@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/gradient_background_color">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Value Edition"
+            android:id="@+id/toolbar_heading"
+           android:paddingTop="@dimen/margin_xxxlarge"
+            android:layout_marginLeft="@dimen/margin_xxxlarge"
+            android:textSize="@dimen/large_20dp"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@+id/back_button_val_edt"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:id="@+id/back_button_val_edt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_left"
+            android:layout_marginTop="@dimen/extra_large_30dp"
+            android:layout_marginLeft="@dimen/large_20dp"/>
+        <LinearLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_below="@+id/toolbar_heading">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Sl.no"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="@dimen/t0_size"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Lot no"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="@dimen/t0_size"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Count"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="@dimen/t0_size"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Required quantity"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="@dimen/t0_size"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Received From"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="@dimen/t0_size"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Process For"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="@dimen/t0_size"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="RB"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="@dimen/t0_size"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@+id/toolbar_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/valueEdition_recycler_view_bsd_lots"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp"/>
+        <LinearLayout
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/value_edition_next_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Next"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/button_background"
+                android:textSize="@dimen/t1_size"
+                android:layout_weight="1"/>
+        </LinearLayout>
+</RelativeLayout>
+</RelativeLayout>

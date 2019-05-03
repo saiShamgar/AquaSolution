@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background_color"
+    tools:context=".UI.MenuActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            android:id="@+id/toolbar_heading"
+            android:paddingTop="@dimen/margin_xxxlarge"
+            android:layout_marginLeft="@dimen/margin_xxxlarge"
+            android:textSize="@dimen/large_20dp"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@+id/back_button_val_edt"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"/>
+
+            <ImageView
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_logout"
+                android:layout_marginTop="@dimen/margin_xxlarge"
+                android:layout_marginRight="@dimen/margin_xxxlarge"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_in_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar_heading"
+            android:background="@color/act_background">
+
+        </android.support.v7.widget.RecyclerView>
+</RelativeLayout>
+

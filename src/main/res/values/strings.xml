@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TestingApp</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="next_count_alert">Do you want to change count ?</string>
+
+    <string name="error_network">Network connection failed. Please check your internet settings.</string>
+    <string name="error_default">Sorry, we are not able to complete your request at this moment. Please try again later.</string>
+
+    <string name="login_prferance">com.PG.testingapp.Utils.login_preference</string>
+    <string name="check_login">com.PG.testingapp.Utils.check_login</string>
+    <string name="logout">Are you sure you want to logout?</string>
+    <string name="upload">please,press ok to upload the details</string>
+</resources>
