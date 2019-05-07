@@ -8,6 +8,7 @@ import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Environment;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -20,6 +21,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.PG.testingapp.Adapters.MenuItemsAdapter;
 import com.PG.testingapp.Adapters.ValueEditionDetailsAdapter;
@@ -57,6 +59,8 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
 
     private ImageView logout;
     private SharedPreferenceConfig config;
+
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -228,5 +232,21 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
         Log.e("EventMessage",message.getLatitude()+" Time "+message.getTime());
         Log.e("EventMessage",message.getAddress());
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 }

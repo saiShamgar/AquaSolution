@@ -291,8 +291,6 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
         }
 
         Log.d("TextType", "total: " + txt_value_edt_weight_total_tare_wt + " NetWeight: " + txt_value_edt_weight_net_weight);
-
-
     }
 
 
@@ -320,12 +318,10 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                                         detaillsModel.setCount_code(count_code);
 
                                         valueEditionDetaillsModel.add(detaillsModel);
-
                                         valueEditionDetailsAdapter=new ValueEditionDetailsAdapter(getApplicationContext(),valueEditionDetaillsModel);
                                         value_edt_weight_recycler_view.setHasFixedSize(true);
                                         value_edt_weight_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                                         value_edt_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
-
                                         clearText();
                                         spinner_val_edt_det.setSelection(0);
 
@@ -345,7 +341,6 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                                         detaillsModel.setCount_code(count_code);
 
                                         valueEditionDetaillsModel.add(detaillsModel);
-
                                         valueEditionDetailsAdapter=new ValueEditionDetailsAdapter(getApplicationContext(),valueEditionDetaillsModel);
                                         value_edt_weight_recycler_view.setHasFixedSize(true);
                                         value_edt_weight_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -366,8 +361,6 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                         spinner_layout.setBackground(getResources().getDrawable(R.drawable.yellow_background));
                     }
                 }
-
-
                 break;
 
             case R.id.txt_value_edt_weight_btn_complete:
@@ -381,7 +374,6 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                 }else {
                     AppUtils.showToast(mContext,"please fill details");
                 }
-
                 break;
 
             case R.id.back_button_val_edt_det:

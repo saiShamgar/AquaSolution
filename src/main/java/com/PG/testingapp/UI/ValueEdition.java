@@ -23,9 +23,11 @@ import com.PG.testingapp.Utils.AppConstant;
 import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.model.GettingProcesses;
 import com.PG.testingapp.model.LoginResponse;
+import com.PG.testingapp.model.Process_Location;
 import com.PG.testingapp.model.Processes_data;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -48,6 +50,9 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
     //services
     private ApiService apiService;
     private Processes_data processes_data;
+
+    private Process_Location location;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +106,8 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
                     if (response.body()!=null){
                         if (response.body().getStatus().contains(AppConstant.MESSAGE)){
                             AppUtils.showToast(mContext,response.body().getMessage());
+
+
                             adapter=new GridViewAdapter(mContext, (OnRadioButtonClick) mContext,response.body().getData());
                             valueEdition_recycler_view_bsd_lots.setHasFixedSize(true);
                             valueEdition_recycler_view_bsd_lots.setLayoutManager(new LinearLayoutManager(mContext));

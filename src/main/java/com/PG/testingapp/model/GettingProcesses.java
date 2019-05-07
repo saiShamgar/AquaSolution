@@ -15,10 +15,14 @@ public class GettingProcesses {
     @SerializedName("data")
     private ArrayList<Processes_data> data;
 
-    public GettingProcesses(String status, String message, ArrayList<Processes_data> data) {
+    @SerializedName("getdata")
+    private ArrayList<Process_Location> getLocations;
+
+    public GettingProcesses(String status, String message, ArrayList<Processes_data> data, ArrayList<Process_Location> getLocations) {
         this.status = status;
         this.message = message;
         this.data = data;
+        this.getLocations = getLocations;
     }
 
     public String getStatus() {
@@ -43,5 +47,13 @@ public class GettingProcesses {
 
     public void setData(ArrayList<Processes_data> data) {
         this.data = data;
+    }
+
+    public ArrayList<Process_Location> getGetLocations() {
+        return getLocations;
+    }
+
+    public void setGetLocations(ArrayList<Process_Location> getLocations) {
+        this.getLocations = getLocations;
     }
 }

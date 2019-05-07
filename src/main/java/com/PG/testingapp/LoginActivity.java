@@ -76,6 +76,7 @@ public class LoginActivity extends BaseActivity  {
                             sharedPreferenceConfig.writeLoginPreference("logged in");
                             Intent login = new Intent(LoginActivity.this, MenuActivity.class);
                             startActivity(login);
+                            finish();
                         }else {
                             Log.e("status",response.body().getMessage());
                             AppUtils.showCustomOkDialog(mContext,"",getResources().getString(R.string.error_default),"OK",null);
