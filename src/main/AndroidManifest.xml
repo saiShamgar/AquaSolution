@@ -24,18 +24,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".UI.ValueEditionDetailsInserted"
+        <activity android:name=".UI.ValueEditionDetailsInserted"
             android:theme="@style/AppThemeWithNoActionBar"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".UI.ValueEditionDetails"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".UI.ValueEditionDetails"/>
+        <activity android:name=".UI.ValueEditionDetails"
             android:theme="@style/AppThemeWithNoActionBar"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".UI.ValueEdition"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".UI.ValueEdition"/>
+        <activity android:name=".UI.ValueEdition"
             android:theme="@style/AppThemeWithNoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".UI.MenuActivity"/>
         <activity
             android:name=".UI.MenuActivity"
             android:screenOrientation="portrait"
@@ -46,6 +46,7 @@
             android:theme="@style/AppThemeWithNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

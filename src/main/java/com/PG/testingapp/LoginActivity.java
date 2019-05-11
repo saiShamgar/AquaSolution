@@ -41,6 +41,7 @@ public class LoginActivity extends BaseActivity  {
         if (sharedPreferenceConfig.readLoginPrefernce().contains("logged in")){
             Intent login = new Intent(LoginActivity.this, MenuActivity.class);
             startActivity(login);
+            finish();
         }
 
         btn_submit = findViewById(R.id.btn_submit);

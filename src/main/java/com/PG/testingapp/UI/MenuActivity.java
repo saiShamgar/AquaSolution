@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import com.PG.testingapp.Adapters.MenuItemsAdapter;
 import com.PG.testingapp.Adapters.ValueEditionDetailsAdapter;
+import com.PG.testingapp.LoginActivity;
 import com.PG.testingapp.R;
 import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.Utils.GpsLocation;
@@ -80,7 +81,10 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
                             @Override
                             public void onClick(View v) {
                                 config.writeLoginPreference("");
-                                onBackPressed();
+                               Intent logout=new Intent(MenuActivity.this, LoginActivity.class);
+                               startActivity(logout);
+                               finish();
+
                             }
                         },
                         new View.OnClickListener() {
@@ -231,7 +235,6 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
     public void getMessage(Events.ActivityServiceMessage message){
         Log.e("EventMessage",message.getLatitude()+" Time "+message.getTime());
         Log.e("EventMessage",message.getAddress());
-
     }
 
     @Override

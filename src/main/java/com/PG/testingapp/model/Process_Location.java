@@ -2,14 +2,16 @@ package com.PG.testingapp.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Process_Location {
+import java.io.Serializable;
+
+public class Process_Location implements Serializable {
     @SerializedName("Org_office_no")
     private String office_no;
 
     @SerializedName("Org_office_Name")
     private String office_name;
 
-    @SerializedName("Org_office_no")
+    @SerializedName("Issued_Org_Office_No")
     private String org_office_no;
 
     public Process_Location(String office_no, String office_name, String org_office_no) {

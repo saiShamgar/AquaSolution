@@ -53,12 +53,10 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
 
     private Process_Location location;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_value_edition);
-
 
         mContext=ValueEdition.this;
         //Initializing Variables
@@ -107,7 +105,10 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
                         if (response.body().getStatus().contains(AppConstant.MESSAGE)){
                             AppUtils.showToast(mContext,response.body().getMessage());
 
-
+                            for (int i=0;i<response.body().getLocations().size();i++){
+                                Log.e("locations",response.body().getLocations().get(i).getOffice_name());
+                            }
+                          //  Log.e("locations",response.body().getLocations().toString());
                             adapter=new GridViewAdapter(mContext, (OnRadioButtonClick) mContext,response.body().getData());
                             valueEdition_recycler_view_bsd_lots.setHasFixedSize(true);
                             valueEdition_recycler_view_bsd_lots.setLayoutManager(new LinearLayoutManager(mContext));
@@ -136,11 +137,7 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
         }else {
             AppUtils.showToast(mContext,getString(R.string.error_network));
         }
-
-
     }
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){

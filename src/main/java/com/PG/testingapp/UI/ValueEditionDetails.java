@@ -123,7 +123,7 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
             public void onTick(long millisUntilFinished) {
                 String saveCurrentDate;
                 Calendar c = Calendar.getInstance();
-                SimpleDateFormat currentDate=new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a");
+                SimpleDateFormat currentDate=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
                 saveCurrentDate=currentDate.format(c.getTime());
                 txt_value_edt_weight_date_time.setText(saveCurrentDate);
             }
