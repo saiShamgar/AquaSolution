@@ -1,5 +1,6 @@
 package com.PG.testingapp.Api;
 
+import com.PG.testingapp.model.GetScheduleNo;
 import com.PG.testingapp.model.GettingProcesses;
 import com.PG.testingapp.model.GettingVeriatyCodes;
 import com.PG.testingapp.model.LoginResponse;
@@ -50,5 +51,8 @@ public interface ApiService {
     @POST("app_multi_procesregisters/")
     Call<Status> insertDetails(
                 @Field("data")String json);
+
+    @GET("app_site_get/")
+    Call<GetScheduleNo> getScheduleNo();
 
 }

@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/layout_siteweighment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <RelativeLayout
+            android:id="@+id/layout_siteweighment_tool"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/titlebg"
+            android:padding="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_left"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:layout_alignParentLeft="true" />
+
+            <TextView
+                android:id="@+id/txt_siteweighment_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/site_weighment"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="50dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/rel_siteweighment_foldercount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/img_siteweighment_foldercount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_folder"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/txtview_siteweighment_foldercount"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/textview_shape"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/nooffolders"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        android:layout_below="@+id/layout_siteweighment_tool"
+        tools:context=".UI.Site_Weightment.Site_weightment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.v7.widget.CardView
+                android:id="@+id/layout_siteweighment_scheduleno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="10dp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/margin_xxlarge"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@color/cardview_dark_background"
+                android:layout_below="@id/layout_siteweighment_tool">
+
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/layout_spin_siteweighment_lin"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/spinnerbg"
+                    android:weightSum="1">
+
+                    <RelativeLayout
+                        android:id="@+id/Schedule_spin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/sch_spinner_heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/schedule_no"
+                            android:layout_centerVertical="true"
+                            android:paddingLeft="20dp"
+                            android:textSize="18sp"
+                            android:textColor="@color/titlebg"
+                            android:textStyle="bold"/>
+
+                        <Spinner
+                            android:id="@+id/spinner_siteweightment_scheduleno"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/titlebg"
+                            android:layout_margin="@dimen/margin_large"
+                            android:dropDownWidth="wrap_content"
+                            android:scrollbars="none"
+                            android:layout_alignParentRight="true"
+                           >
+                        </Spinner>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/layout_sw_child_sch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/Schedule_spin">
+
+
+                        <RelativeLayout
+                            android:id="@+id/layout_siteweighment_scheduledate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:paddingLeft="10dp"
+                            android:background="@color/white"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+
+                            <TextView
+                                android:id="@+id/txtview_siteweighment_scheduledate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/schedule_date"
+                                android:textStyle="bold"
+                                android:textSize="14sp"
+                                android:textColor="@color/black"/>
+
+                            <TextView
+                                android:id="@+id/edttxt_siteweighment_scheduledate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/schedule_date"
+                                android:maxLines="1"
+                                android:background="@android:color/transparent"
+                                android:textSize="16sp"
+                                android:textColor="@color/cardview_dark_background"
+                                android:scrollHorizontally="true"
+                                android:layout_below="@id/txtview_siteweighment_scheduledate"
+                                android:paddingTop="5dp"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/layout_siteweighment_grader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:layout_below="@id/layout_siteweighment_scheduledate"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:background="@color/white"
+                            android:paddingBottom="8dp">
+
+                            <TextView
+                                android:id="@+id/txtview_siteweighment_grader"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Grader Name"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/edttxt_siteweighment_grader"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtview_siteweighment_grader"
+                                android:paddingTop="5dp"
+                                android:textColor="@color/cardview_dark_background"
+                                android:textSize="16dp"
+                                android:background="@android:color/transparent"
+                                android:hint="@string/grader_name" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/layout_siteweighment_vehicalno"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:layout_below="@id/layout_siteweighment_grader"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:background="@color/white"
+                            android:paddingBottom="8dp">
+
+                            <TextView
+                                android:id="@+id/txtview_siteweighment_vehicalno"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/vehical_no"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                            <TextView
+                                android:id="@+id/edttxt_siteweighment_vehicalno"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtview_siteweighment_vehicalno"
+                                android:paddingTop="5dp"
+                                android:maxLines="1"
+                                android:textColor="@color/cardview_dark_background"
+                                android:textSize="16dp"
+                                android:background="@android:color/transparent"
+                                android:scrollHorizontally="true"
+                                android:hint="@string/vehical_no" />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/layout_siteweighment_enquiryno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="15dp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/margin_xxlarge"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:layout_marginBottom="@dimen/margin_xxlarge"
+                android:background="@color/white"
+                app:cardElevation="@dimen/card_elevation_4dp"
+                android:layout_below="@id/layout_siteweighment_scheduleno">
+
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/layout_spin_siteweighment_enquiryno"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/spinnerbg"
+                    android:weightSum="1">
+                    <RelativeLayout
+                        android:id="@+id/layout_sw_enquiry_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/enquery_heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/enquiry_no"
+                            android:layout_centerVertical="true"
+                            android:paddingLeft="20dp"
+                            android:textSize="18sp"
+                            android:textColor="@color/titlebg"
+                            android:textStyle="bold"/>
+
+
+                        <Spinner
+                            android:layout_toRightOf="@+id/enquery_heading"
+                            android:id="@+id/spinner_siteweightment_enquiryno"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:prompt="@string/schedule"
+                            android:backgroundTint="@color/titlebg"
+                            android:padding="25dp">
+                        </Spinner>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:id="@+id/layout_sw_enquiry_child"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_sw_enquiry_parent">
+
+                        //agent details
+                        <RelativeLayout
+                            android:id="@+id/layout_siteweighment_agentdetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:layout_marginTop="1dp"
+                            android:layout_below="@id/layout_siteweighment_place"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+
+                            <ImageView
+                                android:id="@+id/img_siteweighment_agentdetails"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_agent" />
+
+                            <TextView
+                                android:id="@+id/txtview_siteweighment_agentdetails"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/agent_details"
+                                android:layout_toRightOf="@id/img_siteweighment_agentdetails"
+                                android:paddingLeft="20dp"
+                                android:textColor="@color/titlebg"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/edttxt_siteweighment_agentdetails"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtview_siteweighment_agentdetails"
+                                android:layout_toRightOf="@id/img_siteweighment_agentdetails"
+                                android:textSize="16sp"
+                                android:maxLines="1"
+                                android:paddingTop="2dp"
+                                android:paddingLeft="@dimen/margin_xxlarge"
+                                android:scrollHorizontally="true"
+                                android:hint="@string/agent_datails"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/black"/>
+                        </RelativeLayout>
+
+                        //farmer name
+                        <RelativeLayout
+                            android:id="@+id/layout_siteweighment_farmername"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:layout_marginTop="1dp"
+                            android:layout_below="@id/layout_siteweighment_agentdetails"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+
+                            <ImageView
+                                android:id="@+id/img_siteweighment_farmername"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_farmer_details" />
+
+                            <TextView
+                                android:id="@+id/txtview_siteweighment_farmername"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/farmer_name"
+                                android:layout_toRightOf="@id/img_siteweighment_farmername"
+                                android:paddingLeft="20dp"
+                                android:textColor="@color/titlebg"
+                                android:textSize="14sp"
+                                />
+                            <TextView
+                                android:id="@+id/edttxt_siteweighment_farmername"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtview_siteweighment_farmername"
+                                android:layout_toRightOf="@id/img_siteweighment_farmername"
+                                android:paddingLeft="20dp"
+                                android:imeOptions="actionNext"
+                                android:maxLines="1"
+                                android:textSize="16sp"
+                                android:inputType="text"
+                                android:paddingTop="2dp"
+                                android:scrollHorizontally="true"
+                                android:hint="Farmer name"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/black"/>
+
+                        </RelativeLayout>
+
+                        //place
+                        <RelativeLayout
+                            android:id="@+id/layout_siteweighment_place"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:layout_marginTop="1dp"
+                            android:layout_below="@id/layout_siteweighment_farmlocation"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+
+                            <ImageView
+                                android:id="@+id/img_siteweighment_place"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_map" />
+
+                            <TextView
+                                android:id="@+id/txtview_siteweighment_place"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/place"
+                                android:layout_toRightOf="@id/img_siteweighment_place"
+                                android:paddingLeft="20dp"
+                                android:textColor="@color/titlebg"
+                                android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/edttxt_siteweighment_place"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtview_siteweighment_place"
+                                android:layout_toRightOf="@id/img_siteweighment_place"
+                                android:paddingLeft="20dp"
+                                android:textSize="16sp"
+                                android:maxLines="1"
+                                android:paddingTop="2dp"
+                                android:scrollHorizontally="true"
+                                android:hint="Place"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/black"/>
+                        </RelativeLayout>
+
+
+                        //pond num
+                        <RelativeLayout
+                            android:id="@+id/layout_siteweighment_pondnum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:layout_marginTop="1dp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+
+                            <ImageView
+                                android:id="@+id/img_siteweighment_pondnum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_pond" />
+                            <TextView
+                                android:id="@+id/txtview_siteweighment_pondnum"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pond"
+                                android:layout_toRightOf="@id/img_siteweighment_pondnum"
+                                android:paddingLeft="20dp"
+                                android:textColor="@color/titlebg"
+                                android:textSize="14sp" />
+                            <EditText
+                                android:id="@+id/edttxt_siteweighment_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtview_siteweighment_pondnum"
+                                android:layout_toRightOf="@id/img_siteweighment_pondnum"
+                                android:paddingLeft="20dp"
+                                android:maxLines="1"
+                                android:inputType="text"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"
+                                android:imeOptions="actionNext"
+                                android:scrollHorizontally="true"
+                                android:paddingTop="2dp"
+                                android:hint="Pond number"
+                                android:background="@android:color/transparent"/>
+                        </RelativeLayout>
+
+                        //location
+                        <RelativeLayout
+                            android:id="@+id/layout_siteweighment_farmlocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:layout_marginTop="1dp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+
+                            <ImageView
+                                android:id="@+id/img_siteweighment_farmlocation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_farm_loc" />
+
+                            <TextView
+                                android:id="@+id/txtview_siteweighment_farmlocation"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/farm_location"
+                                android:layout_toRightOf="@id/img_siteweighment_farmlocation"
+                                android:paddingLeft="20dp"
+                                android:textColor="@color/titlebg"
+                                android:textSize="14sp"
+                                />
+                            <EditText
+                                android:id="@+id/edttxt_siteweighment_farmlocation"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtview_siteweighment_farmlocation"
+                                android:layout_toRightOf="@id/img_siteweighment_farmlocation"
+                                android:paddingLeft="20dp"
+                                android:maxLines="1"
+                                android:inputType="text"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"
+                                android:imeOptions="actionDone"
+                                android:scrollHorizontally="true"
+                                android:paddingTop="2dp"
+                                android:hint="Farm Location"
+                                android:background="@android:color/transparent"/>
+                        </RelativeLayout>
+
+                        //navigation map
+                        <RelativeLayout
+                            android:id="@+id/layout_siteweighment_navigationmap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:layout_marginTop="1dp"
+                            android:layout_below="@id/layout_siteweighment_farmername"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+
+                            <ImageView
+                                android:id="@+id/img_siteweighment_navigationmap"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_map" />
+
+                            <TextView
+                                android:id="@+id/txtview_siteweighment_navigationmap"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/navigationmap"
+                                android:layout_toRightOf="@id/img_siteweighment_navigationmap"
+                                android:paddingLeft="20dp"
+                                android:textColor="@color/titlebg"
+                                android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/edttxt_siteweighment_navigationmap"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtview_siteweighment_navigationmap"
+                                android:layout_toRightOf="@id/img_siteweighment_navigationmap"
+                                android:paddingLeft="20dp"
+                                android:textSize="16sp"
+                                android:paddingTop="2dp"
+                                android:scrollHorizontally="true"
+                                android:hint="@string/navigation_map_details"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/black"/>
+
+                        </RelativeLayout>
+
+                        //num of boxs layout
+                        <LinearLayout
+                            android:id="@+id/layout_siteweighment_noofboxs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/layout_siteweighment_navigationmap"
+                            android:layout_marginTop="1dp"
+                            android:background="@color/white">
+
+                            <LinearLayout
+                                android:id="@+id/card_siteweighment_boxs"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".5"
+                                android:padding="10dp">
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:id="@+id/txt_siteweighment_boxs"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/number_of_boxes"
+                                        android:textStyle="bold"
+                                        android:textSize="16sp"
+                                        android:gravity="center"
+                                        android:textColor="@color/black"/>
+
+                                    <TextView
+                                        android:id="@+id/date_siteweighment_boxs"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="@string/boxes"
+                                        android:textColorHint="@color/titlebg"
+                                        android:textSize="30sp"
+                                        android:textStyle="bold"
+                                        android:gravity="center"
+                                        android:layout_centerInParent="true"
+                                        android:textColor="@color/titlebg"
+                                        android:background="@android:color/transparent"
+                                        android:scrollHorizontally="true"
+                                        android:layout_below="@id/txt_siteweighment_boxs"
+                                        android:paddingTop="5dp"/>
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/divider"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginBottom="16dp" />
+                            <LinearLayout
+                                android:id="@+id/card_siteweighment_nets"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".5"
+                                android:layout_marginLeft="1dp"
+                                android:padding="10dp">
+                                <RelativeLayout
+                                    android:id="@+id/re113"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:id="@+id/txt_siteweighment_nets"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/number_of_nets"
+                                        android:gravity="center"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/black"/>
+
+                                    <TextView
+                                        android:id="@+id/nets_siteweighment_edttxt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="@string/nets"
+                                        android:textColor="@color/titlebg"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColorHint="@color/titlebg"
+                                        android:textSize="30sp"
+                                        android:background="@android:color/transparent"
+                                        android:layout_below="@id/txt_siteweighment_nets"
+                                        android:paddingTop="5dp"/>
+                                </RelativeLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        //matetrial group
+                        <RelativeLayout
+                            android:id="@+id/layout_siteweighment_materialgroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/color_white"
+                            android:layout_marginTop="1dp"
+                            android:layout_below="@id/layout_siteweighment_noofboxs"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+
+                            <ImageView
+                                android:id="@+id/img_siteweighment_materialgroup"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_material" />
+
+                            <TextView
+                                android:id="@+id/txtview_siteweighment_materialgroup"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/material"
+                                android:layout_toRightOf="@id/img_siteweighment_materialgroup"
+                                android:paddingLeft="20dp"
+                                android:textColor="@color/titlebg"
+                                android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/edttxt_siteweighment_materialgroup"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtview_siteweighment_materialgroup"
+                                android:layout_toRightOf="@id/img_siteweighment_materialgroup"
+                                android:textSize="16sp"
+                                android:paddingLeft="20dp"
+                                android:maxLines="1"
+                                android:paddingTop="2dp"
+                                android:scrollHorizontally="true"
+                                android:hint="@string/material"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/color_black"/>
+
+                        </RelativeLayout>
+
+                        //variety name
+                        <RelativeLayout
+                            android:id="@+id/layout_siteweighment_varietyname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/color_white"
+                            android:layout_marginTop="1dp"
+                            android:layout_below="@id/layout_siteweighment_materialgroup"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+
+
+                            <ImageView
+                                android:id="@+id/img_siteweighment_varietyname"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_variety" />
+
+                            <TextView
+                                android:id="@+id/txtview_siteweighment_varietyname"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/variety_name"
+                                android:layout_toRightOf="@id/img_siteweighment_varietyname"
+                                android:paddingLeft="20dp"
+                                android:textColor="@color/titlebg"
+                                android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/edttxt_siteweighment_varietyname"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtview_siteweighment_varietyname"
+                                android:layout_toRightOf="@id/img_siteweighment_varietyname"
+                                android:paddingLeft="20dp"
+                                android:textSize="16sp"
+                                android:maxLines="1"
+                                android:paddingTop="2dp"
+                                android:scrollHorizontally="true"
+                                android:hint="@string/variety_name"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/black"/>
+
+                        </RelativeLayout>
+
+                        //total count
+                        <RelativeLayout
+                            android:id="@+id/layout_siteweighment_total_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/color_white"
+                            android:layout_marginTop="1dp"
+                            android:layout_below="@id/layout_siteweighment_materialgroup"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+
+
+                            <ImageView
+                                android:id="@+id/img_siteweighment_total_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_count" />
+
+                            <TextView
+                                android:id="@+id/txtview_siteweighment_total_count"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Count"
+                                android:layout_toRightOf="@id/img_siteweighment_total_count"
+                                android:paddingLeft="20dp"
+                                android:textColor="@color/titlebg"
+                                android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/edttxt_siteweighment_total_count"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtview_siteweighment_total_count"
+                                android:layout_toRightOf="@id/img_siteweighment_total_count"
+                                android:paddingLeft="20dp"
+                                android:textSize="16sp"
+                                android:maxLines="1"
+                                android:paddingTop="2dp"
+                                android:hint="Count"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/black"/>
+
+                        </RelativeLayout>
+
+                        //total
+                        <RelativeLayout
+                            android:id="@+id/layout_siteweighment_total"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:layout_marginTop="1dp"
+                            android:layout_below="@id/layout_siteweighment_varietyname"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+
+
+                            <ImageView
+                                android:id="@+id/img_siteweighment_total"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_total_weight" />
+
+                            <TextView
+                                android:id="@+id/txtview_siteweighment_total"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/total_weight_kg"
+                                android:layout_toRightOf="@id/img_siteweighment_total"
+                                android:paddingLeft="20dp"
+                                android:textColor="@color/titlebg"
+                                android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/edttext_siteweighment_total"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtview_siteweighment_total"
+                                android:layout_toRightOf="@id/img_siteweighment_total"
+                                android:paddingLeft="20dp"
+                                android:maxLines="1"
+                                android:textSize="16sp"
+                                android:paddingTop="2dp"
+                                android:hint="@string/total_weight_kg"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/black"/>
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+    </ScrollView>
+    </RelativeLayout>
+

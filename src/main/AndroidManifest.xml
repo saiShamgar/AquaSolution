@@ -24,22 +24,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.ValueEditionDetailsInserted"
+        <activity android:name=".UI.Site_Weightment.Site_weightment"
             android:theme="@style/AppThemeWithNoActionBar"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".UI.ValueEditionDetailsInserted"
+            android:parentActivityName=".UI.ValueEditionDetails"
             android:screenOrientation="portrait"
-            android:parentActivityName=".UI.ValueEditionDetails"/>
-        <activity android:name=".UI.ValueEditionDetails"
-            android:theme="@style/AppThemeWithNoActionBar"
+            android:theme="@style/AppThemeWithNoActionBar" />
+        <activity
+            android:name=".UI.ValueEditionDetails"
+            android:parentActivityName=".UI.ValueEdition"
             android:screenOrientation="portrait"
-            android:parentActivityName=".UI.ValueEdition"/>
-        <activity android:name=".UI.ValueEdition"
-            android:theme="@style/AppThemeWithNoActionBar"
+            android:theme="@style/AppThemeWithNoActionBar" />
+        <activity
+            android:name=".UI.ValueEdition"
+            android:parentActivityName=".UI.MenuActivity"
             android:screenOrientation="portrait"
-            android:parentActivityName=".UI.MenuActivity"/>
+            android:theme="@style/AppThemeWithNoActionBar" />
         <activity
             android:name=".UI.MenuActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeWithNoActionBar"/>
+            android:theme="@style/AppThemeWithNoActionBar" />
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait"

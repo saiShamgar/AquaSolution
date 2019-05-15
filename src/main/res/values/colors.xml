@@ -16,7 +16,6 @@
     <color name="color_blue">#329bf7</color>
     <color name="order_txt_color">#5e5e5e</color>
     <color name="color_app_blue">#0f204b</color>
-    <color name="white">#ffffff</color>
     <color name="color_red">#FF0000</color>
     <color name="color_ripple">#7B000000</color>
 
@@ -31,6 +30,18 @@
     <color name="font_heading">#a7adb6 </color>
     <color name="edt_line_color">#e2e2e2 </color>
     <color name="app_dark_color">#ff4057 </color>
+
+    //site Weighment
+    <color name="titlebg">#FF6969</color>
+    <color name="spinnerbg">#F5F6F8</color>
+    <color name="spindivline">#DCDDDF</color>
+    <color name="scheduledivline">#E7E7E7</color>
+    <color name="text">#FF6969</color>
+    <color name="txtbg">#FDD835</color>
+    <color name="black">#000000</color>
+    <color name="layoutbg">#F1F1F1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="divider">#FFB3B3</color>
 
 
 

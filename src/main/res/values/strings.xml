@@ -11,4 +11,37 @@
     <string name="logout">Are you sure you want to logout?</string>
     <string name="upload">please,press ok to upload the details</string>
     <string name="NextLot">Are You sure You want to change the Lot no?</string>
+
+
+    //site Weighment
+    <string name="schedule">Schedule No.</string>
+    <string name="navigation_map_details">Navigation map details</string>
+    <string name="site_weighment">Site Weighment</string>
+    <string name="nooffolders">5</string>
+    <string name="schedule_date">Schedule Date</string>
+
+    <string name="grader_name">Grader Name</string>
+
+    <string name="vehical_no">Vehical No.</string>
+    <string name="phone_number">Phone Number</string>
+
+    <string name="farm_location">Farm Location</string>
+
+    <string name="place">Place</string>
+    <string name="pond">Pond No.</string>
+    <string name="vehical_number">Vehical Number</string>
+    <string name="agent_details">Agent Details</string>
+    <string name="agent_datails">Agent Datails</string>
+    <string name="farmer_name">Farmer Details</string>
+    <string name="farm_name">Farm Name</string>
+    <string name="navigationmap">Navigation Map Details</string>
+    <string name="number_of_boxes">Number of Boxes</string>
+    <string name="boxes">54</string>
+    <string name="number_of_nets">Number of Nets</string>
+    <string name="nets">34</string>
+    <string name="material">Material Group Name</string>
+    <string name="variety_name">Variety Name</string>
+    <string name="total_weight_kg">Total Weight(kg)</string>
+    <string name="schedule_no">Schedule No.</string>
+    <string name="enquiry_no">Enquiry No.</string>
 </resources>

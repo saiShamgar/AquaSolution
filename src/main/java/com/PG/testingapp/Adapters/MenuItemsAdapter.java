@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.PG.testingapp.R;
+import com.PG.testingapp.UI.Site_Weightment.Site_weightment;
 import com.PG.testingapp.UI.ValueEdition;
 import com.google.zxing.integration.android.IntentIntegrator;
 
@@ -37,16 +38,21 @@ public class MenuItemsAdapter extends RecyclerView.Adapter<MenuItemsAdapter.View
             @Override
             public void onClick(View v) {
                 if (position==0){
-                   // new IntentIntegrator((Activity) context).initiateScan();
-                    Intent valueEdition=new Intent(context, ValueEdition.class);
-                    context.startActivity(valueEdition);
+                    Intent siteWeightment=new Intent(context, Site_weightment.class);
+                    context.startActivity(siteWeightment);
                 }
                 if (position==1){
-                    Toast.makeText(context,"factory weighment",Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(context,"factory weighment",Toast.LENGTH_SHORT).show();
+                    Intent valueEdition=new Intent(context, ValueEdition.class);
+                    context.startActivity(valueEdition);
                 }
             }
         });
         if (position==0){
+            holder.item_name.setText("Site weighment");
+            holder.gridImage.setImageResource(R.drawable.ic_value_edi);
+        }
+        if (position==1){
             holder.item_name.setText("Value Edition");
             holder.gridImage.setImageResource(R.drawable.ic_value_edi);
         }
