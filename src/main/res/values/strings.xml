@@ -11,6 +11,7 @@
     <string name="logout">Are you sure you want to logout?</string>
     <string name="upload">please,press ok to upload the details</string>
     <string name="NextLot">Are You sure You want to change the Lot no?</string>
+    <string name="siteWtAlert">Are You sure You want to save weights? </string>
 
 
     //site Weighment

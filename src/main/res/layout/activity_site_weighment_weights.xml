@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_weight_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.PG.testingapp.UI.ValueEditionDetails">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_background_color"
+            android:elevation="@dimen/card_radius_8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Site Weighment Weights"
+                android:id="@+id/toolbar_heading_val_det"
+                android:layout_marginTop="28dp"
+                android:layout_marginLeft="8dp"
+                android:textSize="18dp"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@+id/back_button_site_wt_det"
+                android:layout_marginBottom="10dp"/>
+
+            <ImageView
+                android:id="@+id/back_button_site_wt_det"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_left"
+                android:layout_marginTop="@dimen/extra_large_30dp"
+                android:layout_marginLeft="@dimen/large_20dp"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_margin"
+            android:orientation="vertical"
+            android:focusableInTouchMode="true"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_xxxxxlarge"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Date Time"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/t13_size"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_text"
+                    android:background="@android:color/transparent"/>
+
+                <TextView
+                    android:id="@+id/txt_siteWeighment_weight_date_time"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/t13_size"
+                    android:padding="5dp"
+                    android:text="Loading.."
+                    android:gravity="end"
+                    android:background="@drawable/boarder_shape"
+                    android:textColor="@color/order_txt_color"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_xxxxxlarge"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Number Of Nets"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/t13_size"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_text"
+                    android:background="@android:color/transparent"/>
+
+                <EditText
+                    android:id="@+id/txt_siteWeighment_weight_no_nets"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/boarder_shape"
+                    android:hint="Enter Number of nets / weight"
+                    android:inputType="number"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:gravity="end"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/order_txt_color"
+                    android:textColorHint="@color/color_lite_grey"
+                    android:textSize="@dimen/t13_size" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_xxxxxlarge"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Tare Weight / Net(kgs)"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/t13_size"
+                    android:textColor="@color/color_text"
+                    android:textStyle="bold"
+                    android:background="@android:color/transparent"/>
+
+                <EditText
+                    android:id="@+id/txt_siteWeighment_weight_tare_weight"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/t13_size"
+                    android:hint="Enter total weight (kgs)"
+                    android:padding="5dp"
+                    android:gravity="end"
+                    android:singleLine="true"
+                    android:inputType="numberDecimal"
+                    android:imeOptions="actionNext"
+                    android:background="@drawable/boarder_shape"
+                    android:textColor="@color/order_txt_color"
+                    android:textColorHint="@color/color_lite_grey"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_xxxxxlarge"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Total Weight (kgs)"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/t13_size"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_text"
+                    android:background="@android:color/transparent"/>
+
+                <EditText
+                    android:id="@+id/edt_siteWeighment_total_weight_kgs"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/t13_size"
+                    android:hint="Enter total weight (kgs)"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:gravity="end"
+                    android:inputType="numberDecimal"
+                    android:imeOptions="actionDone"
+                    android:background="@drawable/boarder_shape"
+                    android:textColor="@color/order_txt_color"
+                    android:textColorHint="@color/color_lite_grey" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_xxxxxlarge"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Total Tare Weight (kgs)"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/t13_size"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_text"
+                    android:background="@android:color/transparent"/>
+
+                <TextView
+                    android:id="@+id/txt_siteWeighment_weight_total_tare_wt"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/t13_size"
+                    android:hint="0"
+                    android:gravity="end"
+                    android:padding="5dp"
+                    android:background="@drawable/boarder_shape"
+                    android:textColor="@color/order_txt_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_xxxxxlarge"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Net Weight (kgs)"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/t13_size"
+                    android:textColor="@color/color_text"
+                    android:textStyle="bold"
+                    android:background="@android:color/transparent"/>
+
+                <TextView
+                    android:id="@+id/txt_siteWeighment_weight_net_weight"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/t13_size"
+                    android:hint="0"
+                    android:gravity="end"
+                    android:padding="5dp"
+                    android:background="@drawable/boarder_shape"
+                    android:textColor="@color/order_txt_color" />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/app_color"
+                android:orientation="horizontal"
+                android:elevation="@dimen/card_elevation_4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="SL No."
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="@dimen/t0_size"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="Time"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="@dimen/t0_size"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="No. Of Nets"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="@dimen/t0_size"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="Total Weight"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="@dimen/t0_size"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="Total Tare Weight"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="@dimen/t0_size"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="Net\nWeight"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="@dimen/t0_size"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="Cumulative Weight."
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="@dimen/t0_size"
+                    android:layout_weight="1"/>
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/siteWeighment_weight_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="55dp"/>
+                <LinearLayout
+                    android:id="@+id/btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Cumulative Wt."
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:background="@color/color_app_blue"
+                        android:textSize="@dimen/t0_size"
+                        android:textColor="@color/white"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/txt_siteWeighment_dts_weight_btn_save"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="SAVE &amp; CONTINUE"
+                        android:gravity="center"
+                        android:background="@color/app_color"
+                        android:textSize="@dimen/t3_size"
+                        android:textColor="@color/white"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:paddingRight="@dimen/margin_xlarge"
+                        android:drawableRight="@drawable/ic_arrow_forward_white_24dp"/>
+                    <TextView
+                        android:id="@+id/txt_siteWeighment_weight_btn_complete"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="GO TO NEXT"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@color/app_dark_color"
+                        android:textSize="@dimen/t3_size"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

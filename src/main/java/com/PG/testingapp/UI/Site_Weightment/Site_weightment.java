@@ -32,6 +32,8 @@ import com.PG.testingapp.Utils.AppConstant;
 import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.Utils.GpsLocation;
 import com.PG.testingapp.model.Events;
+import com.PG.testingapp.model.GetEnquiryFullDetails;
+import com.PG.testingapp.model.GetEnquiryRespone;
 import com.PG.testingapp.model.GetScheduleNo;
 import com.PG.testingapp.model.GettingScheduleDetails;
 import com.PG.testingapp.model.GettingVeriatyCodes;
@@ -145,6 +147,8 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
         edttxt_siteweighment_total_count=findViewById(R.id.edttxt_siteweighment_total_count);
         edttext_siteweighment_total=findViewById(R.id.edttext_siteweighment_total);
 
+        btnSiteWeightmentNext.setOnClickListener(this);
+
         layout_sw_child_sch.setVisibility(View.GONE);
         layout_sw_enquiry_parent.setVisibility(View.GONE);
         layout_sw_enquiry_child.setVisibility(View.GONE);
@@ -233,11 +237,14 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-
+        if (v.getId()==R.id.btnSiteWeightmentNext){
+            Intent siteWeighmentDetails=new Intent(Site_weightment.this,SiteWeighmentWeights.class);
+            startActivity(siteWeighmentDetails);
+        }
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+    public void onItemSelected(final AdapterView<?> parent, View view, int position, long id) {
         if (parent.getSelectedItem().toString()!="Select No"){
             if (AppUtils.isNetworkAvailable(mContext)){
                 AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
@@ -290,9 +297,7 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
                                         @Override
                                         public void onItemSelected(AdapterView<?> parent1, View view1, int position1, long id1) {
                                             if (parent1.getSelectedItem().toString()!="Select No"){
-                                                layout_sw_enquiry_child.setVisibility(View.VISIBLE);
-                                                btnSiteWeightmentNext.setVisibility(View.VISIBLE);
-                                                edttxt_siteweighment_navigationmap.setText(message.getAddress());
+                                                callEnquiryService(parent.getSelectedItem().toString(),parent1.getSelectedItem().toString());
                                                 Log.e("site Weighment",message.getLatitude()+" Time "+message.getTime());
                                                 Log.e("site weighment" ,message.getAddress());
                                             }
@@ -310,17 +315,24 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
                                     });
                                 }
                                 else {
+                                    layout_sw_enquiry_parent.setVisibility(View.GONE);
+                                    layout_sw_enquiry_child.setVisibility(View.GONE);
+                                    btnSiteWeightmentNext.setVisibility(View.GONE);
                                     AppUtils.showToast(mContext,"Enquiry Numbers not found for this schedule number");
                                 }
-
-
                             }
                             else {
+                                layout_sw_child_sch.setVisibility(View.GONE);
+                                layout_sw_enquiry_parent.setVisibility(View.GONE);
+                                layout_sw_enquiry_child.setVisibility(View.GONE);
+                                btnSiteWeightmentNext.setVisibility(View.GONE);
                                 Log.e("status",response.body().getMessage());
-                                AppUtils.showCustomOkDialog(mContext,"",getResources().getString(R.string.error_default),"OK",null);
+                                AppUtils.showCustomOkDialog(mContext,"",response.body().getMessage(),"OK",null);
                             }
                         }
                         else {
+                            layout_sw_child_sch.setVisibility(View.GONE);
+                            layout_sw_enquiry_parent.setVisibility(View.GONE);
                             AppUtils.showCustomOkDialog(mContext,"",getResources().getString(R.string.error_default),"OK",null);
                         }
                     }
@@ -337,14 +349,91 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
                 });
             }
             else {
+                layout_sw_child_sch.setVisibility(View.GONE);
+                layout_sw_enquiry_parent.setVisibility(View.GONE);
+                layout_sw_enquiry_child.setVisibility(View.GONE);
+                layout_sw_enquiry_child.setVisibility(View.GONE);
+                btnSiteWeightmentNext.setVisibility(View.GONE);
                 AppUtils.showCustomOkDialog(mContext,"",getResources().getString(R.string.error_default),"OK",null);
             }
         }else {
             layout_sw_child_sch.setVisibility(View.GONE);
             layout_sw_enquiry_parent.setVisibility(View.GONE);
             layout_sw_enquiry_child.setVisibility(View.GONE);
+            layout_sw_enquiry_child.setVisibility(View.GONE);
+            btnSiteWeightmentNext.setVisibility(View.GONE);
         }
 
+    }
+
+    private void callEnquiryService(String scheduleNo, String enquiryNo) {
+        if (AppUtils.isNetworkAvailable(mContext)){
+            AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
+            apiService=AppUrl.getApiClient().create(ApiService.class);
+            Call<GetEnquiryRespone> call=apiService.getEnQuiryDetails(scheduleNo,enquiryNo);
+            call.enqueue(new Callback<GetEnquiryRespone>() {
+                @Override
+                public void onResponse(Call<GetEnquiryRespone> call, Response<GetEnquiryRespone> response) {
+                    AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                    if (response.body()!=null){
+                        if (response.body().getStatus().contains(AppConstant.MESSAGE)) {
+                            layout_sw_enquiry_child.setVisibility(View.VISIBLE);
+                            btnSiteWeightmentNext.setVisibility(View.VISIBLE);
+                            edttxt_siteweighment_navigationmap.setText(message.getAddress());
+                            if (response.body().getData().getMaterialData().size()!=0){
+                                for (int i=0;i<response.body().getData().getMaterialData().size();i++){
+                                    edttxt_siteweighment_materialgroup.setText(response.body().getData().getMaterialData().get(i).getMaterial_Group_Name());
+                                    edttxt_siteweighment_varietyname.setText(response.body().getData().getMaterialData().get(i).getProduct_Variety_Name());
+                                    edttxt_siteweighment_total_count.setText(response.body().getData().getMaterialData().get(i).getProduct_Variety_Code());
+                                }
+                            }
+                            if (response.body().getData().getFarmerDetails().size()!=0){
+                                for (int i=0;i<response.body().getData().getFarmerDetails().size();i++){
+                                    edttxt_siteweighment_agentdetails.setText(response.body().getData().getFarmerDetails().get(i).getAqua_Agent_Name());
+                                    edttxt_siteweighment_farmername.setText(response.body().getData().getFarmerDetails().get(i).getAqua_Agent_Name());
+                                    edttxt_siteweighment_place.setText(response.body().getData().getFarmerDetails().get(i).getAqua_Farmer_Bank_Place());
+                                }
+                            }
+                            if (response.body().getData().getBoxesDetails().size()!=0){
+                                for (int i=0;i<response.body().getData().getBoxesDetails().size();i++){
+                                    date_siteweighment_boxs.setText(response.body().getData().getBoxesDetails().get(i).getBox_Required());
+                                    nets_siteweighment_edttxt.setText(response.body().getData().getBoxesDetails().get(i).getNet());
+                                }
+                            }
+                            if (response.body().getData().getNetWeightDetails().size()!=0){
+                                for (int i=0;i<response.body().getData().getNetWeightDetails().size();i++){
+                                    edttext_siteweighment_total.setText(response.body().getData().getNetWeightDetails().get(i).getSW_Net_Weight());
+                                }
+                            }
+                        }
+                        else {
+                            Log.e("status",response.body().getMessage());
+                            layout_sw_enquiry_child.setVisibility(View.GONE);
+                            btnSiteWeightmentNext.setVisibility(View.GONE);
+                            AppUtils.showCustomOkDialog(mContext,"",response.body().getMessage(),"OK",null);
+                        }
+                    }
+                    else {
+                        layout_sw_enquiry_child.setVisibility(View.GONE);
+                        btnSiteWeightmentNext.setVisibility(View.GONE);
+                        AppUtils.showCustomOkDialog(mContext,"",getResources().getString(R.string.error_default),"OK",null);
+                    }
+
+                }
+
+                @Override
+                public void onFailure(Call<GetEnquiryRespone> call, Throwable t) {
+                    Log.e("status enquiry",t.toString());
+                    AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                    AppUtils.showCustomOkDialog(mContext,
+                            "",
+                            getString(R.string.error_default),
+                            "OK", null);
+                    layout_sw_enquiry_child.setVisibility(View.GONE);
+                    btnSiteWeightmentNext.setVisibility(View.GONE);
+                }
+            });
+        }
     }
 
     @Override

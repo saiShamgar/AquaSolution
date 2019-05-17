@@ -1,5 +1,6 @@
 package com.PG.testingapp.Api;
 
+import com.PG.testingapp.model.GetEnquiryRespone;
 import com.PG.testingapp.model.GetScheduleNo;
 import com.PG.testingapp.model.GettingProcesses;
 import com.PG.testingapp.model.GettingScheduleDetails;
@@ -60,5 +61,12 @@ public interface ApiService {
     @POST("app_get_schedule_date/")
     Call<GettingScheduleDetails> getScheduleDetails(
             @Field("scheduledate")String json);
+
+    @FormUrlEncoded
+    @POST("app_get_details/")
+    Call<GetEnquiryRespone> getEnQuiryDetails(
+            @Field("sechduleno")String schNo,
+            @Field("enquiryno")String enquiryNo);
+
 
 }
