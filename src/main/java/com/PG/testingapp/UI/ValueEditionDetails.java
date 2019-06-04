@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -123,7 +124,7 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
             public void onTick(long millisUntilFinished) {
                 String saveCurrentDate;
                 Calendar c = Calendar.getInstance();
-                SimpleDateFormat currentDate=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                SimpleDateFormat currentDate=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 saveCurrentDate=currentDate.format(c.getTime());
                 txt_value_edt_weight_date_time.setText(saveCurrentDate);
             }
@@ -324,6 +325,15 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                                         value_edt_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
                                         clearText();
                                         spinner_val_edt_det.setSelection(position);
+
+                                        edt_value_edt_total_weight_kgs.post(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                final InputMethodManager imm = (InputMethodManager) edt_value_edt_total_weight_kgs.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                                                imm.showSoftInput(edt_value_edt_total_weight_kgs, InputMethodManager.SHOW_IMPLICIT);
+                                                edt_value_edt_total_weight_kgs.requestFocus(); // needed if you have more then one input
+                                            }
+                                        });
 
                                     }
                                 },

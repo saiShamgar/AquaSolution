@@ -32,6 +32,7 @@ import com.PG.testingapp.BaseActivity;
 import com.PG.testingapp.LocalDataBase.DbHelper;
 import com.PG.testingapp.LoginActivity;
 import com.PG.testingapp.R;
+import com.PG.testingapp.UI.HeadLessGrading.HeadLessGradingDetailsInserted;
 import com.PG.testingapp.UI.MenuActivity;
 import com.PG.testingapp.Utils.AppConstant;
 import com.PG.testingapp.Utils.AppUtils;
@@ -643,7 +644,15 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
                         }
                         else {
                             Log.e("status",response.body().getMessage());
-                            AppUtils.showCustomOkDialog(mContext,"",response.body().getMessage(),"OK",null);
+                            AppUtils.showCustomOkDialog(mContext, "", response.body().getMessage(), "OK", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent goback=new Intent(Site_weightment.this, MenuActivity.class);
+                                    goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(goback);
+                                    finish();
+                                }
+                            });
                         }
                     }
                     else {

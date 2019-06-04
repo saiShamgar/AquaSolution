@@ -108,7 +108,7 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
             public void onTick(long millisUntilFinished) {
                 String saveCurrentDate;
                 Calendar c = Calendar.getInstance();
-                SimpleDateFormat currentDate=new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+                SimpleDateFormat currentDate=new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
                 saveCurrentDate=currentDate.format(c.getTime());
                 txt_siteWeighment_weight_date_time.setText(saveCurrentDate);
             }
@@ -235,19 +235,15 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
 
                                         clearText();
                                         spinner_st_w_det.setSelection(position);
-//                                        edt_siteWeighment_total_weight_kgs.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-//                                            @Override
-//                                            public void onFocusChange(View v, boolean hasFocus) {
-//                                                edt_siteWeighment_total_weight_kgs.post(new Runnable() {
-//                                                    @Override
-//                                                    public void run() {
-//                                                        InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
-//                                                        imm.showSoftInput(edt_siteWeighment_total_weight_kgs, InputMethodManager.SHOW_IMPLICIT);
-//                                                    }
-//                                                });
-//                                            }
-//                                        });
-//                                        edt_siteWeighment_total_weight_kgs.requestFocus();
+                                        edt_siteWeighment_total_weight_kgs.post(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                final InputMethodManager imm = (InputMethodManager) edt_siteWeighment_total_weight_kgs.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                                                imm.showSoftInput(edt_siteWeighment_total_weight_kgs, InputMethodManager.SHOW_IMPLICIT);
+                                                edt_siteWeighment_total_weight_kgs.requestFocus(); // needed if you have more then one input
+                                            }
+                                        });
+
 
 
 

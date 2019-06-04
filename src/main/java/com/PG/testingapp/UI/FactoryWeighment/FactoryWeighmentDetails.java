@@ -13,6 +13,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -84,8 +85,6 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
 
     private ArrayList<ActualCodes> codes =  new ArrayList<>();
 
-
-
     private ArrayList<ActualCodes> factoryWeighmentCodes;
 
     private HeadLessGrading_2_Grid valueEditionDetailsAdapter;
@@ -124,7 +123,7 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
             public void onTick(long millisUntilFinished) {
                 String saveCurrentDate;
                 Calendar c = Calendar.getInstance();
-                SimpleDateFormat currentDate=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                SimpleDateFormat currentDate=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 saveCurrentDate=currentDate.format(c.getTime());
                 txt_value_edt_weight_date_time.setText(saveCurrentDate);
             }
@@ -260,6 +259,14 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
                                         value_edt_weight_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                                         value_edt_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
                                         clearText();
+                                        edt_value_edt_total_weight_kgs.post(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                final InputMethodManager imm = (InputMethodManager) edt_value_edt_total_weight_kgs.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                                                imm.showSoftInput(edt_value_edt_total_weight_kgs, InputMethodManager.SHOW_IMPLICIT);
+                                                edt_value_edt_total_weight_kgs.requestFocus(); // needed if you have more then one input
+                                            }
+                                        });
                                         spinner_val_edt_det.setSelection(position);
 
                                     }

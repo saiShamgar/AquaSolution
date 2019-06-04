@@ -1,9 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.LocationPlacement.LocationPlacement">
+    tools:context=".UI.LocationPlacement.LocationPlacement"
+    android:background="@color/act_background">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_light_black">
+
+            <ImageView
+                android:id="@+id/loc_place_put_away_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/margin_xxlarge"
+                android:layout_marginRight="@dimen/margin_xxlarge"/>
+
+        <RelativeLayout
+            android:id="@+id/scanner_layout"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_below="@+id/loc_place_put_away_close"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/margin_xxxlarge">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_barcode_black"
+                android:layout_centerInParent="true"/>
+
+            <ImageView
+                android:id="@+id/loc_place_scanner_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_scaner"
+                android:scaleType="fitXY"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/scanResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Scanning.."
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:textSize="16dp"
+            android:layout_below="@+id/scanner_layout"
+            android:singleLine="true"
+            android:layout_marginBottom="@dimen/margin_xxlarge"/>
+
+        </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:layout_below="@+id/toolbar_layout"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="S.No"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/t0_size"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Scanned date and time"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/t0_size"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Pellet/Stock No"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/t0_size"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Location No"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/t0_size"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Status"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/t0_size"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Conformation"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/t0_size"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/scanning_recyclerView"
+        android:layout_below="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+
+
+
+
+</RelativeLayout>

@@ -62,7 +62,95 @@
     <last-search-timestamp>1556971166566</last-search-timestamp>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25df1edb-a575-48b2-a15a-642267591e21" name="Default Changelist" comment="" />
+    <list default="true" id="25df1edb-a575-48b2-a15a-642267591e21" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighmentDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighmentDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGrading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGrading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnGrading/HeadOnGrading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnGrading/HeadOnGrading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HOHL_weights.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HOHL_weights.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HeadOnHeadLessGrading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HeadOnHeadLessGrading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/LocationPlacement/LocationPlacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/LocationPlacement/LocationPlacement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/SiteWeighmentWeights.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/SiteWeighmentWeights.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/Site_weightment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/Site_weightment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/ValueEditionDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/ValueEditionDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_barcode.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_barcode.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_barcode_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_barcode_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_close.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_close.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_factory_weighment.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_factory_weighment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_head_on_grading.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_head_on_grading.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_headles_grading.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_headles_grading.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_hod_hd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_hod_hd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_scaner.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_scaner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_site_weighment.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_site_weighment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_value_edi.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-hdpi/ic_value_edi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_barcode.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_barcode.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_barcode_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_barcode_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_close.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_close.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_factory_weighment.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_factory_weighment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_head_on_grading.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_head_on_grading.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_headles_grading.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_headles_grading.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_hod_hd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_hod_hd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_scaner.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_scaner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_site_weighment.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_site_weighment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_value_edi.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-ldpi/ic_value_edi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_barcode.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_barcode.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_barcode_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_barcode_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_close.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_close.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_factory_weighment.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_factory_weighment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_head_on_grading.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_head_on_grading.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_headles_grading.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_headles_grading.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_hod_hd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_hod_hd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_scaner.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_scaner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_site_weighment.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_site_weighment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_value_edi.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-mdpi/ic_value_edi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_barcode.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_barcode.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_barcode_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_barcode_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_close.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_close.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_factory_weighment.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_factory_weighment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_head_on_grading.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_head_on_grading.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_headles_grading.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_headles_grading.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_hod_hd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_hod_hd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_scaner.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_scaner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_site_weighment.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_site_weighment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_value_edi.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/ic_value_edi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_barcode.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_barcode.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_barcode_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_barcode_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_close.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_close.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_factory_weighment.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_factory_weighment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_head_on_grading.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_head_on_grading.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_headles_grading.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_headles_grading.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_hod_hd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_hod_hd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_scaner.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_scaner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_site_weighment.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_site_weighment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_value_edi.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/ic_value_edi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_barcode.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_barcode.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_barcode_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_barcode_black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_close.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_close.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_factory_weighment.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_factory_weighment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_head_on_grading.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_head_on_grading.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_headles_grading.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_headles_grading.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_hod_hd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_hod_hd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_scaner.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_scaner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_site_weighment.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_site_weighment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_value_edi.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_value_edi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_head_less_grading_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_head_less_grading_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_location_placement.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_location_placement.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_site_weightment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_site_weightment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/gridview_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/gridview_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/styles.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,74 +190,70 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java">
+        <entry file="file://$PROJECT_DIR$/src/main/res/layout/gridview_layout.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="109" column="67" selection-start-line="109" selection-start-column="67" selection-end-line="109" selection-end-column="67" />
+            <state relative-caret-position="449">
+              <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+              <folding>
+                <element signature="e#367#388#0" expanded="true" />
+                <element signature="e#420#441#0" expanded="true" />
+                <element signature="e#1480#1503#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="329" column="78" selection-start-line="329" selection-start-column="48" selection-end-line="329" selection-end-column="78" />
+              <folding>
+                <element signature="e#16581#17255#0" expanded="true" />
+                <element signature="e#17254#17255#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Utils/AppUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="231">
+              <caret line="227" column="23" selection-start-line="227" selection-start-column="23" selection-end-line="227" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighmentDetails.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="268" column="43" selection-start-line="268" selection-start-column="43" selection-end-line="268" selection-end-column="43" />
+              <folding>
+                <element signature="e#13005#13689#0" expanded="true" />
+                <element signature="e#13688#13689#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="19" column="61" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
+            <state relative-caret-position="526">
+              <caret line="56" column="59" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
             </state>
           </provider>
           <provider editor-type-id="android-manifest" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/LocationPlacement/LocationPlacement.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnGrading/HeadOnGrading.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/ValueEdition.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="82" column="71" selection-start-line="82" selection-start-column="63" selection-end-line="82" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighmentDetails.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5984">
-              <caret line="402" column="84" selection-start-line="402" selection-start-column="84" selection-end-line="402" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9639">
-              <caret line="624" column="55" selection-start-line="624" selection-start-column="55" selection-end-line="624" selection-end-column="55" />
+            <state relative-caret-position="120">
+              <caret line="114" column="74" selection-start-line="114" selection-start-column="74" selection-end-line="114" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -177,17 +261,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HOHL_weights.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4998">
-              <caret line="345" column="142" selection-start-line="345" selection-start-column="142" selection-end-line="345" selection-end-column="142" />
+            <state relative-caret-position="499">
+              <caret line="359" column="47" selection-start-line="359" selection-start-column="47" selection-end-line="359" selection-end-column="47" />
+              <folding>
+                <element signature="e#17458#18170#0" expanded="true" />
+                <element signature="e#18169#18170#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_menu.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/ValueEditionDetails.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+            <state relative-caret-position="1207">
+              <caret line="333" column="78" selection-start-line="333" selection-start-column="78" selection-end-line="333" selection-end-column="78" />
+              <folding>
+                <element signature="e#14364#15060#0" expanded="true" />
+                <element signature="e#15059#15060#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/SiteWeighmentWeights.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="244" column="43" selection-start-line="237" selection-start-column="39" selection-end-line="244" selection-end-column="43" />
+              <folding>
+                <element signature="e#11788#12472#0" expanded="true" />
+                <element signature="e#12471#12472#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_head_less_grading_details.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7735">
+              <caret line="61" column="16" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
@@ -199,9 +313,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="resourceFile" />
         <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -212,23 +326,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/HeadLessGrading/HeadLessGradingDetailsInsertedAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/ValueEditionDetailsAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/HeadLessGrading/HeadLessGrading_2_Grid.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/FactoryWeighmentAdapters/FactoryWeighmentDetailsInsertion.java" />
-        <option value="$PROJECT_DIR$/src/main/res/drawable-hdpi/gradient_background_color.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/headOnHeadLessGrading/Lot_details.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HeadOnHeadLessGrading.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/Lot_numbers.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_head_on_weights.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnGrading/HeadOnWeights.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/gridview_layout.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_site_weighment_details_iserted.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_site_weighment_weights.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_factory_weighment_details.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_site_weightment.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_value_edition.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_factory_weighment.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_hohl_weights.xml" />
@@ -243,26 +346,37 @@
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_head_on_grading.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnGrading/HeadOnGradingDetails.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_head_on_grading_details.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnGrading/HeadOnGrading.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGrading.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadOnGrading/InsertDataHeadon.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_head_less_grading_details_inserted.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetailsInserted.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Api/ApiService.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_head_less_grading_details.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/HeadOnHeadlessAdapters/HeadOnHeadlessGridAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/ValueEdition/GetLotDetails_VD.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/ValueEdition/Location_VD.java" />
-        <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/SiteWeighmentWeights.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighmentDetails.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HOHL_weights.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_menu.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/LocationPlacement.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/LocationPlacement/LocationPlacement.java" />
+        <option value="$PROJECT_DIR$/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_site_weightment.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/res/anim/slide_up.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/anim/slide_down.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGrading.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnGrading/HeadOnGrading.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HeadOnHeadLessGrading.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/Site_weightment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighment.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_location_placement.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/LocationPlacement/LocationPlacement.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_menu.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/gridview_layout.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_head_less_grading_details.xml" />
+        <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighmentDetails.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HOHL_weights.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/SiteWeighmentWeights.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/ValueEditionDetails.java" />
       </list>
     </option>
   </component>
@@ -284,6 +398,89 @@
             <path>
               <item name="jme" type="1abcf292:AndroidViewProjectNode" />
               <item name="jme" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="jme" type="1abcf292:AndroidViewProjectNode" />
+              <item name="jme" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="jme" type="1abcf292:AndroidViewProjectNode" />
+              <item name="jme" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jme" type="1abcf292:AndroidViewProjectNode" />
+              <item name="jme" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jme" type="1abcf292:AndroidViewProjectNode" />
+              <item name="jme" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="FactoryWeighment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jme" type="1abcf292:AndroidViewProjectNode" />
+              <item name="jme" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="HeadLessGrading" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jme" type="1abcf292:AndroidViewProjectNode" />
+              <item name="jme" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="HeadOnGrading" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jme" type="1abcf292:AndroidViewProjectNode" />
+              <item name="jme" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="HeadOnHeadLessGrading" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jme" type="1abcf292:AndroidViewProjectNode" />
+              <item name="jme" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="LocationPlacement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jme" type="1abcf292:AndroidViewProjectNode" />
+              <item name="jme" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="Site_Weightment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jme" type="1abcf292:AndroidViewProjectNode" />
+              <item name="jme" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="jme" type="1abcf292:AndroidViewProjectNode" />
+              <item name="jme" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="anim" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="jme" type="1abcf292:AndroidViewProjectNode" />
+              <item name="jme" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="jme" type="1abcf292:AndroidViewProjectNode" />
@@ -312,7 +509,7 @@
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="79SSOBS88HUWIVKR" />
+    <property name="device.picker.selection" value="31006880bb694500" />
     <property name="last_opened_file_path" value="$USER_HOME$/StudioProjects/statusSaver" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
@@ -434,7 +631,7 @@
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50143266" side_tool="true" weight="0.32974428" />
       <window_info anchor="bottom" id="Build" order="4" sideWeight="0.49928367" weight="0.30417228" />
       <window_info anchor="bottom" id="Logcat" order="5" sideWeight="0.49856734" weight="0.32974428" />
-      <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" weight="0.32974428" />
+      <window_info anchor="bottom" id="Android Profiler" order="6" weight="0.32974428" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32974428" />
       <window_info anchor="bottom" id="Run" order="8" weight="0.32974428" />
       <window_info anchor="bottom" id="Debug" order="9" />
@@ -473,110 +670,13 @@
       <window_info anchor="right" id="Preview" order="5" weight="0.28438395" />
     </layout-to-restore>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/SiteWeighmentWeights.java</url>
-          <line>244</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/SiteWeighmentWeights.java</url>
-          <line>245</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/SiteWeighmentWeights.java</url>
-          <line>243</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/SiteWeighmentWeights.java</url>
-          <line>238</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_hohl_details_inserting.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="145" column="50" selection-start-line="145" selection-start-column="50" selection-end-line="145" selection-end-column="50" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/SiteWeighmentDetailsIserted.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="77" column="56" selection-start-line="77" selection-start-column="56" selection-end-line="77" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_site_weighment_details_iserted.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="143" column="43" selection-start-line="143" selection-start-column="43" selection-end-line="143" selection-end-column="43" />
-          <folding>
-            <element signature="e#6387#6409#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/ValueEditionDetailsInserted.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="101" column="53" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_value_edition_details_inserted.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="170" column="39" selection-start-line="170" selection-start-column="39" selection-end-line="170" selection-end-column="39" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HOHL_details_inserting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="75" column="54" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/factory_weighment_grid.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="87" column="47" selection-start-line="87" selection-start-column="47" selection-end-line="87" selection-end-column="47" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/values/dimens.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_head_less_grading.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_head_on_head_less_grading.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -594,22 +694,8 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/ValueEditionDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="135" column="48" selection-start-line="135" selection-start-column="48" selection-end-line="135" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnGrading/HeadOnGradingDetails.java" />
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_head_on_grading_details.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGrading.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="64" column="84" selection-start-line="64" selection-start-column="84" selection-end-line="64" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_head_on_grading.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="659">
@@ -674,50 +760,10 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnGrading/HeadOnGrading.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="66" column="53" selection-start-line="66" selection-start-column="51" selection-end-line="66" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Api/ApiService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="171" column="23" selection-start-line="171" selection-start-column="23" selection-end-line="171" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetailsInserted.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-101">
-          <caret line="247" column="41" selection-start-line="247" selection-start-column="41" selection-end-line="247" selection-end-column="41" />
-          <folding>
-            <element signature="e#9467#9515#0" expanded="true" />
-            <element signature="e#9723#9771#0" expanded="true" />
-            <element signature="e#10165#10198#0" expanded="true" />
-            <element signature="e#12349#12397#0" expanded="true" />
-            <element signature="e#12605#12653#0" expanded="true" />
-            <element signature="e#13047#13080#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_head_less_grading_details.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="589" column="43" selection-start-line="589" selection-start-column="43" selection-end-line="589" selection-end-column="43" />
-          <folding>
-            <element signature="e#25537#25553#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HeadOnHeadLessGrading.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="97" column="58" selection-start-line="97" selection-start-column="58" selection-end-line="97" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -807,110 +853,271 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/LocationPlacement.java" />
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="695">
+          <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/hardware/usb/UsbManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
-          <caret line="496" column="19" selection-start-line="496" selection-start-column="19" selection-end-line="496" selection-end-column="19" />
+          <caret line="294" column="31" selection-start-line="294" selection-start-column="31" selection-end-line="294" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/data/res/values/themes.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="675" column="65" selection-start-line="669" selection-start-column="6" selection-end-line="675" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/anim/slide_up.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="56" selection-start-line="1" selection-start-column="56" selection-end-line="1" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/anim/slide_down.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_site_weightment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-238">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_head_less_grading.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="106" selection-start-line="34" selection-start-column="6" selection-end-line="106" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetailsInserted.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="260" column="37" selection-start-line="257" selection-start-column="27" selection-end-line="260" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGrading.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="113" column="76" selection-start-line="113" selection-start-column="76" selection-end-line="113" selection-end-column="76" />
+          <folding>
+            <element signature="e#4998#5231#0" expanded="true" />
+            <element signature="e#5230#5231#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HeadOnHeadLessGrading.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="113" column="82" selection-start-line="113" selection-start-column="82" selection-end-line="113" selection-end-column="82" />
+          <folding>
+            <element signature="e#5000#5233#0" expanded="true" />
+            <element signature="e#5232#5233#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/Site_weightment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/SiteWeighmentWeights.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="419" column="9" selection-start-line="413" selection-start-column="7" selection-end-line="419" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/LocationPlacement.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1513">
-          <caret line="144" column="30" selection-start-line="144" selection-start-column="30" selection-end-line="144" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_location_placement.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/LocationPlacement/LocationPlacement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        <state relative-caret-position="184">
+          <caret line="642" selection-start-line="642" selection-end-line="642" />
+          <folding>
+            <element signature="e#35879#36112#0" expanded="true" />
+            <element signature="e#36111#36112#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/ValueEdition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="82" column="71" selection-start-line="82" selection-start-column="63" selection-end-line="82" selection-end-column="71" />
+        <state relative-caret-position="473">
+          <caret line="120" column="25" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighmentDetails.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5984">
-          <caret line="402" column="84" selection-start-line="402" selection-start-column="84" selection-end-line="402" selection-end-column="84" />
+        <state relative-caret-position="392">
+          <caret line="109" column="77" selection-start-line="109" selection-start-column="77" selection-end-line="109" selection-end-column="77" />
+          <folding>
+            <element signature="e#4695#4928#0" expanded="true" />
+            <element signature="e#4927#4928#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java">
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_location_placement.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9639">
-          <caret line="624" column="55" selection-start-line="624" selection-start-column="55" selection-end-line="624" selection-end-column="55" />
+        <state relative-caret-position="425">
+          <caret line="130" column="46" selection-start-line="130" selection-start-column="25" selection-end-line="130" selection-end-column="46" />
+          <folding>
+            <element signature="e#2494#2517#0" expanded="true" />
+          </folding>
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HOHL_weights.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/LocationPlacement/LocationPlacement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4998">
-          <caret line="345" column="142" selection-start-line="345" selection-start-column="142" selection-end-line="345" selection-end-column="142" />
+        <state relative-caret-position="357">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_menu.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+        <state relative-caret-position="714">
+          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="109" column="67" selection-start-line="109" selection-start-column="67" selection-end-line="109" selection-end-column="67" />
+        <state relative-caret-position="391">
+          <caret line="128" column="34" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="221">
+          <caret line="35" column="89" selection-start-line="35" selection-start-column="89" selection-end-line="35" selection-end-column="89" />
+          <folding>
+            <element signature="e#1161#1162#0" expanded="true" />
+            <element signature="e#1199#1200#0" expanded="true" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/gridview_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+          <folding>
+            <element signature="e#367#388#0" expanded="true" />
+            <element signature="e#420#441#0" expanded="true" />
+            <element signature="e#1480#1503#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="61" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
+        <state relative-caret-position="526">
+          <caret line="56" column="59" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
         </state>
       </provider>
       <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_head_less_grading_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7735">
+          <caret line="61" column="16" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnGrading/HeadOnGrading.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="114" column="74" selection-start-line="114" selection-start-column="74" selection-end-line="114" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Utils/AppUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="227" column="23" selection-start-line="227" selection-start-column="23" selection-end-line="227" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/ValueEditionDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="333" column="78" selection-start-line="333" selection-start-column="78" selection-end-line="333" selection-end-column="78" />
+          <folding>
+            <element signature="e#14364#15060#0" expanded="true" />
+            <element signature="e#15059#15060#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/SiteWeighmentWeights.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="244" column="43" selection-start-line="237" selection-start-column="39" selection-end-line="244" selection-end-column="43" />
+          <folding>
+            <element signature="e#11788#12472#0" expanded="true" />
+            <element signature="e#12471#12472#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HOHL_weights.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="359" column="47" selection-start-line="359" selection-start-column="47" selection-end-line="359" selection-end-column="47" />
+          <folding>
+            <element signature="e#17458#18170#0" expanded="true" />
+            <element signature="e#18169#18170#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="329" column="78" selection-start-line="329" selection-start-column="48" selection-end-line="329" selection-end-column="78" />
+          <folding>
+            <element signature="e#16581#17255#0" expanded="true" />
+            <element signature="e#17254#17255#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighmentDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="268" column="43" selection-start-line="268" selection-start-column="43" selection-end-line="268" selection-end-column="43" />
+          <folding>
+            <element signature="e#13005#13689#0" expanded="true" />
+            <element signature="e#13688#13689#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

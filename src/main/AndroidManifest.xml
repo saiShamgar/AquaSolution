@@ -27,7 +27,9 @@
         android:roundIcon="@drawable/ic_logo_main"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.LocationPlacement.LocationPlacement"></activity>
+        <activity android:name=".UI.LocationPlacement.LocationPlacement"
+            android:theme="@style/AppThemeWithNoActionBar"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".UI.HeadOnGrading.HeadOnGrading"
             android:screenOrientation="portrait"
@@ -52,8 +54,7 @@
         <activity
             android:name=".UI.HeadLessGrading.HeadLessGradingDetails"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeWithNoActionBar"
-            android:windowSoftInputMode="adjustResize" />
+            android:theme="@style/AppThemeWithNoActionBar" />
         <activity
             android:name=".UI.HeadLessGrading.HeadLessGrading"
             android:screenOrientation="portrait"

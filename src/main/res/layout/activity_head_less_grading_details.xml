@@ -44,25 +44,6 @@
                 android:layout_toRightOf="@+id/back_button_h_l_g_d"
                 android:layout_marginBottom="10dp"/>
 
-            <LinearLayout
-                android:id="@+id/spinner_layout_h_l_g"
-                android:layout_width="0dp"
-                android:layout_weight="1.3"
-                android:layout_height="wrap_content"
-                android:background="@drawable/white_border"
-                android:layout_marginTop="@dimen/extra_large_30dp"
-                android:layout_marginRight="@dimen/margin_large"
-                android:layout_marginLeft="@dimen/margin_large"
-                android:layout_marginBottom="@dimen/card_elevation_4dp"
-                android:layout_toRightOf="@+id/toolbar_heading_ftwt_det"
-                android:paddingRight="@dimen/margin_large">
-                <Spinner
-                    android:id="@+id/spinner_h_l_g"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/white">
-                </Spinner>
-            </LinearLayout>
 
 
         </LinearLayout>
@@ -82,8 +63,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/common_margin"
-                    android:orientation="vertical"
-                    android:focusableInTouchMode="true">
+                    android:orientation="vertical">
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
@@ -108,7 +88,7 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:text="Lot no :"
+                                    android:text="Lot no/ Lot date:"
                                     android:textSize="@dimen/t13_size"
                                     android:textStyle="bold"
                                     android:textColor="@color/color_text"/>
@@ -118,30 +98,8 @@
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:text="4"
-                                    android:textColor="@color/font_color"/>
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_weight="1"
-                                    android:layout_height="wrap_content"
-                                    android:text="Lot Date :"
-                                    android:textSize="@dimen/t13_size"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/color_text"/>
-                                <TextView
-                                    android:id="@+id/txt_h_l_g_lot_date"
-                                    android:layout_width="0dp"
-                                    android:layout_weight="1"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="@color/font_color"/>
-                            </LinearLayout>
-
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:weightSum="4"
-                                android:padding="@dimen/card_radius_8dp">
+                                    android:textSize="14dp"
+                                    android:textColor="@color/color_light_black"/>
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
@@ -155,9 +113,48 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:textColor="@color/font_color"/>
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="18dp"/>
                             </LinearLayout>
 
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/margin_large"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="Grade :"
+                                    android:textSize="@dimen/t13_size"
+                                    android:layout_gravity="center"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/color_text" />
+
+                                <LinearLayout
+                                    android:id="@+id/spinner_layout_h_l_g"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/stroke_back_ground_gray"
+                                    android:paddingRight="@dimen/margin_large">
+                                    <Spinner
+                                        android:id="@+id/spinner_h_l_g"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:layout_gravity="center"
+                                        android:backgroundTint="@color/black">
+                                    </Spinner>
+                                </LinearLayout>
+
+
+                            </LinearLayout>
 
 
                             <LinearLayout

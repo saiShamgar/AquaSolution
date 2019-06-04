@@ -13,6 +13,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -61,7 +63,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
 
     private TextView txt_value_edt_dts_weight_btn_save,txt_value_edt_weight_btn_complete,txt_value_edt_weight_date_time,
             txt_value_edt_weight_group_name,txt_value_edt_weight_total_tare_wt,txt_value_edt_weight_net_weight
-            ,txt_h_l_g_lot_no,txt_h_l_g_lot_date,txt_h_l_g_count,toolbar_heading_HeadLess_det;
+            ,txt_h_l_g_lot_no,txt_h_l_g_count,toolbar_heading_HeadLess_det;
     private RecyclerView value_edt_weight_recycler_view;
     private Toolbar toolbar;
     private ImageView back_button_val_edt_det;
@@ -135,7 +137,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
         txt_value_edt_weight_total_tare_wt=findViewById(R.id.txt_h_l_g_weight_total_tare_wt);
         txt_value_edt_weight_net_weight=findViewById(R.id.txt_h_l_g_weight_net_weight);
         txt_h_l_g_lot_no=findViewById(R.id.txt_h_l_g_lot_no);
-        txt_h_l_g_lot_date=findViewById(R.id.txt_h_l_g_lot_date);
+
 
 
         spinner_val_edt_det=findViewById(R.id.spinner_h_l_g);
@@ -143,8 +145,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
         spinner_h_l_Grade=findViewById(R.id.spinner_h_l_Grade);
 
         setSpinner();
-        txt_h_l_g_lot_date.setText(processes_data.getLot_Date());
-        txt_h_l_g_lot_no.setText(processes_data.getLot_No());
+        txt_h_l_g_lot_no.setText(processes_data.getLot_No()+" /"+processes_data.getLot_Date());
         txt_h_l_g_count.setText(processes_data.getVariety_Count());
 //        txt_ftwt_det_materialGroupName.setText(processes_data.getMaterial_Group_Name());
 //        txt_ftwt_det_veriaty_name.setText(processes_data.getProduct_Variety_Name());
@@ -154,7 +155,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
             public void onTick(long millisUntilFinished) {
                 String saveCurrentDate;
                 Calendar c = Calendar.getInstance();
-                SimpleDateFormat currentDate=new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+                SimpleDateFormat currentDate=new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
                 saveCurrentDate=currentDate.format(c.getTime());
                 txt_value_edt_weight_date_time.setText(saveCurrentDate);
             }
@@ -323,7 +324,24 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                                                 value_edt_weight_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                                                 value_edt_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
                                                 clearText();
-                                                spinner_val_edt_det.setSelection(position);
+
+                                                edt_value_edt_total_weight_kgs.requestFocus();
+
+                                                edt_value_edt_total_weight_kgs.post(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        final InputMethodManager imm = (InputMethodManager) edt_value_edt_total_weight_kgs.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                                                        imm.showSoftInput(edt_value_edt_total_weight_kgs, InputMethodManager.SHOW_IMPLICIT);
+                                                        edt_value_edt_total_weight_kgs.requestFocus(); // needed if you have more then one input
+                                                    }
+                                                });
+//                                                getWindow().setSoftInputMode(
+//                                                        WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+//                                                AppUtils.showkeyboard(mContext,edt_value_edt_total_weight_kgs);
+//                                                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+//                                                imm.showSoftInput(edt_value_edt_total_weight_kgs, InputMethodManager.SHOW_IMPLICIT);
+
+                                                spinner_h_l_Grade.setSelection(gradePosition);
 
                                             }
                                         },
@@ -355,7 +373,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                                                 value_edt_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
 
                                                 clearText();
-                                                spinner_val_edt_det.setSelection(0);
+                                                spinner_h_l_Grade.setSelection(0);
                                             }
                                         });
                             } else {

@@ -21,6 +21,7 @@ import com.PG.testingapp.InterFace.OnRadioButtonClick;
 import com.PG.testingapp.R;
 import com.PG.testingapp.UI.FactoryWeighment.FactoryWeighment;
 import com.PG.testingapp.UI.FactoryWeighment.FactoryWeighmentDetails;
+import com.PG.testingapp.UI.MenuActivity;
 import com.PG.testingapp.Utils.AppConstant;
 import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.Utils.SharedPreferenceConfig;
@@ -107,7 +108,15 @@ public class HeadLessGrading extends BaseActivity implements HeadlessGradinRadio
                         else {
                             value_edition_next_btn.setVisibility(View.GONE);
                             Log.e("status",response.body().getMessage());
-                            AppUtils.showCustomOkDialog(context,"",response.body().getMessage(),"OK",null);
+                            AppUtils.showCustomOkDialog(context, "", response.body().getMessage(), "OK", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent goback=new Intent(HeadLessGrading.this, MenuActivity.class);
+                                    goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(goback);
+                                    finish();
+                                }
+                            });
                         }
                     }
                     else {

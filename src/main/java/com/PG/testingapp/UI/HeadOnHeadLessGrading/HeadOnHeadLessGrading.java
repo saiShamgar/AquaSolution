@@ -21,6 +21,8 @@ import com.PG.testingapp.InterFace.HeadlessGradinRadioClick;
 import com.PG.testingapp.R;
 import com.PG.testingapp.UI.HeadLessGrading.HeadLessGrading;
 import com.PG.testingapp.UI.HeadLessGrading.HeadLessGradingDetails;
+import com.PG.testingapp.UI.HeadLessGrading.HeadLessGradingDetailsInserted;
+import com.PG.testingapp.UI.MenuActivity;
 import com.PG.testingapp.Utils.AppConstant;
 import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.Utils.SharedPreferenceConfig;
@@ -106,7 +108,15 @@ public class HeadOnHeadLessGrading extends BaseActivity implements HeadOnHeadLes
                         else {
                             value_edition_next_btn.setVisibility(View.GONE);
                             Log.e("status",response.body().getMessage());
-                            AppUtils.showCustomOkDialog(context,"",response.body().getMessage(),"OK",null);
+                            AppUtils.showCustomOkDialog(context, "", response.body().getMessage(), "OK", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent goback=new Intent(HeadOnHeadLessGrading.this, MenuActivity.class);
+                                    goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(goback);
+                                    finish();
+                                }
+                            });
                         }
                     }
                     else {

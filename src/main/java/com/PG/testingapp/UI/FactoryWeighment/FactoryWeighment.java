@@ -18,6 +18,8 @@ import com.PG.testingapp.Api.AppUrl;
 import com.PG.testingapp.BaseActivity;
 import com.PG.testingapp.InterFace.OnRadioButtonClick;
 import com.PG.testingapp.R;
+import com.PG.testingapp.UI.HeadLessGrading.HeadLessGradingDetailsInserted;
+import com.PG.testingapp.UI.MenuActivity;
 import com.PG.testingapp.UI.ValueEdition;
 import com.PG.testingapp.UI.ValueEditionDetails;
 import com.PG.testingapp.Utils.AppConstant;
@@ -102,7 +104,15 @@ public class FactoryWeighment extends BaseActivity implements OnRadioButtonClick
                         else {
                             value_edition_next_btn.setVisibility(View.GONE   );
                             Log.e("status",response.body().getMessage());
-                            AppUtils.showCustomOkDialog(context,"",response.body().getMessage(),"OK",null);
+                            AppUtils.showCustomOkDialog(context, "", response.body().getMessage(), "OK", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent goback=new Intent(FactoryWeighment.this, MenuActivity.class);
+                                    goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(goback);
+                                    finish();
+                                }
+                            });
                         }
                     }
                     else {
