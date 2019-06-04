@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_weight_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/act_background"
+    tools:context="com.PG.testingapp.UI.HeadLessGrading.HeadLessGradingDetails">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_background_color"
+            android:elevation="@dimen/card_radius_8dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/back_button_HOHL_d"
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_left"
+                android:layout_marginTop="@dimen/extra_large_30dp"
+                android:layout_marginLeft="@dimen/large_20dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1.5"
+                android:layout_height="wrap_content"
+                android:text="HOHL Weights"
+                android:id="@+id/toolbar_heading_ftwt_det"
+                android:layout_marginTop="28dp"
+                android:layout_marginLeft="8dp"
+                android:textSize="18dp"
+                android:gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@+id/back_button_HOHL_d"
+                android:layout_marginBottom="10dp"/>
+
+
+
+            <LinearLayout
+                android:id="@+id/spinner_layout_HOHL"
+                android:layout_width="0dp"
+                android:layout_weight="1.3"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_border"
+                android:layout_marginTop="@dimen/extra_large_30dp"
+                android:layout_marginRight="@dimen/margin_large"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginBottom="@dimen/card_radius_8dp"
+                android:layout_alignParentRight="true"
+                android:paddingRight="@dimen/margin_large">
+                <Spinner
+                    android:id="@+id/spinner_HOHL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white">
+                </Spinner>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <ScrollView
+            android:id="@+id/scroolview_layout"
+            android:layout_below="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/common_margin"
+                    android:orientation="vertical"
+                    android:focusableInTouchMode="true">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="@dimen/margin_large"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="1dp"
+                        android:padding="@dimen/margin_large"
+                        android:layout_marginBottom="@dimen/margin_large">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="4"
+                                android:padding="@dimen/card_radius_8dp">
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="Lot no :"
+                                    android:textSize="@dimen/t13_size"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/color_text"/>
+                                <TextView
+                                    android:id="@+id/txt_lot_no_HOHL_d"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="4"
+                                    android:textColor="@color/font_color"/>
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="Lot Date :"
+                                    android:textSize="@dimen/t13_size"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/color_text"/>
+                                <TextView
+                                    android:id="@+id/txt_lot_date_HOHL_d"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/font_color"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="4"
+                                android:padding="@dimen/card_radius_8dp">
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="Material\n Group :"
+                                    android:textSize="@dimen/t13_size"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/color_text"/>
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="4"
+                                    android:id="@+id/txt_MG_HOHL_d"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/font_color"
+                                    />
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="Variety \n Name :"
+                                    android:textSize="@dimen/t13_size"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/color_text"/>
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:id="@+id/txt_VN_HOHL_d"
+                                    android:textColor="@color/font_color"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/margin_large"
+                            android:orientation="horizontal"
+                                android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                 android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Group Head :"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:textColor="@color/color_text" />
+
+                            <LinearLayout
+                                android:id="@+id/spinner_layout_HOHL_groupHead"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/stroke_back_ground_gray"
+                                android:layout_marginLeft="@dimen/margin_large">
+                            <Spinner
+                                android:id="@+id/spinner_HOHL_group_head"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:paddingRight="@dimen/margin_large"
+                                android:backgroundTint="@color/black">
+                            </Spinner>
+                            </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_xxxxxlarge"
+                        android:padding="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Location"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/t13_size"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_text" />
+
+                        <TextView
+                            android:id="@+id/txt_HOHL_weight_Location"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/t13_size"
+                            android:padding="5dp"
+                            android:text="Location"
+                            android:gravity="end"
+                            android:background="@drawable/boarder_shape"
+                            android:textColor="@color/order_txt_color"
+                            />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_xxxxxlarge"
+                        android:padding="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Date Time"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/t13_size"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_text" />
+
+                        <TextView
+                            android:id="@+id/txt_HOHL_weight_date_time"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/t13_size"
+                            android:padding="5dp"
+                            android:text="Loading.."
+                            android:gravity="end"
+                            android:background="@drawable/boarder_shape"
+                            android:textColor="@color/order_txt_color"
+                            />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_xxxxxlarge"
+                        android:padding="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Number Of Nets"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/t13_size"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_text"
+                            />
+
+                        <EditText
+                            android:id="@+id/txt_HOHL_weight_no_nets"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/boarder_shape"
+                            android:hint="Enter Number of nets / weight"
+                            android:inputType="number"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:gravity="end"
+                            android:imeOptions="actionNext"
+                            android:textColor="@color/order_txt_color"
+                            android:textColorHint="@color/color_lite_grey"
+                            android:textSize="@dimen/t13_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_xxxxxlarge"
+                        android:padding="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Tare Weight / Net(kgs)"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/t13_size"
+                            android:textColor="@color/color_text"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/txt_HOHL_weight_tare_weight"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/t13_size"
+                            android:hint="Enter total weight (kgs)"
+                            android:padding="5dp"
+                            android:gravity="end"
+                            android:singleLine="true"
+                            android:inputType="numberDecimal"
+                            android:imeOptions="actionNext"
+                            android:background="@drawable/boarder_shape"
+                            android:textColor="@color/order_txt_color"
+                            android:textColorHint="@color/color_lite_grey"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_xxxxxlarge"
+                        android:padding="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Total Weight (kgs)"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/t13_size"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_text" />
+
+                        <EditText
+                            android:id="@+id/edt_HOHL_total_weight_kgs"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/t13_size"
+                            android:hint="Enter total weight (kgs)"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:gravity="end"
+                            android:inputType="numberDecimal"
+                            android:imeOptions="actionDone"
+                            android:background="@drawable/boarder_shape"
+                            android:textColor="@color/order_txt_color"
+                            android:textColorHint="@color/color_lite_grey"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_xxxxxlarge"
+                        android:padding="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Total Tare Weight (kgs)"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/t13_size"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_text" />
+
+                        <TextView
+                            android:id="@+id/txt_HOHL_weight_total_tare_wt"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/t13_size"
+                            android:hint="0"
+                            android:gravity="end"
+                            android:padding="5dp"
+                            android:background="@drawable/boarder_shape"
+                            android:textColor="@color/order_txt_color"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_xxxxxlarge"
+                        android:padding="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Net Weight (kgs)"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/t13_size"
+                            android:textColor="@color/color_text"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txt_HOHL_weight_net_weight"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/t13_size"
+                            android:hint="0"
+                            android:gravity="end"
+                            android:padding="5dp"
+                            android:background="@drawable/boarder_shape"
+                            android:textColor="@color/order_txt_color"
+                            />
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@color/app_dark_color"
+                        android:orientation="horizontal"
+                        android:elevation="@dimen/card_elevation_4dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="SL No."
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="Time"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="Count"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="No.\nOf Nets"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="Total\nWeight"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="Total Tare Weight"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="Net\nWeight"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="Cumulative Weight."
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/extra_large_50dp">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/HOHL_weight_recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_xlarge">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Cumulative Wt."
+                android:gravity="center"
+                android:visibility="gone"
+                android:background="@color/color_app_blue"
+                android:textSize="@dimen/t0_size"
+                android:textColor="@color/white"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/txt_HOHL_dts_weight_btn_save"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="SAVE &amp; CONTINUE"
+                android:gravity="center"
+                android:background="@color/app_color"
+                android:textSize="@dimen/t3_size"
+                android:textColor="@color/white"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:paddingRight="@dimen/margin_xlarge"
+                android:drawableRight="@drawable/ic_arrow_forward_white_24dp"/>
+            <TextView
+                android:id="@+id/txt_HOHL_weight_btn_complete"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="CHECK DETAILS"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@color/app_dark_color"
+                android:textSize="@dimen/t3_size"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+</LinearLayout>

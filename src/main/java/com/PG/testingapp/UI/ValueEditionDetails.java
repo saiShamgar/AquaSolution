@@ -282,9 +282,9 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
 
         Log.i(TAG, "calculateWeight: " + totalWeight);
 
-        if (totalWeight > 0) {
+        if (totalWeight < totTareWeight) {
             Log.i(TAG, "calculateWeight: Inside " + totalWeight);
-            netTotalWeight = totalWeight - totTareWeight;
+            netTotalWeight = totTareWeight-totalWeight;
             txt_value_edt_weight_net_weight.setText(String.valueOf(Math.round(netTotalWeight * 100.0) / 100.0));
         } else {
             txt_value_edt_weight_net_weight.setText("");
@@ -303,7 +303,7 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                         spinner_layout.setBackground(getResources().getDrawable(R.drawable.white_border));
                     }
                     if (doValidation()){
-                        AppUtils.showCustomOkCancelDialog(this, "", getString(R.string.next_count_alert), "YES", "NO",
+                        AppUtils.showCustomOkCancelDialog(this, "", getString(R.string.next_count_alert), "No", "Yes",
                                 new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -323,7 +323,7 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                                         value_edt_weight_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                                         value_edt_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
                                         clearText();
-                                        spinner_val_edt_det.setSelection(0);
+                                        spinner_val_edt_det.setSelection(position);
 
                                     }
                                 },
@@ -347,7 +347,7 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                                         value_edt_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
 
                                         clearText();
-                                        spinner_val_edt_det.setSelection(position);
+                                        spinner_val_edt_det.setSelection(0);
                                     }
                                 });
                     }
@@ -419,7 +419,12 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
             edt_value_edt_total_weight_kgs.requestFocus();
             edt_value_edt_total_weight_kgs.setError("Enter Tare Weight");
 
-        }
+        }else if (txt_value_edt_weight_net_weight.getText().toString().trim().length() == 0) {
+             validate = false;
+             txt_value_edt_weight_net_weight.requestFocus();
+             // AppUtils.showToast(mContext,"Total tare wait cannot be less than total weight");
+             Toast.makeText(mContext,"Total tare wait cannot be less than total weight",Toast.LENGTH_SHORT).show();
+         }
 
         return validate;
     }

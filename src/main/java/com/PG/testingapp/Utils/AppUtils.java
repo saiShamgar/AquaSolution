@@ -225,6 +225,13 @@ public class AppUtils {
 
     }
 
+    public static void showkeyboard(Context context, EditText edittext) {
+            InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.showSoftInput(edittext, InputMethodManager.SHOW_IMPLICIT);
+
+
+    }
+
 
     public static String getAppVersion(Context context) {
         PackageInfo pInfo = null;

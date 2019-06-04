@@ -14,6 +14,12 @@ public class ValueEditionDetaillsModel implements Serializable {
     private String group_person;
     private String team_no;
     private String count_code;
+    private String groupCode;
+    private String varietyName;
+    private String varietyCode;
+    private String groupName;
+    private String gradeCode;
+    private String gradeNo;
 
     public ValueEditionDetaillsModel() {
     }
@@ -88,5 +94,53 @@ public class ValueEditionDetaillsModel implements Serializable {
 
     public void setCount_code(String count_code) {
         this.count_code = count_code;
+    }
+
+    public String getGroupCode() {
+        return groupCode;
+    }
+
+    public void setGroupCode(String groupCode) {
+        this.groupCode = groupCode;
+    }
+
+    public String getVarietyName() {
+        return varietyName;
+    }
+
+    public void setVarietyName(String varietyName) {
+        this.varietyName = varietyName;
+    }
+
+    public String getVarietyCode() {
+        return varietyCode;
+    }
+
+    public void setVarietyCode(String varietyCode) {
+        this.varietyCode = varietyCode;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public String getGradeCode() {
+        return gradeCode;
+    }
+
+    public void setGradeCode(String gradeCode) {
+        this.gradeCode = gradeCode;
+    }
+
+    public String getGradeNo() {
+        return gradeNo;
+    }
+
+    public void setGradeNo(String gradeNo) {
+        this.gradeNo = gradeNo;
     }
 }

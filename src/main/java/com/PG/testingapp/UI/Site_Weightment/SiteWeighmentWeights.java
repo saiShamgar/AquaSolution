@@ -12,32 +12,51 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.PG.testingapp.Adapters.HeadLessGrading.HeadLessGrading_2_Grid;
 import com.PG.testingapp.Adapters.ValueEditionDetailsAdapter;
+import com.PG.testingapp.Api.ApiService;
+import com.PG.testingapp.Api.AppUrl;
 import com.PG.testingapp.BaseActivity;
 import com.PG.testingapp.R;
 import com.PG.testingapp.UI.ValueEditionDetails;
 import com.PG.testingapp.UI.ValueEditionDetailsInserted;
+import com.PG.testingapp.Utils.AppConstant;
 import com.PG.testingapp.Utils.AppUtils;
+import com.PG.testingapp.model.FactoryWeighment.ActualCodes;
+import com.PG.testingapp.model.HeadLessGrading.GetCodes;
 import com.PG.testingapp.model.ValueEditionDetaillsModel;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
-public class SiteWeighmentWeights extends BaseActivity implements View.OnClickListener {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class SiteWeighmentWeights extends BaseActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private TextView txt_siteWeighment_weight_date_time,txt_siteWeighment_weight_total_tare_wt,txt_siteWeighment_weight_net_weight;
     private EditText txt_siteWeighment_weight_no_nets,edt_siteWeighment_total_weight_kgs,txt_siteWeighment_weight_tare_weight;
     private RecyclerView siteWeighment_weight_recycler_view;
     private TextView txt_siteWeighment_dts_weight_btn_save,txt_siteWeighment_weight_btn_complete;
     private ImageView back_button_site_wt_det;
+    private Spinner spinner_st_w_det;
+    private LinearLayout spinner_layout;
 
     private String numberOfNets = "0.0";
     private float tareWeight = 0;
@@ -46,10 +65,17 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
     private float netTotalWeight = 0;
     private String TAG;
     private String count_code;
+    private String count;
     private int position;
     private boolean validate;
     private Context mContext;
-    private ValueEditionDetailsAdapter valueEditionDetailsAdapter;
+    private HeadLessGrading_2_Grid valueEditionDetailsAdapter;
+
+    private ArrayList<ActualCodes> codes =  new ArrayList<>();
+
+    private String scheduleNo,enquiryNO,prodct_code;
+    private ArrayAdapter<String> countAdapter;
+    private ApiService apiService;
 
     private ArrayList<ValueEditionDetaillsModel> valueEditionDetaillsModel=new ArrayList<>();
 
@@ -59,6 +85,10 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
         setContentView(R.layout.activity_site_weighment_weights);
 
         mContext=SiteWeighmentWeights.this;
+
+        scheduleNo=getIntent().getExtras().getString("schedule_no");
+        enquiryNO=getIntent().getExtras().getString("enquiryNo");
+        prodct_code=getIntent().getExtras().getString("prodct_code");
 
         txt_siteWeighment_weight_date_time=findViewById(R.id.txt_siteWeighment_weight_date_time);
         txt_siteWeighment_weight_total_tare_wt=findViewById(R.id.txt_siteWeighment_weight_total_tare_wt);
@@ -72,11 +102,13 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
         txt_siteWeighment_weight_btn_complete=findViewById(R.id.txt_siteWeighment_weight_btn_complete);
         back_button_site_wt_det=findViewById(R.id.back_button_site_wt_det);
 
+        spinner_st_w_det=findViewById(R.id.spinner_st_w_det);
+        spinner_layout=findViewById(R.id.spinner_layout);
         CountDownTimer newtimer = new CountDownTimer(1000000000, 1000) {
             public void onTick(long millisUntilFinished) {
                 String saveCurrentDate;
                 Calendar c = Calendar.getInstance();
-                SimpleDateFormat currentDate=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                SimpleDateFormat currentDate=new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
                 saveCurrentDate=currentDate.format(c.getTime());
                 txt_siteWeighment_weight_date_time.setText(saveCurrentDate);
             }
@@ -85,6 +117,8 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
             }
         };
         newtimer.start();
+
+        setSpinner();
 
         txt_siteWeighment_dts_weight_btn_save.setOnClickListener(this);
         txt_siteWeighment_weight_btn_complete.setOnClickListener(this);
@@ -116,15 +150,115 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
 
     }
 
+    private void setSpinner() {
+        final List<String> list = new ArrayList<>();
+        list.clear();
+        list.add("Select count");
+        if (AppUtils.isNetworkAvailable(mContext)){
+            AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
+            apiService= AppUrl.getApiClient().create(ApiService.class);
+            Log.e("code",prodct_code);
+            Call<GetCodes> call=apiService.getSiteCountCodes(prodct_code);
+            call.enqueue(new Callback<GetCodes>() {
+                @Override
+                public void onResponse(Call<GetCodes> call, Response<GetCodes> response) {
+                    AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                    if (response.body()!=null){
+                        if (response.body().getStatus().contains(AppConstant.MESSAGE)){
+                            AppUtils.showToast(mContext,response.body().getMessage());
+
+                            for (int i=0;i<response.body().getCodes().size();i++){
+                                list.add(response.body().getCodes().get(i).getVcount());
+                            }
+                            codes=response.body().getCodes();
+                            countAdapter = new ArrayAdapter<String>(mContext, R.layout.show_count, list);
+                            spinner_st_w_det.setVisibility(View.VISIBLE);
+                            spinner_st_w_det.setAdapter(countAdapter);
+                        }
+                        else {
+                            Log.e("status",response.body().getMessage());
+                            AppUtils.showCustomOkDialog(mContext,"",response.body().getMessage(),"OK",null);
+                        }
+                    }
+                    else {
+                        AppUtils.showCustomOkDialog(mContext,"",getResources().getString(R.string.error_default),"OK",null);
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<GetCodes> call, Throwable t) {
+                    Log.e("status",t.toString());
+                    AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                    AppUtils.showCustomOkDialog(mContext,
+                            "",
+                            getString(R.string.error_default),
+                            "OK", null);
+                }
+            });
+        }else {
+            AppUtils.showToast(mContext,getString(R.string.error_network));
+        }
+
+        spinner_st_w_det.setOnItemSelectedListener(this);
+
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.txt_siteWeighment_dts_weight_btn_save:
-                    if (doValidation()){
-                        AppUtils.showCustomOkCancelDialog(this, "", getString(R.string.siteWtAlert), "YES", "NO",
+                if (count != "Select count") {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        spinner_layout.setBackground(getResources().getDrawable(R.drawable.white_border));
+                    }
+                    if (doValidation()) {
+                        AppUtils.showCustomOkCancelDialog(this, "", getString(R.string.next_count_alert), "No", "Yes",
                                 new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
+                                        count_code=codes.get(position).getVcode();
+                                        ValueEditionDetaillsModel detaillsModel = new ValueEditionDetaillsModel();
+                                        detaillsModel.setTime(txt_siteWeighment_weight_date_time.getText().toString());
+                                        detaillsModel.setNo_of_nets(Integer.parseInt(txt_siteWeighment_weight_no_nets.getText().toString()));
+                                        detaillsModel.setTotal_weight(Float.parseFloat(edt_siteWeighment_total_weight_kgs.getText().toString()));
+                                        detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_siteWeighment_weight_total_tare_wt.getText().toString()));
+                                        detaillsModel.setNet_weight(Float.parseFloat(txt_siteWeighment_weight_net_weight.getText().toString()));
+                                        detaillsModel.setCummulative_weight(0);
+                                        detaillsModel.setCount_code(count_code);
+                                        detaillsModel.setGroup_person(count);
+
+                                        valueEditionDetaillsModel.add(detaillsModel);
+                                        valueEditionDetailsAdapter = new HeadLessGrading_2_Grid(getApplicationContext(), valueEditionDetaillsModel,"SW");
+                                        siteWeighment_weight_recycler_view.setHasFixedSize(true);
+                                        siteWeighment_weight_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                                        siteWeighment_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
+
+                                        clearText();
+                                        spinner_st_w_det.setSelection(position);
+//                                        edt_siteWeighment_total_weight_kgs.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+//                                            @Override
+//                                            public void onFocusChange(View v, boolean hasFocus) {
+//                                                edt_siteWeighment_total_weight_kgs.post(new Runnable() {
+//                                                    @Override
+//                                                    public void run() {
+//                                                        InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
+//                                                        imm.showSoftInput(edt_siteWeighment_total_weight_kgs, InputMethodManager.SHOW_IMPLICIT);
+//                                                    }
+//                                                });
+//                                            }
+//                                        });
+//                                        edt_siteWeighment_total_weight_kgs.requestFocus();
+
+
+
+
+                                    }
+                                },
+                                new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+
+                                        count_code=codes.get(position).getVcode();
                                         ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
                                         detaillsModel.setTime(txt_siteWeighment_weight_date_time.getText().toString());
                                         detaillsModel.setNo_of_nets(Integer.parseInt(txt_siteWeighment_weight_no_nets.getText().toString()));
@@ -133,42 +267,29 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
                                         detaillsModel.setNet_weight(Float.parseFloat(txt_siteWeighment_weight_net_weight.getText().toString()));
                                         detaillsModel.setCummulative_weight(0);
                                         detaillsModel.setCount_code(count_code);
+                                        detaillsModel.setGroup_person(count);
 
                                         valueEditionDetaillsModel.add(detaillsModel);
-                                        valueEditionDetailsAdapter=new ValueEditionDetailsAdapter(getApplicationContext(),valueEditionDetaillsModel);
+                                        valueEditionDetailsAdapter=new HeadLessGrading_2_Grid(getApplicationContext(),valueEditionDetaillsModel,"SW");
                                         siteWeighment_weight_recycler_view.setHasFixedSize(true);
                                         siteWeighment_weight_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                                         siteWeighment_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
-                                        clearText();
 
-                                    }
-                                },
-                                new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-
-//                                        ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
-//                                        detaillsModel.setTime(txt_siteWeighment_weight_date_time.getText().toString());
-//                                        detaillsModel.setNo_of_nets(Integer.parseInt(txt_siteWeighment_weight_no_nets.getText().toString()));
-//                                        detaillsModel.setTotal_weight(Float.parseFloat(edt_siteWeighment_total_weight_kgs.getText().toString()));
-//                                        detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_siteWeighment_weight_total_tare_wt.getText().toString()));
-//                                        detaillsModel.setNet_weight(Float.parseFloat(txt_siteWeighment_weight_net_weight.getText().toString()));
-//                                        detaillsModel.setCummulative_weight(0);
-//                                        detaillsModel.setCount_code(count_code);
-//
-//                                        valueEditionDetaillsModel.add(detaillsModel);
-//                                        valueEditionDetailsAdapter=new ValueEditionDetailsAdapter(getApplicationContext(),valueEditionDetaillsModel);
-//                                        siteWeighment_weight_recycler_view.setHasFixedSize(true);
-//                                        siteWeighment_weight_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-//                                        siteWeighment_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
-//
 //                                        clearText();
+
+                                        clearText();
+                                        spinner_st_w_det.setSelection(0);
                                     }
                                 });
+                    } else {
+                        AppUtils.showToast(mContext, "please check fields");
                     }
-                    else {
-                        AppUtils.showToast(mContext,"please check fields");
+                } else {
+                    AppUtils.showToast(mContext, "please select count");
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        spinner_layout.setBackground(getResources().getDrawable(R.drawable.yellow_background));
                     }
+                }
 
                 break;
 
@@ -178,6 +299,8 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
                     b.putSerializable("objNames", (Serializable) valueEditionDetaillsModel);
                     Intent insertDetails=new Intent(SiteWeighmentWeights.this, SiteWeighmentDetailsIserted.class);
                     insertDetails.putExtras(b);
+                    insertDetails.putExtra("schedule_no",scheduleNo);
+                    insertDetails.putExtra("enquiryNo",enquiryNO);
                     startActivity(insertDetails);
                 }else {
                     AppUtils.showToast(mContext,"please fill details");
@@ -196,6 +319,7 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
         txt_siteWeighment_weight_total_tare_wt.setText("");
         txt_siteWeighment_weight_net_weight.setText("");
         edt_siteWeighment_total_weight_kgs.requestFocus();
+        AppUtils.showkeyboard(mContext,edt_siteWeighment_total_weight_kgs);
 
     }
 
@@ -216,9 +340,26 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
             edt_siteWeighment_total_weight_kgs.requestFocus();
             edt_siteWeighment_total_weight_kgs.setError("Enter Tare Weight");
 
+        } else if (txt_siteWeighment_weight_net_weight.getText().toString().trim().length() == 0) {
+            validate = false;
+            txt_siteWeighment_weight_net_weight.requestFocus();
+          // AppUtils.showToast(mContext,"Total tare wait cannot be less than total weight");
+            Toast.makeText(mContext,"Total weight should be greater than total tare weight",Toast.LENGTH_SHORT).show();
+
         }
 
         return validate;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        count=parent.getSelectedItem().toString();
+        this.position=position;
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 
     // Handling multiple edit text
@@ -270,9 +411,9 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
 
         Log.i(TAG, "calculateWeight: " + totalWeight);
 
-        if (totalWeight > 0) {
+        if (totalWeight > totTareWeight) {
             Log.i(TAG, "calculateWeight: Inside " + totalWeight);
-            netTotalWeight = totalWeight - totTareWeight;
+            netTotalWeight = totalWeight-totTareWeight;
             txt_siteWeighment_weight_net_weight.setText(String.valueOf(Math.round(netTotalWeight * 100.0) / 100.0));
         } else {
             txt_siteWeighment_weight_net_weight.setText("");

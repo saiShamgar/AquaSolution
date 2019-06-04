@@ -1,12 +1,23 @@
 package com.PG.testingapp.Api;
 
+import com.PG.testingapp.model.FactoryWeighment.FactoryWeighmentCodes;
+import com.PG.testingapp.model.FactoryWeighment.FactoryWeighmentGridModel;
 import com.PG.testingapp.model.GetEnquiryRespone;
 import com.PG.testingapp.model.GetScheduleNo;
 import com.PG.testingapp.model.GettingProcesses;
 import com.PG.testingapp.model.GettingScheduleDetails;
 import com.PG.testingapp.model.GettingVeriatyCodes;
+import com.PG.testingapp.model.HeadLessGrading.GetCodes;
+import com.PG.testingapp.model.HeadLessGrading.GetGrades;
+import com.PG.testingapp.model.HeadLessGrading.GetGroupCodes;
+import com.PG.testingapp.model.HeadLessGrading.GetVarietyDetails;
+import com.PG.testingapp.model.HeadLessGrading.LotNumbersStatus;
 import com.PG.testingapp.model.LoginResponse;
+import com.PG.testingapp.model.SiteWTInsertResponce;
 import com.PG.testingapp.model.Status;
+import com.PG.testingapp.model.headOnHeadLessGrading.GetLotNumbers_HOHL_status;
+import com.PG.testingapp.model.headOnHeadLessGrading.Getcodes_Grouphead;
+import com.PG.testingapp.model.headOnHeadLessGrading.HOHL_location;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -54,8 +65,10 @@ public interface ApiService {
     Call<Status> insertDetails(
                 @Field("data")String json);
 
-    @GET("app_site_get/")
-    Call<GetScheduleNo> getScheduleNo();
+    @FormUrlEncoded
+    @POST("app_site_get/")
+    Call<GetScheduleNo> getScheduleNo(
+            @Field("emp_id") String emp_id );
 
     @FormUrlEncoded
     @POST("app_get_schedule_date/")
@@ -67,6 +80,103 @@ public interface ApiService {
     Call<GetEnquiryRespone> getEnQuiryDetails(
             @Field("sechduleno")String schNo,
             @Field("enquiryno")String enquiryNo);
+
+    @FormUrlEncoded
+    @POST("app_site_map_registers/")
+    Call<SiteWTInsertResponce> insertSiteData(
+            @Field("sitedata")String schNo);
+
+    //factory weighment
+
+    @FormUrlEncoded
+    @POST("app_lot_number_get/")
+    Call<FactoryWeighmentGridModel> ftLotDetails(
+            @Field("emp_id")String emp_id);
+
+    @FormUrlEncoded
+    @POST("app_get_variety/")
+    Call<FactoryWeighmentCodes> ftgetCodes(
+            @Field("lotno")String lot_no,
+            @Field("emp_id")String emp_id);
+
+    @FormUrlEncoded
+    @POST("app_factory_weighment_registers/")
+    Call<Status> factoryIsertionData(
+            @Field("factorydata")String factorydata);
+
+    //headLessGrading
+    @FormUrlEncoded
+    @POST("app_get_lot_num/")
+    Call<LotNumbersStatus> HeadLeassLotData(
+            @Field("Emp_id")String Emp_15);
+
+    @FormUrlEncoded
+    @POST("app_get_count_variety_code/")
+    Call<GetCodes> HeadLeassCountData(
+            @Field("VarietyCode")String VarietyCode);
+
+    @FormUrlEncoded
+    @POST("app_save_lot_details/")
+    Call<Status> HeadLeassInsertData(
+            @Field("data")String VarietyCode);
+
+    @FormUrlEncoded
+    @POST("app_get_variety_counts/")
+    Call<GetCodes> getSiteCountCodes(
+            @Field("varietycode")String VarietyCode);
+
+    @GET("app_get_fp_group_codes/")
+    Call<GetGroupCodes> hlGetFinishedGroups();
+
+    @FormUrlEncoded
+    @POST("app_get_fp_variety_details/")
+    Call<GetVarietyDetails> hlGetVarityCodes(
+            @Field("fpGroupCode")String VarietyCode);
+
+    @FormUrlEncoded
+    @POST("app_get_fp_production_grade/")
+    Call<GetGrades> hlGetGradeCodes(
+            @Field("fpVarietyCode")String fpVarietyCode);
+
+
+
+    //Headon headless grading
+
+    @FormUrlEncoded
+    @POST("app_headon_headless_get_lot_No/")
+    Call<GetLotNumbers_HOHL_status> getlotNum_hohl(
+            @Field("Emp_id")String Emp);
+
+    @FormUrlEncoded
+    @POST("app_headon_headless_get_variety_count/")
+    Call<Getcodes_Grouphead> getCodes_heads(
+            @Field("VarietyCode")String VarietyCode,
+            @Field("LotNo")String LotNo);
+
+    @FormUrlEncoded
+    @POST("app_headon_headless_get_group_loc/")
+    Call<HOHL_location> getLocation(
+            @Field("GroupEmpId")String GroupEmpId);
+
+    @FormUrlEncoded
+    @POST("app_headon_headless_save_headon_headless/")
+    Call<Status> insertHOHLDetails(
+            @Field("data")String GroupEmpId);
+
+    //headon grading
+    @GET("app_headon_get_lot_No/")
+    Call<LotNumbersStatus> getlotNum_h_on();
+
+    @FormUrlEncoded
+    @POST("app_headon_save_details/")
+    Call<Status> insert_h_on(
+            @Field("data")String json);
+
+
+
+
+
+
 
 
 }

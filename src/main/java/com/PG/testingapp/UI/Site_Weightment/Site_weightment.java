@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -17,6 +18,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -26,17 +29,22 @@ import android.widget.Toast;
 import com.PG.testingapp.Api.ApiService;
 import com.PG.testingapp.Api.AppUrl;
 import com.PG.testingapp.BaseActivity;
+import com.PG.testingapp.LocalDataBase.DbHelper;
+import com.PG.testingapp.LoginActivity;
 import com.PG.testingapp.R;
 import com.PG.testingapp.UI.MenuActivity;
 import com.PG.testingapp.Utils.AppConstant;
 import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.Utils.GpsLocation;
+import com.PG.testingapp.Utils.SharedPreferenceConfig;
 import com.PG.testingapp.model.Events;
 import com.PG.testingapp.model.GetEnquiryFullDetails;
 import com.PG.testingapp.model.GetEnquiryRespone;
 import com.PG.testingapp.model.GetScheduleNo;
 import com.PG.testingapp.model.GettingScheduleDetails;
 import com.PG.testingapp.model.GettingVeriatyCodes;
+import com.PG.testingapp.model.SiteWTInsertResponce;
+import com.PG.testingapp.model.SiteWeighmentInsertionData;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -48,6 +56,7 @@ import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStates;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
+import com.google.gson.Gson;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -66,16 +75,22 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
     private Button btnSiteWeightmentNext;
     private TextView edttxt_siteweighment_scheduledate,edttxt_siteweighment_grader,edttxt_siteweighment_vehicalno,
             edttxt_siteweighment_helper,edttxt_siteweighment_helper1,edttxt_siteweighment_agentdetails,edttxt_siteweighment_farmername
-            ,edttxt_siteweighment_place,edttxt_siteweighment_navigationmap,date_siteweighment_boxs,nets_siteweighment_edttxt
-            ,edttxt_siteweighment_materialgroup,edttxt_siteweighment_varietyname,edttxt_siteweighment_total_count,edttext_siteweighment_total;
+            ,edttxt_siteweighment_place,edttxt_siteweighment_navigationmap,date_siteweighment_boxs,nets_siteweighment_edttxt,
+    txtview_siteweighment_foldercount;
+    private EditText edttxt_siteweighment_pondNo,edttxt_siteweighment_farmlocation;
+    private ImageView site_weightment_back;
 
-
-    private RelativeLayout layout_sw_child_sch,layout_sw_enquiry_parent;
+    private RelativeLayout layout_sw_child_sch,layout_sw_enquiry_parent,rel_siteweighment_foldercount;
     private LinearLayout layout_sw_enquiry_child;
     private Context mContext;
     private ApiService apiService;
     private ArrayAdapter<String> countAdapter;
     private ArrayAdapter<String> enqueryAdapter;
+
+    private SharedPreferenceConfig config;
+
+    private String schedule_no,enwuiryNo,prodct_code;
+    boolean validate;
 
     //Location
     private static final int REQUEST_CODE = 123;
@@ -83,11 +98,22 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
     protected static final int REQUEST_CHECK_SETTINGS = 0x1;
 
     private Events.ActivityServiceMessage message;
+    private ArrayList<String> date_time=new ArrayList<>();
+    private ArrayList<String> VAP_No_of_Nets=new ArrayList<>();
+    private ArrayList<String> VAP_Net_Tare_Wt=new ArrayList<>();
+    private ArrayList<String> VAP_Total_Weight=new ArrayList<>();
+    private ArrayList<String> VAP_Total_Tare_Weight=new ArrayList<>();
+    private ArrayList<String> VAP_Net_Weight=new ArrayList<>();
+    private ArrayList<String> Variety_Count_Code=new ArrayList<>();
+
+    private String scheduleNofromDB,enquiryNOfromDB,emp_id_from_db,pondNo_from_db,farmLocFromDb,navMapDEtailsFromDB;
+    private DbHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_site_weightment);
+        dbHelper=new DbHelper(this);
         checkLocation();
         init();
     }
@@ -123,6 +149,7 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
 
     private void init() {
         mContext=Site_weightment.this;
+        config=new SharedPreferenceConfig(this);
         enableGps();
         startService(new Intent(mContext, GpsLocation.class));
         spinner_siteweightment_scheduleno=findViewById(R.id.spinner_siteweightment_scheduleno);
@@ -142,13 +169,128 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
         edttxt_siteweighment_navigationmap=findViewById(R.id.edttxt_siteweighment_navigationmap);
         date_siteweighment_boxs=findViewById(R.id.date_siteweighment_boxs);
         nets_siteweighment_edttxt=findViewById(R.id.nets_siteweighment_edttxt);
-        edttxt_siteweighment_materialgroup=findViewById(R.id.edttxt_siteweighment_materialgroup);
-        edttxt_siteweighment_varietyname=findViewById(R.id.edttxt_siteweighment_varietyname);
-        edttxt_siteweighment_total_count=findViewById(R.id.edttxt_siteweighment_total_count);
-        edttext_siteweighment_total=findViewById(R.id.edttext_siteweighment_total);
+        edttxt_siteweighment_pondNo=findViewById(R.id.edttxt_siteweighment_pondNo);
+        edttxt_siteweighment_farmlocation=findViewById(R.id.edttxt_siteweighment_farmlocation);
+        rel_siteweighment_foldercount=findViewById(R.id.rel_siteweighment_foldercount);
+        txtview_siteweighment_foldercount=findViewById(R.id.txtview_siteweighment_foldercount);
+        site_weightment_back=findViewById(R.id.site_weightment_back);
+//        edttxt_siteweighment_materialgroup=findViewById(R.id.edttxt_siteweighment_materialgroup);
+//        edttxt_siteweighment_varietyname=findViewById(R.id.edttxt_siteweighment_varietyname);
+//        edttxt_siteweighment_total_count=findViewById(R.id.edttxt_siteweighment_total_count);
+//        edttext_siteweighment_total=findViewById(R.id.edttext_siteweighment_total);
+        site_weightment_back.setOnClickListener(this);
+       Cursor cursor= dbHelper.getAllDetailsSiteWeighment();
+       if (cursor.getCount()>0){
+           rel_siteweighment_foldercount.setVisibility(View.VISIBLE);
+           txtview_siteweighment_foldercount.setText(String.valueOf(cursor.getCount()));
+       }
+       else {
+           rel_siteweighment_foldercount.setVisibility(View.GONE);
+       }
 
+       txtview_siteweighment_foldercount.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               AppUtils.showCustomOkCancelDialog(mContext, "", getString(R.string.upload_local_data), "YES", "NO",
+                       new View.OnClickListener() {
+                           @Override
+                           public void onClick(View v) {
+                               final Cursor cursor = dbHelper.getAllDetailsSiteWeighment();
+                               date_time.clear();
+                               VAP_No_of_Nets.clear();
+                               VAP_Net_Tare_Wt.clear();
+                               VAP_Total_Weight.clear();
+                               VAP_Total_Tare_Weight.clear();
+                               VAP_Net_Weight.clear();
+                               if (cursor.moveToFirst()){
+                                   do{
+                                       scheduleNofromDB=cursor.getString(cursor.getColumnIndex("Procurement_Schedule_No"));
+                                       enquiryNOfromDB=cursor.getString(cursor.getColumnIndex("Enquiry_No"));
+                                       emp_id_from_db=cursor.getString(cursor.getColumnIndex("Emp_id"));
+                                       pondNo_from_db=cursor.getString(cursor.getColumnIndex("Farmer_Pond_No"));
+                                       farmLocFromDb=cursor.getString(cursor.getColumnIndex("Farmer_Location"));
+                                       navMapDEtailsFromDB=cursor.getString(cursor.getColumnIndex("Farmer_Pond_Navigation_Details"));
+                                       date_time.add( cursor.getString(cursor.getColumnIndex("Site_Weighment_Date_Time")));
+                                       VAP_No_of_Nets.add( cursor.getString(cursor.getColumnIndex("SW_No_of_Nets")));
+                                       VAP_Net_Tare_Wt.add( cursor.getString(cursor.getColumnIndex("SW_Net_Tare_Wt")));
+                                       VAP_Total_Weight.add( cursor.getString(cursor.getColumnIndex("SW_Total_Weight")));
+                                       VAP_Total_Tare_Weight.add( cursor.getString(cursor.getColumnIndex("SW_Total_Tare_Weight")));
+                                       VAP_Net_Weight.add( cursor.getString(cursor.getColumnIndex("SW_Net_Weight")));
+                                       Variety_Count_Code.add( cursor.getString(cursor.getColumnIndex("Site_Weighment_count")));
+                                   }while(cursor.moveToNext());
+                               }
+                               cursor.close();
+
+                               SiteWeighmentInsertionData insertionData=new SiteWeighmentInsertionData(
+                                       pondNo_from_db,
+                                       farmLocFromDb,
+                                       navMapDEtailsFromDB,
+                                       scheduleNofromDB,
+                                       enquiryNOfromDB,
+                                       VAP_No_of_Nets,
+                                       VAP_Total_Weight,
+                                       VAP_Net_Tare_Wt,
+                                       VAP_Total_Tare_Weight,
+                                       VAP_Net_Weight,
+                                       emp_id_from_db,
+                                       date_time,
+                                       Variety_Count_Code);
+
+                               Gson gson = new Gson();
+                               String json = gson.toJson(insertionData);
+                               Log.e("local data ",json);
+
+                               if (AppUtils.isNetworkAvailable(mContext)){
+                                   AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
+                                   apiService= AppUrl.getApiClient().create(ApiService.class);
+                                   Call<SiteWTInsertResponce> call=apiService.insertSiteData(json);
+                                   call.enqueue(new Callback<SiteWTInsertResponce>() {
+                                       @Override
+                                       public void onResponse(Call<SiteWTInsertResponce> call, Response<SiteWTInsertResponce> response) {
+                                           AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                                           if (response.body()!=null){
+                                               if (response.body().getStatus().contains(AppConstant.MESSAGE)){
+                                                   AppUtils.showToast(mContext,response.body().getMessage());
+                                                   dbHelper.deleteTableSiteWeighment();
+                                                   Intent intent=new Intent(Site_weightment.this,MenuActivity.class);
+                                                   startActivity(intent);
+                                                   finish();
+                                               }else {
+                                                   Log.e("status",response.body().getMessage());
+                                                   AppUtils.showCustomOkDialog(mContext,"",response.body().getMessage(),"OK",null);
+                                               }
+                                           }
+                                           else {
+                                               AppUtils.showCustomOkDialog(mContext,"",getResources().getString(R.string.error_default),"OK",null);
+                                           }
+                                       }
+                                       @Override
+                                       public void onFailure(Call<SiteWTInsertResponce> call, Throwable t) {
+                                           Log.e("status",t.toString());
+                                           AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                                           AppUtils.showCustomOkDialog(mContext,
+                                                   "",
+                                                   getString(R.string.error_default),
+                                                   "OK", null);
+                                       }
+                                   });
+
+                               }else {
+                                   AppUtils.showToast(mContext,getString(R.string.error_network));
+                               }
+                           }
+                       },
+                       new View.OnClickListener() {
+                           @Override
+                           public void onClick(View v) {
+
+                           }
+                       });
+
+
+           }
+       });
         btnSiteWeightmentNext.setOnClickListener(this);
-
         layout_sw_child_sch.setVisibility(View.GONE);
         layout_sw_enquiry_parent.setVisibility(View.GONE);
         layout_sw_enquiry_child.setVisibility(View.GONE);
@@ -168,7 +310,6 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
                 .addLocationRequest(locationRequest);
         builder.setAlwaysShow(true); //this is the key ingredient
-
 
         PendingResult<LocationSettingsResult> result =
                 LocationServices.SettingsApi.checkLocationSettings(googleApiClient, builder.build());
@@ -238,14 +379,47 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         if (v.getId()==R.id.btnSiteWeightmentNext){
-            Intent siteWeighmentDetails=new Intent(Site_weightment.this,SiteWeighmentWeights.class);
-            startActivity(siteWeighmentDetails);
+            if (doValidation()){
+                config.writeSiteWeighmentPond_no(edttxt_siteweighment_pondNo.getText().toString());
+                config.writeSiteWeighmentFarmLocation(edttxt_siteweighment_farmlocation.getText().toString());
+                config.writeSiteWeighmentMapData(edttxt_siteweighment_navigationmap.getText().toString());
+                config.writeSiteWeighmentLatitude(message.getLatitude());
+                config.writeSiteWeighmentLongitude(message.getLongitude());
+                Intent siteWeighmentDetails=new Intent(Site_weightment.this,SiteWeighmentWeights.class);
+                siteWeighmentDetails.putExtra("schedule_no",schedule_no);
+                siteWeighmentDetails.putExtra("enquiryNo",enwuiryNo);
+                siteWeighmentDetails.putExtra("prodct_code",prodct_code);
+                startActivity(siteWeighmentDetails);
+            }
+
         }
+        if (v.getId()==R.id.site_weightment_back){
+            onBackPressed();
+        }
+    }
+
+
+    boolean doValidation() {
+        validate = true;
+        if (edttxt_siteweighment_pondNo.getText().toString().trim().length() == 0) {
+            validate = false;
+            edttxt_siteweighment_pondNo.setError("Enter Number Of Net");
+            edttxt_siteweighment_pondNo.requestFocus();
+
+        } else if (edttxt_siteweighment_farmlocation.getText().toString().trim().length() == 0) {
+            validate = false;
+            edttxt_siteweighment_farmlocation.requestFocus();
+            edttxt_siteweighment_farmlocation.setError("Enter Tare Weight");
+
+        }
+
+        return validate;
     }
 
     @Override
     public void onItemSelected(final AdapterView<?> parent, View view, int position, long id) {
         if (parent.getSelectedItem().toString()!="Select No"){
+            schedule_no=parent.getSelectedItem().toString();
             if (AppUtils.isNetworkAvailable(mContext)){
                 AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
                 apiService=AppUrl.getApiClient().create(ApiService.class);
@@ -297,6 +471,7 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
                                         @Override
                                         public void onItemSelected(AdapterView<?> parent1, View view1, int position1, long id1) {
                                             if (parent1.getSelectedItem().toString()!="Select No"){
+                                                enwuiryNo=parent1.getSelectedItem().toString();
                                                 callEnquiryService(parent.getSelectedItem().toString(),parent1.getSelectedItem().toString());
                                                 Log.e("site Weighment",message.getLatitude()+" Time "+message.getTime());
                                                 Log.e("site weighment" ,message.getAddress());
@@ -380,19 +555,20 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
                             layout_sw_enquiry_child.setVisibility(View.VISIBLE);
                             btnSiteWeightmentNext.setVisibility(View.VISIBLE);
                             edttxt_siteweighment_navigationmap.setText(message.getAddress());
-                            if (response.body().getData().getMaterialData().size()!=0){
-                                for (int i=0;i<response.body().getData().getMaterialData().size();i++){
-                                    edttxt_siteweighment_materialgroup.setText(response.body().getData().getMaterialData().get(i).getMaterial_Group_Name());
-                                    edttxt_siteweighment_varietyname.setText(response.body().getData().getMaterialData().get(i).getProduct_Variety_Name());
-                                    edttxt_siteweighment_total_count.setText(response.body().getData().getMaterialData().get(i).getProduct_Variety_Code());
-                                }
-                            }
+
+                            Log.e("size",String.valueOf(response.body().getData().getFarmerDetails().size()));
+
                             if (response.body().getData().getFarmerDetails().size()!=0){
+                                Log.e("code","hdhfd");
                                 for (int i=0;i<response.body().getData().getFarmerDetails().size();i++){
+
                                     edttxt_siteweighment_agentdetails.setText(response.body().getData().getFarmerDetails().get(i).getAqua_Agent_Name());
                                     edttxt_siteweighment_farmername.setText(response.body().getData().getFarmerDetails().get(i).getAqua_Agent_Name());
                                     edttxt_siteweighment_place.setText(response.body().getData().getFarmerDetails().get(i).getAqua_Farmer_Bank_Place());
+                                    prodct_code=response.body().getData().getFarmerDetails().get(i).getProduct_Variety_Code();
+
                                 }
+
                             }
                             if (response.body().getData().getBoxesDetails().size()!=0){
                                 for (int i=0;i<response.body().getData().getBoxesDetails().size();i++){
@@ -400,11 +576,11 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
                                     nets_siteweighment_edttxt.setText(response.body().getData().getBoxesDetails().get(i).getNet());
                                 }
                             }
-                            if (response.body().getData().getNetWeightDetails().size()!=0){
-                                for (int i=0;i<response.body().getData().getNetWeightDetails().size();i++){
-                                    edttext_siteweighment_total.setText(response.body().getData().getNetWeightDetails().get(i).getSW_Net_Weight());
-                                }
-                            }
+//                            if (response.body().getData().getNetWeightDetails().size()!=0){
+//                                for (int i=0;i<response.body().getData().getNetWeightDetails().size();i++){
+//                                    edttext_siteweighment_total.setText(response.body().getData().getNetWeightDetails().get(i).getSW_Net_Weight());
+//                                }
+//                            }
                         }
                         else {
                             Log.e("status",response.body().getMessage());
@@ -449,7 +625,7 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
         if (AppUtils.isNetworkAvailable(mContext)){
             AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
             apiService= AppUrl.getApiClient().create(ApiService.class);
-            Call<GetScheduleNo> call=apiService.getScheduleNo();
+            Call<GetScheduleNo> call=apiService.getScheduleNo(config.readLoginEmpId());
             call.enqueue(new Callback<GetScheduleNo>() {
                 @Override
                 public void onResponse(Call<GetScheduleNo> call, Response<GetScheduleNo> response) {
@@ -467,7 +643,7 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
                         }
                         else {
                             Log.e("status",response.body().getMessage());
-                            AppUtils.showCustomOkDialog(mContext,"",getResources().getString(R.string.error_default),"OK",null);
+                            AppUtils.showCustomOkDialog(mContext,"",response.body().getMessage(),"OK",null);
                         }
                     }
                     else {

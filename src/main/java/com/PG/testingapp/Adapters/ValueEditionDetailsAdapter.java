@@ -22,6 +22,7 @@ public class ValueEditionDetailsAdapter extends RecyclerView.Adapter<ValueEditio
 
     private Context context;
     private ArrayList<ValueEditionDetaillsModel> details;
+    float cummulativeWeight;
 
     public ValueEditionDetailsAdapter(Context context, ArrayList<ValueEditionDetaillsModel> details) {
         this.context = context;
@@ -59,6 +60,9 @@ public class ValueEditionDetailsAdapter extends RecyclerView.Adapter<ValueEditio
             }
         });
 
+        cummulativeWeight=cummulativeWeight+ valueEditionDetaillsModel1.getNet_weight();
+        holder.txt_cumulative_wt.setText(String.valueOf(cummulativeWeight));
+
         if(position %2 == 1)
         {
             holder.itemView.setBackgroundColor(Color.parseColor("#F5F6F8"));
@@ -71,15 +75,13 @@ public class ValueEditionDetailsAdapter extends RecyclerView.Adapter<ValueEditio
         }
 
         String sl= String.valueOf(position+1);
-
         holder.txt_sl_no.setText(sl);
-
         holder.txt_time.setText(valueEditionDetaillsModel1.getTime());
         holder.txt_no_nets.setText(String.valueOf(valueEditionDetaillsModel1.getNo_of_nets()));
         holder.txt_total_weight.setText(String.valueOf(valueEditionDetaillsModel1.getTotal_weight()));
         holder.txt_total_tare_wt.setText(String.valueOf( valueEditionDetaillsModel1.getTotal_tare_weight()));
         holder.txt_net_weight.setText(String.valueOf(valueEditionDetaillsModel1.getNet_weight()));
-        holder.txt_cumulative_wt.setText(String.valueOf( valueEditionDetaillsModel1.getNet_weight()));
+
     }
 
     @Override

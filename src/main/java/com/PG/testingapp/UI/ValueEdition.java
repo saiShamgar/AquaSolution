@@ -21,6 +21,7 @@ import com.PG.testingapp.LoginActivity;
 import com.PG.testingapp.R;
 import com.PG.testingapp.Utils.AppConstant;
 import com.PG.testingapp.Utils.AppUtils;
+import com.PG.testingapp.model.FactoryWeighment.FTLotNumbers;
 import com.PG.testingapp.model.GettingProcesses;
 import com.PG.testingapp.model.LoginResponse;
 import com.PG.testingapp.model.Process_Location;
@@ -116,7 +117,7 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
                         }
                         else {
                             Log.e("status",response.body().getMessage());
-                            AppUtils.showCustomOkDialog(mContext,"",getResources().getString(R.string.error_default),"OK",null);
+                            AppUtils.showCustomOkDialog(mContext,"",response.body().getMessage(),"OK",null);
                         }
                     }
                     else {
@@ -152,4 +153,11 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
     public void onRadioClick(Processes_data processes_data) {
         this.processes_data=processes_data;
     }
+
+    @Override
+    public void onRadioClickFT(FTLotNumbers processes_data) {
+
+    }
+
+
 }

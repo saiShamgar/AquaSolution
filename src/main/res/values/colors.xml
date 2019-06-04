@@ -8,7 +8,8 @@
     <color name="color_app_orange">#EF7F1A</color>
     <color name="color_lite_grey">#AAAAAA</color>
     <color name="color_black">#000000</color>
-    <color name="app_color">#ff6969</color>
+    <color name="app_color">#0055a2</color>
+    <color name="app_second_color">#0872d2</color>
     <color name="color_grey_light">#626262</color>
     <color name="color_white">#ffffff</color>
     <color name="color_line">#eeeeee</color>
@@ -29,7 +30,7 @@
     <color name="font_color">#515c6f </color>
     <color name="font_heading">#a7adb6 </color>
     <color name="edt_line_color">#e2e2e2 </color>
-    <color name="app_dark_color">#ff4057 </color>
+    <color name="app_dark_color">#034784 </color>
 
     //site Weighment
     <color name="titlebg">#FF6969</color>
@@ -42,7 +43,5 @@
     <color name="layoutbg">#F1F1F1</color>
     <color name="white">#FFFFFF</color>
     <color name="divider">#FFB3B3</color>
-
-
 
 </resources>

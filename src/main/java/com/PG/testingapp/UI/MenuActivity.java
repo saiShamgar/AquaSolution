@@ -2,10 +2,15 @@ package com.PG.testingapp.UI;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
+import android.hardware.usb.UsbDevice;
+import android.hardware.usb.UsbManager;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
@@ -19,6 +24,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,6 +54,8 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Iterator;
 
 public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener
 {
@@ -63,6 +71,11 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
 
     boolean doubleBackToExitPressedOnce = false;
 
+    private static final String ACTION_USB_ATTACHED  = "android.hardware.usb.action.USB_DEVICE_ATTACHED";
+    private static final String ACTION_USB_DETACHED  = "android.hardware.usb.action.USB_DEVICE_DETACHED";
+    private static final String ACTION_USB_PERMISSION  = "com.blecentral.USB_PERMISSION";
+    private BroadcastReceiver broadcastReceiver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +83,7 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
         mContext = MenuActivity.this;
 
         config=new SharedPreferenceConfig(this);
+
         checkLocation();
         init();
 
@@ -81,7 +95,9 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
                             @Override
                             public void onClick(View v) {
                                 config.writeLoginPreference("");
+                                config.writeLoginEmpId("");
                                Intent logout=new Intent(MenuActivity.this, LoginActivity.class);
+                               logout.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                startActivity(logout);
                                finish();
 
@@ -96,17 +112,42 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
             }
         });
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+         broadcastReceiver=new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String action = intent.getAction();
+                if (action.equalsIgnoreCase(ACTION_USB_DETACHED)) {
+                   Toast.makeText(mContext,"usb Dettached",Toast.LENGTH_LONG).show();
+                }else if (action.equalsIgnoreCase(ACTION_USB_ATTACHED)) {
+                    Toast.makeText(mContext,"usb Attached",Toast.LENGTH_LONG).show();
+                }
+            }
+        };
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(ACTION_USB_ATTACHED);
+        filter.addAction(ACTION_USB_DETACHED);
+        registerReceiver(broadcastReceiver,filter);
+    }
+
     void init() {
         enableGps();
+        checkUSB();
         startService(new Intent(mContext, GpsLocation.class));
         recyclerview_in_grid=findViewById(R.id.recyclerview_in_grid);
+
         logout=findViewById(R.id.logout);
         adapter=new MenuItemsAdapter(this);
         recyclerview_in_grid.setHasFixedSize(true);
         recyclerview_in_grid.setLayoutManager(new GridLayoutManager(this,3));
         recyclerview_in_grid.setAdapter(adapter);
 
-        }
+    }
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
@@ -229,7 +270,47 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
     protected void onStop() {
         super.onStop();
         EventBus.getDefault().unregister(this);
+        unregisterReceiver(broadcastReceiver);
     }
+
+    boolean checkUSB(){
+        UsbManager manager = (UsbManager) getSystemService(Context.USB_SERVICE);
+        // Get the list of attached devices
+        HashMap<String, UsbDevice> devices = manager.getDeviceList();
+        // Iterate over all devices
+        Iterator<String> it = devices.keySet().iterator();
+        while (it.hasNext()) {
+            String deviceName = it.next();
+            UsbDevice device = devices.get(deviceName);
+            String VID = Integer.toHexString(device.getVendorId()).toUpperCase();
+            String PID = Integer.toHexString(device.getProductId()).toUpperCase();
+            if (!manager.hasPermission(device)) {
+                PendingIntent mPermissionIntent = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), 0);
+                manager.requestPermission(device, mPermissionIntent);
+                return true;
+            } else {
+                return false;
+        //user permission already granted; prceed to access USB device
+            }
+        }
+        return false;
+    }
+    private final BroadcastReceiver mUsbReceiver = new BroadcastReceiver() {
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (ACTION_USB_PERMISSION.equals(action)) {
+                synchronized (this) {
+                    UsbDevice device = (UsbDevice)intent.getParcelableExtra(UsbManager.EXTRA_DEVICE);
+                    if (intent.getBooleanExtra(UsbManager.EXTRA_PERMISSION_GRANTED, false)) {
+                    AppUtils.showToast(mContext,"usb per ok");
+                    } else {
+                        AppUtils.showToast(mContext,"usb per not ok");
+           //Permission revoked by user
+                    }
+                }
+            }
+        }
+    };
 
     @Subscribe
     public void getMessage(Events.ActivityServiceMessage message){

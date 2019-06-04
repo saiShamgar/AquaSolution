@@ -40,6 +40,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -138,11 +140,16 @@ public class ValueEditionDetailsInserted extends BaseActivity {
             VAP_Group_Emp_id.add(detaillsModels.get(i).getGroup_person());
             Variety_Count_Code.add(detaillsModels.get(i).getCount_code());
 
-
             no_of_nets=no_of_nets+detaillsModels.get(i).getNo_of_nets();
             tot_net_wt=tot_net_wt+detaillsModels.get(i).getNet_weight();
             tot_wt=tot_wt+detaillsModels.get(i).getTotal_weight();
         }
+
+        BigDecimal bd = new BigDecimal(tot_wt).setScale(2, RoundingMode.HALF_UP);
+        tot_wt= (float) bd.doubleValue();
+        BigDecimal bd1 = new BigDecimal(tot_net_wt).setScale(2, RoundingMode.HALF_UP);
+        tot_net_wt= (float) bd1.doubleValue();
+
         tot_no_nets.setText(String.valueOf(no_of_nets));
         tot_net_weight.setText(String.valueOf(tot_net_wt));
         tot_weight.setText(String.valueOf(tot_wt));

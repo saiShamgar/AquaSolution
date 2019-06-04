@@ -4,12 +4,12 @@
     <dimen name="large_20dp">20dp</dimen>
     <dimen name="extra_large_50dp">50dp</dimen>
 
-    <dimen name="t0_size">11sp</dimen>
-    <dimen name="t1_size">14sp</dimen>
+    <dimen name="t0_size">12sp</dimen>
+    <dimen name="t1_size">16sp</dimen>
     <dimen name="t2_size">17sp</dimen>
     <dimen name="t4_size">14sp</dimen>
     <dimen name="t3_size">12sp</dimen>
-    <dimen name="t13_size">13sp</dimen>
+    <dimen name="t13_size">15sp</dimen>
 
     <dimen name="margin_boarder">0.5dp</dimen>
     <dimen name="common_margin">10dp</dimen>

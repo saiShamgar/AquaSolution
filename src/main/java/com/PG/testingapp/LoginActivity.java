@@ -72,7 +72,8 @@ public class LoginActivity extends BaseActivity  {
                     AppUtils.dismissCustomProgress(mCustomProgressDialog);
                     if (response.body()!=null){
                         if (response.body().getStatus().contains(AppConstant.MESSAGE)){
-                            Log.e("status",response.body().getMessage());
+                            Log.e("status",response.body().getData().getUser_Emp_Id());
+                            sharedPreferenceConfig.writeLoginEmpId(response.body().getData().getUser_Emp_Id());
                             AppUtils.showToast(mContext,response.body().getMessage());
                             sharedPreferenceConfig.writeLoginPreference("logged in");
                             Intent login = new Intent(LoginActivity.this, MenuActivity.class);

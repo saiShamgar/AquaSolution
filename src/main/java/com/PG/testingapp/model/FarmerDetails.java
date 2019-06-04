@@ -15,11 +15,16 @@ public class FarmerDetails {
     @SerializedName("Village_Name")
     private String Village_Name;
 
-    public FarmerDetails(String aqua_Agent_Name, String aqua_Farmer_Name, String aqua_Farmer_Bank_Place, String village_Name) {
+    @SerializedName("Product_Variety_Code")
+    private String Product_Variety_Code;
+
+
+    public FarmerDetails(String aqua_Agent_Name, String aqua_Farmer_Name, String aqua_Farmer_Bank_Place, String village_Name, String product_Variety_Code) {
         Aqua_Agent_Name = aqua_Agent_Name;
         Aqua_Farmer_Name = aqua_Farmer_Name;
         Aqua_Farmer_Bank_Place = aqua_Farmer_Bank_Place;
         Village_Name = village_Name;
+        Product_Variety_Code = product_Variety_Code;
     }
 
     public String getAqua_Agent_Name() {
@@ -52,5 +57,13 @@ public class FarmerDetails {
 
     public void setVillage_Name(String village_Name) {
         Village_Name = village_Name;
+    }
+
+    public String getProduct_Variety_Code() {
+        return Product_Variety_Code;
+    }
+
+    public void setProduct_Variety_Code(String product_Variety_Code) {
+        Product_Variety_Code = product_Variety_Code;
     }
 }

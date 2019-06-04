@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/gradient_background_color"
-            android:elevation="@dimen/card_radius_8dp">
+            android:elevation="@dimen/card_elevation_4dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -75,7 +75,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="No. Of Nets"
+                    android:text="No.\nOf Nets"
                     android:textColor="@color/white"
                     android:gravity="center"
                     android:textSize="@dimen/t0_size"
@@ -84,11 +84,12 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="Total Weight"
+                    android:text="Total\nWeight"
                     android:textColor="@color/white"
                     android:gravity="center"
                     android:textSize="@dimen/t0_size"
                     android:layout_weight="1"/>
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -97,6 +98,7 @@
                     android:gravity="center"
                     android:textSize="@dimen/t0_size"
                     android:layout_weight="1"/>
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -134,13 +136,8 @@
                     android:visibility="gone"
                     android:layout_weight="1"/>
 
-
-
             </LinearLayout>
         </RelativeLayout>
-
-
-
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -150,7 +147,8 @@
                 android:id="@+id/recycler_view_ho_hl_details"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/act_background"/>
+                android:background="@color/act_background"
+                android:layout_marginBottom="65dp"/>
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/btnValue_edition_Upload"
@@ -162,118 +160,124 @@
                 android:clickable="true"
                 android:src="@drawable/ic_upload"
                 app:backgroundTint="@color/app_dark_color"
-                android:layout_margin="@dimen/margin_large"/>
+               android:layout_marginBottom="75dp"
+                android:layout_marginRight="@dimen/margin_xlarge"/>
 
             <Button
                 android:id="@+id/valEdtNextLot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_margin="@dimen/card_radius_8dp"
                 android:text="Next Lot"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false"
+                android:layout_marginBottom="75dp"
+                android:layout_marginLeft="@dimen/margin_xlarge"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/margin_large">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No of Nets"
+                        android:gravity="center"
+                        android:textSize="12dp"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/font_color"/>
+                    <TextView
+                        android:id="@+id/tot_no_nets"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="15"
+                        android:textSize="18dp"
+                        android:gravity="center"
+                        android:textColor="@color/color_black"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#cacaca"
+                    tools:ignore="Suspicious0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total Net weight"
+                        android:gravity="center"
+                        android:textSize="12dp"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/font_color"/>
+                    <TextView
+                        android:id="@+id/tot_net_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="15"
+                        android:textSize="18dp"
+                        android:gravity="center"
+                        android:textColor="@color/color_black"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#cacaca"
+                    tools:ignore="Suspicious0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total weight"
+                        android:textSize="12dp"
+                        android:gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/font_color"/>
+                    <TextView
+                        android:id="@+id/tot_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="15"
+                        android:textSize="18dp"
+                        android:gravity="center"
+                        android:textColor="@color/color_black"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
 
         </RelativeLayout>
 
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.25"
-        android:orientation="horizontal"
-        android:background="@color/white">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="1">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="No of Nets"
-                    android:gravity="center"
-                    android:textSize="12dp"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/font_color"/>
-                <TextView
-                    android:id="@+id/tot_no_nets"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="15"
-                    android:textSize="18dp"
-                    android:gravity="center"
-                    android:textColor="@color/color_black"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-            <TextView
-            android:layout_width="0.5dp"
-            android:layout_height="match_parent"
-            android:background="#cacaca"
-            tools:ignore="Suspicious0dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="1">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Total Net weight"
-                    android:gravity="center"
-                    android:textSize="12dp"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/font_color"/>
-                <TextView
-                    android:id="@+id/tot_net_weight"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="15"
-                    android:textSize="18dp"
-                    android:gravity="center"
-                    android:textColor="@color/color_black"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-            <TextView
-                android:layout_width="0.5dp"
-                android:layout_height="match_parent"
-                android:background="#cacaca"
-                tools:ignore="Suspicious0dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="1">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Total weight"
-                    android:textSize="12dp"
-                    android:gravity="center"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/font_color"/>
-                <TextView
-                    android:id="@+id/tot_weight"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="15"
-                    android:textSize="18dp"
-                    android:gravity="center"
-                    android:textColor="@color/color_black"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>

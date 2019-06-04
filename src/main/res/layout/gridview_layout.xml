@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="2dp"
-    android:background="@color/white">
+    android:layout_marginTop="@dimen/margin_large"
+    android:layout_marginBottom="2dp"
+    android:layout_marginLeft="@dimen/card_elevation_4dp"
+    android:layout_marginRight="@dimen/card_elevation_4dp"
+   android:background="@drawable/round_border_white"
+    android:gravity="center">
 
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/layout_grid">
         <ImageView
             android:id="@+id/gridImage"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:src="@android:drawable/ic_menu_gallery"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_xxlarge" />
 
-    <TextView
-        android:id="@+id/item_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Item Name"
-        android:textColor="@color/font_color"
-        android:layout_alignBottom="@+id/gridImage"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/card_elevation_4dp"/>
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Item Name"
+            android:textColor="@color/font_color"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginBottom="@dimen/margin_large"/>
+    </LinearLayout>
 
 </RelativeLayout>

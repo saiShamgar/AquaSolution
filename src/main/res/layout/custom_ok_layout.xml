@@ -15,7 +15,6 @@
             android:id="@+id/tv_custompopup_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:gravity="center"
             android:layout_margin="@dimen/margin_small"
             android:textColor="@color/color_app_blue"
