@@ -12,6 +12,7 @@ import com.PG.testingapp.model.HeadLessGrading.GetGrades;
 import com.PG.testingapp.model.HeadLessGrading.GetGroupCodes;
 import com.PG.testingapp.model.HeadLessGrading.GetVarietyDetails;
 import com.PG.testingapp.model.HeadLessGrading.LotNumbersStatus;
+import com.PG.testingapp.model.LocationPlacement.BarcodeResponce;
 import com.PG.testingapp.model.LoginResponse;
 import com.PG.testingapp.model.SiteWTInsertResponce;
 import com.PG.testingapp.model.Status;
@@ -171,6 +172,12 @@ public interface ApiService {
     @POST("app_headon_save_details/")
     Call<Status> insert_h_on(
             @Field("data")String json);
+
+    //location placement
+    @FormUrlEncoded
+    @POST("app_cs_scan_barcode/")
+    Call<BarcodeResponce> scanbarcode(
+            @Field("barcode")String barcode);
 
 
 

@@ -51,6 +51,9 @@ public class FactoryWeighmentGridAdapter extends RecyclerView.Adapter<FactoryWei
         holder.checkbox_ftwt.setTag(i);
         holder.checkbox_ftwt.setChecked(i==selected);
 
+        holder.txt_quatity.setVisibility(View.VISIBLE);
+        holder.txt_quatity.setText(lotNumbers.get(i).getStatus());
+
         String sl= String.valueOf(i+1);
         holder.txt_sl_no.setText(sl);
         holder.txt_lot_no.setText(lotNumbers.get(i).getLot_No());
@@ -76,7 +79,7 @@ public class FactoryWeighmentGridAdapter extends RecyclerView.Adapter<FactoryWei
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private CheckBox checkbox_ftwt;
-        private TextView txt_sl_no,txt_lot_date,txt_lot_no,variaty,location;
+        private TextView txt_sl_no,txt_lot_date,txt_lot_no,variaty,location,txt_quatity;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -86,6 +89,7 @@ public class FactoryWeighmentGridAdapter extends RecyclerView.Adapter<FactoryWei
             txt_lot_no=itemView.findViewById(R.id.txt_lot_no);
             variaty=itemView.findViewById(R.id.txt_variety);
             location=itemView.findViewById(R.id.txt_location);
+            txt_quatity=itemView.findViewById(R.id.txt_quatity);
         }
     }
 }

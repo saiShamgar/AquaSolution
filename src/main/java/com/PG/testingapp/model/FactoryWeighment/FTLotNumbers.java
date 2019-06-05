@@ -23,13 +23,17 @@ public class FTLotNumbers implements Serializable {
     @SerializedName("Org_office_Name")
     private String Org_office_Name;
 
-    public FTLotNumbers(String lot_Date, String lot_No, String product_Variety_Code, String product_Variety_Name, String FK_Org_office_no, String org_office_Name) {
+    @SerializedName("status")
+    private String status;
+
+    public FTLotNumbers(String lot_Date, String lot_No, String product_Variety_Code, String product_Variety_Name, String FK_Org_office_no, String org_office_Name, String status) {
         Lot_Date = lot_Date;
         Lot_No = lot_No;
         Product_Variety_Code = product_Variety_Code;
         Product_Variety_Name = product_Variety_Name;
         this.FK_Org_office_no = FK_Org_office_no;
         Org_office_Name = org_office_Name;
+        this.status = status;
     }
 
     public String getLot_Date() {
@@ -78,5 +82,13 @@ public class FTLotNumbers implements Serializable {
 
     public void setOrg_office_Name(String org_office_Name) {
         Org_office_Name = org_office_Name;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

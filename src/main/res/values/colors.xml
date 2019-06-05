@@ -17,9 +17,10 @@
     <color name="color_blue">#329bf7</color>
     <color name="order_txt_color">#5e5e5e</color>
     <color name="color_app_blue">#0f204b</color>
-    <color name="color_red">#FF0000</color>
+
     <color name="color_ripple">#7B000000</color>
     <color name="color_light_black">#363636</color>
+    <color name="color_red">#db2828</color>
 
     <color name="color_alert">#C0FE0F</color>
     <color name="table_child_color">#d6d6d6</color>

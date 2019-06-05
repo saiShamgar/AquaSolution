@@ -6,13 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.LocationPlacement.LocationPlacement"
-    android:background="@color/act_background">
+    android:background="@color/act_background"
+    android:focusableInTouchMode="true">
 
     <RelativeLayout
         android:id="@+id/toolbar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color_light_black">
+        android:background="@color/color_light_black"
+        android:focusableInTouchMode="true">
 
             <ImageView
                 android:id="@+id/loc_place_put_away_close"
@@ -37,13 +39,12 @@
                 android:src="@drawable/ic_barcode_black"
                 android:layout_centerInParent="true"/>
 
-            <ImageView
+            <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/loc_place_scanner_line"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_scaner"
-                android:scaleType="fitXY"
-                android:layout_centerInParent="true" />
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_scaner_gif"
+                />
 
         </RelativeLayout>
 
@@ -51,21 +52,40 @@
             android:id="@+id/scanResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Scanning.."
+            android:textColorHint="@color/white"
+            android:textColor="@color/color_light_black"
+            android:layout_centerHorizontal="true"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:backgroundTint="@color/color_light_black"
+            android:layout_below="@+id/scanner_layout"
+            android:singleLine="true"
+            android:textCursorDrawable="@color/color_light_black"
+            android:layout_marginBottom="@dimen/margin_xxlarge"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:layout_centerHorizontal="true"
             android:textSize="16dp"
+            android:hint="Sannning"
+            android:gravity="center"
+            android:backgroundTint="@color/color_light_black"
             android:layout_below="@+id/scanner_layout"
             android:singleLine="true"
+            android:textCursorDrawable="@color/color_light_black"
             android:layout_marginBottom="@dimen/margin_xxlarge"/>
+
 
         </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/layoutHeader"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:background="@color/white"
         android:layout_below="@+id/toolbar_layout"
@@ -77,45 +97,51 @@
             android:text="S.No"
             android:textColor="@color/black"
             android:gravity="center"
+            android:textStyle="bold"
             android:textSize="@dimen/t0_size"
             android:layout_weight="1"/>
 
         <TextView
+            android:textStyle="bold"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="Scanned date and time"
+            android:text="Scanned\ntime"
             android:textColor="@color/black"
             android:gravity="center"
             android:textSize="@dimen/t0_size"
             android:layout_weight="1"/>
 
         <TextView
+            android:textStyle="bold"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="Pellet/Stock No"
+            android:text="Pellet/\nStock No"
             android:textColor="@color/black"
             android:gravity="center"
             android:textSize="@dimen/t0_size"
             android:layout_weight="1"/>
 
         <TextView
+            android:textStyle="bold"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="Location No"
+            android:text="Location\n No"
             android:textColor="@color/black"
             android:gravity="center"
             android:textSize="@dimen/t0_size"
             android:layout_weight="1"/>
         <TextView
+            android:textStyle="bold"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Status"
             android:textColor="@color/black"
-            android:gravity="center"
+           android:gravity="center"
             android:textSize="@dimen/t0_size"
             android:layout_weight="1"/>
 
         <TextView
+            android:textStyle="bold"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Conformation"

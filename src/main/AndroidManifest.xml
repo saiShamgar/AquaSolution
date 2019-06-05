@@ -28,8 +28,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".UI.LocationPlacement.LocationPlacement"
-            android:theme="@style/AppThemeWithNoActionBar"
-            android:screenOrientation="portrait"></activity>
+            android:theme="@style/AppThemeWithNoActionBar1"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
         <activity
             android:name=".UI.HeadOnGrading.HeadOnGrading"
             android:screenOrientation="portrait"

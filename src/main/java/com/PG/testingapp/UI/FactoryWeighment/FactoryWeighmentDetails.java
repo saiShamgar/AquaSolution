@@ -173,7 +173,6 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
 
     private void setSpinner() {
         final List<String> list = new ArrayList<>();
-
         list.clear();
         list.add("Select count");
         if (AppUtils.isNetworkAvailable(mContext)){
@@ -263,7 +262,7 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
                                             @Override
                                             public void run() {
                                                 final InputMethodManager imm = (InputMethodManager) edt_value_edt_total_weight_kgs.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-                                                imm.showSoftInput(edt_value_edt_total_weight_kgs, InputMethodManager.SHOW_IMPLICIT);
+                                                imm.showSoftInput(edt_value_edt_total_weight_kgs,InputMethodManager.SHOW_IMPLICIT);
                                                 edt_value_edt_total_weight_kgs.requestFocus(); // needed if you have more then one input
                                             }
                                         });

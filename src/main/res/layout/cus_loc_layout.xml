@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/layoutHeader"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:layout_below="@+id/toolbar_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="@dimen/margin_large">
+
+    <TextView
+        android:id="@+id/loc_s_no"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="S.No"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="@dimen/t0_size"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/loc_date_time"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="Scanned time"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="@dimen/t0_size"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/loc_st_no"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="Pellet/Stock No"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="@dimen/t0_size"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/loc_loc_no"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="Location No"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="@dimen/t0_size"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/loc_status"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="Status"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/t0_size"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/loc_confirm"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="Confirm"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="@dimen/t0_size"
+        android:layout_weight="1"
+        android:padding="@dimen/card_radius_8dp"
+        android:background="@drawable/background_blue_low_radius"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/loc_pending"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="pending"
+        android:textColor="@color/color_red"
+        android:gravity="center"
+        android:textSize="@dimen/t0_size"
+        android:layout_weight="1"
+        android:padding="@dimen/card_radius_8dp"
+        android:visibility="gone"
+        android:background="@drawable/stroke_background_red_low_radius"/>
+
+
+
+
+</LinearLayout>
