@@ -16,6 +16,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -51,6 +56,8 @@ dependencies {
     implementation 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
 
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.3'
+
+    implementation 'com.github.felHR85:UsbSerial:6.0.4'
 }
 
 buildscript {
@@ -66,4 +73,11 @@ buildscript {
 repositories {
     google()
     jcenter()
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
 }

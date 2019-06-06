@@ -19,7 +19,7 @@ public class FTInsertionData {
     private String Product_Variety_Code;
 
     @SerializedName("Variety_Count_Code")
-    private ArrayList<String> Variety_Count_Code;
+    private String Variety_Count_Code;
 
     @SerializedName("Factory_Weighment_Date_Time")
     private ArrayList<String> Factory_Weighment_Date_Time;
@@ -39,7 +39,8 @@ public class FTInsertionData {
     @SerializedName("FW_Net_Weight")
     private ArrayList<String> FW_Net_Weight;
 
-    public FTInsertionData(String fws_emp_id, String lot_No, String material_Group_Code, String product_Variety_Code, ArrayList<String> variety_Count_Code, ArrayList<String> factory_Weighment_Date_Time, ArrayList<String> FW_No_of_Nets, ArrayList<String> FW_Total_Weight, ArrayList<String> FW_Tare_Weight, ArrayList<String> FW_Total_Tare_Weight, ArrayList<String> FW_Net_Weight) {
+
+    public FTInsertionData(String fws_emp_id, String lot_No, String material_Group_Code, String product_Variety_Code, String variety_Count_Code, ArrayList<String> factory_Weighment_Date_Time, ArrayList<String> FW_No_of_Nets, ArrayList<String> FW_Total_Weight, ArrayList<String> FW_Tare_Weight, ArrayList<String> FW_Total_Tare_Weight, ArrayList<String> FW_Net_Weight) {
         this.fws_emp_id = fws_emp_id;
         Lot_No = lot_No;
         Material_Group_Code = material_Group_Code;
@@ -85,11 +86,11 @@ public class FTInsertionData {
         Product_Variety_Code = product_Variety_Code;
     }
 
-    public ArrayList<String> getVariety_Count_Code() {
+    public String getVariety_Count_Code() {
         return Variety_Count_Code;
     }
 
-    public void setVariety_Count_Code(ArrayList<String> variety_Count_Code) {
+    public void setVariety_Count_Code(String variety_Count_Code) {
         Variety_Count_Code = variety_Count_Code;
     }
 

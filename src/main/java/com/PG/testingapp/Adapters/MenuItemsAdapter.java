@@ -21,6 +21,7 @@ import com.PG.testingapp.UI.HeadOnHeadLessGrading.HeadOnHeadLessGrading;
 import com.PG.testingapp.UI.LocationPlacement.LocationPlacement;
 import com.PG.testingapp.UI.Site_Weightment.Site_weightment;
 import com.PG.testingapp.UI.ValueEdition;
+import com.PG.testingapp.UI.WeightLoadMachine;
 import com.PG.testingapp.Utils.AppUtils;
 import com.google.zxing.integration.android.IntentIntegrator;
 
@@ -73,6 +74,7 @@ public class MenuItemsAdapter extends RecyclerView.Adapter<MenuItemsAdapter.View
                         Intent valueEdition=new Intent(context, LocationPlacement.class);
                         context.startActivity(valueEdition);
                     }
+
                 }
                 else {
                     AppUtils.showToast(context,context.getString(R.string.error_network));

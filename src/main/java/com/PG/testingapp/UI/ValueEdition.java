@@ -1,7 +1,13 @@
 package com.PG.testingapp.UI;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.hardware.usb.UsbDevice;
+import android.hardware.usb.UsbDeviceConnection;
+import android.hardware.usb.UsbEndpoint;
+import android.hardware.usb.UsbManager;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.PG.testingapp.Adapters.GridViewAdapter;
 import com.PG.testingapp.Api.ApiService;
@@ -19,6 +26,7 @@ import com.PG.testingapp.BaseActivity;
 import com.PG.testingapp.InterFace.OnRadioButtonClick;
 import com.PG.testingapp.LoginActivity;
 import com.PG.testingapp.R;
+import com.PG.testingapp.UI.LocationPlacement.LocationPlacement;
 import com.PG.testingapp.Utils.AppConstant;
 import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.model.FactoryWeighment.FTLotNumbers;
@@ -29,6 +37,7 @@ import com.PG.testingapp.model.Processes_data;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,6 +53,10 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
     //Adapters
     private GridViewAdapter adapter;
     private Context mContext;
+
+    String YOUR_DEVICE_NAME;
+    byte[] DATA;
+    int TIMEOUT;
 
     //Strings
     String name,fullName;
@@ -75,13 +88,12 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
         value_edition_next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (processes_data!=null){
-                    Intent val_details=new Intent(ValueEdition.this,ValueEditionDetails.class);
-                    val_details.putExtra("process",processes_data);
-                    startActivity(val_details);
-                }else {
-                    AppUtils.showToast(mContext,"Please select existing lot number");
-                }
+
+                   // startActivityForResult(new Intent(ValueEdition.this, WeightLoadMachine.class), 100);
+
+
+
+
             }
         });
 
@@ -91,6 +103,24 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
                 onBackPressed();
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 100)
+        {
+            if (resultCode == Activity.RESULT_OK)
+            {
+                Log.e("weight", "onActivityResult: "+data.getStringExtra("weight"));
+//                tvTotalWeight.setText(data.getStringExtra("weight"));
+//                totalWeight = Math.round(Double.parseDouble(tvTotalWeight.getText().toString().trim()));
+//
+//                Log.i(TAG, "onActivityResult: Total Weight"+totalWeight);
+//                calculateWeight();
+            }
+        }
     }
 
     private void callService() {

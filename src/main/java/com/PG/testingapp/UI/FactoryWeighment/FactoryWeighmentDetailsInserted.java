@@ -70,7 +70,6 @@ public class FactoryWeighmentDetailsInserted extends BaseActivity {
     private Context context;
     private SharedPreferenceConfig config;
     private ArrayList<ActualCodes> detaillsModels1;
-    private String materialCode,VarietyName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,8 +84,7 @@ public class FactoryWeighmentDetailsInserted extends BaseActivity {
         detaillsModels1 = (ArrayList<ActualCodes>) b.getSerializable("objNames1");
         processes_data=(FTLotNumbers) getIntent().getSerializableExtra("process");
 
-        materialCode=getIntent().getExtras().getString("material_name");
-        VarietyName=getIntent().getExtras().getString("varaity_name");
+
 
         recycler_view_ho_hl_details=findViewById(R.id.recycler_view_ft_details_inserted);
         back_button_val_edt_inserted=findViewById(R.id.back_button_ft_details_inserted);
@@ -161,9 +159,9 @@ public class FactoryWeighmentDetailsInserted extends BaseActivity {
         FTInsertionData jsonData=new FTInsertionData(
                 config.readLoginEmpId(),
                 processes_data.getLot_No(),
-                materialCode,
-                VarietyName,
-                Variety_Count_Code,
+                processes_data.getFk_Material_Group_Code(),
+                processes_data.getProduct_Variety_Code(),
+                processes_data.getVariety_count_code2(),
                 date_time,
                 VAP_No_of_Nets,
                 VAP_Total_Weight,

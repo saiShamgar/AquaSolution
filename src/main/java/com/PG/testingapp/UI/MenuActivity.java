@@ -298,6 +298,7 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
             UsbDevice device = devices.get(deviceName);
             String VID = Integer.toHexString(device.getVendorId()).toUpperCase();
             String PID = Integer.toHexString(device.getProductId()).toUpperCase();
+          //  String RESULT = Integer.toHexString(device.getInterface(0)).toUpperCase();
             if (!manager.hasPermission(device)) {
                 PendingIntent mPermissionIntent = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), 0);
                 manager.requestPermission(device, mPermissionIntent);
