@@ -10,8 +10,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AppUrl {
 
-    //public static final String BASE_URL =  "http://phpphp.pg-erp.com/index.php/";
-    public static final String BASE_URL =  "http://ghapapp.pg-erp.com/";
+    public static final String BASE_URL =  "http://phpphp.pg-erp.com/index.php/";
+   // public static final String BASE_URL =  "http://ghapapp.pg-erp.com/";
 
     public static Retrofit retrofit=null;
 

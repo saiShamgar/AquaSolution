@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/jme.iml" filepath="$PROJECT_DIR$/jme.iml" />
+      <module fileurl="file://$PROJECT_DIR$/usbSerialForAndroid/usbSerialForAndroid.iml" filepath="$PROJECT_DIR$/usbSerialForAndroid/usbSerialForAndroid.iml" />
     </modules>
   </component>
 </project>

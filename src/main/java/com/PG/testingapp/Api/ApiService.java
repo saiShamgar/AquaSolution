@@ -179,11 +179,14 @@ public interface ApiService {
     Call<BarcodeResponce> scanbarcode(
             @Field("barcode")String barcode);
 
+    @GET("app_cs_scanned_list/")
+    Call<BarcodeResponce> getAllBarcodeResults();
 
-
-
-
-
-
+    @FormUrlEncoded
+    @POST("app_cs_scan_barcode/")
+    Call<BarcodeResponce> saveScanDetails(
+            @Field("PP_Number")String PP_Number,
+            @Field("CS_Pellet_Location_No")String CS_Pellet_Location_No,
+            @Field("Operator_Emp_id")String Operator_Emp_id);
 
 }

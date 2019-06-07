@@ -3,28 +3,46 @@ package com.PG.testingapp.Adapters.LocAdapters;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.PG.testingapp.Adapters.FactoryWeighmentAdapters.FactoryWeighmentDetailsInsertion;
+import com.PG.testingapp.Api.ApiService;
+import com.PG.testingapp.Api.AppUrl;
+import com.PG.testingapp.BaseActivity;
+import com.PG.testingapp.InterFace.ScannedInterface;
 import com.PG.testingapp.R;
+import com.PG.testingapp.Utils.AppConstant;
+import com.PG.testingapp.Utils.AppUtils;
+import com.PG.testingapp.Utils.SharedPreferenceConfig;
+import com.PG.testingapp.model.LocationPlacement.BarcodeResponce;
 import com.PG.testingapp.model.LocationPlacement.BarcodeResults;
 
 import java.util.ArrayList;
 
-public class PutAway_scanner_adapter extends RecyclerView.Adapter<PutAway_scanner_adapter.Viewholder> {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class PutAway_scanner_adapter extends RecyclerView.Adapter<PutAway_scanner_adapter.Viewholder>  {
 
     private Context context;
     private ArrayList<BarcodeResults> barcodeResults;
+    private ScannedInterface scannedInterface;
 
-    public PutAway_scanner_adapter(Context context, ArrayList<BarcodeResults> barcodeResults) {
+    public PutAway_scanner_adapter(Context context, ArrayList<BarcodeResults> barcodeResults, ScannedInterface scannedInterface) {
         this.context = context;
-        this.barcodeResults=barcodeResults;
-
+        this.barcodeResults = barcodeResults;
+        this.scannedInterface = scannedInterface;
     }
+
+
 
     @NonNull
     @Override
@@ -52,7 +70,7 @@ public class PutAway_scanner_adapter extends RecyclerView.Adapter<PutAway_scanne
             holder.loc_loc_no.setText(barcodeResults.get(position).getFK_CS_Pellet_Location_Visible_No());
             holder.loc_status.setText(barcodeResults.get(position).getStatus());
 
-            if (barcodeResults.get(position).getStatus().contains("Scanned")){
+            if (barcodeResults.get(position).getStatus().contains("SCANNED")){
 
                 holder.loc_confirm.setVisibility(View.GONE);
                 holder.loc_pending.setVisibility(View.VISIBLE);
@@ -62,8 +80,22 @@ public class PutAway_scanner_adapter extends RecyclerView.Adapter<PutAway_scanne
                 holder.loc_pending.setVisibility(View.GONE);
             }
 
+            holder.loc_confirm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+
+                    scannedInterface.onButtonClick(barcodeResults.get(position).getPP_Number(),barcodeResults.get(position).getFK_CS_Pellet_Location_No());
+
+                }
+            });
+
 
     }
+
+
+
+
 
     @Override
     public int getItemCount() {
@@ -72,7 +104,8 @@ public class PutAway_scanner_adapter extends RecyclerView.Adapter<PutAway_scanne
 
     public class Viewholder extends RecyclerView.ViewHolder{
 
-        private TextView loc_s_no,loc_date_time,loc_st_no,loc_loc_no,loc_status,loc_confirm,loc_pending;
+        private TextView loc_s_no,loc_date_time,loc_st_no,loc_loc_no,loc_status;
+        private Button loc_confirm,loc_pending;
 
         public Viewholder(@NonNull View itemView) {
             super(itemView);

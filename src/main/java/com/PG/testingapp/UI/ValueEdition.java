@@ -34,9 +34,11 @@ import com.PG.testingapp.model.GettingProcesses;
 import com.PG.testingapp.model.LoginResponse;
 import com.PG.testingapp.model.Process_Location;
 import com.PG.testingapp.model.Processes_data;
+import com.google.android.things.pio.PeripheralManager;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import retrofit2.Call;
@@ -78,7 +80,18 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
         value_edition_next_btn=findViewById(R.id.value_edition_next_btn);
         back_button_val_edt=findViewById(R.id.back_button_val_edt);
 
-        callService();
+     //   callService();
+
+        PeripheralManager manager = PeripheralManager.getInstance();
+        List<String> deviceList = manager.getUartDeviceList();
+        if (deviceList.isEmpty()) {
+            Log.e("tag", "No UART port available on this device.");
+          Toast.makeText(getApplicationContext(),"No UART port available on this device.",Toast.LENGTH_LONG).show();
+        } else {
+            Log.e("tag", "List of available devices: " + deviceList);
+
+            Toast.makeText(getApplicationContext(),"List of available devices: ."+deviceList,Toast.LENGTH_LONG).show();
+        }
 
 //        adapter=new GridViewAdapter(this,this);
 //        valueEdition_recycler_view_bsd_lots.setHasFixedSize(true);

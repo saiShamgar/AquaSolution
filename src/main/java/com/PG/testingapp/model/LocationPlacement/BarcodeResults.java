@@ -21,15 +21,19 @@ public class BarcodeResults {
     @SerializedName("PP_Total_No_of_Cartons")
     private String PP_Total_No_of_Cartons;
 
+    @SerializedName("FK_Existing_Stock_Number")
+    private String FK_Existing_Stock_Number;
+
     @SerializedName("Status")
     private String Status;
 
-    public BarcodeResults(String PP_Number, String PP_Date, String FK_CS_Pellet_Location_No, String FK_CS_Pellet_Location_Visible_No, String PP_Total_No_of_Cartons, String status) {
+    public BarcodeResults(String PP_Number, String PP_Date, String FK_CS_Pellet_Location_No, String FK_CS_Pellet_Location_Visible_No, String PP_Total_No_of_Cartons, String FK_Existing_Stock_Number, String status) {
         this.PP_Number = PP_Number;
         this.PP_Date = PP_Date;
         this.FK_CS_Pellet_Location_No = FK_CS_Pellet_Location_No;
         this.FK_CS_Pellet_Location_Visible_No = FK_CS_Pellet_Location_Visible_No;
         this.PP_Total_No_of_Cartons = PP_Total_No_of_Cartons;
+        this.FK_Existing_Stock_Number = FK_Existing_Stock_Number;
         Status = status;
     }
 
@@ -71,6 +75,14 @@ public class BarcodeResults {
 
     public void setPP_Total_No_of_Cartons(String PP_Total_No_of_Cartons) {
         this.PP_Total_No_of_Cartons = PP_Total_No_of_Cartons;
+    }
+
+    public String getFK_Existing_Stock_Number() {
+        return FK_Existing_Stock_Number;
+    }
+
+    public void setFK_Existing_Stock_Number(String FK_Existing_Stock_Number) {
+        this.FK_Existing_Stock_Number = FK_Existing_Stock_Number;
     }
 
     public String getStatus() {

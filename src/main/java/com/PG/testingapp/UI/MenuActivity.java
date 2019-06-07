@@ -10,6 +10,7 @@ import android.content.IntentFilter;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.hardware.usb.UsbDevice;
+import android.hardware.usb.UsbDeviceConnection;
 import android.hardware.usb.UsbManager;
 import android.os.Build;
 import android.os.Environment;
@@ -50,12 +51,15 @@ import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStates;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 
+
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 import static android.hardware.usb.UsbManager.EXTRA_PERMISSION_GRANTED;
 
@@ -298,6 +302,10 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
             UsbDevice device = devices.get(deviceName);
             String VID = Integer.toHexString(device.getVendorId()).toUpperCase();
             String PID = Integer.toHexString(device.getProductId()).toUpperCase();
+
+
+
+
           //  String RESULT = Integer.toHexString(device.getInterface(0)).toUpperCase();
             if (!manager.hasPermission(device)) {
                 PendingIntent mPermissionIntent = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), 0);

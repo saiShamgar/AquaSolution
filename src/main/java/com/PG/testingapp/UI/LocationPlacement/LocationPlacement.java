@@ -30,14 +30,17 @@ import com.PG.testingapp.Api.ApiService;
 import com.PG.testingapp.Api.AppUrl;
 import com.PG.testingapp.BaseActivity;
 import com.PG.testingapp.InterFace.OnRadioButtonClick;
+import com.PG.testingapp.InterFace.ScannedInterface;
 import com.PG.testingapp.R;
 import com.PG.testingapp.UI.FactoryWeighment.FactoryWeighment;
 import com.PG.testingapp.UI.MenuActivity;
 import com.PG.testingapp.Utils.AppConstant;
 import com.PG.testingapp.Utils.AppUtils;
+import com.PG.testingapp.Utils.SharedPreferenceConfig;
 import com.PG.testingapp.model.FactoryWeighment.FactoryWeighmentGridModel;
 import com.PG.testingapp.model.LocationPlacement.BarcodeResponce;
 import com.PG.testingapp.model.LocationPlacement.BarcodeResults;
+import com.PG.testingapp.model.Status;
 
 import java.util.ArrayList;
 
@@ -48,7 +51,7 @@ import retrofit2.Response;
 
 import static android.hardware.usb.UsbManager.EXTRA_PERMISSION_GRANTED;
 
-public class LocationPlacement extends BaseActivity {
+public class LocationPlacement extends BaseActivity implements ScannedInterface {
 
     //declaring variables
     private GifImageView loc_place_scanner_line;
@@ -58,7 +61,10 @@ public class LocationPlacement extends BaseActivity {
     private PutAway_scanner_adapter adapter;
     private Context context;
     private ApiService apiService;
+    private String loc_no,PP_Number;
+    private SharedPreferenceConfig config;
     private ArrayList<BarcodeResults> barcodeResults=new ArrayList<>();
+
 
 
     @Override
@@ -67,6 +73,7 @@ public class LocationPlacement extends BaseActivity {
         setContentView(R.layout.activity_location_placement);
 
         context=LocationPlacement.this;
+        config=new SharedPreferenceConfig(this);
 
         loc_place_scanner_line=findViewById(R.id.loc_place_scanner_line);
         scanning_recyclerView=findViewById(R.id.scanning_recyclerView);
@@ -75,7 +82,7 @@ public class LocationPlacement extends BaseActivity {
         scanResult.requestFocus();
 
 
-
+        gettingAllPendingResults();
 
         scanResult.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -107,23 +114,65 @@ public class LocationPlacement extends BaseActivity {
             }
         });
 
-
-
-
-
-
-
-
-//        Animation slideUp = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_up);
-//        Animation slidedown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_down);
-//
-//        loc_place_scanner_line.startAnimation(slideUp);
-//        loc_place_scanner_line.startAnimation(slidedown);
-
-
-
     }
 
+    private void gettingAllPendingResults() {
+
+        if (AppUtils.isNetworkAvailable(context)){
+            AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
+            apiService= AppUrl.getApiClient().create(ApiService.class);
+            Call<BarcodeResponce> call=apiService.getAllBarcodeResults();
+            call.enqueue(new Callback<BarcodeResponce>() {
+                @Override
+                public void onResponse(Call<BarcodeResponce> call, Response<BarcodeResponce> response) {
+                    AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                    if (response.body()!=null){
+                        if (response.body().getStatus().contains(AppConstant.MESSAGE)){
+                            AppUtils.showToast(context,response.body().getMessage());
+
+                            if (response.body().getPalatte_Details().size()!=0){
+                                adapter=new PutAway_scanner_adapter(getApplicationContext(),response.body().getPalatte_Details(), (ScannedInterface) context);
+                                scanning_recyclerView.setHasFixedSize(true);
+                                scanning_recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                                //  Log.e("locations",response.body().getLocations().toString());
+                                scanning_recyclerView.setAdapter(adapter);
+                                adapter.notifyDataSetChanged();
+                            }else {
+                                Log.e("palate details","empty");
+                            }
+
+                        }
+                        else {
+                            Log.e("status",response.body().getMessage());
+                            AppUtils.showCustomOkDialog(context, "", response.body().getMessage(), "OK", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                }
+                            });
+                        }
+                    }
+                    else {
+                        AppUtils.showCustomOkDialog(context,"",getResources().getString(R.string.error_default),"OK",null);
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<BarcodeResponce> call, Throwable t) {
+                    Log.e("status",t.toString());
+                    scanResult.setText("");
+                    scanResult.requestFocus();
+                    AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                    AppUtils.showCustomOkDialog(context,
+                            "",
+                            getString(R.string.error_default),
+                            "OK", null);
+                }
+            });
+        }else {
+            AppUtils.showToast(context,getString(R.string.error_network));
+        }
+    }
 
     private void callService(String s) {
         if (AppUtils.isNetworkAvailable(context)){
@@ -141,10 +190,9 @@ public class LocationPlacement extends BaseActivity {
                             scanResult.requestFocus();
 
                             if (response.body().getPalatte_Details().size()!=0){
-                              barcodeResults.addAll(response.body().getPalatte_Details());
-                              adapter=new PutAway_scanner_adapter(getApplicationContext(),barcodeResults);
-                              scanning_recyclerView.setHasFixedSize(true);
-                              scanning_recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                                adapter=new PutAway_scanner_adapter(getApplicationContext(),response.body().getPalatte_Details(),(ScannedInterface) context);
+                                scanning_recyclerView.setHasFixedSize(true);
+                                scanning_recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                                 //  Log.e("locations",response.body().getLocations().toString());
                                 scanning_recyclerView.setAdapter(adapter);
                                 adapter.notifyDataSetChanged();
@@ -192,6 +240,91 @@ public class LocationPlacement extends BaseActivity {
         }
     }
 
+    @Override
+    public void onButtonClick(String pp_num, String locNum) {
+        AppUtils.showCustomOkCancelDialog(context, "",context.getString(R.string.upload), "YES", "NO",
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        saveBarcodeDetails(pp_num,locNum) ;
+                    }
+                },
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
 
 
+
+
+    }
+
+    private void saveBarcodeDetails(String pp_num, String locNum) {
+
+        if (AppUtils.isNetworkAvailable(context)){
+            AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
+            apiService= AppUrl.getApiClient().create(ApiService.class);
+            Call<BarcodeResponce> call=apiService.saveScanDetails(pp_num,loc_no,config.readLoginEmpId());
+            call.enqueue(new Callback<BarcodeResponce>() {
+                @Override
+                public void onResponse(Call<BarcodeResponce> call, Response<BarcodeResponce> response) {
+                    AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                    if (response.body()!=null){
+                        if (response.body().getStatus().contains(AppConstant.MESSAGE)){
+                            AppUtils.showToast(context,response.body().getMessage());
+                            scanResult.setText("");
+                            scanResult.requestFocus();
+
+                            if (response.body().getPalatte_Details().size()!=0){
+                                adapter=new PutAway_scanner_adapter(getApplicationContext(),response.body().getPalatte_Details(),(ScannedInterface) context);
+                                scanning_recyclerView.setHasFixedSize(true);
+                                scanning_recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                                //  Log.e("locations",response.body().getLocations().toString());
+                                scanning_recyclerView.setAdapter(adapter);
+                                adapter.notifyDataSetChanged();
+                            }else {
+                                scanResult.setText("");
+                                scanResult.requestFocus();
+                                Log.e("palate details","empty");
+                            }
+
+
+                        }
+                        else {
+                            Log.e("status",response.body().getMessage());
+                            scanResult.setText("");
+                            scanResult.requestFocus();
+                            AppUtils.showCustomOkDialog(context, "", response.body().getMessage(), "OK", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                }
+                            });
+                        }
+                    }
+                    else {
+                        scanResult.setText("");
+                        scanResult.requestFocus();
+                        AppUtils.showCustomOkDialog(context,"",getResources().getString(R.string.error_default),"OK",null);
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<BarcodeResponce> call, Throwable t) {
+                    Log.e("status",t.toString());
+                    scanResult.setText("");
+                    scanResult.requestFocus();
+                    AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                    AppUtils.showCustomOkDialog(context,
+                            "",
+                            getString(R.string.error_default),
+                            "OK", null);
+                }
+            });
+        }else {
+            AppUtils.showToast(context,getString(R.string.error_network));
+        }
+    }
 }
