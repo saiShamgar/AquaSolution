@@ -62,7 +62,6 @@ public class PutAway_scanner_adapter extends RecyclerView.Adapter<PutAway_scanne
             holder.itemView.setBackgroundColor(Color.parseColor("#F5F6F8"));
         }
 
-
             String sl= String.valueOf(position+1);
             holder.loc_s_no.setText(sl);
             holder.loc_date_time.setText(barcodeResults.get(position).getPP_Date());

@@ -161,7 +161,7 @@ public class FactoryWeighmentDetailsInserted extends BaseActivity {
                 processes_data.getLot_No(),
                 processes_data.getFk_Material_Group_Code(),
                 processes_data.getProduct_Variety_Code(),
-                processes_data.getVariety_count_code2(),
+                Variety_Count_Code,
                 date_time,
                 VAP_No_of_Nets,
                 VAP_Total_Weight,
@@ -173,44 +173,44 @@ public class FactoryWeighmentDetailsInserted extends BaseActivity {
         String json = gson.toJson(jsonData);
         Log.e("ft data ",json);
 
-        AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
-        apiService= AppUrl.getApiClient().create(ApiService.class);
-        Call<Status> call=apiService.factoryIsertionData(json);
-        call.enqueue(new Callback<Status>() {
-            @Override
-            public void onResponse(Call<Status> call, Response<Status> response) {
-                AppUtils.dismissCustomProgress(mCustomProgressDialog);
-                Log.e("status","entered");
-                if (response.body()!=null){
-                    if (response.body().getStatus().contains(AppConstant.MESSAGE)){
-                        Log.e("status",response.body().getMessage());
-                        AppUtils.showToast(context,response.body().getMessage());
-                        Intent goback=new Intent(FactoryWeighmentDetailsInserted.this, MenuActivity.class);
-                        goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(goback);
-                        finish();
-
-                    }else {
-                        Log.e("status","not success");
-                        AppUtils.showCustomOkDialog(context,"",getResources().getString(R.string.error_default),"OK",null);
-                    }
-                }
-                else {
-                    Log.e("status","response null");
-                    AppUtils.showCustomOkDialog(context,"",getResources().getString(R.string.error_default),"OK",null);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Status> call, Throwable t) {
-                Log.e("status",t.toString());
-                AppUtils.dismissCustomProgress(mCustomProgressDialog);
-                AppUtils.showCustomOkDialog(context,
-                        "",
-                        getString(R.string.error_default),
-                        "OK", null);
-            }
-        });
+//        AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
+//        apiService= AppUrl.getApiClient().create(ApiService.class);
+//        Call<Status> call=apiService.factoryIsertionData(json);
+//        call.enqueue(new Callback<Status>() {
+//            @Override
+//            public void onResponse(Call<Status> call, Response<Status> response) {
+//                AppUtils.dismissCustomProgress(mCustomProgressDialog);
+//                Log.e("status","entered");
+//                if (response.body()!=null){
+//                    if (response.body().getStatus().contains(AppConstant.MESSAGE)){
+//                        Log.e("status",response.body().getMessage());
+//                        AppUtils.showToast(context,response.body().getMessage());
+//                        Intent goback=new Intent(FactoryWeighmentDetailsInserted.this, MenuActivity.class);
+//                        goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                        startActivity(goback);
+//                        finish();
+//
+//                    }else {
+//                        Log.e("status","not success");
+//                        AppUtils.showCustomOkDialog(context,"",getResources().getString(R.string.error_default),"OK",null);
+//                    }
+//                }
+//                else {
+//                    Log.e("status","response null");
+//                    AppUtils.showCustomOkDialog(context,"",getResources().getString(R.string.error_default),"OK",null);
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Status> call, Throwable t) {
+//                Log.e("status",t.toString());
+//                AppUtils.dismissCustomProgress(mCustomProgressDialog);
+//                AppUtils.showCustomOkDialog(context,
+//                        "",
+//                        getString(R.string.error_default),
+//                        "OK", null);
+//            }
+//        });
 
 
 

@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 import com.PG.testingapp.R;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -174,12 +176,22 @@ public class AppUtils {
         return null;
     }
 
+    public static String roundValue(String s){
+
+        String s1="";
+        BigDecimal bd1 = new BigDecimal(s).setScale(2, RoundingMode.HALF_UP);
+        s1= String.valueOf(bd1.doubleValue());
+
+        return s1;
+
+    }
+
 
     public static String dateFormat(String time){
         String mydate="";
 
-        SimpleDateFormat comigDate = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss a");
-        SimpleDateFormat displayDate = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a");
+        SimpleDateFormat comigDate = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat displayDate = new SimpleDateFormat("dd-MM-yyyy");
         try {
              mydate = displayDate.format(comigDate.parse(time));
 

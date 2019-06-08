@@ -439,7 +439,7 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
                                     emp_name=emp_name+response.body().getSchedule_details().getGrader_emp_id().get(i)+" , ";
                                 }
                                 emp_name=emp_name.replaceAll(" , $","");
-                                edttxt_siteweighment_scheduledate.setText(response.body().getSchedule_details().getDate());
+                                edttxt_siteweighment_scheduledate.setText(AppUtils.dateFormat(response.body().getSchedule_details().getDate()));
                                 edttxt_siteweighment_grader.setText(emp_name);
                                 edttxt_siteweighment_vehicalno.setText(response.body().getSchedule_details().getVehecial_id());
 

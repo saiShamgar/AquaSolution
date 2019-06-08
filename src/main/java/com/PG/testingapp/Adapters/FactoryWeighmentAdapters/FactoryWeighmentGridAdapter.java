@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.PG.testingapp.Adapters.GridViewAdapter;
 import com.PG.testingapp.InterFace.OnRadioButtonClick;
 import com.PG.testingapp.R;
+import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.model.FactoryWeighment.FTLotNumbers;
 
 import java.util.ArrayList;
@@ -52,14 +53,13 @@ public class FactoryWeighmentGridAdapter extends RecyclerView.Adapter<FactoryWei
         holder.checkbox_ftwt.setChecked(i==selected);
 
         holder.txt_quatity.setVisibility(View.VISIBLE);
-        holder.txt_count.setVisibility(View.VISIBLE);
-        holder.txt_count.setText(lotNumbers.get(i).getVarietycount());
+
         holder.txt_quatity.setText(lotNumbers.get(i).getStatus());
 
         String sl= String.valueOf(i+1);
         holder.txt_sl_no.setText(sl);
         holder.txt_lot_no.setText(lotNumbers.get(i).getLot_No());
-        holder.txt_lot_date.setText(lotNumbers.get(i).getLot_Date());
+        holder.txt_lot_date.setText(AppUtils.dateFormat(lotNumbers.get(i).getLot_Date()));
         holder.variaty.setText(lotNumbers.get(i).getProduct_Variety_Name());
         holder.location.setText(lotNumbers.get(i).getOrg_office_Name());
         if(i %2 == 1)

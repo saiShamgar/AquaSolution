@@ -98,9 +98,9 @@ public class HeadLessGradingDetailsInserted extends BaseActivity {
         tot_weight=findViewById(R.id.tot_weight);
 
         if (status.contains("HL")){
-            toolbar_heading_hl_details_inserted.setText("HLG Summary");
+            toolbar_heading_hl_details_inserted.setText("HeadLess Grading Summary");
         }else if (status.contains("HO")){
-            toolbar_heading_hl_details_inserted.setText("HOG Summary");
+            toolbar_heading_hl_details_inserted.setText("HeadOn Grading Summary");
         }
 
         adapter=new HeadLessGradingDetailsInsertedAdapter(this,detaillsModels,"HLG");

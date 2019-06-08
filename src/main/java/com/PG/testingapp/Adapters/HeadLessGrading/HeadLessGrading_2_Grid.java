@@ -14,13 +14,15 @@ import com.PG.testingapp.R;
 import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.model.ValueEditionDetaillsModel;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class HeadLessGrading_2_Grid extends RecyclerView.Adapter<HeadLessGrading_2_Grid.Viewholder> {
 
     private Context context;
     private ArrayList<ValueEditionDetaillsModel> details;
-    float cummulativeWeight;
+    float cummulativeWeight,total_weight;
     private String status;
 
     public HeadLessGrading_2_Grid(Context context, ArrayList<ValueEditionDetaillsModel> details, String status) {
@@ -61,9 +63,11 @@ public class HeadLessGrading_2_Grid extends RecyclerView.Adapter<HeadLessGrading
                 }
             });
 
-            cummulativeWeight=cummulativeWeight+ valueEditionDetaillsModel1.getNet_weight();
-            holder.txt_cumulative_wt.setText(String.valueOf(cummulativeWeight));
 
+            cummulativeWeight=cummulativeWeight+ valueEditionDetaillsModel1.getNet_weight();
+            BigDecimal bd1 = new BigDecimal(cummulativeWeight).setScale(2, RoundingMode.HALF_UP);
+            cummulativeWeight= (float) bd1.doubleValue();
+            holder.txt_cumulative_wt.setText(String.valueOf(cummulativeWeight));
             if(position %2 == 1)
             {
                 holder.itemView.setBackgroundColor(Color.parseColor("#F5F6F8"));
@@ -81,9 +85,11 @@ public class HeadLessGrading_2_Grid extends RecyclerView.Adapter<HeadLessGrading
 
             holder.txt_time.setText(valueEditionDetaillsModel1.getTime());
             holder.txt_no_nets.setText(String.valueOf(valueEditionDetaillsModel1.getNo_of_nets()));
-            holder.txt_total_weight.setText(String.valueOf(valueEditionDetaillsModel1.getTotal_weight()));
-            holder.txt_total_tare_wt.setText(String.valueOf( valueEditionDetaillsModel1.getTotal_tare_weight()));
-            holder.txt_net_weight.setText(String.valueOf(valueEditionDetaillsModel1.getNet_weight()));
+
+            holder.txt_total_weight.setText(AppUtils.roundValue(String.valueOf(valueEditionDetaillsModel1.getTotal_weight())));
+
+            holder.txt_total_tare_wt.setText(AppUtils.roundValue(String.valueOf( valueEditionDetaillsModel1.getTotal_tare_weight())));
+            holder.txt_net_weight.setText(AppUtils.roundValue(String.valueOf(valueEditionDetaillsModel1.getNet_weight())));
             holder.txt_count.setText(String.valueOf(valueEditionDetaillsModel1.getCount_code()));
             holder.txt_grade.setText(String.valueOf(valueEditionDetaillsModel1.getGradeNo()));
         }
@@ -112,9 +118,12 @@ public class HeadLessGrading_2_Grid extends RecyclerView.Adapter<HeadLessGrading
                 }
             });
 
-            cummulativeWeight=cummulativeWeight+ valueEditionDetaillsModel1.getNet_weight();
-            holder.txt_cumulative_wt.setText(String.valueOf(cummulativeWeight));
 
+
+            cummulativeWeight=cummulativeWeight+ valueEditionDetaillsModel1.getNet_weight();
+            BigDecimal bd1 = new BigDecimal(cummulativeWeight).setScale(2, RoundingMode.HALF_UP);
+            cummulativeWeight= (float) bd1.doubleValue();
+            holder.txt_cumulative_wt.setText(String.valueOf(cummulativeWeight));
             if(position %2 == 1)
             {
                 holder.itemView.setBackgroundColor(Color.parseColor("#F5F6F8"));
@@ -131,9 +140,11 @@ public class HeadLessGrading_2_Grid extends RecyclerView.Adapter<HeadLessGrading
             holder.txt_sl_no.setText(sl);
             holder.txt_time.setText(valueEditionDetaillsModel1.getTime());
             holder.txt_no_nets.setText(String.valueOf(valueEditionDetaillsModel1.getNo_of_nets()));
-            holder.txt_total_weight.setText(String.valueOf(valueEditionDetaillsModel1.getTotal_weight()));
-            holder.txt_total_tare_wt.setText(String.valueOf( valueEditionDetaillsModel1.getTotal_tare_weight()));
-            holder.txt_net_weight.setText(String.valueOf(valueEditionDetaillsModel1.getNet_weight()));
+            holder.txt_total_weight.setText(AppUtils.roundValue(String.valueOf(valueEditionDetaillsModel1.getTotal_weight())));
+
+            holder.txt_total_tare_wt.setText(AppUtils.roundValue(String.valueOf( valueEditionDetaillsModel1.getTotal_tare_weight())));
+
+            holder.txt_net_weight.setText(AppUtils.roundValue(String.valueOf(valueEditionDetaillsModel1.getNet_weight())));
             holder.txt_count.setText(String.valueOf(valueEditionDetaillsModel1.getCount_code()));
         }
 
@@ -162,6 +173,8 @@ public class HeadLessGrading_2_Grid extends RecyclerView.Adapter<HeadLessGrading
             });
 
             cummulativeWeight=cummulativeWeight+ valueEditionDetaillsModel1.getNet_weight();
+            BigDecimal bd1 = new BigDecimal(cummulativeWeight).setScale(2, RoundingMode.HALF_UP);
+            cummulativeWeight= (float) bd1.doubleValue();
             holder.txt_cumulative_wt.setText(String.valueOf(cummulativeWeight));
 
             if(position %2 == 1)
@@ -180,9 +193,11 @@ public class HeadLessGrading_2_Grid extends RecyclerView.Adapter<HeadLessGrading
             holder.txt_sl_no.setText(sl);
             holder.txt_time.setText(valueEditionDetaillsModel1.getTime());
             holder.txt_no_nets.setText(String.valueOf(valueEditionDetaillsModel1.getNo_of_nets()));
-            holder.txt_total_weight.setText(String.valueOf(valueEditionDetaillsModel1.getTotal_weight()));
-            holder.txt_total_tare_wt.setText(String.valueOf( valueEditionDetaillsModel1.getTotal_tare_weight()));
-            holder.txt_net_weight.setText(String.valueOf(valueEditionDetaillsModel1.getNet_weight()));
+
+            holder.txt_total_weight.setText(AppUtils.roundValue(String.valueOf(valueEditionDetaillsModel1.getTotal_weight())));
+
+            holder.txt_total_tare_wt.setText(AppUtils.roundValue(String.valueOf( valueEditionDetaillsModel1.getTotal_tare_weight())));
+            holder.txt_net_weight.setText(AppUtils.roundValue(String.valueOf(valueEditionDetaillsModel1.getNet_weight())));
             holder.txt_count.setText(String.valueOf(valueEditionDetaillsModel1.getGroup_person()));
         }
 
@@ -211,6 +226,8 @@ public class HeadLessGrading_2_Grid extends RecyclerView.Adapter<HeadLessGrading
             });
 
             cummulativeWeight=cummulativeWeight+ valueEditionDetaillsModel1.getNet_weight();
+            BigDecimal bd1 = new BigDecimal(cummulativeWeight).setScale(2, RoundingMode.HALF_UP);
+            cummulativeWeight= (float) bd1.doubleValue();
             holder.txt_cumulative_wt.setText(String.valueOf(cummulativeWeight));
 
             if(position %2 == 1)
@@ -229,9 +246,11 @@ public class HeadLessGrading_2_Grid extends RecyclerView.Adapter<HeadLessGrading
             holder.txt_sl_no.setText(sl);
             holder.txt_time.setText(valueEditionDetaillsModel1.getTime());
             holder.txt_no_nets.setText(String.valueOf(valueEditionDetaillsModel1.getNo_of_nets()));
-            holder.txt_total_weight.setText(String.valueOf(valueEditionDetaillsModel1.getTotal_weight()));
-            holder.txt_total_tare_wt.setText(String.valueOf( valueEditionDetaillsModel1.getTotal_tare_weight()));
-            holder.txt_net_weight.setText(String.valueOf(valueEditionDetaillsModel1.getNet_weight()));
+
+            holder.txt_total_weight.setText(AppUtils.roundValue(String.valueOf(valueEditionDetaillsModel1.getTotal_weight())));
+
+            holder.txt_total_tare_wt.setText(AppUtils.roundValue(String.valueOf( valueEditionDetaillsModel1.getTotal_tare_weight())));
+            holder.txt_net_weight.setText(AppUtils.roundValue(String.valueOf(valueEditionDetaillsModel1.getNet_weight())));
             holder.txt_count.setText(String.valueOf(valueEditionDetaillsModel1.getGroup_person()));
         }
 

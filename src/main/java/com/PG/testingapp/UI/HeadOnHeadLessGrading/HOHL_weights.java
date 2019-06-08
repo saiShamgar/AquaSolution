@@ -125,7 +125,7 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
         spinner_HOHL_group_head=findViewById(R.id.spinner_HOHL_group_head);
 
         setSpinner();
-        txt_h_l_g_lot_date.setText(processes_data.getLot_date());
+        txt_h_l_g_lot_date.setText(AppUtils.dateFormat(processes_data.getLot_date()));
         txt_h_l_g_lot_no.setText(processes_data.getLotNo());
         txt_ftwt_det_materialGroupName.setText(processes_data.getMaterial_Group_Name());
         txt_ftwt_det_veriaty_name.setText(processes_data.getProduct_Variety_Name());
@@ -254,7 +254,7 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
         if (AppUtils.isNetworkAvailable(mContext)){
             AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
             apiService= AppUrl.getApiClient().create(ApiService.class);
-            Call<Getcodes_Grouphead> call=apiService.getCodes_heads(processes_data.getPvc(),processes_data.getLotNo());
+            Call<Getcodes_Grouphead> call=apiService.getCodes_heads(processes_data.getVcc(),processes_data.getLotNo());
             call.enqueue(new Callback<Getcodes_Grouphead>() {
                 @Override
                 public void onResponse(Call<Getcodes_Grouphead> call, Response<Getcodes_Grouphead> response) {
@@ -313,16 +313,13 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.txt_HOHL_dts_weight_btn_save:
-                if (count != "Select count" ) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                        spinner_layout.setBackground(getResources().getDrawable(R.drawable.white_border));
-                    }
+
                     if (group_name != "Select Group Head"){
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                             spinner_layout_HOHL_groupHead.setBackground(getResources().getDrawable(R.drawable.stroke_back_ground_gray));
                         }
                         if (doValidation()) {
-                            AppUtils.showCustomOkCancelDialog(this, "","Do you want change count and group head?", "No", "Yes",
+                            AppUtils.showCustomOkCancelDialog(this, "","Do you want change  group head?", "No", "Yes",
                                     new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
@@ -386,7 +383,7 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
                                             value_edt_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
 
                                             clearText();
-                                            spinner_val_edt_det.setSelection(0);
+                                            //spinner_val_edt_det.setSelection(0);
                                             spinner_HOHL_group_head.setSelection(0);
                                         }
                                     });
@@ -402,13 +399,6 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
                     }
 
 
-
-                } else {
-                    AppUtils.showToast(mContext, "please select count");
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                        spinner_layout.setBackground(getResources().getDrawable(R.drawable.yellow_background));
-                    }
-                }
                 break;
 
             case R.id.txt_HOHL_weight_btn_complete:

@@ -10,8 +10,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.PG.testingapp.R;
+import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.model.ValueEditionDetaillsModel;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class FactoryWeighmentDetailsInsertion extends RecyclerView.Adapter<FactoryWeighmentDetailsInsertion.ViewHolder> {
@@ -45,11 +48,16 @@ public class FactoryWeighmentDetailsInsertion extends RecyclerView.Adapter<Facto
 
         String sl= String.valueOf(i+1);
         holder.txt_sl_no.setText(sl);
+
         cummulative_wt=cummulative_wt+insertDetails.get(i).getNet_weight();
+        BigDecimal bd1 = new BigDecimal(cummulative_wt).setScale(2, RoundingMode.HALF_UP);
+        cummulative_wt= (float) bd1.doubleValue();
+
         holder.txt_count.setText(insertDetails.get(i).getGroup_person());
         holder.txt_time.setText(insertDetails.get(i).getTime());
         holder.txt_cummulative_wt.setText(String.valueOf(cummulative_wt));
-        holder.txt_net_weight.setText(String.valueOf( insertDetails.get(i).getNet_weight()));
+        holder.txt_net_weight.setText(AppUtils.roundValue(String.valueOf(insertDetails.get(i).getNet_weight())));
+
 
 
     }

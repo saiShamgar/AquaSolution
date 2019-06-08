@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.PG.testingapp.R;
+import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.model.ValueEditionDetaillsModel;
 
 import java.util.ArrayList;
@@ -47,9 +48,11 @@ public class HOHL_Insertion_Adapter extends RecyclerView.Adapter<HOHL_Insertion_
         holder.txt_count.setText(insertDetails.get(i).getCount_code());
         holder.txt_time.setText(insertDetails.get(i).getTime());
         holder.txt_no_nets.setText(String.valueOf(insertDetails.get(i).getNo_of_nets()));
-        holder.txt_total_tare_wt.setText(String.valueOf( insertDetails.get(i).getTotal_tare_weight()));
-        holder.txt_total_weight.setText(String.valueOf( insertDetails.get(i).getTotal_weight()));
-        holder.txt_net_weight.setText(String.valueOf( insertDetails.get(i).getNet_weight()));
+
+        holder.txt_total_tare_wt.setText(AppUtils.roundValue(String.valueOf( insertDetails.get(i).getTotal_tare_weight())));
+        holder.txt_total_weight.setText(AppUtils.roundValue(String.valueOf(insertDetails.get(i).getTotal_weight())));
+        holder.txt_net_weight.setText(AppUtils.roundValue(String.valueOf( insertDetails.get(i).getNet_weight())));
+
     }
 
     @Override

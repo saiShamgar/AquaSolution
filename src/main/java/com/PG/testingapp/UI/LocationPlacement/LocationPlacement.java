@@ -266,7 +266,7 @@ public class LocationPlacement extends BaseActivity implements ScannedInterface 
         if (AppUtils.isNetworkAvailable(context)){
             AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
             apiService= AppUrl.getApiClient().create(ApiService.class);
-            Call<BarcodeResponce> call=apiService.saveScanDetails(pp_num,loc_no,config.readLoginEmpId());
+            Call<BarcodeResponce> call=apiService.saveScanDetails(pp_num,locNum,config.readLoginEmpId());
             call.enqueue(new Callback<BarcodeResponce>() {
                 @Override
                 public void onResponse(Call<BarcodeResponce> call, Response<BarcodeResponce> response) {
@@ -277,18 +277,14 @@ public class LocationPlacement extends BaseActivity implements ScannedInterface 
                             scanResult.setText("");
                             scanResult.requestFocus();
 
-                            if (response.body().getPalatte_Details().size()!=0){
-                                adapter=new PutAway_scanner_adapter(getApplicationContext(),response.body().getPalatte_Details(),(ScannedInterface) context);
-                                scanning_recyclerView.setHasFixedSize(true);
-                                scanning_recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                                //  Log.e("locations",response.body().getLocations().toString());
-                                scanning_recyclerView.setAdapter(adapter);
-                                adapter.notifyDataSetChanged();
-                            }else {
-                                scanResult.setText("");
-                                scanResult.requestFocus();
-                                Log.e("palate details","empty");
-                            }
+
+                            adapter=new PutAway_scanner_adapter(getApplicationContext(),response.body().getPalatte_Details(),(ScannedInterface) context);
+                            scanning_recyclerView.setHasFixedSize(true);
+                            scanning_recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                            //  Log.e("locations",response.body().getLocations().toString());
+                            scanning_recyclerView.setAdapter(adapter);
+                            adapter.notifyDataSetChanged();
+
 
 
                         }

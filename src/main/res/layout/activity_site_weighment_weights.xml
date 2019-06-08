@@ -39,7 +39,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1.5"
                 android:layout_height="wrap_content"
-                android:text="SW Weights"
+                android:text="Site Weighment Weights"
                 android:id="@+id/toolbar_heading_val_det"
                 android:layout_marginTop="28dp"
                 android:layout_marginLeft="8dp"

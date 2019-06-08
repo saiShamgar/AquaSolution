@@ -14,6 +14,7 @@ import com.PG.testingapp.Adapters.FactoryWeighmentAdapters.FactoryWeighmentGridA
 import com.PG.testingapp.InterFace.HeadlessGradinRadioClick;
 import com.PG.testingapp.InterFace.OnRadioButtonClick;
 import com.PG.testingapp.R;
+import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.model.FactoryWeighment.FTLotNumbers;
 import com.PG.testingapp.model.HeadLessGrading.Lot_numbers;
 
@@ -56,7 +57,7 @@ public class HeadLessGradingGridAdapter extends RecyclerView.Adapter<HeadLessGra
         String sl= String.valueOf(i+1);
         holder.txt_sl_no.setText(sl);
         holder.txt_lot_no.setText(Lot_No.get(i).getLot_No());
-        holder.txt_lot_date.setText(Lot_No.get(i).getLot_Date());
+        holder.txt_lot_date.setText(AppUtils.dateFormat(Lot_No.get(i).getLot_Date()));
         holder.variaty.setText(Lot_No.get(i).getProduct_Variety_Name());
         holder.location.setText(Lot_No.get(i).getVariety_Count());
         holder.txt_quatity.setText(Lot_No.get(i).getQuantity());

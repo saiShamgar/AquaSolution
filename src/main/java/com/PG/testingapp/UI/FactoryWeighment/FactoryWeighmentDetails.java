@@ -56,12 +56,12 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
 
     private TextView txt_value_edt_dts_weight_btn_save,txt_value_edt_weight_btn_complete,txt_value_edt_weight_date_time,
             txt_value_edt_weight_group_name,txt_value_edt_weight_total_tare_wt,txt_value_edt_weight_net_weight,txt_ftwt_det_materialGroupName
-            ,txt_ftwt_det_veriaty_name,txt_ftwt_det_variety_count;
+            ,txt_ftwt_det_veriaty_name;
     private RecyclerView value_edt_weight_recycler_view;
     private Toolbar toolbar;
     private ImageView back_button_val_edt_det;
     private EditText txt_value_edt_weight_no_nets,txt_value_edt_weight_tare_weight,edt_value_edt_total_weight_kgs;
-   // private Spinner ;
+    private Spinner spinner_val_edt_det;
     private LinearLayout spinner_layout;
     private FTLotNumbers processes_data;
     private String TAG;
@@ -117,19 +117,19 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
         edt_value_edt_total_weight_kgs=findViewById(R.id.edt_ftwt_det_total_weight_kgs);
         txt_value_edt_weight_total_tare_wt=findViewById(R.id.txt_ftwt_det_weight_total_tare_wt);
         txt_value_edt_weight_net_weight=findViewById(R.id.txt_ftwt_det_weight_net_weight);
-        txt_ftwt_det_variety_count=findViewById(R.id.txt_ftwt_det_variety_count);
+       // txt_ftwt_det_variety_count=findViewById(R.id.txt_ftwt_det_variety_count);
 
-        txt_ftwt_det_variety_count.setText(processes_data.getVarietycount());
+       // txt_ftwt_det_variety_count.setText(processes_data.getVarietycount());
 
-       // spinner_val_edt_det=findViewById(R.id.spinner_ftwt_det);
+        spinner_val_edt_det=findViewById(R.id.spinner_ftwt_det);
 
-      //  setSpinner();
+        setSpinner();
         CountDownTimer newtimer = new CountDownTimer(1000000000, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 String saveCurrentDate;
                 Calendar c = Calendar.getInstance();
-                SimpleDateFormat currentDate=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                SimpleDateFormat currentDate=new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
                 saveCurrentDate=currentDate.format(c.getTime());
                 txt_value_edt_weight_date_time.setText(saveCurrentDate);
             }
@@ -177,85 +177,89 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
 
     }
 
-//    private void setSpinner() {
-//        final List<String> list = new ArrayList<>();
-//        list.clear();
-//        list.add("Select count");
-//        if (AppUtils.isNetworkAvailable(mContext)){
-//            AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
-//            apiService= AppUrl.getApiClient().create(ApiService.class);
-//            Call<FactoryWeighmentCodes> call=apiService.ftgetCodes(processes_data.getLot_No(),config.readLoginEmpId());
-//            call.enqueue(new Callback<FactoryWeighmentCodes>() {
-//                @Override
-//                public void onResponse(Call<FactoryWeighmentCodes> call, Response<FactoryWeighmentCodes> response) {
-//                    AppUtils.dismissCustomProgress(mCustomProgressDialog);
-//                    if (response.body()!=null){
-//                        if (response.body().getStatus().contains(AppConstant.MESSAGE)){
-//                            AppUtils.showToast(mContext,response.body().getMessage());
-//
-//                            for (int i=0;i<response.body().getData().getVariety_Count().size();i++){
-//                                list.add(response.body().getData().getVariety_Count().get(i).getVcount());
-//                            }
-//                            codes=response.body().getData().getVariety_Count();
-//                            factoryWeighmentCodes=response.body().getData().getVariety_Count();
-//                            countAdapter = new ArrayAdapter<String>(mContext, R.layout.show_count, list);
-//                            spinner_val_edt_det.setVisibility(View.VISIBLE);
-//                            spinner_val_edt_det.setAdapter(countAdapter);
-//                            txt_ftwt_det_materialGroupName.setText(response.body().getData().getMaterial_Group_Name());
-//                            txt_ftwt_det_veriaty_name.setText(response.body().getData().getProduct_Variety_Name());
-//                            material_code=response.body().getData().getFk_Material_Group_Code();
-//                            varaity_code=response.body().getData().getProduct_Variety_Code();
-//                        }
-//                        else {
-//                            Log.e("status",response.body().getMessage());
-//                            AppUtils.showCustomOkDialog(mContext,"",response.body().getMessage(),"OK",null);
-//                        }
-//                    }
-//                    else {
-//                        AppUtils.showCustomOkDialog(mContext,"",getResources().getString(R.string.error_default),"OK",null);
-//                    }
-//                }
-//
-//                @Override
-//                public void onFailure(Call<FactoryWeighmentCodes> call, Throwable t) {
-//                    Log.e("status",t.toString());
-//                    AppUtils.dismissCustomProgress(mCustomProgressDialog);
-//                    AppUtils.showCustomOkDialog(mContext,
-//                            "",
-//                            getString(R.string.error_default),
-//                            "OK", null);
-//                }
-//            });
-//        }else {
-//            AppUtils.showToast(mContext,getString(R.string.error_network));
-//        }
-//
-//        spinner_val_edt_det.setOnItemSelectedListener(this);
-//
-//    }
+    private void setSpinner() {
+        final List<String> list = new ArrayList<>();
+        list.clear();
+        list.add("Select count");
+        if (AppUtils.isNetworkAvailable(mContext)){
+            AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
+            apiService= AppUrl.getApiClient().create(ApiService.class);
+            Call<FactoryWeighmentCodes> call=apiService.ftgetCodes(processes_data.getLot_No(),config.readLoginEmpId());
+            call.enqueue(new Callback<FactoryWeighmentCodes>() {
+                @Override
+                public void onResponse(Call<FactoryWeighmentCodes> call, Response<FactoryWeighmentCodes> response) {
+                    AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                    if (response.body()!=null){
+                        if (response.body().getStatus().contains(AppConstant.MESSAGE)){
+                            AppUtils.showToast(mContext,response.body().getMessage());
+
+                            for (int i=0;i<response.body().getData().getVariety_Count().size();i++){
+                                list.add(response.body().getData().getVariety_Count().get(i).getVcount());
+                            }
+                            codes=response.body().getData().getVariety_Count();
+                            factoryWeighmentCodes=response.body().getData().getVariety_Count();
+                            countAdapter = new ArrayAdapter<String>(mContext, R.layout.show_count, list);
+                            spinner_val_edt_det.setVisibility(View.VISIBLE);
+                            spinner_val_edt_det.setAdapter(countAdapter);
+                            txt_ftwt_det_materialGroupName.setText(response.body().getData().getMaterial_Group_Name());
+                            txt_ftwt_det_veriaty_name.setText(response.body().getData().getProduct_Variety_Name());
+                            material_code=response.body().getData().getFk_Material_Group_Code();
+                            varaity_code=response.body().getData().getProduct_Variety_Code();
+                        }
+                        else {
+                            Log.e("status",response.body().getMessage());
+                            AppUtils.showCustomOkDialog(mContext,"",response.body().getMessage(),"OK",null);
+                        }
+                    }
+                    else {
+                        AppUtils.showCustomOkDialog(mContext,"",getResources().getString(R.string.error_default),"OK",null);
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<FactoryWeighmentCodes> call, Throwable t) {
+                    Log.e("status",t.toString());
+                    AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                    AppUtils.showCustomOkDialog(mContext,
+                            "",
+                            getString(R.string.error_default),
+                            "OK", null);
+                }
+            });
+        }else {
+            AppUtils.showToast(mContext,getString(R.string.error_network));
+        }
+
+        spinner_val_edt_det.setOnItemSelectedListener(this);
+
+    }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.txt_ftwt_det_dts_weight_btn_save:
+                if (count != "Select count") {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        spinner_layout.setBackground(getResources().getDrawable(R.drawable.white_border));
+                    }
                     if (doValidation()) {
-                        AppUtils.showCustomOkCancelDialog(this, "", "Do you want to save weights?", "Yes", "No",
+                        AppUtils.showCustomOkCancelDialog(this, "", "Do you want to change count?", "No", "Yes",
                                 new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                      //  count_code=codes.get(position).getVcode();
-                                        ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
+                                        count_code=codes.get(position-1).getVcode();
+                                        ValueEditionDetaillsModel detaillsModel = new ValueEditionDetaillsModel();
                                         detaillsModel.setTime(txt_value_edt_weight_date_time.getText().toString());
                                         detaillsModel.setNo_of_nets(Integer.parseInt(txt_value_edt_weight_no_nets.getText().toString()));
                                         detaillsModel.setTotal_weight(Float.parseFloat(edt_value_edt_total_weight_kgs.getText().toString()));
                                         detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
                                         detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
                                         detaillsModel.setCummulative_weight(0);
-                                        detaillsModel.setGroup_person(processes_data.getVarietycount());
-                                        detaillsModel.setCount_code(processes_data.getVariety_count_code2());
+                                        detaillsModel.setGroup_person(count);
+                                        detaillsModel.setCount_code(count_code);
 
                                         valueEditionDetaillsModel.add(detaillsModel);
-                                        valueEditionDetailsAdapter=new HeadLessGrading_2_Grid(getApplicationContext(),valueEditionDetaillsModel,"FW");
+                                        valueEditionDetailsAdapter = new HeadLessGrading_2_Grid(getApplicationContext(), valueEditionDetaillsModel, "FW");
                                         value_edt_weight_recycler_view.setHasFixedSize(true);
                                         value_edt_weight_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                                         value_edt_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
@@ -264,41 +268,48 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
                                             @Override
                                             public void run() {
                                                 final InputMethodManager imm = (InputMethodManager) edt_value_edt_total_weight_kgs.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-                                                imm.showSoftInput(edt_value_edt_total_weight_kgs,InputMethodManager.SHOW_IMPLICIT);
+                                                imm.showSoftInput(edt_value_edt_total_weight_kgs, InputMethodManager.SHOW_IMPLICIT);
                                                 edt_value_edt_total_weight_kgs.requestFocus(); // needed if you have more then one input
                                             }
                                         });
-                                      //  spinner_val_edt_det.setSelection(position);
+                                          spinner_val_edt_det.setSelection(position);
 
                                     }
                                 },
                                 new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-//                                        count_code=codes.get(position).getVcode();
-//                                        ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
-//                                        detaillsModel.setTime(txt_value_edt_weight_date_time.getText().toString());
-//                                        detaillsModel.setNo_of_nets(Integer.parseInt(txt_value_edt_weight_no_nets.getText().toString()));
-//                                        detaillsModel.setTotal_weight(Float.parseFloat(edt_value_edt_total_weight_kgs.getText().toString()));
-//                                        detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
-//                                        detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
-//                                        detaillsModel.setCummulative_weight(0);
-//                                        detaillsModel.setGroup_person(count);
-//                                        detaillsModel.setCount_code(count_code);
-//
-//                                        valueEditionDetaillsModel.add(detaillsModel);
-//                                        valueEditionDetailsAdapter=new HeadLessGrading_2_Grid(getApplicationContext(),valueEditionDetaillsModel,"FW");
-//                                        value_edt_weight_recycler_view.setHasFixedSize(true);
-//                                        value_edt_weight_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-//                                        value_edt_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
-//
-//                                        clearText();
-                                      //  spinner_val_edt_det.setSelection(0);
+                                        count_code=codes.get(position-1).getVcode();
+                                        ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
+                                        detaillsModel.setTime(txt_value_edt_weight_date_time.getText().toString());
+                                        detaillsModel.setNo_of_nets(Integer.parseInt(txt_value_edt_weight_no_nets.getText().toString()));
+                                        detaillsModel.setTotal_weight(Float.parseFloat(edt_value_edt_total_weight_kgs.getText().toString()));
+                                        detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
+                                        detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
+                                        detaillsModel.setCummulative_weight(0);
+                                        detaillsModel.setGroup_person(count);
+                                        detaillsModel.setCount_code(count_code);
+
+                                        valueEditionDetaillsModel.add(detaillsModel);
+                                        valueEditionDetailsAdapter=new HeadLessGrading_2_Grid(getApplicationContext(),valueEditionDetaillsModel,"FW");
+                                        value_edt_weight_recycler_view.setHasFixedSize(true);
+                                        value_edt_weight_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                                        value_edt_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
+
+                                        clearText();
+                                        spinner_val_edt_det.setSelection(0);
                                     }
                                 });
                     } else {
                         AppUtils.showToast(mContext, "please check fields");
                     }
+
+                } else {
+                    AppUtils.showToast(mContext, "please select count");
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        spinner_layout.setBackground(getResources().getDrawable(R.drawable.yellow_background));
+                    }
+                }
 
 
                 break;
@@ -331,6 +342,7 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         count=parent.getSelectedItem().toString();
         this.position=position;
+
     }
 
     @Override

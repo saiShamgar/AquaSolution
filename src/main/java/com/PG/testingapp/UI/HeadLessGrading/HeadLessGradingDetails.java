@@ -123,9 +123,9 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
         txt_h_l_g_count=findViewById(R.id.txt_h_l_g_count);
         toolbar_heading_HeadLess_det=findViewById(R.id.toolbar_heading_HeadLess_det);
         if (status.contains("HL")){
-            toolbar_heading_HeadLess_det.setText("HLG Weights");
+            toolbar_heading_HeadLess_det.setText("HeadLess Grading Weights");
         }else if (status.contains("HO")){
-            toolbar_heading_HeadLess_det.setText("HOG Weights");
+            toolbar_heading_HeadLess_det.setText("HeadOn Grading Weights");
         }
 
 
@@ -145,7 +145,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
         spinner_h_l_Grade=findViewById(R.id.spinner_h_l_Grade);
 
         setSpinner();
-        txt_h_l_g_lot_no.setText(processes_data.getLot_No()+" /"+processes_data.getLot_Date());
+        txt_h_l_g_lot_no.setText(processes_data.getLot_No()+" /"+AppUtils.dateFormat(processes_data.getLot_Date()));
         txt_h_l_g_count.setText(processes_data.getVariety_Count());
 //        txt_ftwt_det_materialGroupName.setText(processes_data.getMaterial_Group_Name());
 //        txt_ftwt_det_veriaty_name.setText(processes_data.getProduct_Variety_Name());

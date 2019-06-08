@@ -11,15 +11,18 @@ import android.widget.TextView;
 
 import com.PG.testingapp.Adapters.FactoryWeighmentAdapters.FactoryWeighmentDetailsInsertion;
 import com.PG.testingapp.R;
+import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.model.Status;
 import com.PG.testingapp.model.ValueEditionDetaillsModel;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class HeadLessGradingDetailsInsertedAdapter extends RecyclerView.Adapter<HeadLessGradingDetailsInsertedAdapter.Viewholder> {
     private Context context;
     private ArrayList<ValueEditionDetaillsModel> insertDetails;
-    float cummulative_wt;
+    float cummulative_wt,total_weight;
     private String status;
 
     public HeadLessGradingDetailsInsertedAdapter(Context context, ArrayList<ValueEditionDetaillsModel> insertDetails, String status) {
@@ -53,9 +56,9 @@ public class HeadLessGradingDetailsInsertedAdapter extends RecyclerView.Adapter<
             holder.txt_count.setText(insertDetails.get(i).getCount_code());
             holder.txt_time.setText(insertDetails.get(i).getTime());
             holder.txt_no_nets.setText(String.valueOf(insertDetails.get(i).getNo_of_nets()));
-            holder.txt_total_tare_wt.setText(String.valueOf( insertDetails.get(i).getTotal_tare_weight()));
-            holder.txt_total_weight.setText(String.valueOf( insertDetails.get(i).getTotal_weight()));
-            holder.txt_net_weight.setText(String.valueOf( insertDetails.get(i).getNet_weight()));
+            holder.txt_total_tare_wt.setText(AppUtils.roundValue(String.valueOf( insertDetails.get(i).getTotal_tare_weight())));
+            holder.txt_total_weight.setText(AppUtils.roundValue(String.valueOf(insertDetails.get(i).getTotal_weight())));
+            holder.txt_net_weight.setText(AppUtils.roundValue(String.valueOf( insertDetails.get(i).getNet_weight())));
         }
         else if (status=="HOHL"){
 
@@ -65,9 +68,9 @@ public class HeadLessGradingDetailsInsertedAdapter extends RecyclerView.Adapter<
             holder.txt_count.setText(insertDetails.get(i).getCount_code());
             holder.txt_time.setText(insertDetails.get(i).getTime());
             holder.txt_no_nets.setText(String.valueOf(insertDetails.get(i).getNo_of_nets()));
-            holder.txt_total_tare_wt.setText(String.valueOf( insertDetails.get(i).getTotal_tare_weight()));
-            holder.txt_total_weight.setText(String.valueOf( insertDetails.get(i).getTotal_weight()));
-            holder.txt_net_weight.setText(String.valueOf( insertDetails.get(i).getNet_weight()));
+            holder.txt_total_tare_wt.setText(AppUtils.roundValue(String.valueOf( insertDetails.get(i).getTotal_tare_weight())));
+            holder.txt_total_weight.setText(AppUtils.roundValue(String.valueOf(insertDetails.get(i).getTotal_weight())));
+            holder.txt_net_weight.setText(AppUtils.roundValue(String.valueOf( insertDetails.get(i).getNet_weight())));
         }
 
 

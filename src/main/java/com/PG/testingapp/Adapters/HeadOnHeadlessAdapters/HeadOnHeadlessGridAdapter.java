@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.PG.testingapp.InterFace.HeadOnHeadLessRadioClick;
 import com.PG.testingapp.InterFace.HeadlessGradinRadioClick;
 import com.PG.testingapp.R;
+import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.model.HeadLessGrading.Lot_numbers;
 import com.PG.testingapp.model.headOnHeadLessGrading.Lot_details;
 
@@ -54,7 +55,7 @@ public class HeadOnHeadlessGridAdapter extends RecyclerView.Adapter<HeadOnHeadle
         String sl= String.valueOf(i+1);
         holder.txt_sl_no.setText(sl);
         holder.txt_lot_no.setText(Lot_No.get(i).getLotNo());
-        holder.txt_lot_date.setText(Lot_No.get(i).getLot_date());
+        holder.txt_lot_date.setText(AppUtils.dateFormat(Lot_No.get(i).getLot_date()));
         holder.variaty.setText(Lot_No.get(i).getProduct_Variety_Name());
         holder.count.setText(Lot_No.get(i).getVariety_Count());
         holder.txt_quatity.setText(Lot_No.get(i).getQuantity());

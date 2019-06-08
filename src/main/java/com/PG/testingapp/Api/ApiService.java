@@ -151,7 +151,7 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("app_headon_headless_get_variety_count/")
     Call<Getcodes_Grouphead> getCodes_heads(
-            @Field("VarietyCode")String VarietyCode,
+            @Field("VarietyCountCode")String VarietyCountCode,
             @Field("LotNo")String LotNo);
 
     @FormUrlEncoded
@@ -183,7 +183,7 @@ public interface ApiService {
     Call<BarcodeResponce> getAllBarcodeResults();
 
     @FormUrlEncoded
-    @POST("app_cs_scan_barcode/")
+    @POST("app_save_cs_put_away_details/")
     Call<BarcodeResponce> saveScanDetails(
             @Field("PP_Number")String PP_Number,
             @Field("CS_Pellet_Location_No")String CS_Pellet_Location_No,

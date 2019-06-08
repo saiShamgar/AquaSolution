@@ -82,16 +82,16 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
 
      //   callService();
 
-        PeripheralManager manager = PeripheralManager.getInstance();
-        List<String> deviceList = manager.getUartDeviceList();
-        if (deviceList.isEmpty()) {
-            Log.e("tag", "No UART port available on this device.");
-          Toast.makeText(getApplicationContext(),"No UART port available on this device.",Toast.LENGTH_LONG).show();
-        } else {
-            Log.e("tag", "List of available devices: " + deviceList);
-
-            Toast.makeText(getApplicationContext(),"List of available devices: ."+deviceList,Toast.LENGTH_LONG).show();
-        }
+//        PeripheralManager manager = PeripheralManager.getInstance();
+//        List<String> deviceList = manager.getUartDeviceList();
+//        if (deviceList.isEmpty()) {
+//            Log.e("tag", "No UART port available on this device.");
+//          Toast.makeText(getApplicationContext(),"No UART port available on this device.",Toast.LENGTH_LONG).show();
+//        } else {
+//            Log.e("tag", "List of available devices: " + deviceList);
+//
+//            Toast.makeText(getApplicationContext(),"List of available devices: ."+deviceList,Toast.LENGTH_LONG).show();
+//        }
 
 //        adapter=new GridViewAdapter(this,this);
 //        valueEdition_recycler_view_bsd_lots.setHasFixedSize(true);

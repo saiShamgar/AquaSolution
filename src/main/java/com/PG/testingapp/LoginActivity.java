@@ -81,7 +81,7 @@ public class LoginActivity extends BaseActivity  {
                             finish();
                         }else {
                             Log.e("status",response.body().getMessage());
-                            AppUtils.showCustomOkDialog(mContext,"",getResources().getString(R.string.error_default),"OK",null);
+                            AppUtils.showCustomOkDialog(mContext,"",response.body().getMessage(),"OK",null);
                         }
                     }
                     else {
