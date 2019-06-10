@@ -108,7 +108,7 @@ public class HOHL_details_inserting extends BaseActivity {
             VAP_Total_Weight.add(String.valueOf(detaillsModels.get(i).getTotal_weight()));
             VAP_Total_Tare_Weight.add(String.valueOf(detaillsModels.get(i).getTotal_tare_weight()));
             VAP_Net_Weight.add(String.valueOf(detaillsModels.get(i).getNet_weight()));
-            Variety_Count_Code.add(detaillsModels.get(i).getGroup_person());
+           // Variety_Count_Code.add(detaillsModels.get(i).getGroup_person());
             VAP_Group_Emp_id.add(detaillsModels.get(i).getTeam_no());
 
             no_of_nets=no_of_nets+detaillsModels.get(i).getNo_of_nets();
@@ -158,7 +158,7 @@ public class HOHL_details_inserting extends BaseActivity {
                 VAP_Total_Tare_Weight,
                 VAP_Total_Weight,
                 date_time,
-                Variety_Count_Code,
+                processes_data.getVcc(),
                 VAP_Group_Emp_id,
                 processes_data.getLot_date(),
                 processes_data.getLotNo(),
@@ -167,7 +167,7 @@ public class HOHL_details_inserting extends BaseActivity {
 
         Gson gson = new Gson();
         String json = gson.toJson(jsonData);
-        Log.e("ft data ",json);
+        Log.e("hohl data ",json);
 
         AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
         apiService= AppUrl.getApiClient().create(ApiService.class);

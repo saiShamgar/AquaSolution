@@ -58,12 +58,12 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
 
     private TextView txt_value_edt_dts_weight_btn_save,txt_value_edt_weight_btn_complete,txt_value_edt_weight_date_time,
             txt_value_edt_weight_group_name,txt_value_edt_weight_total_tare_wt,txt_value_edt_weight_net_weight,txt_ftwt_det_materialGroupName
-            ,txt_ftwt_det_veriaty_name,txt_h_l_g_lot_no,txt_h_l_g_lot_date,txt_HOHL_weight_Location;
+            ,txt_ftwt_det_veriaty_name,txt_h_l_g_lot_no,txt_h_l_g_count,txt_HOHL_weight_Location;
     private RecyclerView value_edt_weight_recycler_view;
     private Toolbar toolbar;
     private ImageView back_button_val_edt_det;
     private EditText txt_value_edt_weight_no_nets,txt_value_edt_weight_tare_weight,edt_value_edt_total_weight_kgs;
-    private Spinner spinner_val_edt_det,spinner_HOHL_group_head;
+    private Spinner spinner_HOHL_group_head;
     private LinearLayout spinner_layout,spinner_layout_HOHL_groupHead;
     private Lot_details processes_data;
     private String TAG;
@@ -104,7 +104,7 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
         txt_value_edt_weight_btn_complete=findViewById(R.id.txt_HOHL_weight_btn_complete);
         value_edt_weight_recycler_view=findViewById(R.id.HOHL_weight_recycler_view);
         back_button_val_edt_det=findViewById(R.id.back_button_HOHL_d);
-        spinner_layout=findViewById(R.id.spinner_layout_HOHL);
+      //  spinner_layout=findViewById(R.id.spinner_layout_HOHL);
         spinner_layout_HOHL_groupHead=findViewById(R.id.spinner_layout_HOHL_groupHead);
         txt_ftwt_det_materialGroupName=findViewById(R.id.txt_MG_HOHL_d);
         txt_ftwt_det_veriaty_name=findViewById(R.id.txt_VN_HOHL_d);
@@ -118,15 +118,15 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
         txt_value_edt_weight_total_tare_wt=findViewById(R.id.txt_HOHL_weight_total_tare_wt);
         txt_value_edt_weight_net_weight=findViewById(R.id.txt_HOHL_weight_net_weight);
         txt_h_l_g_lot_no=findViewById(R.id.txt_lot_no_HOHL_d);
-        txt_h_l_g_lot_date=findViewById(R.id.txt_lot_date_HOHL_d);
+        txt_h_l_g_count=findViewById(R.id.txt_count_HOHL_d);
 
 
-        spinner_val_edt_det=findViewById(R.id.spinner_HOHL);
+      //  spinner_val_edt_det=findViewById(R.id.spinner_HOHL);
         spinner_HOHL_group_head=findViewById(R.id.spinner_HOHL_group_head);
 
-        setSpinner();
-        txt_h_l_g_lot_date.setText(AppUtils.dateFormat(processes_data.getLot_date()));
-        txt_h_l_g_lot_no.setText(processes_data.getLotNo());
+       setSpinner();
+        txt_h_l_g_count.setText(processes_data.getVariety_Count());
+        txt_h_l_g_lot_no.setText(processes_data.getLotNo()+"/"+AppUtils.dateFormat(processes_data.getLot_date()));
         txt_ftwt_det_materialGroupName.setText(processes_data.getMaterial_Group_Name());
         txt_ftwt_det_veriaty_name.setText(processes_data.getProduct_Variety_Name());
 
@@ -244,11 +244,11 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
     }
 
     private void setSpinner() {
-        final ArrayList<String> list = new ArrayList<>();
+      //  final ArrayList<String> list = new ArrayList<>();
         final ArrayList<String> list1 = new ArrayList<>();
 
-        list.clear();
-        list.add("Select count");
+//        list.clear();
+//        list.add("Select count");
         list1.clear();
         list1.add("Select Group Head");
         if (AppUtils.isNetworkAvailable(mContext)){
@@ -263,18 +263,18 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
                         if (response.body().getStatus().contains(AppConstant.MESSAGE)){
                             AppUtils.showToast(mContext,response.body().getMessage());
 
-                            for (int i=0;i<response.body().getCodes().size();i++){
-                                list.add(response.body().getCodes().get(i).getVcount());
-                            }
+//                            for (int i=0;i<response.body().getCodes().size();i++){
+//                                list.add(response.body().getCodes().get(i).getVcount());
+//                            }
 
                             for (int i=0;i<response.body().getGroup_Head().size();i++){
                                 list1.add(response.body().getGroup_Head().get(i).getEmp_Name());
                             }
-                            codes=response.body().getCodes();
+                         //   codes=response.body().getCodes();
                             groupHeads=response.body().getGroup_Head();
-                            countAdapter = new ArrayAdapter<String>(mContext, R.layout.show_count, list);
-                            spinner_val_edt_det.setVisibility(View.VISIBLE);
-                            spinner_val_edt_det.setAdapter(countAdapter);
+//                            countAdapter = new ArrayAdapter<String>(mContext, R.layout.show_count, list);
+//                            spinner_val_edt_det.setVisibility(View.VISIBLE);
+//                            spinner_val_edt_det.setAdapter(countAdapter);
 
                             groupHeadAdapter = new ArrayAdapter<String>(mContext, R.layout.show_count, list1);
                             spinner_HOHL_group_head.setVisibility(View.VISIBLE);
@@ -304,7 +304,7 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
             AppUtils.showToast(mContext,getString(R.string.error_network));
         }
 
-        spinner_val_edt_det.setOnItemSelectedListener(this);
+       // spinner_val_edt_det.setOnItemSelectedListener(this);
 
 
     }
@@ -324,7 +324,7 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
                                         @Override
                                         public void onClick(View v) {
 
-                                            count_code=codes.get(position-1).getVcode();
+                                          //  count_code=codes.get(position-1).getVcode();
                                             group_id=groupHeads.get(group_position-1).getEmp_id();
 
                                             ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
@@ -334,8 +334,8 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
                                             detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
                                             detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
                                             detaillsModel.setCummulative_weight(0);
-                                            detaillsModel.setCount_code(count);
-                                            detaillsModel.setGroup_person(count_code);
+                                            detaillsModel.setCount_code(processes_data.getVariety_Count());
+                                            detaillsModel.setGroup_person(processes_data.getVcc());
                                             detaillsModel.setTeam_no(group_id);
 
                                             valueEditionDetaillsModel.add(detaillsModel);
@@ -344,7 +344,7 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
                                             value_edt_weight_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                                         value_edt_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
                                             clearText();
-                                            spinner_val_edt_det.setSelection(position);
+                                           // spinner_val_edt_det.setSelection(position);
                                             spinner_HOHL_group_head.setSelection(group_position);
 
                                             edt_value_edt_total_weight_kgs.post(new Runnable() {
@@ -362,7 +362,7 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
                                     new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            count_code=codes.get(position-1).getVcode();
+                                        //    count_code=codes.get(position-1).getVcode();
                                             group_id=groupHeads.get(group_position-1).getEmp_id();
 
                                             ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
@@ -372,8 +372,8 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
                                             detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
                                             detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
                                             detaillsModel.setCummulative_weight(0);
-                                            detaillsModel.setCount_code(count);
-                                            detaillsModel.setGroup_person(count_code);
+                                            detaillsModel.setCount_code(processes_data.getVariety_Count());
+                                            detaillsModel.setGroup_person(processes_data.getVcc());
                                             detaillsModel.setTeam_no(group_id);
 
                                             valueEditionDetaillsModel.add(detaillsModel);
@@ -423,9 +423,9 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        count=parent.getSelectedItem().toString();
+       // count=parent.getSelectedItem().toString();
        // count_code=codes.get(position).getVcode();
-        this.position=position;
+       // this.position=position;
     }
 
     @Override

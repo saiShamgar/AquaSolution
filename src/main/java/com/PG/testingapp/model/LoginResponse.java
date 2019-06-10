@@ -9,12 +9,15 @@ import java.util.List;
 public class LoginResponse {
 
     @SerializedName("status")
+    @Expose
     private String status;
 
     @SerializedName("message")
+    @Expose
     private String message;
 
     @SerializedName("data")
+    @Expose
     private LoginData data;
 
 

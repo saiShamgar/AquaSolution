@@ -52,8 +52,6 @@ public class LoginActivity extends BaseActivity  {
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//               Intent login = new Intent(LoginActivity.this, MenuActivity.class);
-//               startActivity(login);
                callService();
             }
         });
@@ -61,11 +59,10 @@ public class LoginActivity extends BaseActivity  {
     }
 
     private void callService() {
-
         if (AppUtils.isNetworkAvailable(mContext)){
             AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
             apiService= AppUrl.getApiClient().create(ApiService.class);
-            Call<LoginResponse> call=apiService.agentLogin(edt_user_name.getText().toString(),edt_password.getText().toString());
+            Call<LoginResponse> call=apiService.agentLogin(edt_user_name.getText().toString().trim(),edt_password.getText().toString().trim());
             call.enqueue(new Callback<LoginResponse>() {
                 @Override
                 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {

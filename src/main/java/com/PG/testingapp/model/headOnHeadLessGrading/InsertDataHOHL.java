@@ -29,7 +29,7 @@ public class InsertDataHOHL implements Serializable {
 
 
     @SerializedName("Variety_Count_Code")
-    private ArrayList<String> Variety_Count_Code;
+    private String Variety_Count_Code;
 
     @SerializedName("HLGH_Emp_Id")
     private ArrayList<String> HLGH_Emp_Id;
@@ -46,7 +46,7 @@ public class InsertDataHOHL implements Serializable {
     @SerializedName("Product_Variety_Code")
     private String Product_Variety_Code;
 
-    public InsertDataHOHL(String HLS_Emp_Id, ArrayList<String> HOHL_Net_Weight, ArrayList<String> HOHL_No_of_Nets, ArrayList<String> HOHL_Tare_Weight, ArrayList<String> HOHL_Total_Tare_Weight, ArrayList<String> HOHL_Total_Weight, ArrayList<String> HOHL_Weighment_Date_Time, ArrayList<String> variety_Count_Code, ArrayList<String> HLGH_Emp_Id, String lot_Date, String lot_No, String material_Group_Code, String product_Variety_Code) {
+    public InsertDataHOHL(String HLS_Emp_Id, ArrayList<String> HOHL_Net_Weight, ArrayList<String> HOHL_No_of_Nets, ArrayList<String> HOHL_Tare_Weight, ArrayList<String> HOHL_Total_Tare_Weight, ArrayList<String> HOHL_Total_Weight, ArrayList<String> HOHL_Weighment_Date_Time, String variety_Count_Code, ArrayList<String> HLGH_Emp_Id, String lot_Date, String lot_No, String material_Group_Code, String product_Variety_Code) {
         this.HLS_Emp_Id = HLS_Emp_Id;
         this.HOHL_Net_Weight = HOHL_Net_Weight;
         this.HOHL_No_of_Nets = HOHL_No_of_Nets;
@@ -61,7 +61,6 @@ public class InsertDataHOHL implements Serializable {
         Material_Group_Code = material_Group_Code;
         Product_Variety_Code = product_Variety_Code;
     }
-
 
     public String getHLS_Emp_Id() {
         return HLS_Emp_Id;
@@ -119,11 +118,11 @@ public class InsertDataHOHL implements Serializable {
         this.HOHL_Weighment_Date_Time = HOHL_Weighment_Date_Time;
     }
 
-    public ArrayList<String> getVariety_Count_Code() {
+    public String getVariety_Count_Code() {
         return Variety_Count_Code;
     }
 
-    public void setVariety_Count_Code(ArrayList<String> variety_Count_Code) {
+    public void setVariety_Count_Code(String variety_Count_Code) {
         Variety_Count_Code = variety_Count_Code;
     }
 

@@ -1,37 +1,48 @@
 package com.PG.testingapp.model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class LoginData {
 
     @SerializedName("Date_Permission")
+    @Expose
     private String Date_Permission;
 
     @SerializedName("Emp_id")
+    @Expose
     private String Emp_id;
 
     @SerializedName("Dept_id")
+    @Expose
     private String Dept_id;
 
     @SerializedName("User_Emp_Id")
+    @Expose
     private String User_Emp_Id;
 
     @SerializedName("User_Mobile_No")
+    @Expose
     private String User_Mobile_No;
 
     @SerializedName("User_Name")
+    @Expose
     private String User_Name;
 
     @SerializedName("User_Mail_Id")
+    @Expose
     private String User_Mail_Id;
 
     @SerializedName("User_Passward")
+    @Expose
     private String User_Passward;
 
     @SerializedName("Message")
+    @Expose
     private String Message;
 
     @SerializedName("COMP_CODE")
+    @Expose
     private String COMP_CODE;
 
 
