@@ -12,11 +12,13 @@ import android.content.pm.PackageManager;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbDeviceConnection;
 import android.hardware.usb.UsbManager;
+import android.hardware.usb.UsbRequest;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,8 +39,11 @@ import com.PG.testingapp.R;
 import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.Utils.GpsLocation;
 import com.PG.testingapp.Utils.SharedPreferenceConfig;
+import com.PG.testingapp.Utils.UsbDriver;
 import com.PG.testingapp.model.Events;
 import com.PG.testingapp.model.ValueEditionDetaillsModel;
+import com.felhr.usbserial.UsbSerialDevice;
+import com.felhr.usbserial.UsbSerialInterface;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -57,9 +62,12 @@ import org.greenrobot.eventbus.Subscribe;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import static android.hardware.usb.UsbManager.EXTRA_PERMISSION_GRANTED;
 
@@ -77,10 +85,13 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
 
     boolean doubleBackToExitPressedOnce = false;
 
+    private static UsbDriver Usb_Driver_class;
+
     private static final String ACTION_USB_ATTACHED  = "android.hardware.usb.action.USB_DEVICE_ATTACHED";
     private static final String ACTION_USB_DETACHED  = "android.hardware.usb.action.USB_DEVICE_DETACHED";
     private static final String ACTION_USB_PERMISSION  = "com.blecentral.USB_PERMISSION";
     private BroadcastReceiver broadcastReceiver;
+    private int VID,PID;
 
 
     @Override
@@ -248,11 +259,18 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
         }
     }
 
+    void startSerialConnection(UsbManager usbManager, UsbDevice device) {
+        UsbDeviceConnection connection = usbManager.openDevice(device);
+
+    }
+
+
     @Override
     protected void onStart() {
         super.onStart();
         EventBus.getDefault().register(this);
         broadcastReceiver=new BroadcastReceiver() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onReceive(Context context, Intent intent) {
                 String action = intent.getAction();
@@ -261,11 +279,26 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
                 }else if (action.equalsIgnoreCase(ACTION_USB_ATTACHED)) {
                     checkUSB();
                     Toast.makeText(mContext,"usb Attached",Toast.LENGTH_LONG).show();
+
+
+
+
+
+
                 }else if (action.equalsIgnoreCase(ACTION_USB_PERMISSION)) {
                     synchronized (this) {
                         UsbDevice device = (UsbDevice)intent.getParcelableExtra(UsbManager.EXTRA_DEVICE);
                         if (intent.getBooleanExtra(EXTRA_PERMISSION_GRANTED, false)) {
-                            AppUtils.showToast(mContext,"USB permission granted");
+                          //  AppUtils.showToast(mContext,"USB permission granted");
+                            UsbManager usbManager = getSystemService(UsbManager.class);
+                            Map<String, UsbDevice> connectedDevices = usbManager.getDeviceList();
+                            for (UsbDevice device11 : connectedDevices.values()) {
+                                if (device11.getVendorId() == VID && device11.getProductId() == PID) {
+                                    Log.i("hsduhf", "Device found: " + device.getDeviceName());
+                                    startSerialConnection(usbManager, device);
+                                    break;
+                                }
+                            }
                         } else {
                             AppUtils.showToast(mContext,"USB permission not granted");
                             //Permission revoked by user
@@ -291,6 +324,7 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
         unregisterReceiver(broadcastReceiver);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     void checkUSB(){
         UsbManager manager = (UsbManager) getSystemService(Context.USB_SERVICE);
         // Get the list of attached devices
@@ -300,20 +334,29 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
         while (it.hasNext()) {
             String deviceName = it.next();
             UsbDevice device = devices.get(deviceName);
-            String VID = Integer.toHexString(device.getVendorId()).toUpperCase();
-            String PID = Integer.toHexString(device.getProductId()).toUpperCase();
+           //  VID = String.valueOf(device.getVendorId());
+           //  PID = String.valueOf(device.getProductId());
+             PID = device.getProductId();
+             VID = device.getVendorId();
 
 
 
 
-          //  String RESULT = Integer.toHexString(device.getInterface(0)).toUpperCase();
+
+            AppUtils.showToast(mContext,PID+" "+VID);
+
+
+           // String RESULT = Integer.toHexString(device.getInterface(0)).toUpperCase();
             if (!manager.hasPermission(device)) {
                 PendingIntent mPermissionIntent = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), 0);
                 manager.requestPermission(device, mPermissionIntent);
 
             } else {
 
-        //user permission already granted; prceed to access USB device
+
+
+
+                //user permission already granted; prceed to access USB device
             }
         }
     }

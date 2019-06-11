@@ -521,4 +521,21 @@ public class HOHL_weights extends BaseActivity implements View.OnClickListener, 
 
         Log.d("TextType", "total: " + txt_value_edt_weight_total_tare_wt + " NetWeight: " + txt_value_edt_weight_net_weight);
     }
+
+    @Override
+    public void onBackPressed() {
+        //  super.onBackPressed();
+        AppUtils.showCustomOkCancelDialog(this, "", "Do you want to go back without saving weights?", "No", "Yes",
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                }, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        HOHL_weights.super.onBackPressed();
+                    }
+                });
+    }
 }

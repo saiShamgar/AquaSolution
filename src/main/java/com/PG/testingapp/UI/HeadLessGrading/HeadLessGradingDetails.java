@@ -422,7 +422,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
 
                 break;
 
-            case R.id.back_button_h_l_g:
+            case R.id.back_button_h_l_g_d:
                 onBackPressed();
                 break;
         }
@@ -649,4 +649,20 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
         Log.d("TextType", "total: " + txt_value_edt_weight_total_tare_wt + " NetWeight: " + txt_value_edt_weight_net_weight);
     }
 
+    @Override
+    public void onBackPressed() {
+      //  super.onBackPressed();
+        AppUtils.showCustomOkCancelDialog(this, "", "Do you want to go back without saving weights?", "No", "Yes",
+                 new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                }, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        HeadLessGradingDetails.super.onBackPressed();
+                    }
+                });
+    }
 }

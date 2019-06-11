@@ -542,7 +542,7 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
 
     }
 
-    private void callEnquiryService(String scheduleNo, String enquiryNo) {
+    private void  callEnquiryService(String scheduleNo, String enquiryNo) {
         if (AppUtils.isNetworkAvailable(mContext)){
             AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
             apiService=AppUrl.getApiClient().create(ApiService.class);

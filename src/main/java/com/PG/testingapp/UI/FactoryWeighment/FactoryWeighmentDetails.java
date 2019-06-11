@@ -29,6 +29,7 @@ import com.PG.testingapp.Api.ApiService;
 import com.PG.testingapp.Api.AppUrl;
 import com.PG.testingapp.BaseActivity;
 import com.PG.testingapp.R;
+import com.PG.testingapp.UI.HeadLessGrading.HeadLessGradingDetails;
 import com.PG.testingapp.UI.ValueEditionDetails;
 import com.PG.testingapp.UI.ValueEditionDetailsInserted;
 import com.PG.testingapp.Utils.AppConstant;
@@ -437,6 +438,23 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
         }
 
         Log.d("TextType", "total: " + txt_value_edt_weight_total_tare_wt + " NetWeight: " + txt_value_edt_weight_net_weight);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //  super.onBackPressed();
+        AppUtils.showCustomOkCancelDialog(this, "", "Do you want to go back without saving weights?", "No", "Yes",
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                }, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        FactoryWeighmentDetails.super.onBackPressed();
+                    }
+                });
     }
 
 

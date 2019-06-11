@@ -19,7 +19,7 @@
             android:text="HeadLess Grading"
             android:id="@+id/toolbar_heading"
             android:paddingTop="@dimen/margin_xxxlarge"
-            android:layout_marginLeft="@dimen/margin_xxxlarge"
+            android:layout_marginLeft="@dimen/margin_xlarge"
             android:textSize="@dimen/large_20dp"
             android:textColor="@color/white"
             android:layout_toRightOf="@+id/back_button_h_l_g"
@@ -27,11 +27,11 @@
 
         <ImageView
             android:id="@+id/back_button_h_l_g"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/extra_large_50dp"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_left"
-            android:layout_marginTop="@dimen/extra_large_30dp"
-            android:layout_marginLeft="@dimen/large_20dp"/>
+            android:paddingTop="28dp"
+            android:layout_marginLeft="@dimen/large_20dp" />
         <LinearLayout
             android:id="@+id/layoutHeader"
             android:layout_width="match_parent"
