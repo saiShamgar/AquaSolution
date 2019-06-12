@@ -301,7 +301,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                                         new View.OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
-                                                count_code=codes.get(position).getFP_Group_Code();
+                                                count_code=codes.get(position-1).getFP_Group_Code();
                                                 varaity_code=varietyDetails.get(variety_position-1).getFP_Variety_Code();
                                                 gradeCode=gradeCodes.get(gradePosition-1).getFP_Production_Grade_Code();
                                                 ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
@@ -348,7 +348,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                                         new View.OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
-                                                count_code=codes.get(position).getFP_Group_Code();
+                                                count_code=codes.get(position-1).getFP_Group_Code();
                                                 varaity_code=varietyDetails.get(variety_position-1).getFP_Variety_Code();
                                                 gradeCode=gradeCodes.get(gradePosition-1).getFP_Production_Grade_Code();
                                                 ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();

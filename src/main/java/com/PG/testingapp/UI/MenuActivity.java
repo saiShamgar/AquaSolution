@@ -1,6 +1,7 @@
 package com.PG.testingapp.UI;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -9,8 +10,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
+import android.hardware.usb.UsbConstants;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbDeviceConnection;
+import android.hardware.usb.UsbEndpoint;
+import android.hardware.usb.UsbInterface;
 import android.hardware.usb.UsbManager;
 import android.hardware.usb.UsbRequest;
 import android.os.Build;
@@ -64,6 +68,9 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -92,6 +99,28 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
     private static final String ACTION_USB_PERMISSION  = "com.blecentral.USB_PERMISSION";
     private BroadcastReceiver broadcastReceiver;
     private int VID,PID;
+
+    private byte[] bytes;
+    private static int TIMEOUT = 0;
+    private boolean forceClaim = true;
+
+
+    /*
+     * Initiate a control transfer to request the first configuration
+     * descriptor of the device.
+     */
+    //Type: Indicates whether this is a read or write
+    // Matches USB_ENDPOINT_DIR_MASK for either IN or OUT
+    private static final int REQUEST_TYPE = 0x80;
+    //Request: GET_CONFIGURATION_DESCRIPTOR = 0x06
+    private static final int REQUEST = 0x06;
+    //Value: Descriptor Type (High) and Index (Low)
+    // Configuration Descriptor = 0x2
+    // Index = 0x0 (First configuration)
+    private static final int REQ_VALUE = 0x200;
+    private static final int REQ_INDEX = 0x00;
+    private static final int LENGTH = 64;
+    private String result;
 
 
     @Override
@@ -260,7 +289,57 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
     }
 
     void startSerialConnection(UsbManager usbManager, UsbDevice device) {
+        UsbInterface intf = device.getInterface(0);
         UsbDeviceConnection connection = usbManager.openDevice(device);
+        connection.claimInterface(device.getInterface(0), true);
+
+        new Thread(new Runnable() {
+
+            @TargetApi(Build.VERSION_CODES.KITKAT)
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
+            @Override
+            public void run() {
+
+                UsbEndpoint endpoint = null;
+
+                for (int i = 0; i < intf.getEndpointCount(); i++) {
+                    if (intf.getEndpoint(i).getDirection() == UsbConstants.USB_DIR_OUT) {
+                        endpoint = intf.getEndpoint(i);
+                        break;
+                    }
+                }
+
+
+                byte[] buffer1 = new byte[200];
+
+                connection.bulkTransfer(endpoint, buffer1,  LENGTH, 3000);
+
+
+                UsbRequest request = new UsbRequest(); // create an URB
+                boolean initilzed = request.initialize(connection, endpoint);
+
+                if (!initilzed) {
+                    Log.e("USB CONNECTION FAILED", "Request initialization failed for reading");
+                    return;
+                }
+                while (true) {
+                    int bufferMaxLength = endpoint.getMaxPacketSize();
+                    Charset charset=Charset.forName("UTF-8");
+                    ByteBuffer buffer = ByteBuffer.allocate(bufferMaxLength);
+                    if (request.queue(buffer, bufferMaxLength)) {
+                        if (connection.requestWait().equals(request)) {
+
+//                            byte[] bytes=new byte[buffer.remaining()];
+//                                buffer.get(bytes);
+                               result =new String(buffer.array(), 0, buffer.position());
+                            Log.e("Weight data  ", result);
+
+                        }
+                    }
+                }
+
+            }
+        }).start();
 
     }
 
@@ -281,10 +360,6 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
                     Toast.makeText(mContext,"usb Attached",Toast.LENGTH_LONG).show();
 
 
-
-
-
-
                 }else if (action.equalsIgnoreCase(ACTION_USB_PERMISSION)) {
                     synchronized (this) {
                         UsbDevice device = (UsbDevice)intent.getParcelableExtra(UsbManager.EXTRA_DEVICE);
@@ -294,8 +369,9 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
                             Map<String, UsbDevice> connectedDevices = usbManager.getDeviceList();
                             for (UsbDevice device11 : connectedDevices.values()) {
                                 if (device11.getVendorId() == VID && device11.getProductId() == PID) {
-                                    Log.i("hsduhf", "Device found: " + device.getDeviceName());
-                                    startSerialConnection(usbManager, device);
+                                    Log.i("hsduhf", "Device found: " + device11.getDeviceName());
+                                 //   Toast.makeText(getApplicationContext(),"count "+device11.getInterfaceCount(),Toast.LENGTH_LONG).show();
+                                    startSerialConnection(usbManager, device11);
                                     break;
                                 }
                             }
@@ -340,10 +416,7 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
              VID = device.getVendorId();
 
 
-
-
-
-            AppUtils.showToast(mContext,PID+" "+VID);
+           // AppUtils.showToast(mContext,PID+" "+VID);
 
 
            // String RESULT = Integer.toHexString(device.getInterface(0)).toUpperCase();
