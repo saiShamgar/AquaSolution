@@ -18,11 +18,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aqua.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Aqua.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,24 +39,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/ValueEdition.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/FactoryWeighmentAdapters/FactoryWeighmentDetailsInsertion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="242" column="75" selection-start-line="242" selection-start-column="75" selection-end-line="242" selection-end-column="75" />
+            <state relative-caret-position="153">
+              <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighmentDetailsInserted.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="332" column="4" selection-start-line="332" selection-start-column="4" selection-end-line="332" selection-end-column="4" />
-              <folding>
-                <element signature="e#19435#19436#0" expanded="true" />
-                <element signature="e#19500#19501#0" expanded="true" />
-                <marker date="1560342096944" expanded="true" signature="11462:11591" ph="..." />
-              </folding>
+            <state relative-caret-position="290">
+              <caret line="98" column="56" selection-start-line="95" selection-start-column="7" selection-end-line="98" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -66,7 +59,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Utils/UsbService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
+            <state relative-caret-position="1360">
               <caret line="103" column="22" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
             </state>
           </provider>
@@ -75,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Api/ApiService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="1870">
               <caret line="137" column="38" selection-start-line="137" selection-start-column="11" selection-end-line="137" selection-end-column="38" />
             </state>
           </provider>
@@ -93,7 +86,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/SiteWeighmentWeights.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
+            <state relative-caret-position="6511">
               <caret line="433" column="44" selection-start-line="433" selection-start-column="44" selection-end-line="433" selection-end-column="44" />
             </state>
           </provider>
@@ -102,7 +95,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2421">
+            <state relative-caret-position="4182">
               <caret line="303" column="69" selection-start-line="303" selection-start-column="69" selection-end-line="303" selection-end-column="69" />
             </state>
           </provider>
@@ -111,7 +104,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetailsInserted.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-291">
+            <state relative-caret-position="2227">
               <caret line="173" column="9" selection-start-line="173" selection-start-column="9" selection-end-line="173" selection-end-column="9" />
             </state>
           </provider>
@@ -120,7 +113,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Utils/UsbDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
+            <state relative-caret-position="170">
               <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -184,6 +177,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetailsInserted.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Utils/UsbDriver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java" />
       </list>
     </option>
@@ -200,8 +194,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -225,45 +217,15 @@
               <item name="Aqua" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
+              <item name="Adapters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
               <item name="Aqua" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Aqua" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="HeadLessGrading" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Aqua" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="LocationPlacement" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Aqua" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="Site_Weightment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Aqua" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Utils" type="462c0819:PsiDirectoryNode" />
+              <item name="Adapters" type="462c0819:PsiDirectoryNode" />
+              <item name="FactoryWeighmentAdapters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
@@ -273,6 +235,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -282,7 +246,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="79SSOBS88HUWIVKR" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../OneWel2019 - Copy" />
-    <property name="sync.plugin.last.upgrade.timestamp" value="1560254533527" />
+    <property name="sync.plugin.last.upgrade.timestamp" value="1560399627961" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -381,7 +345,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23280802" />
@@ -392,7 +356,6 @@
       <window_info id="Designer" order="6" />
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
-      <window_info anchor="bottom" id="Find" weight="0.32974428" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" auto_hide="true" x="22" y="300" width="1396" height="260" id="Logcat" order="1" weight="0.3499327" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32974428" />
@@ -402,6 +365,7 @@
       <window_info anchor="bottom" id="Android Profiler" order="6" />
       <window_info anchor="bottom" id="Run" order="7" />
       <window_info anchor="bottom" id="Debug" order="8" />
+      <window_info anchor="bottom" id="Find" order="9" weight="0.32974428" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
@@ -544,13 +508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighmentDetailsInserted.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2907">
-          <caret line="212" selection-start-line="174" selection-start-column="5" selection-end-line="212" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
@@ -599,13 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/FactoryWeighmentAdapters/FactoryWeighmentDetailsInsertion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/FactoryWeighmentAdapters/FactoryWeighmentGridAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -624,17 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="123" column="36" selection-start-line="123" selection-start-column="36" selection-end-line="123" selection-end-column="36" />
-          <folding>
-            <element signature="e#1208#1209#0" expanded="true" />
-            <element signature="e#1246#1247#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -784,16 +723,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GroupCodes.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/ValueEdition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="3111">
+          <caret line="242" column="75" selection-start-line="242" selection-start-column="75" selection-end-line="242" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="940">
+          <caret line="336" column="24" selection-start-line="336" selection-start-column="24" selection-end-line="336" selection-end-column="24" />
+          <folding>
+            <element signature="e#14103#14104#0" expanded="true" />
+            <element signature="e#14198#14199#0" expanded="true" />
+            <element signature="e#16027#18061#0" expanded="true" />
+            <element signature="e#18060#18061#0" expanded="true" />
+            <element signature="e#20453#20454#0" expanded="true" />
+            <element signature="e#20518#20519#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2380">
+          <caret line="166" column="17" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
+          <folding>
+            <element signature="e#1208#1209#0" expanded="true" />
+            <element signature="e#1246#1247#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Utils/UsbService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="103" column="22" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Api/ApiService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="1870">
           <caret line="137" column="38" selection-start-line="137" selection-start-column="11" selection-end-line="137" selection-end-column="38" />
         </state>
       </provider>
@@ -807,42 +779,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/SiteWeighmentWeights.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
+        <state relative-caret-position="6511">
           <caret line="433" column="44" selection-start-line="433" selection-start-column="44" selection-end-line="433" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Utils/UsbService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="103" column="22" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2421">
+        <state relative-caret-position="4182">
           <caret line="303" column="69" selection-start-line="303" selection-start-column="69" selection-end-line="303" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetailsInserted.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-291">
+        <state relative-caret-position="2227">
           <caret line="173" column="9" selection-start-line="173" selection-start-column="9" selection-end-line="173" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/ValueEdition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="242" column="75" selection-start-line="242" selection-start-column="75" selection-end-line="242" selection-end-column="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Utils/UsbDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
+        <state relative-caret-position="170">
           <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -850,15 +808,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GroupCodes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="332" column="4" selection-start-line="332" selection-start-column="4" selection-end-line="332" selection-end-column="4" />
-          <folding>
-            <element signature="e#19435#19436#0" expanded="true" />
-            <element signature="e#19500#19501#0" expanded="true" />
-            <marker date="1560342096944" expanded="true" signature="11462:11591" ph="..." />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/FactoryWeighmentAdapters/FactoryWeighmentDetailsInsertion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighmentDetailsInserted.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="98" column="56" selection-start-line="95" selection-start-column="7" selection-end-line="98" selection-end-column="56" />
         </state>
       </provider>
     </entry>

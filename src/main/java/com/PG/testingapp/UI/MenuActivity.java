@@ -104,6 +104,8 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
     private static int TIMEOUT = 0;
     private boolean forceClaim = true;
 
+    String stringToRx;
+
 
     /*
      * Initiate a control transfer to request the first configuration
@@ -121,6 +123,15 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
     private static final int REQ_INDEX = 0x00;
     private static final int LENGTH = 64;
     private String result;
+
+
+    private static final byte IGNORE_00 = (byte) 0x00;
+    private static final byte SYNC_WORD = (byte) 0xFF;
+
+    private static final int CMD_LED_OFF = 2;
+    private static final int CMD_LED_ON = 1;
+    private static final int CMD_TEXT = 3;
+    private static final int MAX_TEXT_LENGTH = 16;
 
 
     @Override
@@ -291,7 +302,22 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
     void startSerialConnection(UsbManager usbManager, UsbDevice device) {
         UsbInterface intf = device.getInterface(0);
         UsbDeviceConnection connection = usbManager.openDevice(device);
-        connection.claimInterface(device.getInterface(0), true);
+       // connection.claimInterface(device.getInterface(0), true);
+
+
+        if (connection != null &&
+                connection.claimInterface(intf, true)) {
+
+            Log.e("connection","success");
+
+
+            connection.controlTransfer(0x21, 34, 0, 0, null, 0, 0);
+            connection.controlTransfer(0x21, 32, 0, 0,
+                    new byte[]{(byte) 0x80, 0x25, 0x00,
+                            0x00, 0x00, 0x00, 0x08},
+                    7, 0);
+
+        }
 
         new Thread(new Runnable() {
 
@@ -300,44 +326,91 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
             @Override
             public void run() {
 
-                UsbEndpoint endpoint = null;
+
+                UsbEndpoint endpointIn = null;
+                UsbEndpoint endpointOut = null;
 
                 for (int i = 0; i < intf.getEndpointCount(); i++) {
-                    if (intf.getEndpoint(i).getDirection() == UsbConstants.USB_DIR_OUT) {
-                        endpoint = intf.getEndpoint(i);
+                    if (intf.getEndpoint(i).getDirection() == UsbConstants.USB_DIR_IN) {
+                        endpointIn = intf.getEndpoint(i);
+                    }
+                  else  if (intf.getEndpoint(i).getDirection() == UsbConstants.USB_DIR_OUT) {
+                        endpointOut = intf.getEndpoint(i);
+                    }
+
+                }
+
+
+                if (connection != null) {
+                    byte[] message = new byte[64];
+                    message[0] = SYNC_WORD;
+
+                    connection.bulkTransfer(endpointOut,
+                            message, message.length, 1000);
+
+                }
+
+                ByteBuffer buffer = ByteBuffer.allocate(1);
+                UsbRequest request = new UsbRequest();
+                request.initialize(connection, endpointIn);
+                while (true) {
+                    request.queue(buffer, 1);
+                    if (connection.requestWait() == request) {
+                        byte dataRx = buffer.get(0);
+                        Log.e("datasdgfd", "dataRx: " + dataRx);
+                        if(dataRx!=IGNORE_00){
+
+                            stringToRx += (char)dataRx;
+                            runOnUiThread(new Runnable(){
+
+                                @Override
+                                public void run() {
+                                   Log.e("data",stringToRx);
+                                }});
+                        }
+                    } else {
                         break;
                     }
                 }
 
-
-                byte[] buffer1 = new byte[200];
-
-                connection.bulkTransfer(endpoint, buffer1,  LENGTH, 3000);
-
-
-                UsbRequest request = new UsbRequest(); // create an URB
-                boolean initilzed = request.initialize(connection, endpoint);
-
-                if (!initilzed) {
-                    Log.e("USB CONNECTION FAILED", "Request initialization failed for reading");
-                    return;
-                }
-                while (true) {
-                    int bufferMaxLength = endpoint.getMaxPacketSize();
-                    Charset charset=Charset.forName("UTF-8");
-                    ByteBuffer buffer = ByteBuffer.allocate(bufferMaxLength);
-                    if (request.queue(buffer, bufferMaxLength)) {
-                        if (connection.requestWait().equals(request)) {
-
-//                            byte[] bytes=new byte[buffer.remaining()];
-//                                buffer.get(bytes);
-                               result =new String(buffer.array(), 0, buffer.position());
-                            Log.e("Weight data  ", result);
-
-                        }
-                    }
-                }
-
+//                UsbEndpoint endpoint = null;
+//
+//                for (int i = 0; i < intf.getEndpointCount(); i++) {
+//                    if (intf.getEndpoint(i).getDirection() == UsbConstants.USB_DIR_OUT) {
+//                        endpoint = intf.getEndpoint(i);
+//                        break;
+//                    }
+//                }
+//
+//
+//                byte[] buffer1 = new byte[200];
+//
+//                connection.bulkTransfer(endpoint, buffer1,  LENGTH, 3000);
+//
+//
+//                UsbRequest request = new UsbRequest(); // create an URB
+//                boolean initilzed = request.initialize(connection, endpoint);
+//
+//                if (!initilzed) {
+//                    Log.e("USB CONNECTION FAILED", "Request initialization failed for reading");
+//                    return;
+//                }
+//                while (true) {
+//                    int bufferMaxLength = endpoint.getMaxPacketSize();
+//                    Charset charset=Charset.forName("UTF-8");
+//                    ByteBuffer buffer = ByteBuffer.allocate(bufferMaxLength);
+//                    if (request.queue(buffer, bufferMaxLength)) {
+//                        if (connection.requestWait().equals(request)) {
+//
+////                            byte[] bytes=new byte[buffer.remaining()];
+////                                buffer.get(bytes);
+//                               result =new String(buffer.array(), 0, buffer.position());
+//                            Log.e("Weight data  ", result);
+//
+//                        }
+//                    }
+//                }
+//
             }
         }).start();
 
