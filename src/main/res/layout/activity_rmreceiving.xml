@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    tools:context=".UI.RMRecivingDetails.RMReceiving">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/gradient_background_color">
+
+        <LinearLayout
+            android:id="@+id/toolbar_layout_lin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/extra_large_50dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <ImageView
+                android:id="@+id/back_button_rm_recive"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_left"
+                android:padding="@dimen/margin_xlarge"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1.5"
+                android:layout_height="wrap_content"
+                android:text="RM Receiving"
+                android:layout_gravity="center"
+                android:id="@+id/toolbar_heading"
+                android:textSize="@dimen/large_20dp"
+                android:textColor="@color/white" />
+
+
+
+        </LinearLayout>
+
+
+
+        <HorizontalScrollView
+            android:id="@+id/horizantal_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar_layout_lin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/layoutHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:weightSum="10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/extra_large_50dp"
+                        android:layout_height="match_parent"
+                        android:text="RB"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="@dimen/t0_size"
+                        android:padding="@dimen/margin_large" />
+
+                    <TextView
+                        android:layout_width="@dimen/extra_large_50dp"
+                        android:layout_height="match_parent"
+                        android:text="S.No"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="@dimen/t0_size"
+                        android:padding="@dimen/margin_large"/>
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:text="Inward Date"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="@dimen/t0_size"
+                        android:padding="@dimen/margin_large"/>
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:text="IGP No"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="@dimen/t0_size"
+                        android:padding="@dimen/margin_large"/>
+
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:text="Procurement No"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="@dimen/t0_size"
+                        android:padding="@dimen/margin_large"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_large"
+                        android:text="Farmer Name"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/t0_size" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:text="Status"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="@dimen/t0_size"
+                        android:padding="@dimen/margin_large"/>
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:text="Variety"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="@dimen/t0_size"
+                        android:padding="@dimen/margin_large" />
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:text="Count"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="@dimen/t0_size"
+                        android:padding="@dimen/margin_large" />
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:text="Quantity"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="@dimen/t0_size"
+                        android:padding="@dimen/margin_large" />
+
+
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rmReceiving_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_white">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+    </RelativeLayout>
+    <Button
+        android:id="@+id/btn_next_rm_receive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Next"
+        android:textColor="@color/color_white"
+        android:background="@color/app_dark_color"/>
+
+</RelativeLayout>

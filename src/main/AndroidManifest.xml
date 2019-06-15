@@ -18,7 +18,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-feature android:name="android.hardware.usb.host" />
-    <uses-permission android:name="com.google.android.things.permission.USE_PERIPHERAL_IO"/>
+
+    <uses-permission android:name="com.google.android.things.permission.USE_PERIPHERAL_IO" />
     <uses-permission android:name="com.google.android.things.permission.MANAGE_INPUT_DRIVERS" />
 
     <application
@@ -29,7 +30,17 @@
         android:roundIcon="@drawable/ic_logo_main"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.WeightLoadMachine"></activity>
+        <activity android:name=".UI.RMRecivingDetails.RmReceivingDetials"
+            android:theme="@style/AppThemeWithNoActionBar"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".UI.RMRecivingDetails.RMReceiving"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeWithNoActionBar" />
+        <activity
+            android:name=".UI.WeightLoadMachine"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeWithNoActionBar" />
         <activity
             android:name=".UI.LocationPlacement.LocationPlacement"
             android:screenOrientation="portrait"

@@ -14,6 +14,9 @@ import com.PG.testingapp.model.HeadLessGrading.GetVarietyDetails;
 import com.PG.testingapp.model.HeadLessGrading.LotNumbersStatus;
 import com.PG.testingapp.model.LocationPlacement.BarcodeResponce;
 import com.PG.testingapp.model.LoginResponse;
+import com.PG.testingapp.model.RMReceiving.GetCountCodoesStatus;
+import com.PG.testingapp.model.RMReceiving.RMReceive_IGP_No_Status;
+import com.PG.testingapp.model.RMReceiving.RMRecivingLoationsStatus;
 import com.PG.testingapp.model.SiteWTInsertResponce;
 import com.PG.testingapp.model.Status;
 import com.PG.testingapp.model.headOnHeadLessGrading.GetLotNumbers_HOHL_status;
@@ -188,5 +191,23 @@ public interface ApiService {
             @Field("PP_Number")String PP_Number,
             @Field("CS_Pellet_Location_No")String CS_Pellet_Location_No,
             @Field("Operator_Emp_id")String Operator_Emp_id);
+
+    //rm Receiving details
+    @GET("app_raw_material_get_details/")
+    Call<RMReceive_IGP_No_Status> getIGP_no();
+
+    @GET("app_rmoffice_get_location/")
+    Call<RMRecivingLoationsStatus> getRM_locations();
+
+    @FormUrlEncoded
+    @POST("app_rmvariety_get_details/")
+    Call<GetVarietyDetails> getRMVarietyCodes(
+            @Field("Material_Group_Code")String Material_Group_Code);
+
+    @FormUrlEncoded
+    @POST("app_rmvarietycount_get_details/")
+    Call<GetCountCodoesStatus> getRMcountCodes(
+            @Field("Product_Variety_Code")String Product_Variety_Code);
+
 
 }

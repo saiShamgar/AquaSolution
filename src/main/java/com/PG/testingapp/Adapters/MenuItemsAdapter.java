@@ -19,6 +19,7 @@ import com.PG.testingapp.UI.HeadLessGrading.HeadLessGrading;
 import com.PG.testingapp.UI.HeadOnGrading.HeadOnGrading;
 import com.PG.testingapp.UI.HeadOnHeadLessGrading.HeadOnHeadLessGrading;
 import com.PG.testingapp.UI.LocationPlacement.LocationPlacement;
+import com.PG.testingapp.UI.RMRecivingDetails.RMReceiving;
 import com.PG.testingapp.UI.Site_Weightment.Site_weightment;
 import com.PG.testingapp.UI.ValueEdition;
 import com.PG.testingapp.UI.WeightLoadMachine;
@@ -94,6 +95,10 @@ public class MenuItemsAdapter extends RecyclerView.Adapter<MenuItemsAdapter.View
                         Intent valueEdition=new Intent(context, LocationPlacement.class);
                         context.startActivity(valueEdition);
                     }
+                    if (position==14){
+                        Intent valueEdition=new Intent(context, RMReceiving.class);
+                        context.startActivity(valueEdition);
+                    }
 
                 }
                 else {
@@ -159,12 +164,16 @@ public class MenuItemsAdapter extends RecyclerView.Adapter<MenuItemsAdapter.View
             holder.item_name.setText("Location\n Placement");
             holder.gridImage.setImageResource(R.drawable.ic_barcode);
         }
+        if (position==14){
+            holder.item_name.setText("RM\n Receiving");
+            holder.gridImage.setImageResource(R.drawable.ic_cam_gallery);
+        }
 
     }
 
     @Override
     public int getItemCount() {
-        return 14;
+        return 15;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

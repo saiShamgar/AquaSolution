@@ -96,7 +96,6 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
     private ArrayList<VarietyCodes> varietyDetails =  new ArrayList<>();
     private ArrayList<GetGradeCodes> gradeCodes =  new ArrayList<>();
 
-
     private HeadLessGrading_2_Grid valueEditionDetailsAdapter;
     private ArrayList<ValueEditionDetaillsModel> valueEditionDetaillsModel=new ArrayList<>();
     @Override
@@ -112,7 +111,6 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
 
         Log.e("tag",status);
 
-
         txt_value_edt_dts_weight_btn_save=findViewById(R.id.txt_h_l_g_dts_weight_btn_save);
         txt_value_edt_weight_btn_complete=findViewById(R.id.txt_h_l_g_weight_btn_complete);
         value_edt_weight_recycler_view=findViewById(R.id.h_l_g_weight_recycler_view);
@@ -122,12 +120,12 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
         spinner_layout_h_l_Grade=findViewById(R.id.spinner_layout_h_l_Grade);
         txt_h_l_g_count=findViewById(R.id.txt_h_l_g_count);
         toolbar_heading_HeadLess_det=findViewById(R.id.toolbar_heading_HeadLess_det);
+        
         if (status.contains("HL")){
             toolbar_heading_HeadLess_det.setText("HeadLess Grading Weights");
         }else if (status.contains("HO")){
             toolbar_heading_HeadLess_det.setText("HeadOn Grading Weights");
         }
-
 
         //textViews
         txt_value_edt_weight_date_time=findViewById(R.id.txt_h_l_g_weight_date_time);
@@ -137,8 +135,6 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
         txt_value_edt_weight_total_tare_wt=findViewById(R.id.txt_h_l_g_weight_total_tare_wt);
         txt_value_edt_weight_net_weight=findViewById(R.id.txt_h_l_g_weight_net_weight);
         txt_h_l_g_lot_no=findViewById(R.id.txt_h_l_g_lot_no);
-
-
 
         spinner_val_edt_det=findViewById(R.id.spinner_h_l_g);
         spinner_h_l_VarietyName=findViewById(R.id.spinner_h_l_VarietyName);
