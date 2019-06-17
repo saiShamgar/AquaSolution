@@ -21,11 +21,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/RMReceivingAdapter/RmReceivingGrid_screen_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/RMReceivingAdapter/RmReceivingGrid_screen_1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Api/ApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Api/ApiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RMRecivingDetails/RmReceivingDetials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RMRecivingDetails/RmReceivingDetials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RMReceive_IGP_No.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RMReceive_IGP_No.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,118 +46,108 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Api/ApiService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="208" column="46" selection-start-line="208" selection-start-column="31" selection-end-line="208" selection-end-column="46" />
+            <state relative-caret-position="525">
+              <caret line="221" column="41" selection-start-line="221" selection-start-column="41" selection-end-line="221" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RMRecivingDetails/RmReceivingDetials.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-734">
+              <caret line="96" column="47" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="183" column="28" selection-start-line="183" selection-start-column="28" selection-end-line="183" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RMRecivingDetails/RmReceivingDetials.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="251" column="9" selection-start-line="251" selection-start-column="9" selection-end-line="251" selection-end-column="9" />
+            <state relative-caret-position="238">
+              <caret line="177" column="81" selection-start-line="177" selection-start-column="81" selection-end-line="177" selection-end-column="81" />
               <folding>
-                <element signature="e#9591#9627#0" expanded="true" />
-                <element signature="e#14647#14695#0" expanded="true" />
-                <element signature="e#15103#15136#0" expanded="true" />
-                <element signature="e#15268#15301#0" expanded="true" />
+                <element signature="e#1318#1319#0" expanded="true" />
+                <element signature="e#1356#1357#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_rm_receiving_detials.xml">
-          <provider editor-type-id="android-designer2" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RMRecivingDetails/RMReceiving.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3585">
-              <caret line="240" column="72" selection-start-line="240" selection-start-column="72" selection-end-line="240" selection-end-column="72" />
+            <state relative-caret-position="684">
+              <caret line="146" column="9" selection-start-line="81" selection-start-column="7" selection-end-line="146" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GroupCodes.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RmAnalysis/RmAnalysisDetails.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="576">
+              <caret line="52" column="74" selection-start-line="52" selection-start-column="74" selection-end-line="52" selection-end-column="74" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GetGrades.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="609" column="9" selection-start-line="603" selection-start-column="7" selection-end-line="609" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GetCodes.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RmAnalysis/RmAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="17" column="41" selection-start-line="10" selection-start-column="3" selection-end-line="17" selection-end-column="41" />
+              <caret line="81" column="71" selection-start-line="81" selection-start-column="71" selection-end-line="81" selection-end-column="71" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/GetCountCodoesStatus.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RMRecivingDetails/RmReceivingScreen_three.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+            <state relative-caret-position="443">
+              <caret line="162" column="67" selection-start-line="162" selection-start-column="67" selection-end-line="162" selection-end-column="67" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#717#718#0" expanded="true" />
-                <element signature="e#761#762#0" expanded="true" />
-                <element signature="e#797#798#0" expanded="true" />
-                <element signature="e#831#832#0" expanded="true" />
-                <element signature="e#861#862#0" expanded="true" />
-                <element signature="e#907#908#0" expanded="true" />
-                <element signature="e#945#946#0" expanded="true" />
-                <element signature="e#995#996#0" expanded="true" />
-                <element signature="e#1023#1024#0" expanded="true" />
-                <element signature="e#1083#1084#0" expanded="true" />
-                <element signature="e#1112#1113#0" expanded="true" />
+                <element signature="e#3483#3484#0" expanded="true" />
+                <element signature="e#3530#3531#0" expanded="true" />
+                <element signature="e#7165#7213#0" expanded="true" />
+                <element signature="e#7571#7604#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/GetCountCodes.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetailsInserted.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#580#581#0" expanded="true" />
-                <element signature="e#638#639#0" expanded="true" />
-                <element signature="e#683#684#0" expanded="true" />
-                <element signature="e#728#729#0" expanded="true" />
-                <element signature="e#769#770#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="525">
+              <caret line="223" column="15" selection-start-line="186" selection-start-column="11" selection-end-line="223" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/FactoryWeighment/ActualCodes.java">
+        <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_rm_analysis_details.xml">
+          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="240">
+              <caret line="220" column="71" selection-start-line="220" selection-start-column="49" selection-end-line="220" selection-end-column="71" />
+              <folding>
+                <element signature="e#38234#50886#0" />
+                <element signature="e#50912#63574#0" />
+                <element signature="e#63600#76257#0" />
+                <element signature="e#76283#88940#0" />
+                <element signature="e#88966#101618#0" />
+                <element signature="e#101644#114306#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -166,9 +157,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
         <option value="Interface" />
+        <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -178,19 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_factory_weighment.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/FactoryWeighmentAdapters/FactoryWeighmentGridAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_factory_weighment_details.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/FactoryWeighment/FTInsertionData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Utils/AppUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/HeadLessGrading/HeadLessGrading_2_Grid.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/HeadLessGrading/HeadLessGradingDetailsInsertedAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/HeadOnHeadlessAdapters/HOHL_Insertion_Adapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/FactoryWeighmentAdapters/FactoryWeighmentDetailsInsertion.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighmentDetailsInserted.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/LoginData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Api/AppUrl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/LoginResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/LoginActivity.java" />
@@ -208,23 +187,40 @@
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Utils/UsbDriver.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/custom_rm_receiving_screen_one.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RMReceive_IGP_No_Status.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RMReceive_IGP_No.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/InterFace/RMReceivingRadioClick.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_rmreceiving.xml" />
-        <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RMReceivingLocationDetails.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_rm_receiving_detials.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/RMReceivingAdapter/RmReceivingGrid_screen_1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RMRecivingDetails/RMReceiving.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RM_MetrialData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RMRecivingLoationsStatus.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/GetCountCodes.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/GetCountCodoesStatus.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Api/ApiService.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/cus_rm_receiving_screen_two.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_rm_receiving_screen_three.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RMReceive_IGP_No.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/RMReceivingAdapter/RmReceivingGrid_screen_1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RmReceivingScreen_2_Grid.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/RMReceivingAdapter/RmReceivingGrid_screen_2.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RMRecivingDetails/RmReceivingDetials.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/Rm_analysis_screen_1_adapter.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_rm_analysis.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RmAnalysis/RmAnaalysisDetailsStatus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RmAnalysis/RmAnalysisDetails.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/cus_rm_analysis_screen_one.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/InterFace/RmAnalysis_RadioClick.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/RmAnalysis/Rm_analysis_screen_1_adapter.java" />
+        <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/drawable/strock_background_blue.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RmReceivingInsertModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RMRecivingDetails/RmReceivingScreen_three.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_rm_analysis_details.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RmAnalysis/RmAnalysisDetails.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RmAnalysis/RmAnalysis.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Api/ApiService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java" />
       </list>
     </option>
   </component>
@@ -239,8 +235,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
       <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
@@ -265,7 +261,15 @@
               <item name="Aqua" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
+              <item name="Adapters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Aqua" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Adapters" type="462c0819:PsiDirectoryNode" />
+              <item name="RmAnalysis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
@@ -280,39 +284,7 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="HeadLessGrading" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Aqua" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="HeadOnGrading" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Aqua" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="LocationPlacement" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Aqua" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="RMReceiving" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Aqua" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="ValueEdition" type="462c0819:PsiDirectoryNode" />
+              <item name="RmAnalysis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
@@ -336,6 +308,14 @@
               <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="HeadOnGrading" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Aqua" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="RmAnalysis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
@@ -344,6 +324,17 @@
               <item name="testingapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="RMRecivingDetails" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Aqua" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Aqua" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="Aqua" type="1abcf292:AndroidViewProjectNode" />
@@ -362,10 +353,11 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="79SSOBS88HUWIVKR" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../OneWel2019 - Copy" />
-    <property name="sync.plugin.last.upgrade.timestamp" value="1560572201516" />
+    <property name="sync.plugin.last.upgrade.timestamp" value="1560745095097" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
+      <recent name="com.PG.testingapp.UI.RmAnalysis" />
       <recent name="com.PG.testingapp.UI.RMRecivingDetails" />
     </key>
   </component>
@@ -469,7 +461,7 @@
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23280802" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25071633" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -482,7 +474,7 @@
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32974428" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.32974428" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="5" weight="0.32974428" />
+      <window_info anchor="bottom" id="Build" order="5" visible="true" weight="0.32974428" />
       <window_info anchor="bottom" id="Android Profiler" order="6" />
       <window_info anchor="bottom" id="Run" order="7" />
       <window_info anchor="bottom" id="Debug" order="8" />
@@ -497,127 +489,109 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/GetScheduleNo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GetGradeCodes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/ValueEdition.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GetVarietyDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3111">
-          <caret line="242" column="75" selection-start-line="242" selection-start-column="75" selection-end-line="242" selection-end-column="75" />
+        <state relative-caret-position="221">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/FactoryWeighmentAdapters/FactoryWeighmentDetailsInsertion.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GetGroupCodes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+        <state relative-caret-position="221">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/FactoryWeighment/FactoryWeighmentDetailsInserted.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2856">
-          <caret line="209" column="36" selection-start-line="209" selection-start-column="36" selection-end-line="209" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Utils/UsbService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="103" column="22" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/LocationPlacement/LocationPlacement.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GroupCodes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/Site_Weightment/SiteWeighmentWeights.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GetGrades.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6511">
-          <caret line="433" column="44" selection-start-line="433" selection-start-column="44" selection-end-line="433" selection-end-column="44" />
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetailsInserted.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2227">
-          <caret line="173" column="9" selection-start-line="173" selection-start-column="9" selection-end-line="173" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Utils/UsbDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_head_less_grading.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding>
-            <element signature="e#1374#1393#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="183" column="30" selection-start-line="183" selection-start-column="30" selection-end-line="183" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="175" column="17" selection-start-line="175" selection-start-column="17" selection-end-line="175" selection-end-column="17" />
-          <folding>
-            <element signature="e#1208#1209#0" expanded="true" />
-            <element signature="e#1246#1247#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/factory_weighment_grid.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="111" column="19" selection-start-line="8" selection-start-column="3" selection-end-line="111" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/GridViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="38" column="36" selection-start-line="37" selection-start-column="7" selection-end-line="38" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/BoxesDetails.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GetCodes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="23" selection-start-line="5" selection-start-column="2" selection-end-line="12" selection-end-column="23" />
+          <caret line="17" column="41" selection-start-line="10" selection-start-column="3" selection-end-line="17" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/GetCountCodoesStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#761#762#0" expanded="true" />
+            <element signature="e#797#798#0" expanded="true" />
+            <element signature="e#831#832#0" expanded="true" />
+            <element signature="e#861#862#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#945#946#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
+            <element signature="e#1023#1024#0" expanded="true" />
+            <element signature="e#1083#1084#0" expanded="true" />
+            <element signature="e#1112#1113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/FactoryWeighment/ActualCodes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/ValueEditionDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/ValueEditionDetaillsModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_hohl_details_inserting.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="44" lean-forward="true" selection-end-line="251" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/headOnHeadLessGrading/Lot_details.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RMReceive_IGP_No_Status.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#640#641#0" expanded="true" />
@@ -636,145 +610,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Utils/AppUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2543">
-          <caret line="285" selection-start-line="285" selection-end-line="285" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/InterFace/OnRadioButtonClick.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="53" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/InterFace/RMReceivingRadioClick.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="55" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/HeadLessGrading/HeadLessGrading_2_Grid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4012">
-          <caret line="252" column="121" selection-start-line="252" selection-start-column="121" selection-end-line="252" selection-end-column="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/HeadLessGrading/HeadLessGradingGridAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/HeadOnHeadlessAdapters/HeadOnHeadlessGridAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/custom_rm_receiving_screen_one.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_rm_receiving_screen_three.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="80" column="37" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_rmreceiving.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-          <folding>
-            <element signature="e#4790#4811#0" expanded="true" />
-            <element signature="e#4961#4977#0" expanded="true" />
-            <element signature="e#5368#5384#0" expanded="true" />
-            <element signature="e#5425#5446#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_head_less_grading_details.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="153" column="47" selection-start-line="138" selection-start-column="30" selection-end-line="153" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGrading.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="73" column="11" selection-start-line="61" selection-start-column="7" selection-end-line="73" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/ValueEdition/LotNoDetails_VD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/ValueEdition/Location_VD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RMReceivingLocationDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
-            <element signature="e#649#650#0" expanded="true" />
-            <element signature="e#694#695#0" expanded="true" />
-            <element signature="e#736#737#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#836#837#0" expanded="true" />
-            <element signature="e#885#886#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/RMReceivingAdapter/RmReceivingGrid_screen_1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="54" column="95" selection-start-line="54" selection-start-column="95" selection-end-line="54" selection-end-column="95" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RMRecivingDetails/RMReceiving.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="80" column="17" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
+        <state relative-caret-position="158">
+          <caret line="116" column="65" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RMReceive_IGP_No.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="29" selection-start-line="8" selection-start-column="3" selection-end-line="12" selection-end-column="29" />
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="8" selection-start-column="3" selection-end-line="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2897#2898#0" expanded="true" />
@@ -839,130 +686,106 @@
             <element signature="e#6302#6303#0" expanded="true" />
             <element signature="e#6350#6351#0" expanded="true" />
             <element signature="e#6385#6386#0" expanded="true" />
+            <element signature="e#6533#6534#0" expanded="true" />
+            <element signature="e#6564#6565#0" expanded="true" />
+            <element signature="e#6612#6613#0" expanded="true" />
+            <element signature="e#6652#6653#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RMRecivingLoationsStatus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HOHL_details_inserting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="78" column="57" selection-start-line="78" selection-start-column="57" selection-end-line="78" selection-end-column="57" />
+        <state relative-caret-position="439">
+          <caret line="169" column="33" selection-start-line="167" selection-start-column="7" selection-end-line="169" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RmReceivingScreen_2_Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="75" column="33" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#765#766#0" expanded="true" />
-            <element signature="e#794#795#0" expanded="true" />
-            <element signature="e#838#839#0" expanded="true" />
-            <element signature="e#874#875#0" expanded="true" />
-            <element signature="e#908#909#0" expanded="true" />
-            <element signature="e#938#939#0" expanded="true" />
-            <element signature="e#984#985#0" expanded="true" />
-            <element signature="e#1022#1023#0" expanded="true" />
-            <element signature="e#1084#1085#0" expanded="true" />
-            <element signature="e#1111#1112#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
-            <element signature="e#1247#1248#0" expanded="true" />
-            <element signature="e#1276#1277#0" expanded="true" />
-            <element signature="e#1320#1321#0" expanded="true" />
-            <element signature="e#1356#1357#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1554#1555#0" expanded="true" />
+            <element signature="e#884#885#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#1558#1559#0" expanded="true" />
             <element signature="e#1606#1607#0" expanded="true" />
-            <element signature="e#1650#1651#0" expanded="true" />
-            <element signature="e#1953#1954#0" expanded="true" />
+            <element signature="e#1646#1647#0" expanded="true" />
+            <element signature="e#1685#1686#0" expanded="true" />
+            <element signature="e#1720#1721#0" expanded="true" />
+            <element signature="e#1776#1777#0" expanded="true" />
+            <element signature="e#1824#1825#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RM_MetrialData.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/RMReceivingAdapter/RmReceivingGrid_screen_2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        <state relative-caret-position="953">
+          <caret line="80" column="51" selection-start-line="80" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#2183#2184#0" expanded="true" />
+            <element signature="e#2285#2286#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/VarietyCodes.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadOnHeadLessGrading/HOHL_weights.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="36" />
+        <state relative-caret-position="545">
+          <caret line="539" column="5" selection-start-line="524" selection-start-column="3" selection-end-line="539" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/GettingVeriatyCodes.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/HeadLessGrading/HeadLessGrading_2_Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        <state relative-caret-position="3230">
+          <caret line="268" column="5" selection-start-line="264" selection-start-column="3" selection-end-line="268" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/Codes.java">
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/cus_rm_receiving_screen_two.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="34" />
+        <state relative-caret-position="172">
+          <caret line="11" column="53" selection-end-line="65" selection-end-column="17" />
+          <folding>
+            <element signature="e#368#395#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GetGradeCodes.java">
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_rmreceiving.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="345">
+          <caret line="24" column="12" selection-end-line="176" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GetVarietyDetails.java">
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/custom_rm_receiving_screen_one.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="30" />
+        <state relative-caret-position="226">
+          <caret line="28" column="27" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="28" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GetGroupCodes.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/InterFace/OnRadioButtonClick.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GroupCodes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GetGrades.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/FactoryWeighment/ActualCodes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/HeadLessGrading/GetCodes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="41" selection-start-line="10" selection-start-column="3" selection-end-line="17" selection-end-column="41" />
+        <state relative-caret-position="119">
+          <caret line="8" column="53" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/GetCountCodes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+        <state relative-caret-position="170">
+          <caret line="12" column="38" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="12" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
             <element signature="e#580#581#0" expanded="true" />
             <element signature="e#638#639#0" expanded="true" />
             <element signature="e#683#684#0" expanded="true" />
@@ -972,58 +795,234 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/GetCountCodoesStatus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/cus_rm_analysis_screen_one.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+        <state relative-caret-position="415">
+          <caret line="81" column="43" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/RMReceivingAdapter/RmReceivingGrid_screen_1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
-            <element signature="e#761#762#0" expanded="true" />
-            <element signature="e#797#798#0" expanded="true" />
-            <element signature="e#831#832#0" expanded="true" />
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#1083#1084#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Api/ApiService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/InterFace/RmAnalysis_RadioClick.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="208" column="46" selection-start-line="208" selection-start-column="31" selection-end-line="208" selection-end-column="46" />
+        <state relative-caret-position="102">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RmAnalysis/RmAnalysisDetailsModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="609" column="9" selection-start-line="603" selection-start-column="7" selection-end-line="609" selection-end-column="9" />
+        <state relative-caret-position="201">
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1737#1738#0" expanded="true" />
+            <element signature="e#1772#1773#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RmAnalysis/RmAnaalysisDetailsStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#677#678#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/RmAnalysis/Rm_analysis_screen_1_adapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-449">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="35" column="59" lean-forward="true" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_rm_analysis.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="43" column="23" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="43" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_rm_receiving_detials.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3585">
-          <caret line="240" column="72" selection-start-line="240" selection-start-column="72" selection-end-line="240" selection-end-column="72" />
+        <state relative-caret-position="191">
+          <caret line="200" column="39" selection-start-line="67" selection-start-column="22" selection-end-line="200" selection-end-column="39" />
+          <folding>
+            <element signature="e#2944#11099#0" />
+            <element signature="e#5819#8431#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable-hdpi/stroke_background_red_low_radius.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable-hdpi/yellow_background.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable-hdpi/background_blue_low_radius.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable/strock_background_blue.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="103" column="57" selection-start-line="103" selection-start-column="57" selection-end-line="103" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_head_less_grading_details.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="299" column="35" selection-start-line="266" selection-start-column="19" selection-end-line="299" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/model/RMReceiving/RmReceivingInsertModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="116" column="38" selection-start-line="116" selection-start-column="38" selection-end-line="116" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3410#3411#0" expanded="true" />
+            <element signature="e#3468#3469#0" expanded="true" />
+            <element signature="e#3513#3514#0" expanded="true" />
+            <element signature="e#4892#4893#0" expanded="true" />
+            <element signature="e#4929#4930#0" expanded="true" />
+            <element signature="e#4989#4990#0" expanded="true" />
+            <element signature="e#5041#5042#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/HeadLessGrading/HeadLessGradingDetailsInserted.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="223" column="15" selection-start-line="186" selection-start-column="11" selection-end-line="223" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RMRecivingDetails/RmReceivingScreen_three.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="162" column="67" selection-start-line="162" selection-start-column="67" selection-end-line="162" selection-end-column="67" />
+          <folding>
+            <element signature="e#3483#3484#0" expanded="true" />
+            <element signature="e#3530#3531#0" expanded="true" />
+            <element signature="e#7165#7213#0" expanded="true" />
+            <element signature="e#7571#7604#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_rm_analysis_details.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="220" column="71" selection-start-line="220" selection-start-column="49" selection-end-line="220" selection-end-column="71" />
+          <folding>
+            <element signature="e#38234#50886#0" />
+            <element signature="e#50912#63574#0" />
+            <element signature="e#63600#76257#0" />
+            <element signature="e#76283#88940#0" />
+            <element signature="e#88966#101618#0" />
+            <element signature="e#101644#114306#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RmAnalysis/RmAnalysisDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="52" column="74" selection-start-line="52" selection-start-column="74" selection-end-line="52" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RMRecivingDetails/RmReceivingDetials.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="251" column="9" selection-start-line="251" selection-start-column="9" selection-end-line="251" selection-end-column="9" />
+        <state relative-caret-position="-734">
+          <caret line="96" column="47" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RMRecivingDetails/RMReceiving.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="146" column="9" selection-start-line="81" selection-start-column="7" selection-end-line="146" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Api/ApiService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="221" column="41" selection-start-line="221" selection-start-column="41" selection-end-line="221" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/RmAnalysis/RmAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="81" column="71" selection-start-line="81" selection-start-column="71" selection-end-line="81" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/UI/MenuActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="183" column="28" selection-start-line="183" selection-start-column="28" selection-end-line="183" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PG/testingapp/Adapters/MenuItemsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="177" column="81" selection-start-line="177" selection-start-column="81" selection-end-line="177" selection-end-column="81" />
           <folding>
-            <element signature="e#9591#9627#0" expanded="true" />
-            <element signature="e#14647#14695#0" expanded="true" />
-            <element signature="e#15103#15136#0" expanded="true" />
-            <element signature="e#15268#15301#0" expanded="true" />
+            <element signature="e#1318#1319#0" expanded="true" />
+            <element signature="e#1356#1357#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.method.CharacterPickerDialog;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -15,17 +16,21 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.PG.testingapp.Adapters.HeadLessGrading.HeadLessGrading_2_Grid;
 import com.PG.testingapp.Adapters.RMReceivingAdapter.RmReceivingGrid_screen_1;
+import com.PG.testingapp.Adapters.RMReceivingAdapter.RmReceivingGrid_screen_2;
 import com.PG.testingapp.Api.ApiService;
 import com.PG.testingapp.Api.AppUrl;
 import com.PG.testingapp.BaseActivity;
 import com.PG.testingapp.InterFace.RMReceivingRadioClick;
 import com.PG.testingapp.R;
+import com.PG.testingapp.UI.HeadOnHeadLessGrading.HOHL_details_inserting;
+import com.PG.testingapp.UI.HeadOnHeadLessGrading.HOHL_weights;
 import com.PG.testingapp.UI.MenuActivity;
 import com.PG.testingapp.UI.ValueEditionDetails;
 import com.PG.testingapp.Utils.AppConstant;
@@ -39,8 +44,10 @@ import com.PG.testingapp.model.RMReceiving.RMReceive_IGP_No_Status;
 import com.PG.testingapp.model.RMReceiving.RMReceivingLocationDetails;
 import com.PG.testingapp.model.RMReceiving.RMRecivingLoationsStatus;
 import com.PG.testingapp.model.RMReceiving.RM_MetrialData;
+import com.PG.testingapp.model.RMReceiving.RmReceivingScreen_2_Grid;
 import com.PG.testingapp.model.ValueEditionDetaillsModel;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -60,6 +67,7 @@ public class RmReceivingDetials extends BaseActivity {
     private TextView txt_rm_receiving_details_weight_btn_save,txt_rm_receiving_details_btn_complete;
     private RecyclerView rm_receiving_details_recycler_view;
     private RMReceive_IGP_No rmReceive_igp_no;
+    private ImageView back_button_rm_recive_details;
 
     private Context context;
     private ApiService apiService;
@@ -74,10 +82,14 @@ public class RmReceivingDetials extends BaseActivity {
     private ArrayList<VarietyCodes> varietyDetails=new ArrayList<>();
     private ArrayList<GetCountCodes> countDetails=new ArrayList<>();
 
+    private ArrayList<RmReceivingScreen_2_Grid> model=new ArrayList<>();
+
     private String loctationName,productName,varietyName,countName;
     private String locationCode,productCode,varietyCode,countcode;
     private int locationPosition,productPosition,varietyPosition,countPosition;
     private boolean validate;
+
+    private RmReceivingGrid_screen_2 adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +116,8 @@ public class RmReceivingDetials extends BaseActivity {
         spinner_rm_product=findViewById(R.id.spinner_rm_product);
         spinner_rm_variety=findViewById(R.id.spinner_rm_variety);
         spinner_rm_count=findViewById(R.id.spinner_rm_count);
+
+        back_button_rm_recive_details=findViewById(R.id.back_button_rm_recive_details);
 
         txt_rm_received_details_quantity=findViewById(R.id.txt_rm_received_details_quantity);
         rm_receiving_details_recycler_view=findViewById(R.id.rm_receiving_details_recycler_view);
@@ -218,13 +232,78 @@ public class RmReceivingDetials extends BaseActivity {
                                                 @Override
                                                 public void onClick(View v) {
 
+                                                    varietyCode=varietyDetails.get(varietyPosition-1).getFP_Variety_Code();
+                                                    productCode=productDetails.get(productPosition-1).getMaterial_Group_Code();
+                                                    countcode=countDetails.get(countPosition-1).getVariety_Count_Code();
+                                                    locationCode=locationDetails.get(locationPosition-1).getOrg_office_no();
+                                                    RmReceivingScreen_2_Grid details=new RmReceivingScreen_2_Grid();
+                                                    details.setProduct(productName);
+                                                    details.setVariety(varietyName);
+                                                    details.setCount(countName);
+                                                    details.setCount_code(countcode);
+                                                    details.setProduct_code(productCode);
+                                                    details.setVariety_code(varietyCode);
+                                                    details.setQuantity(txt_rm_received_details_quantity.getText().toString().trim());
+                                                    details.setLocation(loctationName);
+                                                    details.setLocationCode(locationCode);
 
+                                                    model.add(details);
+                                                    adapter=new RmReceivingGrid_screen_2(getApplicationContext(),model);
+                                                    rm_receiving_details_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                                                    rm_receiving_details_recycler_view.setHasFixedSize(true);
+                                                    rm_receiving_details_recycler_view.setAdapter(adapter);
+
+                                                    spinner_rm_count.setSelection(countPosition);
+
+                                                    txt_rm_received_details_quantity.setText("");
+                                                    txt_rm_received_details_quantity.requestFocus();
+                                                    txt_rm_received_details_quantity.post(new Runnable() {
+                                                        @Override
+                                                        public void run() {
+                                                            final InputMethodManager imm = (InputMethodManager) txt_rm_received_details_quantity.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                                                            imm.showSoftInput(txt_rm_received_details_quantity, InputMethodManager.SHOW_IMPLICIT);
+                                                            txt_rm_received_details_quantity.requestFocus(); // needed if you have more then one input
+                                                        }
+                                                    });
                                                 }
                                             },
                                             new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
 
+                                                    varietyCode=varietyDetails.get(varietyPosition-1).getFP_Variety_Code();
+                                                    productCode=productDetails.get(productPosition-1).getMaterial_Group_Code();
+                                                    countcode=countDetails.get(countPosition-1).getVariety_Count_Code();
+                                                    locationCode=locationDetails.get(locationPosition-1).getOrg_office_no();
+                                                    RmReceivingScreen_2_Grid details=new RmReceivingScreen_2_Grid();
+                                                    details.setProduct(productName);
+                                                    details.setVariety(varietyName);
+                                                    details.setCount(countName);
+                                                    details.setCount_code(countcode);
+                                                    details.setProduct_code(productCode);
+                                                    details.setVariety_code(varietyCode);
+                                                    details.setQuantity(txt_rm_received_details_quantity.getText().toString().trim());
+                                                    details.setLocation(loctationName);
+                                                    details.setLocationCode(locationCode);
+
+                                                    model.add(details);
+                                                    adapter=new RmReceivingGrid_screen_2(getApplicationContext(),model);
+                                                    rm_receiving_details_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                                                    rm_receiving_details_recycler_view.setHasFixedSize(true);
+                                                    rm_receiving_details_recycler_view.setAdapter(adapter);
+
+                                                    spinner_rm_count.setSelection(0);
+
+                                                    txt_rm_received_details_quantity.setText("");
+                                                    txt_rm_received_details_quantity.requestFocus();
+                                                    txt_rm_received_details_quantity.post(new Runnable() {
+                                                        @Override
+                                                        public void run() {
+                                                            final InputMethodManager imm = (InputMethodManager) txt_rm_received_details_quantity.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                                                            imm.showSoftInput(txt_rm_received_details_quantity, InputMethodManager.SHOW_IMPLICIT);
+                                                            txt_rm_received_details_quantity.requestFocus(); // needed if you have more then one input
+                                                        }
+                                                    });
                                                 }
                                             });
                                 } else {
@@ -262,6 +341,33 @@ public class RmReceivingDetials extends BaseActivity {
                         spinner_layout_rm_recived_loc.setBackground(getResources().getDrawable(R.drawable.yellow_background));
                     }
                 }
+            }
+        });
+
+        txt_rm_receiving_details_btn_complete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (model.size()!=0){
+                    Bundle b = new Bundle();
+                    b.putSerializable("objNames", (Serializable) model);
+                    Intent insertDetails=new Intent(RmReceivingDetials.this, RmReceivingScreen_three.class);
+                    insertDetails.putExtras(b);
+                    insertDetails.putExtra("process",rmReceive_igp_no);
+                    insertDetails.putExtra("lot_no",txt_rm_Lot_no.getText().toString().trim());
+                    insertDetails.putExtra("lot_date",txt_rm_lot_date.getText().toString().trim());
+                    insertDetails.putExtra("ps_no",txt_rm_process_no.getText().toString().trim());
+                    insertDetails.putExtra("ps_date",txt_rm_process_sch_date.getText().toString().trim());
+                    startActivity(insertDetails);
+                }else {
+                    AppUtils.showToast(context,"please fill details");
+                }
+            }
+        });
+
+        back_button_rm_recive_details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 
@@ -486,5 +592,22 @@ public class RmReceivingDetials extends BaseActivity {
             AppUtils.showToast(context,getString(R.string.error_network));
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        //  super.onBackPressed();
+        AppUtils.showCustomOkCancelDialog(this, "", "Do you want to go back without saving data?", "No", "Yes",
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                }, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        RmReceivingDetials.super.onBackPressed();
+                    }
+                });
     }
 }

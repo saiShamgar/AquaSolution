@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:weightSum="10"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="@dimen/extra_large_50dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center">
+            <CheckBox
+                android:id="@+id/checkbox_rm_analysis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/app_color"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/rm_analysis_lot_no"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:text="Lot.No"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/t0_size"
+            android:padding="@dimen/margin_large"/>
+
+        <TextView
+            android:id="@+id/rm_analysis_farmer_name"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="Farmer Name"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/t0_size"
+            android:padding="@dimen/margin_large"/>
+
+        <TextView
+            android:id="@+id/rm_analysis_location"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="Location"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/t0_size"
+            android:padding="@dimen/margin_large"/>
+
+
+        <TextView
+            android:id="@+id/rm_analysis_variety"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:text="Variety"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/t0_size"
+            android:padding="@dimen/margin_large"/>
+        <TextView
+            android:id="@+id/rm_analysis_count"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="@dimen/margin_large"
+            android:text="Count"
+            android:textColor="@color/black"
+            android:textSize="@dimen/t0_size" />
+
+        <TextView
+            android:id="@+id/rm_analysis_quantity"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="Quantity"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/t0_size"
+            android:padding="@dimen/margin_large"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

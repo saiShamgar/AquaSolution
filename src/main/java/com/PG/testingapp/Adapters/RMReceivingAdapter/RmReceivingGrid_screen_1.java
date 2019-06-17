@@ -59,7 +59,7 @@ public class RmReceivingGrid_screen_1 extends RecyclerView.Adapter<RmReceivingGr
         holder.txt_status.setText(details.get(i).getStatus());
         holder.txt_variety.setText(details.get(i).getProduct_Variety_Name());
         holder.txt_count.setText(details.get(i).getVariety_Count());
-        holder.txt_quantity.setText(details.get(i).getProduct_Variety_Code()  );
+        holder.txt_quantity.setText(details.get(i).getQuantity()  );
 
     }
 

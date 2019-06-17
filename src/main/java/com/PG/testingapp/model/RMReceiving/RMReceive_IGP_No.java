@@ -63,7 +63,10 @@ public class RMReceive_IGP_No implements Serializable {
     @SerializedName("Lot_date")
     private String Lot_date;
 
-    public RMReceive_IGP_No(String RM_Inward_Date, String RM_IGP_No, String procurement_Schedule_No, String org_office_no, String FK_Farmer_No, String aqua_Agent_No, String RM_Inward_Remarks, String lot_No, String material_Group_Code, String product_Variety_Code, String variety_Count_Code, String product_Variety_Name, String variety_Count, String aqua_Farmer_No, String aqua_Farmer_Name, String aqua_Agent_Name, String officeLoc, String status, String lot_date) {
+    @SerializedName("quantity")
+    private String quantity;
+
+    public RMReceive_IGP_No(String RM_Inward_Date, String RM_IGP_No, String procurement_Schedule_No, String org_office_no, String FK_Farmer_No, String aqua_Agent_No, String RM_Inward_Remarks, String lot_No, String material_Group_Code, String product_Variety_Code, String variety_Count_Code, String product_Variety_Name, String variety_Count, String aqua_Farmer_No, String aqua_Farmer_Name, String aqua_Agent_Name, String officeLoc, String status, String lot_date, String quantity) {
         this.RM_Inward_Date = RM_Inward_Date;
         this.RM_IGP_No = RM_IGP_No;
         Procurement_Schedule_No = procurement_Schedule_No;
@@ -83,6 +86,7 @@ public class RMReceive_IGP_No implements Serializable {
         OfficeLoc = officeLoc;
         Status = status;
         Lot_date = lot_date;
+        this.quantity = quantity;
     }
 
     public String getRM_Inward_Date() {
@@ -235,5 +239,13 @@ public class RMReceive_IGP_No implements Serializable {
 
     public void setLot_date(String lot_date) {
         Lot_date = lot_date;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 }

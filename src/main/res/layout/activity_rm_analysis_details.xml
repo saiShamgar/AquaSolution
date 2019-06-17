@@ -1,0 +1,2181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.RmAnalysis.RmAnalysisDetails">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/toolbar_layout_lin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/extra_large_50dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@drawable/gradient_background_color">
+
+            <ImageView
+                android:id="@+id/back_button_rm_analysis"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_left"
+                android:padding="@dimen/margin_xlarge"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1.5"
+                android:layout_height="wrap_content"
+                android:text="RM Receiving Analysis"
+                android:layout_gravity="center"
+                android:id="@+id/toolbar_heading"
+                android:textSize="@dimen/large_20dp"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/act_background">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/white"
+                    android:focusableInTouchMode="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4"
+                            android:padding="@dimen/card_radius_8dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Analysis Date : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_rm_analysis_date"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14dp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_light_black"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Lot no : "
+                                android:textSize="@dimen/t13_size"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_rm_lot_no"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_light_black"
+                                android:layout_gravity="center"
+                                android:textSize="14dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4"
+                            android:padding="@dimen/card_radius_8dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Lot Date : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_rm_lot_date"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14dp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_light_black"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Farmer Name : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_rm_farmer_name"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_light_black"
+                                android:layout_gravity="center"
+                                android:textSize="14dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4"
+                            android:padding="@dimen/card_radius_8dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Location : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_rm_location"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14dp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_light_black"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Received Count : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_rm_received_count"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_light_black"
+                                android:layout_gravity="center"
+                                android:textSize="14dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4"
+                            android:padding="@dimen/card_radius_8dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Quantity : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_rm_quantity"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14dp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_light_black"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Sample Quantity HON(Kgs) : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <EditText
+                                android:id="@+id/txt_rm_sample_quantity"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_light_black"
+                                android:layout_gravity="center"
+                                android:hint="0"
+                                android:inputType="numberDecimal"
+                                android:imeOptions="actionDone"
+                                android:textSize="14dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4"
+                            android:padding="@dimen/card_radius_8dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="No of pics : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_rm_no_of_pics"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14dp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_light_black"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Supervisor name : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_rm_supervisor_name"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_light_black"
+                                android:layout_gravity="center"
+                                android:textSize="14dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4"
+                            android:padding="@dimen/card_radius_8dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Remarks : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_rm_remarks"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14dp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_light_black"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="8"
+                    android:layout_marginLeft="@dimen/margin_xlarge"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:elevation="1dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/cat_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:paddingLeft="@dimen/margin_large"
+                            android:paddingRight="@dimen/margin_large"
+                            android:paddingTop="@dimen/card_elevation_4dp"
+                            android:paddingBottom="@dimen/card_elevation_4dp"
+                            android:background="@drawable/strock_background_blue"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center"
+                            android:background="@color/black"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/cat_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2"
+                            android:paddingLeft="@dimen/margin_large"
+                            android:paddingRight="@dimen/margin_large"
+                            android:paddingTop="@dimen/card_elevation_4dp"
+                            android:paddingBottom="@dimen/card_elevation_4dp"
+                            android:background="@drawable/strock_background_blue"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center"
+                            android:background="@color/black"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/cat_three"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3"
+                            android:paddingLeft="@dimen/margin_large"
+                            android:paddingRight="@dimen/margin_large"
+                            android:paddingTop="@dimen/card_elevation_4dp"
+                            android:paddingBottom="@dimen/card_elevation_4dp"
+                            android:background="@drawable/strock_background_blue"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center"
+                            android:background="@color/black"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/cat_four"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4"
+                            android:paddingLeft="@dimen/margin_large"
+                            android:paddingRight="@dimen/margin_large"
+                            android:paddingTop="@dimen/card_elevation_4dp"
+                            android:paddingBottom="@dimen/card_elevation_4dp"
+                            android:background="@drawable/strock_background_blue"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center"
+                            android:background="@color/black"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/cat_five"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5"
+                            android:paddingLeft="@dimen/margin_large"
+                            android:paddingRight="@dimen/margin_large"
+                            android:paddingTop="@dimen/card_elevation_4dp"
+                            android:paddingBottom="@dimen/card_elevation_4dp"
+                            android:background="@drawable/strock_background_blue"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center"
+                            android:background="@color/black"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/cat_six"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6"
+                            android:paddingLeft="@dimen/margin_large"
+                            android:paddingRight="@dimen/margin_large"
+                            android:paddingTop="@dimen/card_elevation_4dp"
+                            android:paddingBottom="@dimen/card_elevation_4dp"
+                            android:background="@drawable/strock_background_blue"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center"
+                            android:background="@color/black"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/cat_seven"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7"
+                            android:paddingLeft="@dimen/margin_large"
+                            android:paddingRight="@dimen/margin_large"
+                            android:paddingTop="@dimen/card_elevation_4dp"
+                            android:paddingBottom="@dimen/card_elevation_4dp"
+                            android:background="@drawable/strock_background_blue"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center"
+                            android:background="@color/black"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/cat_eight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="8"
+                            android:paddingLeft="@dimen/margin_large"
+                            android:paddingRight="@dimen/margin_large"
+                            android:paddingTop="@dimen/card_elevation_4dp"
+                            android:paddingBottom="@dimen/card_elevation_4dp"
+                            android:background="@drawable/strock_background_blue"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:focusableInTouchMode="true">
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/margin_large"
+                            app:cardElevation="2dp"
+                            android:layout_margin="@dimen/card_radius_8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="1-Soft/Semi Soft/Paper Soft"
+                                    android:layout_margin="@dimen/margin_xlarge"
+                                    android:textSize="18dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="No of pics :"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text" />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_one_no_of_pics"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting/sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_one_sample_quantity"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="% on Sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_one_per_sam_qt"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting in recd. Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_one_recd_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Final quantity"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_one_final_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/margin_large"
+                            app:cardElevation="2dp"
+                            android:layout_margin="@dimen/card_radius_8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="2-Loose Shell/Tp"
+                                    android:layout_margin="@dimen/margin_xlarge"
+                                    android:textSize="18dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="No of pics :"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text" />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_two_no_of_pics"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting/sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_two_sample_quantity"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="% on Sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_two_per_sam_qt"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting in recd. Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_two_recd_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Final quantity"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_two_final_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/margin_large"
+                            app:cardElevation="2dp"
+                            android:layout_margin="@dimen/card_radius_8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="3-Drooping Head"
+                                    android:layout_margin="@dimen/margin_xlarge"
+                                    android:textSize="18dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="No of pics :"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text" />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_three_no_of_pics"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting/sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_three_sample_quantity"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="% on Sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_three_per_sam_qt"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting in recd. Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_three_recd_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Final quantity"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_three_final_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/margin_large"
+                            app:cardElevation="2dp"
+                            android:layout_margin="@dimen/card_radius_8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="4-Black spot/Black Dot"
+                                    android:layout_margin="@dimen/margin_xlarge"
+                                    android:textSize="18dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="No of pics :"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text" />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_four_no_of_pics"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting/sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_four_sample_quantity"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="% on Sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_four_per_sam_qt"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting in recd. Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_four_recd_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Final quantity"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_four_final_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/margin_large"
+                            app:cardElevation="2dp"
+                            android:layout_margin="@dimen/card_radius_8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="5-Broken/Damage"
+                                    android:layout_margin="@dimen/margin_xlarge"
+                                    android:textSize="18dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="No of pics :"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text" />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_five_no_of_pics"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting/sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_five_sample_quantity"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="% on Sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_five_per_sam_qt"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting in recd. Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_five_recd_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Final quantity"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_five_final_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/margin_large"
+                            app:cardElevation="2dp"
+                            android:layout_margin="@dimen/card_radius_8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="6-Decomposition/Discolouration"
+                                    android:layout_margin="@dimen/margin_xlarge"
+                                    android:textSize="18dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="No of pics :"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text" />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_six_no_of_pics"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting/sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_six_sample_quantity"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="% on Sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_six_per_sam_qt"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting in recd. Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_six_recd_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Final quantity"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_six_final_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/margin_large"
+                            app:cardElevation="2dp"
+                            android:layout_margin="@dimen/card_radius_8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="7-Bends/small Cuttings"
+                                    android:layout_margin="@dimen/margin_xlarge"
+                                    android:textSize="18dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="No of pics :"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text" />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_seven_no_of_pics"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting/sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_seven_sample_quantity"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="% on Sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_seven_per_sam_qt"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting in recd. Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_seven_recd_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Final quantity"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_seven_final_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/margin_large"
+                            app:cardElevation="2dp"
+                            android:layout_margin="@dimen/card_radius_8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="8-Red/Black gill"
+                                    android:layout_margin="@dimen/margin_xlarge"
+                                    android:textSize="18dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="No of pics :"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text" />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_eight_no_of_pics"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting/sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_eight_sample_quantity"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="% on Sample Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_eight_per_sam_qt"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Cutting in recd. Qty"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_eight_recd_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/margin_xxxxxlarge"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="@dimen/margin_xlarge"
+                                    android:layout_marginRight="@dimen/margin_large"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="Final quantity"
+                                        android:gravity="center_vertical"
+                                        android:textSize="@dimen/t13_size"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/color_text"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/txt_rm_ct_eight_final_qty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/boarder_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:gravity="end"
+                                        android:imeOptions="actionNext"
+                                        android:textColor="@color/order_txt_color"
+                                        android:textColorHint="@color/color_lite_grey"
+                                        android:textSize="@dimen/t13_size" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

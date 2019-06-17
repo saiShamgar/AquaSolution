@@ -17,6 +17,7 @@ import com.PG.testingapp.model.LoginResponse;
 import com.PG.testingapp.model.RMReceiving.GetCountCodoesStatus;
 import com.PG.testingapp.model.RMReceiving.RMReceive_IGP_No_Status;
 import com.PG.testingapp.model.RMReceiving.RMRecivingLoationsStatus;
+import com.PG.testingapp.model.RmAnalysis.RmAnaalysisDetailsStatus;
 import com.PG.testingapp.model.SiteWTInsertResponce;
 import com.PG.testingapp.model.Status;
 import com.PG.testingapp.model.headOnHeadLessGrading.GetLotNumbers_HOHL_status;
@@ -208,6 +209,19 @@ public interface ApiService {
     @POST("app_rmvarietycount_get_details/")
     Call<GetCountCodoesStatus> getRMcountCodes(
             @Field("Product_Variety_Code")String Product_Variety_Code);
+
+    @FormUrlEncoded
+    @POST("app_rawmaterial_save_registers/")
+    Call<Status> saveRmReeceivingDetails(
+            @Field("data")String data);
+
+    //rm analysis
+    @FormUrlEncoded
+    @POST("app_rm_analysis_get_data/")
+    Call<RmAnaalysisDetailsStatus> get_rm_analysis_details(
+            @Field("Emp_Id")String Emp_Id);
+
+
 
 
 }

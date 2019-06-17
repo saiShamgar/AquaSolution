@@ -20,6 +20,7 @@ import com.PG.testingapp.UI.HeadOnGrading.HeadOnGrading;
 import com.PG.testingapp.UI.HeadOnHeadLessGrading.HeadOnHeadLessGrading;
 import com.PG.testingapp.UI.LocationPlacement.LocationPlacement;
 import com.PG.testingapp.UI.RMRecivingDetails.RMReceiving;
+import com.PG.testingapp.UI.RmAnalysis.RmAnalysis;
 import com.PG.testingapp.UI.Site_Weightment.Site_weightment;
 import com.PG.testingapp.UI.ValueEdition;
 import com.PG.testingapp.UI.WeightLoadMachine;
@@ -50,53 +51,57 @@ public class MenuItemsAdapter extends RecyclerView.Adapter<MenuItemsAdapter.View
                         Intent siteWeightment=new Intent(context, Site_weightment.class);
                         context.startActivity(siteWeightment);
                     }
-                    if (position==1){
+                    else if (position==1){
                         //  Toast.makeText(context,"factory weighment",Toast.LENGTH_SHORT).show();
                         Intent valueEdition=new Intent(context, FactoryWeighment.class);
                         context.startActivity(valueEdition);
                     }
-                    if (position==2){
+                    else if (position==2){
 
                     }
-                    if (position==3){
+                    else if (position==3){
                         Intent valueEdition=new Intent(context, HeadOnGrading.class);
                         context.startActivity(valueEdition);
                     }
-                    if (position==4){
+                    else  if (position==4){
 
                     }
-                    if (position==5){
+                    else  if (position==5){
                         Intent valueEdition=new Intent(context, HeadOnHeadLessGrading.class);
                         context.startActivity(valueEdition);
                     }
-                    if (position==6){
+                    else  if (position==6){
 
                     }
-                    if (position==7){
+                    else  if (position==7){
                         Intent valueEdition=new Intent(context, HeadLessGrading.class);
                         context.startActivity(valueEdition);
                     }
-                    if (position==8){
+                    else  if (position==8){
 
                     }
-                    if (position==9){
+                    else  if (position==9){
 
                     }
-                    if (position==10){
+                    else  if (position==10){
 
                     }
-                    if (position==11){
+                    else  if (position==11){
 
                     }
-                    if (position==12){
+                    else  if (position==12){
 
                     }
-                    if (position==13){
+                    else  if (position==13){
                         Intent valueEdition=new Intent(context, LocationPlacement.class);
                         context.startActivity(valueEdition);
                     }
-                    if (position==14){
+                    else  if (position==14){
                         Intent valueEdition=new Intent(context, RMReceiving.class);
+                        context.startActivity(valueEdition);
+                    }
+                    else  if (position==15){
+                        Intent valueEdition=new Intent(context, RmAnalysis.class);
                         context.startActivity(valueEdition);
                     }
 
@@ -112,68 +117,72 @@ public class MenuItemsAdapter extends RecyclerView.Adapter<MenuItemsAdapter.View
             holder.item_name.setText("Site\n weighment");
             holder.gridImage.setImageResource(R.drawable.ic_site_weighment);
         }
-        if (position==1){
+        else  if (position==1){
             holder.item_name.setText("Factory\n Manual");
             holder.gridImage.setImageResource(R.drawable.ic_factory_weighment);
         }
-        if (position==2){
+        else  if (position==2){
             holder.item_name.setText("Factory\n WS");
             holder.gridImage.setImageResource(R.drawable.ic_factory_ws);
         }
-        if (position==3){
+        else  if (position==3){
             holder.item_name.setText("HeadOn\n Grading Manual");
             holder.gridImage.setImageResource(R.drawable.ic_head_on_grading);
         }
-        if (position==4){
+        else  if (position==4){
             holder.item_name.setText("HeadOn\n Grading WS");
             holder.gridImage.setImageResource(R.drawable.ic_headon_grading_ws);
         }
-        if (position==5){
+        else if (position==5){
             holder.item_name.setText("HOHL\n Manual");
             holder.gridImage.setImageResource(R.drawable.ic_hod_hd);
         }
-        if (position==6){
+        else  if (position==6){
             holder.item_name.setText("HOHL\nWS");
             holder.gridImage.setImageResource(R.drawable.ic_hohl_ws);
         }
-        if (position==7){
+        else  if (position==7){
             holder.item_name.setText("HeadLess\n Grading Manual");
             holder.gridImage.setImageResource(R.drawable.ic_headles_grading);
         }
-        if (position==8){
+        else  if (position==8){
             holder.item_name.setText("HeadLess\nGrading WS");
             holder.gridImage.setImageResource(R.drawable.ic_headless_grading_ws);
         }
-        if (position==9){
+        else  if (position==9){
             holder.item_name.setText("Value\n Edition Manual");
             holder.gridImage.setImageResource(R.drawable.ic_value_edi);
         }
-        if (position==10){
+        else if (position==10){
             holder.item_name.setText("Value\nEdition WS");
             holder.gridImage.setImageResource(R.drawable.ic_value_addition_ws);
         }
-        if (position==11){
+        else  if (position==11){
             holder.item_name.setText("Chemical\n Treatment");
             holder.gridImage.setImageResource(R.drawable.ic_chemical_treatment);
         }
-        if (position==12){
+        else if (position==12){
             holder.item_name.setText("Chemical\nTreatment WS");
             holder.gridImage.setImageResource(R.drawable.ic_chemical_treatment_ws);
         }
-        if (position==13){
+        else if (position==13){
             holder.item_name.setText("Location\n Placement");
             holder.gridImage.setImageResource(R.drawable.ic_barcode);
         }
-        if (position==14){
+        else  if (position==14){
             holder.item_name.setText("RM\n Receiving");
-            holder.gridImage.setImageResource(R.drawable.ic_cam_gallery);
+            holder.gridImage.setImageResource(R.drawable.ic_raw_material);
+        }
+        else  if (position==15){
+            holder.item_name.setText("RM\n Analysis");
+            holder.gridImage.setImageResource(R.drawable.ic_raw_material_analysis);
         }
 
     }
 
     @Override
     public int getItemCount() {
-        return 15;
+        return 16;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
