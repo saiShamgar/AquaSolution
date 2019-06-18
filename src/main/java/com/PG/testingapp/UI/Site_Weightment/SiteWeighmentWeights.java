@@ -217,7 +217,7 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
                                 new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        count_code=codes.get(position).getVcode();
+                                        count_code=codes.get(position-1).getVcode();
                                         ValueEditionDetaillsModel detaillsModel = new ValueEditionDetaillsModel();
                                         detaillsModel.setTime(txt_siteWeighment_weight_date_time.getText().toString());
                                         detaillsModel.setNo_of_nets(Integer.parseInt(txt_siteWeighment_weight_no_nets.getText().toString()));
@@ -255,7 +255,7 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
                                     @Override
                                     public void onClick(View v) {
 
-                                        count_code=codes.get(position).getVcode();
+                                        count_code=codes.get(position-1).getVcode();
                                         ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
                                         detaillsModel.setTime(txt_siteWeighment_weight_date_time.getText().toString());
                                         detaillsModel.setNo_of_nets(Integer.parseInt(txt_siteWeighment_weight_no_nets.getText().toString()));

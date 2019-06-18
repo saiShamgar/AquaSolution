@@ -13,12 +13,16 @@ public class RmAnaalysisDetailsStatus implements Serializable {
     @SerializedName("message")
     private String message;
 
+    @SerializedName("Supervisor")
+    private String Supervisor;
+
     @SerializedName("Data")
     private ArrayList<RmAnalysisDetailsModel> Data;
 
-    public RmAnaalysisDetailsStatus(String status, String message, ArrayList<RmAnalysisDetailsModel> data) {
+    public RmAnaalysisDetailsStatus(String status, String message, String supervisor, ArrayList<RmAnalysisDetailsModel> data) {
         this.status = status;
         this.message = message;
+        Supervisor = supervisor;
         Data = data;
     }
 
@@ -44,5 +48,13 @@ public class RmAnaalysisDetailsStatus implements Serializable {
 
     public void setData(ArrayList<RmAnalysisDetailsModel> data) {
         Data = data;
+    }
+
+    public String getSupervisor() {
+        return Supervisor;
+    }
+
+    public void setSupervisor(String supervisor) {
+        Supervisor = supervisor;
     }
 }

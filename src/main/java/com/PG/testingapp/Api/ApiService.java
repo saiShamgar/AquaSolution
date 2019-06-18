@@ -20,6 +20,7 @@ import com.PG.testingapp.model.RMReceiving.RMRecivingLoationsStatus;
 import com.PG.testingapp.model.RmAnalysis.RmAnaalysisDetailsStatus;
 import com.PG.testingapp.model.SiteWTInsertResponce;
 import com.PG.testingapp.model.Status;
+import com.PG.testingapp.model.ValueEdition.GetLotDetails_VD;
 import com.PG.testingapp.model.headOnHeadLessGrading.GetLotNumbers_HOHL_status;
 import com.PG.testingapp.model.headOnHeadLessGrading.Getcodes_Grouphead;
 import com.PG.testingapp.model.headOnHeadLessGrading.HOHL_location;
@@ -41,11 +42,14 @@ public interface ApiService {
             @Field("User_Mail_Id")String username,
             @Field("User_Passward")String password);
 
-    @GET("app_process_get/")
-    Call<GettingProcesses> getProcesses();
+    @FormUrlEncoded
+    @POST("app_valueaddition_get_lotnum/")
+    Call<GetLotDetails_VD> getProcesses(
+            @Field("emp_id")String emp_id);
 
-    @GET("app_product_get/")
-    Call<GettingVeriatyCodes> getCountCodes();
+
+    @GET("app_valueaddition_get_emp_name/")
+    Call<GettingVeriatyCodes> getGradeCodes();
 
     @FormUrlEncoded
     @POST("app_login/")

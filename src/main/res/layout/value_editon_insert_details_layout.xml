@@ -69,23 +69,23 @@
                 android:gravity="center"
                 android:layout_weight="1"/>
 
-            <TextView
-                android:id="@+id/txt_person_name"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:text="1200"
-                android:textColor="@color/color_text"
-                android:gravity="center"
-                android:layout_weight="1"/>
+            <!--<TextView-->
+                <!--android:id="@+id/txt_person_name"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:text="1200"-->
+                <!--android:textColor="@color/color_text"-->
+                <!--android:gravity="center"-->
+                <!--android:layout_weight="1"/>-->
 
-            <TextView
-                android:id="@+id/txt_team_no"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:text="1200"
-                android:textColor="@color/color_text"
-                android:gravity="center"
-                android:layout_weight="1"/>
+            <!--<TextView-->
+                <!--android:id="@+id/txt_team_no"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:text="1200"-->
+                <!--android:textColor="@color/color_text"-->
+                <!--android:gravity="center"-->
+                <!--android:layout_weight="1"/>-->
 
 
 

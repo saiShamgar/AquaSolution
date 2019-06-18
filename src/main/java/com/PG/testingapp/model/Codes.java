@@ -4,54 +4,30 @@ import com.google.gson.annotations.SerializedName;
 
 public class Codes {
 
-    @SerializedName("Variety_Code")
-    private String variety_code;
+    @SerializedName("Emp_id")
+    private String Emp_id;
 
-    @SerializedName("Variety_Count_Code")
-    private String variaty_count_code;
+    @SerializedName("Emp_Name")
+    private String Emp_Name;
 
-    @SerializedName("Variety_Count")
-    private String variety_count;
-
-    @SerializedName("fk_Material_Group")
-    private String fk_material_group;
-
-    public Codes(String variety_code, String variaty_count_code, String variety_count, String fk_material_group) {
-        this.variety_code = variety_code;
-        this.variaty_count_code = variaty_count_code;
-        this.variety_count = variety_count;
-        this.fk_material_group = fk_material_group;
+    public Codes(String emp_id, String emp_Name) {
+        Emp_id = emp_id;
+        Emp_Name = emp_Name;
     }
 
-    public String getVariety_code() {
-        return variety_code;
+    public String getEmp_id() {
+        return Emp_id;
     }
 
-    public void setVariety_code(String variety_code) {
-        this.variety_code = variety_code;
+    public void setEmp_id(String emp_id) {
+        Emp_id = emp_id;
     }
 
-    public String getVariaty_count_code() {
-        return variaty_count_code;
+    public String getEmp_Name() {
+        return Emp_Name;
     }
 
-    public void setVariaty_count_code(String variaty_count_code) {
-        this.variaty_count_code = variaty_count_code;
-    }
-
-    public String getVariety_count() {
-        return variety_count;
-    }
-
-    public void setVariety_count(String variety_count) {
-        this.variety_count = variety_count;
-    }
-
-    public String getFk_material_group() {
-        return fk_material_group;
-    }
-
-    public void setFk_material_group(String fk_material_group) {
-        this.fk_material_group = fk_material_group;
+    public void setEmp_Name(String emp_Name) {
+        Emp_Name = emp_Name;
     }
 }

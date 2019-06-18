@@ -81,7 +81,8 @@ public class MenuItemsAdapter extends RecyclerView.Adapter<MenuItemsAdapter.View
 
                     }
                     else  if (position==9){
-
+                        Intent valueEdition=new Intent(context, ValueEdition.class);
+                        context.startActivity(valueEdition);
                     }
                     else  if (position==10){
 

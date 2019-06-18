@@ -45,14 +45,12 @@ public class ValueEditionInsertDetailsAdapter extends RecyclerView.Adapter<Value
             holder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
         }
 
-        holder.txt_count.setText(insertDetails.get(i).getCount_code());
+        holder.txt_count.setText(insertDetails.get(i).getGradeNo());
         holder.txt_time.setText(insertDetails.get(i).getTime());
         holder.txt_no_nets.setText(String.valueOf(insertDetails.get(i).getNo_of_nets()));
         holder.txt_total_tare_wt.setText(String.valueOf( insertDetails.get(i).getTotal_tare_weight()));
         holder.txt_total_weight.setText(String.valueOf( insertDetails.get(i).getTotal_weight()));
         holder.txt_net_weight.setText(String.valueOf( insertDetails.get(i).getNet_weight()));
-        holder.txt_person_name.setText(insertDetails.get(i).getGroup_person());
-        holder.txt_team_no.setText(insertDetails.get(i).getTeam_no());
     }
 
     @Override
@@ -61,7 +59,7 @@ public class ValueEditionInsertDetailsAdapter extends RecyclerView.Adapter<Value
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView txt_count,txt_time,txt_no_nets,txt_total_weight,txt_total_tare_wt,txt_net_weight,txt_person_name,txt_team_no;
+        private TextView txt_count,txt_time,txt_no_nets,txt_total_weight,txt_total_tare_wt,txt_net_weight;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -72,8 +70,8 @@ public class ValueEditionInsertDetailsAdapter extends RecyclerView.Adapter<Value
             txt_total_tare_wt=itemView.findViewById(R.id.txt_total_tare_wt);
             txt_total_weight=itemView.findViewById(R.id.txt_total_weight);
             txt_net_weight=itemView.findViewById(R.id.txt_net_weight);
-            txt_person_name=itemView.findViewById(R.id.txt_person_name);
-            txt_team_no=itemView.findViewById(R.id.txt_team_no);
+//            txt_person_name=itemView.findViewById(R.id.txt_person_name);
+//            txt_team_no=itemView.findViewById(R.id.txt_team_no);
         }
     }
 }

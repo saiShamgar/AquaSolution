@@ -20,6 +20,7 @@ public class ValueEditionDetaillsModel implements Serializable {
     private String groupName;
     private String gradeCode;
     private String gradeNo;
+    private String table_no;
 
     public ValueEditionDetaillsModel() {
     }
@@ -142,5 +143,13 @@ public class ValueEditionDetaillsModel implements Serializable {
 
     public void setGradeNo(String gradeNo) {
         this.gradeNo = gradeNo;
+    }
+
+    public String getTable_no() {
+        return table_no;
+    }
+
+    public void setTable_no(String table_no) {
+        this.table_no = table_no;
     }
 }

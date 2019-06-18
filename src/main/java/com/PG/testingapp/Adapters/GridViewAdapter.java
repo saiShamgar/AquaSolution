@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.PG.testingapp.InterFace.OnRadioButtonClick;
 import com.PG.testingapp.R;
 import com.PG.testingapp.model.Processes_data;
+import com.PG.testingapp.model.ValueEdition.LotNoDetails_VD;
 
 import java.util.ArrayList;
 
@@ -24,9 +25,9 @@ public class GridViewAdapter extends RecyclerView.Adapter<GridViewAdapter.ViewHo
     private Context context;
     private int selected=-1;
     private OnRadioButtonClick onRadioButtonClick;
-    private ArrayList<Processes_data> processes_data;
+    private ArrayList<LotNoDetails_VD> processes_data;
 
-    public GridViewAdapter(Context context, OnRadioButtonClick onRadioButtonClick, ArrayList<Processes_data> processes_data) {
+    public GridViewAdapter(Context context, OnRadioButtonClick onRadioButtonClick, ArrayList<LotNoDetails_VD> processes_data) {
         this.context = context;
         this.onRadioButtonClick = onRadioButtonClick;
         this.processes_data = processes_data;
@@ -41,7 +42,7 @@ public class GridViewAdapter extends RecyclerView.Adapter<GridViewAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int i) {
-        holder.checkbox_vale_edt.setOnClickListener(new View.OnClickListener() {
+        holder.checkbox_value_edition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selected=(Integer)v.getTag();
@@ -49,16 +50,14 @@ public class GridViewAdapter extends RecyclerView.Adapter<GridViewAdapter.ViewHo
                 notifyDataSetChanged();
             }
         });
-        holder.checkbox_vale_edt.setTag(i);
-        holder.checkbox_vale_edt.setChecked(i==selected);
+        holder.checkbox_value_edition.setTag(i);
+        holder.checkbox_value_edition.setChecked(i==selected);
 
-        String sl= String.valueOf(i+1);
-        holder.txt_sl_no.setText(sl);
-        holder.txt_lot_no.setText(processes_data.get(i).getLot_no());
-        holder.txt_count.setText(processes_data.get(i).getCount_code());
-        holder.received_quantity.setText("");
-        holder.process_for.setText(processes_data.get(i).getProcess_code());
-        holder.received_from.setText("");
+        holder.value_edition_lot_no.setText(processes_data.get(i).getLot_No());
+        holder.value_edition_grade.setText(processes_data.get(i).getFP_Production_Grade_No());
+        holder.value_edition_required_quantity.setText(processes_data.get(i).getAllotted_Quantity());
+        holder.value_edition_process_for.setText(processes_data.get(i).getProduct_Process_Name());
+        holder.value_edition_received_from.setText("");
 
 
 
@@ -81,19 +80,17 @@ public class GridViewAdapter extends RecyclerView.Adapter<GridViewAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private CheckBox checkbox_vale_edt;
-        private TextView txt_sl_no,txt_lot_no,txt_count,received_quantity,received_from,process_for;
+        private CheckBox checkbox_value_edition;
+        private TextView value_edition_lot_no,value_edition_grade,value_edition_required_quantity,value_edition_received_from,value_edition_process_for;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            checkbox_vale_edt=itemView.findViewById(R.id.checkbox_vale_edt);
-            txt_sl_no=itemView.findViewById(R.id.txt_sl_no);
-            txt_lot_no=itemView.findViewById(R.id.txt_lot_no);
-            txt_count=itemView.findViewById(R.id.txt_count);
-            received_quantity=itemView.findViewById(R.id.received_quantity);
-            received_from=itemView.findViewById(R.id.received_from);
-            process_for=itemView.findViewById(R.id.process_for);
-
+            checkbox_value_edition=itemView.findViewById(R.id.checkbox_value_edition);
+            value_edition_lot_no=itemView.findViewById(R.id.value_edition_lot_no);
+            value_edition_grade=itemView.findViewById(R.id.value_edition_grade);
+            value_edition_required_quantity=itemView.findViewById(R.id.value_edition_required_quantity);
+            value_edition_received_from=itemView.findViewById(R.id.value_edition_received_from);
+            value_edition_process_for=itemView.findViewById(R.id.value_edition_process_for);
         }
     }
 }

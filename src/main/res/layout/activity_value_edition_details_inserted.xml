@@ -20,31 +20,32 @@
             android:background="@drawable/gradient_background_color"
             android:elevation="@dimen/card_elevation_4dp">
 
-            <RelativeLayout
+            <LinearLayout
+                android:id="@+id/toolbar_layout_lin"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/toolbar_container">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Weight details"
-                    android:id="@+id/toolbar_heading_det_inserted"
-                    android:paddingTop="@dimen/margin_xxxlarge"
-                    android:layout_marginLeft="@dimen/margin_xxxlarge"
-                    android:textSize="@dimen/large_20dp"
-                    android:textColor="@color/white"
-                    android:layout_toRightOf="@+id/back_button_val_edt_inserted"
-                    android:layout_marginBottom="10dp"/>
+                android:layout_height="@dimen/extra_large_50dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:background="@drawable/gradient_background_color">
 
                 <ImageView
-                    android:id="@+id/back_button_val_edt_inserted"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/back_button_val_edt_insertion"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="match_parent"
                     android:src="@drawable/ic_left"
-                    android:layout_marginTop="@dimen/extra_large_30dp"
-                    android:layout_marginLeft="@dimen/large_20dp"/>
-            </RelativeLayout>
+                    android:padding="@dimen/margin_xlarge"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="wrap_content"
+                    android:text="Value Edition"
+                    android:layout_gravity="center"
+                    android:id="@+id/toolbar_heading"
+                    android:textSize="@dimen/large_20dp"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -52,7 +53,7 @@
                 android:paddingTop="@dimen/t0_padding"
                 android:paddingBottom="@dimen/t0_padding"
                 android:orientation="horizontal"
-                android:layout_below="@+id/toolbar_container">
+                android:layout_below="@+id/toolbar_layout_lin">
 
                 <TextView
                     android:layout_width="0dp"
@@ -115,7 +116,8 @@
                     android:textColor="@color/white"
                     android:gravity="center"
                     android:textSize="@dimen/t0_size"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -124,7 +126,8 @@
                     android:textColor="@color/white"
                     android:gravity="center"
                     android:textSize="@dimen/t0_size"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -171,7 +174,8 @@
                 android:text="Next Lot"
                 android:textAllCaps="false"
                 android:layout_marginBottom="75dp"
-                android:layout_marginLeft="@dimen/margin_xlarge"/>
+                android:layout_marginLeft="@dimen/margin_xlarge"
+                android:visibility="gone"/>
 
 
             <LinearLayout

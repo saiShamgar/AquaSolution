@@ -67,6 +67,27 @@
                 android:textColor="@color/color_text"
                 android:gravity="center"
                 android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/txt_group__emp_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textColor="@color/color_text"
+                android:gravity="center"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/txt_group_no"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textColor="@color/color_text"
+                android:gravity="center"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/txt_table_no"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textColor="@color/color_text"
+                android:gravity="center"
+                android:layout_weight="1"/>
 
         </LinearLayout>
     </LinearLayout>

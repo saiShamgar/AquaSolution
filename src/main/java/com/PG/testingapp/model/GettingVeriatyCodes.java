@@ -12,7 +12,7 @@ public class GettingVeriatyCodes {
     @SerializedName("message")
     private String message;
 
-    @SerializedName("data")
+    @SerializedName("Location")
     private List<Codes> codes;
 
     public GettingVeriatyCodes(String status, String message, List<Codes> codes) {

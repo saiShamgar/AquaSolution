@@ -29,6 +29,7 @@ import com.PG.testingapp.model.FactoryWeighment.FTLotNumbers;
 import com.PG.testingapp.model.FactoryWeighment.FactoryWeighmentGridModel;
 import com.PG.testingapp.model.GettingProcesses;
 import com.PG.testingapp.model.Processes_data;
+import com.PG.testingapp.model.ValueEdition.LotNoDetails_VD;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -136,7 +137,7 @@ public class FactoryWeighment extends BaseActivity implements OnRadioButtonClick
     }
 
     @Override
-    public void onRadioClick(Processes_data processes_data) {
+    public void onRadioClick(LotNoDetails_VD processes_data) {
 
     }
 

@@ -37,6 +37,7 @@ public class RmAnalysis extends BaseActivity implements RmAnalysis_RadioClick {
     private Rm_analysis_screen_1_adapter adapter;
     private RmAnalysisDetailsModel rmAnalysisDetails;
     private SharedPreferenceConfig config;
+    private String supervisor_name;
 
 
 
@@ -65,6 +66,7 @@ public class RmAnalysis extends BaseActivity implements RmAnalysis_RadioClick {
                     Intent val_details=new Intent(RmAnalysis.this, RmAnalysisDetails.class);
                     val_details.putExtra("process",rmAnalysisDetails);
                     val_details.putExtra("status","RMA");
+                    val_details.putExtra("supervisor",supervisor_name);
                     startActivity(val_details);
                 }else {
                     AppUtils.showToast(context,"Please select existing lot number");
@@ -87,6 +89,8 @@ public class RmAnalysis extends BaseActivity implements RmAnalysis_RadioClick {
                     if (response.body()!=null){
                         if (response.body().getStatus().contains(AppConstant.MESSAGE)){
                             AppUtils.showToast(context,response.body().getMessage());
+
+                            supervisor_name=response.body().getSupervisor();
                             if (response.body().getData().size()!=0){
                                 adapter=new Rm_analysis_screen_1_adapter(getApplicationContext(),response.body().getData(),(RmAnalysis_RadioClick) context);
                                 rm_analysis_rv.setHasFixedSize(true);
