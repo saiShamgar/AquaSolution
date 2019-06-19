@@ -322,6 +322,7 @@
                             android:padding="5dp"
                             android:singleLine="true"
                             android:gravity="end"
+                            android:maxLength="5"
                             android:imeOptions="actionNext"
                             android:textColor="@color/order_txt_color"
                             android:textColorHint="@color/color_lite_grey"
@@ -354,13 +355,13 @@
                             android:hint="Enter total weight (kgs)"
                             android:padding="5dp"
                             android:gravity="end"
+                            android:maxLength="6"
                             android:singleLine="true"
                             android:inputType="numberDecimal"
                             android:imeOptions="actionNext"
                             android:background="@drawable/boarder_shape"
                             android:textColor="@color/order_txt_color"
-                            android:textColorHint="@color/color_lite_grey"
-                            />
+                            android:textColorHint="@color/color_lite_grey" />
 
                     </LinearLayout>
 
@@ -390,6 +391,7 @@
                             android:padding="5dp"
                             android:singleLine="true"
                             android:gravity="end"
+                            android:maxLength="6"
                             android:inputType="numberDecimal"
                             android:imeOptions="actionDone"
                             android:background="@drawable/boarder_shape"
@@ -463,120 +465,136 @@
 
                 </LinearLayout>
 
-                <LinearLayout
+                <HorizontalScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
+                    android:layout_height="match_parent">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@color/app_dark_color"
-                        android:orientation="horizontal"
-                        android:elevation="@dimen/card_elevation_4dp">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:text="SL No."
-                            android:textColor="@color/white"
-                            android:gravity="center"
-                            android:textSize="@dimen/t0_size"
-                            android:layout_weight="1"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@color/app_dark_color"
+                            android:orientation="horizontal"
+                            android:elevation="@dimen/card_elevation_4dp">
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:text="Time"
-                            android:textColor="@color/white"
-                            android:gravity="center"
-                            android:textSize="@dimen/t0_size"
-                            android:layout_weight="1"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="SL No."
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:text="No.\nOf Nets"
-                            android:textColor="@color/white"
-                            android:gravity="center"
-                            android:textSize="@dimen/t0_size"
-                            android:layout_weight="1"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Grade"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:text="Total\nWeight"
-                            android:textColor="@color/white"
-                            android:gravity="center"
-                            android:textSize="@dimen/t0_size"
-                            android:layout_weight="1"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:text="Total\nTare Weight"
-                            android:textColor="@color/white"
-                            android:gravity="center"
-                            android:textSize="@dimen/t0_size"
-                            android:layout_weight="1"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:text="Net\nWeight"
-                            android:textColor="@color/white"
-                            android:gravity="center"
-                            android:textSize="@dimen/t0_size"
-                            android:layout_weight="1"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Time"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:text="Cumulative Weight."
-                            android:textColor="@color/white"
-                            android:gravity="center"
-                            android:textSize="@dimen/t0_size"
-                            android:layout_weight="1"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="No.\nOf Nets"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:text="Group Person"
-                            android:textColor="@color/white"
-                            android:gravity="center"
-                            android:textSize="@dimen/t0_size"
-                            android:layout_weight="1"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:text="Team Nos"
-                            android:textColor="@color/white"
-                            android:gravity="center"
-                            android:textSize="@dimen/t0_size"
-                            android:layout_weight="1"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Total\nWeight"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Total\nTare Weight"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Net\nWeight"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
 
-                        <TextView
-                            android:layout_width="0dp"
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Cumulative Weight."
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Group Person"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Team Nos"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Table Nos"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
+
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="Table Nos"
-                            android:textColor="@color/white"
-                            android:gravity="center"
-                            android:textSize="@dimen/t0_size"
-                            android:layout_weight="1"/>
+                            android:layout_marginBottom="@dimen/extra_large_50dp">
 
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/value_edt_weight_recycler_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
 
+                        </RelativeLayout>
                     </LinearLayout>
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="@dimen/extra_large_50dp">
+                </HorizontalScrollView>
 
-                        <android.support.v7.widget.RecyclerView
-                            android:id="@+id/value_edt_weight_recycler_view"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
 
-                    </RelativeLayout>
-                </LinearLayout>
             </LinearLayout>
         </ScrollView>
 

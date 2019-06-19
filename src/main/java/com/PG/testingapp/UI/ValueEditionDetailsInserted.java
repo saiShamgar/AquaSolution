@@ -29,11 +29,13 @@ import com.PG.testingapp.LoginActivity;
 import com.PG.testingapp.R;
 import com.PG.testingapp.Utils.AppConstant;
 import com.PG.testingapp.Utils.AppUtils;
+import com.PG.testingapp.Utils.SharedPreferenceConfig;
 import com.PG.testingapp.model.JsonData;
 import com.PG.testingapp.model.LoginResponse;
 import com.PG.testingapp.model.Processes_data;
 import com.PG.testingapp.model.Status;
 import com.PG.testingapp.model.ValueEdition.LotNoDetails_VD;
+import com.PG.testingapp.model.ValueEdition.ValueEditionInsertionData;
 import com.PG.testingapp.model.ValueEditionDetaillsModel;
 import com.google.gson.Gson;
 
@@ -70,33 +72,15 @@ public class ValueEditionDetailsInserted extends BaseActivity {
     private ArrayList<String> VAP_Total_Tare_Weight=new ArrayList<>();
     private ArrayList<String> VAP_Net_Weight=new ArrayList<>();
     private ArrayList<String> VAP_Group_Emp_id=new ArrayList<>();
-    private ArrayList<String> Variety_Count_Code=new ArrayList<>();
-
-    private ArrayList<String> date_timeFromDb=new ArrayList<>();
-    private ArrayList<String> VAP_No_of_NetsFromDb=new ArrayList<>();
-    private ArrayList<String> VAP_Net_Tare_WtFromDb=new ArrayList<>();
-    private ArrayList<String> VAP_Total_WeightFromDb=new ArrayList<>();
-    private ArrayList<String> VAP_Total_Tare_WeightFromDb=new ArrayList<>();
-    private ArrayList<String> VAP_Net_WeightFromDb=new ArrayList<>();
-    private ArrayList<String> VAP_Group_Emp_idFromDb=new ArrayList<>();
-    private ArrayList<String> Variety_Count_CodeFromDb=new ArrayList<>();
-
-    private String Lot_no_fromDB;
-    private String Office_no_db_fromDB;
-    private String Process_code_fromDB;
-    private String Schedule_no_fromDB;
-    private String Process_no_fromDB;
-    private String Table_no_fromDB;
-    private double Tot_wt_fromDB;
-    private String Weight_no_fromDB;
-    private String Worker_nos_fromDB;
-
+    private ArrayList<String> Team_nos=new ArrayList<>();
+    private ArrayList<String> Table_nos=new ArrayList<>();
 
 
     private Context context;
     private ApiService apiService;
 
     private DbHelper dbHelper;
+    private SharedPreferenceConfig config;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,6 +89,7 @@ public class ValueEditionDetailsInserted extends BaseActivity {
         context=ValueEditionDetailsInserted.this;
 
         dbHelper=new DbHelper(this);
+        config=new SharedPreferenceConfig(this);
 
         Bundle b = getIntent().getExtras();
         ArrayList<ValueEditionDetaillsModel> detaillsModels = (ArrayList<ValueEditionDetaillsModel>) b.getSerializable("objNames");
@@ -138,8 +123,10 @@ public class ValueEditionDetailsInserted extends BaseActivity {
             VAP_Total_Weight.add(String.valueOf(detaillsModels.get(i).getTotal_weight()));
             VAP_Total_Tare_Weight.add(String.valueOf(detaillsModels.get(i).getTotal_tare_weight()));
             VAP_Net_Weight.add(String.valueOf(detaillsModels.get(i).getNet_weight()));
-            VAP_Group_Emp_id.add(detaillsModels.get(i).getGroup_person());
-            Variety_Count_Code.add(detaillsModels.get(i).getCount_code());
+            VAP_Group_Emp_id.add(detaillsModels.get(i).getGroupCode());
+            Table_nos.add(detaillsModels.get(i).getTable_no());
+            Team_nos.add(detaillsModels.get(i).getTeam_no());
+
 
             no_of_nets=no_of_nets+detaillsModels.get(i).getNo_of_nets();
             tot_net_wt=tot_net_wt+detaillsModels.get(i).getNet_weight();
@@ -183,176 +170,66 @@ public class ValueEditionDetailsInserted extends BaseActivity {
     }
 
     private void callService() {
+        ValueEditionInsertionData jsonData=new ValueEditionInsertionData(
+                processes_data.getLot_No(),
+                processes_data.getOrg_office_no(),
+                processes_data.getProduct_Process_Code(),
+                processes_data.getProduction_Process_Schedule_No(),
+                date_time,
+                VAP_Group_Emp_id,
+                VAP_Net_Tare_Wt,
+                VAP_Net_Weight,
+                VAP_No_of_Nets,
+                config.readLoginEmpId(),
+                Table_nos,
+                VAP_Total_Tare_Weight,
+                VAP_Total_Weight,
+                Team_nos,
+                processes_data.getFP_Production_Grade_Code());
 
-//        for (int i=0;i<VAP_No_of_Nets.size();i++){
-//            if (dbHelper.insertDetails(processes_data.getLot_no(),processes_data.getOffice_no(),processes_data.getProcess_code(),processes_data.getProcess_schedule_no()
-//                    ,VAP_Group_Emp_id.get(i),String.valueOf(tot_wt),VAP_Net_Tare_Wt.get(i),VAP_Net_Weight.get(i),VAP_No_of_Nets.get(i),
-//                    processes_data.getProcess_no(),"14",processes_data.getTables_no(),VAP_Total_Tare_Weight.get(i),
-//                    VAP_Total_Weight.get(i),date_time.get(i),processes_data.getWeight_no(),processes_data.getWorkers_nos(),Variety_Count_Code.get(i),"12.0"))
-//            {
-//                Log.e("data ","data inserted");
-//            }
-//            else {
-//                Log.e("data ","data not inserted");
-//            }
-//        }
-//
-//        final Cursor cursor = dbHelper.getAllDetails();
-//        if (cursor.moveToFirst()){
-//            do{
-//                Lot_no_fromDB=cursor.getString(cursor.getColumnIndex("Lot_No"));
-//                Office_no_db_fromDB=cursor.getString(cursor.getColumnIndex("Org_office_no"));
-//                Process_code_fromDB=cursor.getString(cursor.getColumnIndex("Product_Process_Code"));
-//                Schedule_no_fromDB=cursor.getString(cursor.getColumnIndex("Production_Process_Schedule_No"));
-//                Process_no_fromDB=cursor.getString(cursor.getColumnIndex("VAP_Process_No"));
-//                Table_no_fromDB=cursor.getString(cursor.getColumnIndex("VAP_Tables_No"));
-//                Tot_wt_fromDB=cursor.getDouble(cursor.getColumnIndex("VAP_Group_Total_Qty"));
-//                Weight_no_fromDB=cursor.getString(cursor.getColumnIndex("VAP_Weight_No"));
-//                Worker_nos_fromDB=cursor.getString(cursor.getColumnIndex("VAP_Workers_Nos"));
-//                date_timeFromDb.add( cursor.getString(cursor.getColumnIndex("VAP_Weighment_Date_Time")));
-//                VAP_No_of_NetsFromDb.add( cursor.getString(cursor.getColumnIndex("VAP_No_of_Nets")));
-//                VAP_Net_Tare_WtFromDb.add( cursor.getString(cursor.getColumnIndex("VAP_Net_Tare_Wt")));
-//                VAP_Total_WeightFromDb.add( cursor.getString(cursor.getColumnIndex("VAP_Total_Weight")));
-//                VAP_Total_Tare_WeightFromDb.add( cursor.getString(cursor.getColumnIndex("VAP_Total_Tare_Weight")));
-//                VAP_Net_WeightFromDb.add( cursor.getString(cursor.getColumnIndex("VAP_Net_Weight")));
-//                VAP_Group_Emp_idFromDb.add( cursor.getString(cursor.getColumnIndex("VAP_Group_Emp_id")));
-//                Variety_Count_CodeFromDb.add( cursor.getString(cursor.getColumnIndex("Variety_Count_Code")));
-//            }while(cursor.moveToNext());
-//
-//         //   Log.e("list",data.toString());
-//        }
-//        cursor.close();
-//
-//        AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
-//        apiService= AppUrl.getApiClient().create(ApiService.class);
-//
-//        Log.e("getProcess_schedule_no",Schedule_no_fromDB);
-//        Log.e("getLot_no",Lot_no_fromDB);
-//        Log.e("getOffice_no",Office_no_db_fromDB);
-//        Log.e("getProcess_code",Process_code_fromDB);
-//        Log.e("getWeight_no",Weight_no_fromDB);
-//        Log.e("date_time",date_timeFromDb.toString());
-//        Log.e("getWorkers_nos",Worker_nos_fromDB);
-//        Log.e("getTables_no",Table_no_fromDB);
-//        Log.e("VAP_No_of_Nets",VAP_No_of_NetsFromDb.toString());
-//        Log.e("VAP_Net_Tare_Wt",VAP_Net_Tare_WtFromDb.toString());
-//        Log.e("VAP_Total_Weight",VAP_Total_WeightFromDb.toString());
-//        Log.e("VAP_Total_Tare_Weight",VAP_Total_Tare_WeightFromDb.toString());
-//        Log.e("getProcess_no",Process_no_fromDB);
-//        Log.e("VAP_Net_Weight",VAP_Net_WeightFromDb.toString());
-//        Log.e("VAP_Group_Emp_id",VAP_Group_Emp_idFromDb.toString());
-//        Log.e("tot_wt",String.valueOf(Tot_wt_fromDB));
-//        Log.e("Variety_Count_Code",Variety_Count_CodeFromDb.toString());
-//
-//        JsonData jsonData=new JsonData(Schedule_no_fromDB,Lot_no_fromDB,
-//                Office_no_db_fromDB,Process_code_fromDB,Weight_no_fromDB,
-//                Worker_nos_fromDB,Table_no_fromDB,"14",
-//                Process_no_fromDB,12,Tot_wt_fromDB,date_timeFromDb,VAP_No_of_NetsFromDb,VAP_Net_Tare_WtFromDb,VAP_Total_WeightFromDb,
-//                VAP_Total_Tare_WeightFromDb,VAP_Net_WeightFromDb,VAP_Group_Emp_idFromDb,Variety_Count_CodeFromDb);
-//
-//        Gson gson = new Gson();
-//        String json = gson.toJson(jsonData);
-//        Log.e("data ",json);
-//
-////        JsonData jsonData=new JsonData(processes_data.getProcess_schedule_no(),processes_data.getLot_no(),
-////                processes_data.getOffice_no(),processes_data.getProcess_code(),processes_data.getWeight_no(),
-////                processes_data.getWorkers_nos(),processes_data.getTables_no(),"14",
-////                processes_data.getProcess_no(),12,tot_wt,date_time,VAP_No_of_Nets,VAP_Net_Tare_Wt,VAP_Total_Weight,
-////                VAP_Total_Tare_Weight,VAP_Net_Weight,VAP_Group_Emp_id,Variety_Count_Code);
-////
-////        Gson gson = new Gson();
-////        String json = gson.toJson(jsonData);
-////        Log.e("data ",json);
-//
-//        Call<Status> call=apiService.insertDetails(json);
-//        call.enqueue(new Callback<Status>() {
-//            @Override
-//            public void onResponse(Call<Status> call, Response<Status> response) {
-//                AppUtils.dismissCustomProgress(mCustomProgressDialog);
-//                Log.e("status","entered");
-//                if (response.body()!=null){
-//                    if (response.body().getStatus().contains(AppConstant.MESSAGE)){
-//                        Log.e("status",response.body().getMessage());
-//                        AppUtils.showToast(context,response.body().getMessage());
-//                        dbHelper.deleteTable();
-//                        Intent goback=new Intent(ValueEditionDetailsInserted.this,MenuActivity.class);
-//                        goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                        startActivity(goback);
-//                        finish();
-//
-//                    }else {
-//                        Log.e("status","not success");
-//                        AppUtils.showCustomOkDialog(context,"",getResources().getString(R.string.error_default),"OK",null);
-//                    }
-//                }
-//                else {
-//                    Log.e("status","response null");
-//                    AppUtils.showCustomOkDialog(context,"",getResources().getString(R.string.error_default),"OK",null);
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Status> call, Throwable t) {
-//                Log.e("status",t.toString());
-//                AppUtils.dismissCustomProgress(mCustomProgressDialog);
-//                AppUtils.showCustomOkDialog(context,
-//                        "",
-//                        getString(R.string.error_default),
-//                        "OK", null);
-//            }
-//        });
-//
-////        Call<Status> call=apiService.insertDetails(
-////                    processes_data.getProcess_schedule_no(),
-////                    processes_data.getLot_no(),
-////                    processes_data.getOffice_no(),
-////                    processes_data.getProcess_code(),
-////                    processes_data.getWeight_no(),
-////                    date_time,
-////                    processes_data.getWorkers_nos(),
-////                    processes_data.getTables_no(),
-////                    VAP_No_of_Nets,
-////                    VAP_Net_Tare_Wt,
-////                    VAP_Total_Weight,
-////                    VAP_Total_Tare_Weight,
-////                    "14",
-////                    processes_data.getProcess_no(),
-////                    VAP_Net_Weight,
-////                    1.0,
-////                    VAP_Group_Emp_id,
-////                    Double.parseDouble(String.valueOf(tot_wt)),
-////                    Variety_Count_Code);
-////        call.enqueue(new Callback<Status>() {
-////            @Override
-////            public void onResponse(Call<Status> call, Response<Status> response) {
-////                AppUtils.dismissCustomProgress(mCustomProgressDialog);
-////                Log.e("status","entered");
-////                if (response.body()!=null){
-////                    if (response.body().getStatus().contains(AppConstant.MESSAGE)){
-////                        Log.e("status",response.body().getMessage());
-////                        AppUtils.showToast(context,response.body().getMessage());
-////
-////                    }else {
-////                        Log.e("status","not success");
-////                        AppUtils.showCustomOkDialog(context,"",getResources().getString(R.string.error_default),"OK",null);
-////                    }
-////                }
-////                else {
-////                    Log.e("status","response null");
-////                    AppUtils.showCustomOkDialog(context,"",getResources().getString(R.string.error_default),"OK",null);
-////                }
-////            }
-////
-////            @Override
-////            public void onFailure(Call<Status> call, Throwable t) {
-////                Log.e("status",t.toString());
-////                AppUtils.dismissCustomProgress(mCustomProgressDialog);
-////                AppUtils.showCustomOkDialog(context,
-////                        "",
-////                        getString(R.string.error_default),
-////                        "OK", null);
-////            }
-////        });
+        Gson gson = new Gson();
+        String json = gson.toJson(jsonData);
+        Log.e("val edt data ",json);
+
+        AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
+        apiService= AppUrl.getApiClient().create(ApiService.class);
+        Call<Status> call=apiService.inserValueEdt_details(json);
+        call.enqueue(new Callback<Status>() {
+            @Override
+            public void onResponse(Call<Status> call, Response<Status> response) {
+                AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                Log.e("status","entered");
+                if (response.body()!=null){
+                    if (response.body().getStatus().contains(AppConstant.MESSAGE)){
+                        Log.e("status",response.body().getMessage());
+                        AppUtils.showToast(context,response.body().getMessage());
+                        Intent goback=new Intent(ValueEditionDetailsInserted.this, MenuActivity.class);
+                        goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(goback);
+                        finish();
+
+                    }else {
+                        Log.e("status",response.body().getMessage());
+                        AppUtils.showCustomOkDialog(context,"",response.body().getMessage(),"OK",null);
+                    }
+                }
+                else {
+                    Log.e("status","response null");
+                    AppUtils.showCustomOkDialog(context,"",getResources().getString(R.string.error_default),"OK",null);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Status> call, Throwable t) {
+                Log.e("status",t.toString());
+                AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                AppUtils.showCustomOkDialog(context,
+                        "",
+                        getString(R.string.error_default),
+                        "OK", null);
+            }
+        });
+
     }
 
     @Override

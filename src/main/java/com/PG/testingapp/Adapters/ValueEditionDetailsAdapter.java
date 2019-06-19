@@ -61,7 +61,7 @@ public class ValueEditionDetailsAdapter extends RecyclerView.Adapter<ValueEditio
         });
 
         cummulativeWeight=cummulativeWeight+ valueEditionDetaillsModel1.getNet_weight();
-        holder.txt_cumulative_wt.setText(String.valueOf(cummulativeWeight));
+        holder.txt_cumulative_wt.setText(AppUtils.roundValue(String.valueOf(cummulativeWeight)));
 
         if(position %2 == 1)
         {
@@ -78,12 +78,13 @@ public class ValueEditionDetailsAdapter extends RecyclerView.Adapter<ValueEditio
         holder.txt_sl_no.setText(sl);
         holder.txt_time.setText(valueEditionDetaillsModel1.getTime());
         holder.txt_no_nets.setText(String.valueOf(valueEditionDetaillsModel1.getNo_of_nets()));
-        holder.txt_total_weight.setText(String.valueOf(valueEditionDetaillsModel1.getTotal_weight()));
-        holder.txt_total_tare_wt.setText(String.valueOf( valueEditionDetaillsModel1.getTotal_tare_weight()));
-        holder.txt_net_weight.setText(String.valueOf(valueEditionDetaillsModel1.getNet_weight()));
+        holder.txt_total_weight.setText(AppUtils.roundValue(String.valueOf(valueEditionDetaillsModel1.getTotal_weight())));
+        holder.txt_total_tare_wt.setText(AppUtils.roundValue(String.valueOf( valueEditionDetaillsModel1.getTotal_tare_weight())));
+        holder.txt_net_weight.setText(AppUtils.roundValue(String.valueOf(valueEditionDetaillsModel1.getNet_weight())));
         holder.txt_group__emp_name.setText(String.valueOf(valueEditionDetaillsModel1.getGroupName()));
         holder.txt_table_no.setText(String.valueOf(valueEditionDetaillsModel1.getTable_no()));
         holder.txt_group_no.setText(String.valueOf(valueEditionDetaillsModel1.getTeam_no()));
+        holder.txt_grade.setText(String.valueOf(valueEditionDetaillsModel1.getGradeNo()));
 
     }
 
@@ -99,7 +100,7 @@ public class ValueEditionDetailsAdapter extends RecyclerView.Adapter<ValueEditio
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView txt_time,txt_no_nets,txt_total_weight,txt_total_tare_wt,txt_net_weight,txt_cumulative_wt,txt_sl_no,
+        private TextView txt_time,txt_no_nets,txt_total_weight,txt_total_tare_wt,txt_net_weight,txt_cumulative_wt,txt_sl_no,txt_grade,
                 txt_group_no,txt_table_no,txt_group__emp_name;
 
         public ViewHolder(@NonNull View itemView) {
@@ -114,6 +115,7 @@ public class ValueEditionDetailsAdapter extends RecyclerView.Adapter<ValueEditio
             txt_group_no=itemView.findViewById(R.id.txt_group_no);
             txt_table_no=itemView.findViewById(R.id.txt_table_no);
             txt_group__emp_name=itemView.findViewById(R.id.txt_group__emp_name);
+            txt_grade=itemView.findViewById(R.id.txt_grade);
         }
     }
 }

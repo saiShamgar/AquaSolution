@@ -75,6 +75,11 @@ public interface ApiService {
                 @Field("data")String json);
 
     @FormUrlEncoded
+    @POST("app_valuaddition_save_registers/")
+    Call<Status> inserValueEdt_details(
+            @Field("data")String data);
+
+    @FormUrlEncoded
     @POST("app_site_get/")
     Call<GetScheduleNo> getScheduleNo(
             @Field("emp_id") String emp_id );

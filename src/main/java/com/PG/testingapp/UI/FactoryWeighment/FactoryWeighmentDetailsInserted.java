@@ -190,8 +190,8 @@ public class FactoryWeighmentDetailsInserted extends BaseActivity {
                         finish();
 
                     }else {
-                        Log.e("status","not success");
-                        AppUtils.showCustomOkDialog(context,"",getResources().getString(R.string.error_default),"OK",null);
+                        Log.e("status",response.body().getMessage());
+                        AppUtils.showCustomOkDialog(context,"",response.body().getMessage(),"OK",null);
                     }
                 }
                 else {

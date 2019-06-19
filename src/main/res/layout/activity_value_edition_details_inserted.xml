@@ -17,16 +17,14 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/gradient_background_color"
-            android:elevation="@dimen/card_elevation_4dp">
+            android:background="@drawable/gradient_background_color">
 
             <LinearLayout
                 android:id="@+id/toolbar_layout_lin"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/extra_large_50dp"
                 android:orientation="horizontal"
-                android:weightSum="2"
-                android:background="@drawable/gradient_background_color">
+                android:weightSum="2">
 
                 <ImageView
                     android:id="@+id/back_button_val_edt_insertion"
@@ -136,7 +134,7 @@
                     android:textColor="@color/white"
                     android:gravity="center"
                     android:textSize="@dimen/t0_size"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:layout_weight="1"/>
 
             </LinearLayout>

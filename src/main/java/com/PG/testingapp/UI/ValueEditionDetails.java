@@ -137,8 +137,6 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
             txt_val_edt_details_process_for.setText(processes_data.getProduct_Process_Name());
         }
 
-
-
         setSpinner();
 
         CountDownTimer newtimer = new CountDownTimer(1000000000, 1000) {
@@ -324,7 +322,7 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
             case R.id.txt_value_edt_dts_weight_btn_save:
                 if (emp_name!="Select Grade"){
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                        spinner_layout_value_edition.setBackground(getResources().getDrawable(R.drawable.white_border));
+                        spinner_layout_value_edition.setBackground(getResources().getDrawable(R.drawable.stroke_back_ground_gray));
                     }
                     if (doValidation()){
                         AppUtils.showCustomOkCancelDialog(this, "","Do you want to change group name?", "No", "Yes",
@@ -341,6 +339,7 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                                         detaillsModel.setCummulative_weight(0);
                                         detaillsModel.setGroupName(emp_name);
                                         detaillsModel.setGroupCode(emp_code);
+                                        detaillsModel.setGradeNo(processes_data.getFP_Production_Grade_No());
                                         detaillsModel.setTeam_no(txt_value_edt_weight_group_nos.getText().toString());
                                         detaillsModel.setTable_no(txt_value_edt_weight_table_nos.getText().toString());
 
@@ -377,6 +376,7 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                                         detaillsModel.setGroupCode(emp_code);
                                         detaillsModel.setTeam_no(txt_value_edt_weight_group_nos.getText().toString());
                                         detaillsModel.setTable_no(txt_value_edt_weight_table_nos.getText().toString());
+                                        detaillsModel.setGradeNo(processes_data.getFP_Production_Grade_No());
 
 
                                         valueEditionDetaillsModel.add(detaillsModel);
@@ -395,7 +395,7 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                     }
 
                     }else {
-                    AppUtils.showToast(mContext,"please select count");
+                    AppUtils.showToast(mContext,"please select employee");
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                         spinner_layout_value_edition.setBackground(getResources().getDrawable(R.drawable.yellow_background));
                     }
@@ -476,5 +476,22 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
          }
 
         return validate;
+    }
+
+    @Override
+    public void onBackPressed() {
+        //  super.onBackPressed();
+        AppUtils.showCustomOkCancelDialog(this, "", "Do you want to go back without saving weights?", "No", "Yes",
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                }, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ValueEditionDetails.super.onBackPressed();
+                    }
+                });
     }
 }

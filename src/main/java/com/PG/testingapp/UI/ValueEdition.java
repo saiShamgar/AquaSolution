@@ -77,68 +77,10 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
     private Context mContext;
     private SharedPreferenceConfig config;
 
-//    String YOUR_DEVICE_NAME;
-//    byte[] DATA;
-//    int TIMEOUT;
-//
-//    //Strings
-//    String name,fullName;
-
     //services
     private ApiService apiService;
     private LotNoDetails_VD processes_data;
 
-//    //
-//    public static final int targetVendorID = 6790;
-//    public static final int targetProductID = 29987;
-//    public  UsbManager manager;
-//    public  UsbDeviceConnection usbDeviceConnection;
-//    public UsbInterface usbInterfaceFound = null;
-//    public  UsbEndpoint endpointOut = null;
-//    public  UsbEndpoint endpointIn = null;
-//    public  UsbDevice usbdevice,device_details;
-//    public  UsbEndpoint listusbendpoint;
-//
-//    public static final String PREFS_NAME = "LoginPrefs";
-//    HashMap<String, UsbDevice> devicelist= null;
-//    int selectedendpoint;
-//    static int Coil_No;
-//    private static final int VID = 6790;
-//    private static final int PID = 29987;
-//    private static UsbDriver Usb_Driver_class;
-//    ActionBar actionbar;
-//    //UsbConnectionHandler connectionHandler;
-//    public static UsbDriver USB_Driver_Child;
-//    public static boolean Communication_Failed,Frame_Ok,Total_Frame_Decoded;
-//    static byte[] Communication_Byte;
-//    public SharedPreferences loginpreferences;
-//    public SharedPreferences.Editor loginpreferenceseditor;
-//    public boolean savelogin;
-//    public String Password;
-//    Button sample_button;
-//    public EditText receive_Data;
-//    CheckBox remember_me;
-//    Typeface custom_font;
-//    String i = "";
-//    Intent i2;
-//    CheckBox show_password;
-//    String ProcID;
-//    String User_Name_string,password_string;
-//    TextView title,username_txt,password_txt,company_name;
-//    ByteBuffer buffer;
-//    Button signin;
-//    EditText dialog_username,dialog_password,dialog_confirm;
-//
-//    static byte[] sample;
-//    static boolean Communication_Ok;
-//    public static float []Wave_Form_Data=new float[1500];
-//    public static float []Wave_Form_Data_1=new float[1500];
-//    public static float Respsonse_Time,Drive_Voltage;
-//    static int Sequence_No,Response_Time;
-//    private char string_to_receive;
-
-
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -168,26 +110,6 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
             }
         });
     }
-
-
-
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        if (requestCode == 100)
-//        {
-//            if (resultCode == Activity.RESULT_OK)
-//            {
-//                Log.e("weight", "onActivityResult: "+data.getStringExtra("weight"));
-////                tvTotalWeight.setText(data.getStringExtra("weight"));
-////                totalWeight = Math.round(Double.parseDouble(tvTotalWeight.getText().toString().trim()));
-////
-////                Log.i(TAG, "onActivityResult: Total Weight"+totalWeight);
-////                calculateWeight();
-//            }
-//        }
-//    }
 
     private void callService() {
         if (AppUtils.isNetworkAvailable(mContext)){
@@ -247,8 +169,6 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 
     @Override
     public void onRadioClick(LotNoDetails_VD processes_data) {
