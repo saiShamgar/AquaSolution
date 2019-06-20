@@ -19,6 +19,7 @@ import com.PG.testingapp.model.RMReceiving.RMReceive_IGP_No_Status;
 import com.PG.testingapp.model.RMReceiving.RMRecivingLoationsStatus;
 import com.PG.testingapp.model.RmAnalysis.RmAnaalysisDetailsStatus;
 import com.PG.testingapp.model.SiteWTInsertResponce;
+import com.PG.testingapp.model.Soaking.GetLotNo_Soaking_status;
 import com.PG.testingapp.model.Status;
 import com.PG.testingapp.model.ValueEdition.GetLotDetails_VD;
 import com.PG.testingapp.model.headOnHeadLessGrading.GetLotNumbers_HOHL_status;
@@ -229,6 +230,14 @@ public interface ApiService {
     @POST("app_rm_analysis_get_data/")
     Call<RmAnaalysisDetailsStatus> get_rm_analysis_details(
             @Field("Emp_Id")String Emp_Id);
+
+    //soaking
+
+    @FormUrlEncoded
+    @POST("app_soacking_get_details/")
+    Call<GetLotNo_Soaking_status> getSoakingLotNo(
+            @Field("empid")String Emp_Id);
+
 
 
 

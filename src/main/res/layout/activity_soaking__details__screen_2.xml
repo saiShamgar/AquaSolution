@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.RmAnalysis.RmAnalysisDetails"
+    android:background="@color/act_background">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/toolbar_layout_lin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/extra_large_50dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@drawable/gradient_background_color">
+
+            <ImageView
+                android:id="@+id/back_button_rm_analysis"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_left"
+                android:padding="@dimen/margin_xlarge"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1.5"
+                android:layout_height="wrap_content"
+                android:text="RM Receiving Analysis"
+                android:layout_gravity="center"
+                android:id="@+id/toolbar_heading"
+                android:textSize="@dimen/large_20dp"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/act_background">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/white"
+                    android:focusableInTouchMode="true"
+                    app:cardCornerRadius="@dimen/card_elevation_4dp"
+                    app:cardElevation="2dp"
+                    android:layout_margin="@dimen/card_radius_8dp"
+                    android:padding="@dimen/margin_large">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4"
+                            android:padding="@dimen/card_radius_8dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Lot No : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_soaking_lotNo"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14dp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_light_black"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Variety : "
+                                android:textSize="@dimen/t13_size"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_soaking_variety"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_light_black"
+                                android:layout_gravity="center"
+                                android:textSize="14dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4"
+                            android:padding="@dimen/card_radius_8dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Working Grade : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_soaking_workingGrade"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14dp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_light_black"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Grade : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_soaking_grade"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_light_black"
+                                android:layout_gravity="center"
+                                android:textSize="14dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4"
+                            android:padding="@dimen/card_radius_8dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Recd Quantity : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_soaking_recd_quantity"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textSize="14dp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_light_black"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Process Details : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_soaking_process_details"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_light_black"
+                                android:layout_gravity="center"
+                                android:textSize="14dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:weightSum="2"
+                            android:padding="@dimen/card_radius_8dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Process Timing Details"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:textSize="16dp"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="@dimen/card_radius_8dp"
+                                android:layout_marginTop="@dimen/margin_large">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:weightSum="2"
+                                    android:layout_margin="@dimen/card_radius_8dp">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.6"
+                                        android:text="Start Time :"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/black" />
+
+                                    <TextView
+                                        android:id="@+id/process_start_time"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1.2"
+                                        android:text="-Select- "
+                                        android:padding="@dimen/card_elevation_4dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:background="@drawable/stroke_back_ground_gray"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:weightSum="2"
+                                    android:layout_margin="@dimen/card_radius_8dp">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.6"
+                                        android:text="End Time :"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/black" />
+
+                                    <TextView
+                                        android:id="@+id/process_end_time"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1.2"
+                                        android:text="-Select- "
+                                        android:padding="@dimen/card_elevation_4dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:background="@drawable/stroke_back_ground_gray"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2"
+                                android:padding="@dimen/card_radius_8dp"
+                                android:layout_marginLeft="@dimen/margin_large"
+                                android:layout_marginRight="@dimen/margin_large">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="Process Duration : "
+                                    android:textSize="@dimen/t13_size"
+                                    android:textStyle="bold"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/color_text"/>
+                                <TextView
+                                    android:id="@+id/txt_soaking_det_process_duration"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/color_light_black"
+                                    android:layout_gravity="center"
+                                    android:textSize="18dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:padding="@dimen/card_radius_8dp">
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Supervisor name : "
+                                android:textSize="@dimen/t13_size"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:textColor="@color/color_text"/>
+                            <TextView
+                                android:id="@+id/txt_soaking_emp_name"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_light_black"
+                                android:layout_gravity="center"
+                                android:textSize="14dp"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.PG.testingapp.R;
+import com.PG.testingapp.UI.ChemicalTreatmentProcess.ChemicalTreatmentProcess;
 import com.PG.testingapp.UI.FactoryWeighment.FactoryWeighment;
 import com.PG.testingapp.UI.HeadLessGrading.HeadLessGrading;
 import com.PG.testingapp.UI.HeadOnGrading.HeadOnGrading;
@@ -88,6 +89,8 @@ public class MenuItemsAdapter extends RecyclerView.Adapter<MenuItemsAdapter.View
 
                     }
                     else  if (position==11){
+                        Intent valueEdition=new Intent(context, ChemicalTreatmentProcess.class);
+                        context.startActivity(valueEdition);
 
                     }
                     else  if (position==12){

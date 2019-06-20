@@ -21,9 +21,11 @@ import com.PG.testingapp.R;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by Akash on 3/15/2018.
@@ -207,13 +209,42 @@ public class AppUtils {
      * @param
      * @return
      */
-    public static String timeFormat(long timeStamp){
+    public static String covertGSTTonormalDateFormat(String timeStamp){
 
-        String currentTime;
-        SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a");
-        currentTime = timeFormat.format(timeStamp);
+        SimpleDateFormat input = new SimpleDateFormat("E MMM dd HH:mm:ss Z yyyy");
+        SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a");
 
-        return currentTime;
+        Date d = null;
+        try
+        {
+            d = input.parse(timeStamp);
+        }
+        catch (ParseException e)
+        {
+            e.printStackTrace();
+        }
+        String formatted = output.format(d);
+        Log.i("DATE", "" + formatted);
+        return formatted;
+    }
+
+    public static String HourFormat(String timeStamp){
+
+        SimpleDateFormat input = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a");
+        SimpleDateFormat output = new SimpleDateFormat("HH:mm:ss aa");
+
+        Date d = null;
+        try
+        {
+            d = input.parse(timeStamp);
+        }
+        catch (ParseException e)
+        {
+            e.printStackTrace();
+        }
+        String formatted = output.format(d);
+        Log.i("DATE", "" + formatted);
+        return formatted;
     }
 
     public static String convertServerFormatDateTime(Calendar calendar){
