@@ -9,7 +9,7 @@
     android:background="@color/act_background">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -23,7 +23,7 @@
             android:background="@drawable/gradient_background_color">
 
             <ImageView
-                android:id="@+id/back_button_rm_analysis"
+                android:id="@+id/back_button_soaking_details"
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
                 android:layout_height="match_parent"
@@ -33,7 +33,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1.5"
                 android:layout_height="wrap_content"
-                android:text="RM Receiving Analysis"
+                android:text="Soaking Process"
                 android:layout_gravity="center"
                 android:id="@+id/toolbar_heading"
                 android:textSize="@dimen/large_20dp"
@@ -42,6 +42,7 @@
         </LinearLayout>
 
         <ScrollView
+            android:layout_below="@+id/toolbar_layout_lin"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <LinearLayout
@@ -337,12 +338,403 @@
                 </android.support.v7.widget.CardView>
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_xxxxxlarge"
+                    android:padding="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Date&amp;Time"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/t13_size"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_text" />
+
+                    <TextView
+                        android:id="@+id/txt_soaking_date_time"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/t13_size"
+                        android:padding="5dp"
+                        android:text="Loading.."
+                        android:gravity="end"
+                        android:background="@drawable/boarder_shape"
+                        android:textColor="@color/order_txt_color"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_xxxxxlarge"
+                    android:padding="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tub No"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/t13_size"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_text" />
+
+                    <EditText
+                        android:id="@+id/txt_soaking_tub_no"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/t13_size"
+                        android:padding="5dp"
+                        android:hint="0"
+                        android:gravity="end"
+                        android:inputType="number"
+                        android:imeOptions="actionNext"
+                        android:background="@drawable/boarder_shape"
+                        android:textColor="@color/order_txt_color" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_xxxxxlarge"
+                    android:padding="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Number Of Nets"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/t13_size"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_text"
+                        />
+
+                    <EditText
+                        android:id="@+id/txt_soaking_no_nets"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/boarder_shape"
+                        android:hint="Enter Number of nets / weight"
+                        android:inputType="number"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:gravity="end"
+                        android:imeOptions="actionNext"
+                        android:textColor="@color/order_txt_color"
+                        android:textColorHint="@color/color_lite_grey"
+                        android:textSize="@dimen/t13_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_xxxxxlarge"
+                    android:padding="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Tare Weight / Net(kgs)"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/t13_size"
+                        android:textColor="@color/color_text"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txt_soaking_tare_weight"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/t13_size"
+                        android:hint="Enter total weight (kgs)"
+                        android:padding="5dp"
+                        android:gravity="end"
+                        android:singleLine="true"
+                        android:inputType="numberDecimal"
+                        android:imeOptions="actionNext"
+                        android:background="@drawable/boarder_shape"
+                        android:textColor="@color/order_txt_color"
+                        android:textColorHint="@color/color_lite_grey"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_xxxxxlarge"
+                    android:padding="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Total Weight (kgs)"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/t13_size"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_text" />
+
+                    <EditText
+                        android:id="@+id/edt_soaking_total_weight_kgs"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/t13_size"
+                        android:hint="Enter total weight (kgs)"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:gravity="end"
+                        android:inputType="numberDecimal"
+                        android:imeOptions="actionDone"
+                        android:background="@drawable/boarder_shape"
+                        android:textColor="@color/order_txt_color"
+                        android:textColorHint="@color/color_lite_grey"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_xxxxxlarge"
+                    android:padding="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Total Tare Weight (kgs)"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/t13_size"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_text" />
+
+                    <TextView
+                        android:id="@+id/txt_soaking_total_tare_wt"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/t13_size"
+                        android:hint="0"
+                        android:gravity="end"
+                        android:padding="5dp"
+                        android:background="@drawable/boarder_shape"
+                        android:textColor="@color/order_txt_color"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_xxxxxlarge"
+                    android:padding="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Net Weight (kgs)"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/t13_size"
+                        android:textColor="@color/color_text"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_soaking_net_weight"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/t13_size"
+                        android:hint="0"
+                        android:gravity="end"
+                        android:padding="5dp"
+                        android:background="@drawable/boarder_shape"
+                        android:textColor="@color/order_txt_color" />
+
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@color/app_dark_color"
+                            android:orientation="horizontal"
+                            android:elevation="@dimen/card_elevation_4dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="S.No."
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Time"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Tub No"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Grade"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="No.Of Nets"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Total Weight"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Total Tare Weight"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Net\nWeight"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:text="Cumulative Weight."
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:textSize="@dimen/t0_size"
+                                android:layout_weight="1"/>
+
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/extra_large_50dp">
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/soaking_process_recycler_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
 
             </LinearLayout>
         </ScrollView>
 
+        <LinearLayout
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_xlarge">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Cumulative Wt."
+                android:gravity="center"
+                android:visibility="gone"
+                android:background="@color/color_app_blue"
+                android:textSize="@dimen/t0_size"
+                android:textColor="@color/white"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/txt_soaking_btn_save"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="SAVE &amp; CONTINUE"
+                android:gravity="center"
+                android:background="@color/app_color"
+                android:textSize="@dimen/t3_size"
+                android:textColor="@color/white"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:paddingRight="@dimen/margin_xlarge"
+                android:drawableRight="@drawable/ic_arrow_forward_white_24dp"/>
+            <TextView
+                android:id="@+id/txt_soaking_btn_complete"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="GO TO SUMMARY"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@color/app_dark_color"
+                android:textSize="@dimen/t3_size"
+                android:layout_weight="1"/>
+        </LinearLayout>
 
 
-    </LinearLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>

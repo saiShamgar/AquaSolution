@@ -238,8 +238,9 @@ public interface ApiService {
     Call<GetLotNo_Soaking_status> getSoakingLotNo(
             @Field("empid")String Emp_Id);
 
-
-
-
+    @FormUrlEncoded
+    @POST("app_soacking_save_registers/")
+    Call<Status> insert_soaking_details(
+            @Field("data")String json);
 
 }

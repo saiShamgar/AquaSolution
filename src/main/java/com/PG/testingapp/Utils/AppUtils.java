@@ -212,7 +212,7 @@ public class AppUtils {
     public static String covertGSTTonormalDateFormat(String timeStamp){
 
         SimpleDateFormat input = new SimpleDateFormat("E MMM dd HH:mm:ss Z yyyy");
-        SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a");
+        SimpleDateFormat output = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
         Date d = null;
         try
@@ -230,7 +230,7 @@ public class AppUtils {
 
     public static String HourFormat(String timeStamp){
 
-        SimpleDateFormat input = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a");
+        SimpleDateFormat input = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         SimpleDateFormat output = new SimpleDateFormat("HH:mm:ss aa");
 
         Date d = null;

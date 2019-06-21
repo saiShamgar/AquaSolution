@@ -136,7 +136,7 @@ public class ChemicalTreatmentProcess extends BaseActivity implements Soaking_On
                     AppUtils.dismissCustomProgress(mCustomProgressDialog);
                     AppUtils.showCustomOkDialog(context,
                             "",
-                            getString(R.string.error_default),
+                            t.getMessage().toString(),
                             "OK", new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {

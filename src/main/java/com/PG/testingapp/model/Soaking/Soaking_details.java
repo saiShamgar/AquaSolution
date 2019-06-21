@@ -39,7 +39,15 @@ public class Soaking_details implements Serializable {
     @SerializedName("Packing_grades")
     private String Packing_grades;
 
-    public Soaking_details(String soaking_Process_Schedule_No, String lot_No, String soaking_Process_Type, String soaking_Process_Details, String FP_Production_Grade_Code, String soaking_Allotted_Quantity, String FK_FP_Grade_Code, String FP_Variety_Code, String FP_Variety_Name, String grade, String packing_grades) {
+    @SerializedName("Product_Process_Code")
+    private String Product_Process_Code;
+
+
+    @SerializedName("Production_Process_Schedule_No")
+    private String Production_Process_Schedule_No;
+
+
+    public Soaking_details(String soaking_Process_Schedule_No, String lot_No, String soaking_Process_Type, String soaking_Process_Details, String FP_Production_Grade_Code, String soaking_Allotted_Quantity, String FK_FP_Grade_Code, String FP_Variety_Code, String FP_Variety_Name, String grade, String packing_grades, String product_Process_Code, String production_Process_Schedule_No) {
         Soaking_Process_Schedule_No = soaking_Process_Schedule_No;
         Lot_No = lot_No;
         Soaking_Process_Type = soaking_Process_Type;
@@ -51,6 +59,8 @@ public class Soaking_details implements Serializable {
         this.FP_Variety_Name = FP_Variety_Name;
         Grade = grade;
         Packing_grades = packing_grades;
+        Product_Process_Code = product_Process_Code;
+        Production_Process_Schedule_No = production_Process_Schedule_No;
     }
 
     public String getSoaking_Process_Schedule_No() {
@@ -139,5 +149,21 @@ public class Soaking_details implements Serializable {
 
     public void setPacking_grades(String packing_grades) {
         Packing_grades = packing_grades;
+    }
+
+    public String getProduct_Process_Code() {
+        return Product_Process_Code;
+    }
+
+    public void setProduct_Process_Code(String product_Process_Code) {
+        Product_Process_Code = product_Process_Code;
+    }
+
+    public String getProduction_Process_Schedule_No() {
+        return Production_Process_Schedule_No;
+    }
+
+    public void setProduction_Process_Schedule_No(String production_Process_Schedule_No) {
+        Production_Process_Schedule_No = production_Process_Schedule_No;
     }
 }

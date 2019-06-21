@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_show_inserted_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.PG.testingapp.UI.ValueEditionDetailsInserted">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/gradient_background_color">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:elevation="@dimen/card_elevation_4dp">
+
+            <LinearLayout
+                android:id="@+id/toolbar_layout_lin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/extra_large_50dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <ImageView
+                    android:id="@+id/back_button_soaking_details_ins"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_left"
+                    android:padding="@dimen/margin_xlarge"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="wrap_content"
+                    android:text="Soaking process "
+                    android:layout_gravity="center"
+                    android:id="@+id/toolbar_heading"
+                    android:textSize="@dimen/large_20dp"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+            <HorizontalScrollView
+                android:layout_below="@+id/toolbar_layout_lin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:orientation="horizontal"
+                        android:elevation="@dimen/card_elevation_4dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="S.No."
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="Time"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="Tub No"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="Grade"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="No.Of Nets"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="Total Weight"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="Total Tare Weight"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="Net\nWeight"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="Cumulative Weight."
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/t0_size"
+                            android:layout_weight="1"/>
+
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="55dp" >
+
+                        <android.support.v7.widget.RecyclerView
+                            android:background="@color/white"
+                            android:id="@+id/soaking_process_insert_recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_soaking_inserted_Upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:rippleColor="@color/color_ripple"
+            android:layout_marginBottom="70dp"
+            android:clickable="true"
+           android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_upload"
+            app:backgroundTint="@color/app_dark_color"
+            android:layout_marginRight="@dimen/margin_xlarge"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No of Nets"
+                    android:gravity="center"
+                    android:textSize="12dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/font_color"/>
+                <TextView
+                    android:id="@+id/tot_no_nets"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="15"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:textColor="@color/color_black"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="#cacaca"
+                tools:ignore="Suspicious0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total Net weight"
+                    android:gravity="center"
+                    android:textSize="12dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/font_color"/>
+                <TextView
+                    android:id="@+id/tot_net_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="15"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:textColor="@color/color_black"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="#cacaca"
+                tools:ignore="Suspicious0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total weight"
+                    android:textSize="12dp"
+                    android:gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/font_color"/>
+                <TextView
+                    android:id="@+id/tot_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="15"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:textColor="@color/color_black"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

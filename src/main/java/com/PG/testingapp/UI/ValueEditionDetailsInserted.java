@@ -60,11 +60,9 @@ public class ValueEditionDetailsInserted extends BaseActivity {
     private TextView tot_no_nets,tot_net_weight,tot_weight;
     private FloatingActionButton btnValue_edition_Upload;
     private Button valEdtNextLot;
-
     private ArrayList<String> list=new ArrayList<>();
     private int no_of_nets;
     private float tot_net_wt,tot_wt;
-
     private ArrayList<String> date_time=new ArrayList<>();
     private ArrayList<String> VAP_No_of_Nets=new ArrayList<>();
     private ArrayList<String> VAP_Net_Tare_Wt=new ArrayList<>();
@@ -74,23 +72,16 @@ public class ValueEditionDetailsInserted extends BaseActivity {
     private ArrayList<String> VAP_Group_Emp_id=new ArrayList<>();
     private ArrayList<String> Team_nos=new ArrayList<>();
     private ArrayList<String> Table_nos=new ArrayList<>();
-
-
     private Context context;
     private ApiService apiService;
-
-    private DbHelper dbHelper;
     private SharedPreferenceConfig config;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_value_edition_details_inserted);
-
         context=ValueEditionDetailsInserted.this;
-
-        dbHelper=new DbHelper(this);
         config=new SharedPreferenceConfig(this);
-
         Bundle b = getIntent().getExtras();
         ArrayList<ValueEditionDetaillsModel> detaillsModels = (ArrayList<ValueEditionDetaillsModel>) b.getSerializable("objNames");
         processes_data=(LotNoDetails_VD) getIntent().getSerializableExtra("process");
