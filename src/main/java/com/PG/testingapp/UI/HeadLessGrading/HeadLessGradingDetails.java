@@ -109,7 +109,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
         processes_data=(Lot_numbers) getIntent().getSerializableExtra("process");
         status=getIntent().getExtras().get("status").toString();
 
-        Log.e("tag",status);
+      //  Log.e("tag",status);
 
         txt_value_edt_dts_weight_btn_save=findViewById(R.id.txt_h_l_g_dts_weight_btn_save);
         txt_value_edt_weight_btn_complete=findViewById(R.id.txt_h_l_g_weight_btn_complete);

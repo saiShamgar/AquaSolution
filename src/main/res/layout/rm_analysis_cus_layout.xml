@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container_item_weight_detail"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/item_container"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_description"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/color_text"
+                android:textSize="@dimen/t0_size"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txt_no_pieces"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/color_text"
+                android:textSize="@dimen/t0_size" />
+
+            <TextView
+                android:id="@+id/txt_cuttingQty"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/color_text"
+                android:textSize="@dimen/t0_size" />
+
+            <TextView
+                android:id="@+id/txt_per_on_sample_quantity"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="21"
+                android:textColor="@color/color_text"
+                android:textSize="@dimen/t0_size" />
+
+
+
+            <TextView
+                android:id="@+id/txt_recdQty"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/color_text"
+                android:textSize="12dp" />
+
+
+            <TextView
+                android:id="@+id/txt_final_cutting"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/color_text"
+                android:textSize="@dimen/t0_size"
+                android:visibility="visible"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

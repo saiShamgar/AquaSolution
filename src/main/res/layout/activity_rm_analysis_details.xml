@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.RmAnalysis.RmAnalysisDetails">
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
     <LinearLayout
@@ -39,8 +44,6 @@
                 android:textColor="@color/white" />
 
         </LinearLayout>
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -276,23 +279,27 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:weightSum="4"
+                            android:weightSum="2"
                             android:padding="@dimen/card_radius_8dp">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
+                                android:layout_weight="0.6"
                                 android:layout_height="wrap_content"
                                 android:text="Remarks : "
                                 android:textSize="@dimen/t13_size"
                                 android:textStyle="bold"
                                 android:layout_gravity="center"
                                 android:textColor="@color/color_text"/>
-                            <TextView
+                            <EditText
                                 android:id="@+id/txt_rm_remarks"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
+                                android:layout_weight="1.4"
                                 android:layout_height="wrap_content"
                                 android:textSize="14dp"
+                                android:inputType="text"
+                                android:singleLine="true"
+                                android:imeOptions="actionDone"
+                                android:hint="Write Here"
                                 android:layout_gravity="center"
                                 android:textColor="@color/color_light_black"/>
 
@@ -490,7 +497,8 @@
 
                 <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:nestedScrollingEnabled="false">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -547,7 +555,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -584,7 +592,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -756,7 +764,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -793,7 +801,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -965,7 +973,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -1002,7 +1010,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -1174,7 +1182,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -1211,7 +1219,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -1383,7 +1391,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -1420,7 +1428,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -1592,7 +1600,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -1629,7 +1637,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -1801,7 +1809,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -1838,7 +1846,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -2010,7 +2018,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -2047,7 +2055,7 @@
                                         android:padding="5dp"
                                         android:singleLine="true"
                                         android:gravity="end"
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:textColor="@color/order_txt_color"
                                         android:textColorHint="@color/color_lite_grey"
                                         android:textSize="@dimen/t13_size" />
@@ -2172,9 +2180,20 @@
 
                 </ScrollView>
 
+                <Button
+                    android:id="@+id/go_to_summary"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Go to summary"
+                    android:background="@color/app_dark_color"/>
+
 
             </LinearLayout>
+
 
     </LinearLayout>
 
 </RelativeLayout>
+
+</android.support.v4.widget.NestedScrollView>

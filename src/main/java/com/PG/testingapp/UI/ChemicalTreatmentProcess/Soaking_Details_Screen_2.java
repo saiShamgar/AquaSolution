@@ -105,11 +105,9 @@ public class Soaking_Details_Screen_2 extends AppCompatActivity implements View.
             txt_soaking_recd_quantity.setText(soaking_details.getSoaking_Allotted_Quantity());
             txt_soaking_process_details.setText(soaking_details.getSoaking_Process_Details());
             txt_soaking_emp_name.setText(supervisor);
-
         }
 
         CountDownTimer newtimer = new CountDownTimer(1000000000, 1000) {
-
             public void onTick(long millisUntilFinished) {
                 String saveCurrentDate;
                 Calendar c = Calendar.getInstance();
@@ -122,8 +120,6 @@ public class Soaking_Details_Screen_2 extends AppCompatActivity implements View.
             }
         };
         newtimer.start();
-
-
 
         process_start_time.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -193,8 +189,6 @@ public class Soaking_Details_Screen_2 extends AppCompatActivity implements View.
 
             }
         });
-
-
     }
 
     boolean doValidation() {
@@ -382,7 +376,7 @@ public class Soaking_Details_Screen_2 extends AppCompatActivity implements View.
         switch (v.getId()) {
             case R.id.txt_soaking_btn_save:
                             if (doValidation()) {
-                                AppUtils.showCustomOkCancelDialog(this, "","Do you want to save weights?", "Yes", "No",
+                                AppUtils.showCustomOkCancelDialog(this, "","Do you want to continue?", "Yes", "No",
                                         new View.OnClickListener() {
                                             @Override
                                             public void onClick(View v) {

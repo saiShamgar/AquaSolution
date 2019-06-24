@@ -158,7 +158,7 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
         if (AppUtils.isNetworkAvailable(mContext)){
             AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
             apiService= AppUrl.getApiClient().create(ApiService.class);
-            Log.e("code",prodct_code);
+         //   Log.e("code",prodct_code);
             Call<GetCodes> call=apiService.getSiteCountCodes(prodct_code);
             call.enqueue(new Callback<GetCodes>() {
                 @Override

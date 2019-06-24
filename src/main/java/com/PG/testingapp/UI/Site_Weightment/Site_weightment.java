@@ -557,10 +557,10 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
                             btnSiteWeightmentNext.setVisibility(View.VISIBLE);
                             edttxt_siteweighment_navigationmap.setText(message.getAddress());
 
-                            Log.e("size",String.valueOf(response.body().getData().getFarmerDetails().size()));
+                         //   Log.e("size",String.valueOf(response.body().getData().getFarmerDetails().size()));
 
                             if (response.body().getData().getFarmerDetails().size()!=0){
-                                Log.e("code","hdhfd");
+                              //  Log.e("code","hdhfd");
                                 for (int i=0;i<response.body().getData().getFarmerDetails().size();i++){
 
                                     edttxt_siteweighment_agentdetails.setText(response.body().getData().getFarmerDetails().get(i).getAqua_Agent_Name());

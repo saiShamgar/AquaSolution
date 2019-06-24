@@ -94,7 +94,7 @@ public interface ApiService {
     @POST("app_get_details/")
     Call<GetEnquiryRespone> getEnQuiryDetails(
             @Field("sechduleno")String schNo,
-            @Field("  ")String enquiryNo);
+            @Field("enquiryno")String enquiryNo);
 
     @FormUrlEncoded
     @POST("app_site_map_registers/")
