@@ -243,4 +243,9 @@ public interface ApiService {
     Call<Status> insert_soaking_details(
             @Field("data")String json);
 
+    @FormUrlEncoded
+    @POST("app_rm_analysis_save_data/")
+    Call<Status> insert_analysis_details(
+            @Field("data")String json);
+
 }

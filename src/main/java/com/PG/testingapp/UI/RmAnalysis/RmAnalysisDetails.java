@@ -850,14 +850,14 @@ public class RmAnalysisDetails extends AppCompatActivity {
     private void setTextForColumnThree(String text, TextView txt_rm_ct_one_per_sam_qt, EditText txt_rm_ct_one_sample_quantity, TextView txt_rm_ct_one_recd_qty, EditText txt_rm_ct_one_final_qty, TextView cat_one) {
         if (txt_rm_no_of_pics.getText().toString()!=""){
             txt_rm_ct_one_sample_quantity.setEnabled(false);
-            txt_rm_ct_one_sample_quantity.setText("");
+            txt_rm_ct_one_sample_quantity.setText("0.000");
             float no_pieces=Float.parseFloat(text);
             Log.e("no_pieces",String.valueOf(no_pieces));
             float totalPieces=Integer.parseInt(txt_rm_no_of_pics.getText().toString());
             Log.e("totalPieces",String.valueOf(totalPieces));
             float result=(no_pieces/totalPieces)*100;
             Log.e("result",String.valueOf(result));
-            float value_for_column4=Float.parseFloat(rmAnalysisDetailsModel.getQuantity())*result;
+            float value_for_column4=(Float.parseFloat(rmAnalysisDetailsModel.getQuantity())*result)/100;
             Log.e("value_for_column4",String.valueOf(value_for_column4));
             txt_rm_ct_one_recd_qty.setText(AppUtils.roundValue(String.valueOf(value_for_column4)));
             txt_rm_ct_one_final_qty.setText(AppUtils.roundValue(String.valueOf(value_for_column4)));
@@ -871,14 +871,14 @@ public class RmAnalysisDetails extends AppCompatActivity {
     private void setTextForColumnThree_basedOncolumn2(String text, TextView txt_rm_ct_one_per_sam_qt, EditText txt_rm_ct_one_no_of_pics, TextView txt_rm_ct_one_recd_qty, EditText txt_rm_ct_one_final_qty, TextView cat_one) {
         if (txt_rm_sample_quantity.getText().toString()!=""){
             txt_rm_ct_one_no_of_pics.setEnabled(false);
-            txt_rm_ct_one_no_of_pics.setText("");
+            txt_rm_ct_one_no_of_pics.setText("0");
             float no_pieces=Float.parseFloat(text);
             Log.e("no_pieces",String.valueOf(no_pieces));
             float totalPieces=Float.parseFloat(txt_rm_sample_quantity.getText().toString());
             Log.e("totalPieces",String.valueOf(totalPieces));
             float result=(no_pieces/totalPieces)*100;
             Log.e("result",String.valueOf(result));
-            float value_for_column4=Float.parseFloat(rmAnalysisDetailsModel.getQuantity())*result;
+            float value_for_column4=(Float.parseFloat(rmAnalysisDetailsModel.getQuantity())*result)/100;
             Log.e("value_for_column4",String.valueOf(value_for_column4));
             txt_rm_ct_one_recd_qty.setText(AppUtils.roundValue(String.valueOf(value_for_column4)));
             txt_rm_ct_one_final_qty.setText(AppUtils.roundValue(String.valueOf(value_for_column4)));

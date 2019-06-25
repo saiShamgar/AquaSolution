@@ -1,6 +1,7 @@
 package com.PG.testingapp.UI.RmAnalysis;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,17 +14,27 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.PG.testingapp.Adapters.RmAnalysis.RmAnalysis_Screen_Three;
+import com.PG.testingapp.Api.ApiService;
+import com.PG.testingapp.Api.AppUrl;
+import com.PG.testingapp.BaseActivity;
 import com.PG.testingapp.R;
+import com.PG.testingapp.UI.MenuActivity;
+import com.PG.testingapp.Utils.AppConstant;
 import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.Utils.SharedPreferenceConfig;
 import com.PG.testingapp.model.RmAnalysis.AnalysisInsertModel;
 import com.PG.testingapp.model.RmAnalysis.AnalysisModel;
 import com.PG.testingapp.model.RmAnalysis.RmAnalysisDetailsModel;
+import com.PG.testingapp.model.Status;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
-public class RmAnalysis_summary extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class RmAnalysis_summary extends BaseActivity {
 
     private TextView txt_rm_analysis_date,txt_rm_lot_no,txt_rm_lot_date,txt_rm_farmer_name,txt_rm_location,
             txt_rm_received_count,txt_rm_quantity,txt_rm_no_of_pics,txt_rm_supervisor_name,
@@ -37,6 +48,7 @@ public class RmAnalysis_summary extends AppCompatActivity {
     private RmAnalysis_Screen_Three adapter;
     private RecyclerView rm_analysis_recycler_view;
     private SharedPreferenceConfig config;
+    private ApiService apiService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,6 +142,46 @@ public class RmAnalysis_summary extends AppCompatActivity {
         Gson gson = new Gson();
         String json = gson.toJson(jsonData);
         Log.e("data ",json);
+
+        AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
+        apiService= AppUrl.getApiClient().create(ApiService.class);
+        Call<Status> call=apiService.insert_analysis_details(json);
+        call.enqueue(new Callback<Status>() {
+            @Override
+            public void onResponse(Call<Status> call, Response<Status> response) {
+                AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                Log.e("status","entered");
+                if (response.body()!=null){
+                    if (response.body().getStatus().contains(AppConstant.MESSAGE)){
+                        Log.e("status",response.body().getMessage());
+                        AppUtils.showToast(context,response.body().getMessage());
+                        Intent goback=new Intent(RmAnalysis_summary.this, MenuActivity.class);
+                        goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(goback);
+                        finish();
+
+                    }else {
+                        Log.e("status",response.body().getMessage());
+                        AppUtils.showCustomOkDialog(context,"",response.body().getMessage(),"OK",null);
+                    }
+                }
+                else {
+                    Log.e("status","response null");
+                    AppUtils.showCustomOkDialog(context,"",getResources().getString(R.string.error_default),"OK",null);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Status> call, Throwable t) {
+                Log.e("status",t.toString());
+                AppUtils.dismissCustomProgress(mCustomProgressDialog);
+                AppUtils.showCustomOkDialog(context,
+                        "",
+                        getString(R.string.error_default),
+                        "OK", null);
+            }
+        });
+
 
     }
 }
