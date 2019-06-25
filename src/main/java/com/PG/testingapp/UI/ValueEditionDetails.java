@@ -192,7 +192,7 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
     private void setSpinner() {
         final List<String> list = new ArrayList<>();
         list.clear();
-        list.add("Select Grade");
+        list.add("Select Group Name");
         if (AppUtils.isNetworkAvailable(mContext)){
             AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
             apiService= AppUrl.getApiClient().create(ApiService.class);
@@ -320,7 +320,7 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.txt_value_edt_dts_weight_btn_save:
-                if (emp_name!="Select Grade"){
+                if (emp_name!="Select Group Name"){
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                         spinner_layout_value_edition.setBackground(getResources().getDrawable(R.drawable.stroke_back_ground_gray));
                     }
@@ -365,6 +365,7 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                                 new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
+                                        emp_code=emp_codes.get(emp_position-1).getEmp_id();
                                         ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
                                         detaillsModel.setTime(txt_value_edt_weight_date_time.getText().toString());
                                         detaillsModel.setNo_of_nets(Integer.parseInt(txt_value_edt_weight_no_nets.getText().toString()));

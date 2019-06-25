@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.PG.testingapp.Adapters.RmAnalysis.RmAnalysis_Screen_Three;
@@ -49,6 +50,7 @@ public class RmAnalysis_summary extends BaseActivity {
     private RecyclerView rm_analysis_recycler_view;
     private SharedPreferenceConfig config;
     private ApiService apiService;
+    private ImageView back_button_rm_analysis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,7 @@ public class RmAnalysis_summary extends BaseActivity {
         txt_rm_remarks=findViewById(R.id.txt_rm_remarks_summary);
         btn_rm_analysis_inserted_Upload=findViewById(R.id.btn_rm_analysis_inserted_Upload);
         rm_analysis_recycler_view=findViewById(R.id.rm_analysis_recycler_view);
+        back_button_rm_analysis=findViewById(R.id.back_button_rm_analysis);
 
 
         adapter=new RmAnalysis_Screen_Three(this,detaillsModels);
@@ -101,6 +104,12 @@ public class RmAnalysis_summary extends BaseActivity {
             txt_rm_analysis_date.setText(date);
             txt_rm_remarks.setText(remarks);
         }
+        back_button_rm_analysis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
 
 

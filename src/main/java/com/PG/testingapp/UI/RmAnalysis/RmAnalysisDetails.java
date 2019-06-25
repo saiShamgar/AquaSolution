@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.PG.testingapp.R;
@@ -34,6 +35,7 @@ public class RmAnalysisDetails extends AppCompatActivity {
     private TextView txt_rm_analysis_date,txt_rm_lot_no,txt_rm_lot_date,txt_rm_farmer_name,txt_rm_location,
             txt_rm_received_count,txt_rm_quantity,txt_rm_no_of_pics,txt_rm_supervisor_name,
             cat_one,cat_two,cat_three,cat_four,cat_five,cat_six,cat_seven,cat_eight;
+    private ImageView back_button_rm_analysis;
 
     private EditText txt_rm_ct_one_no_of_pics,txt_rm_ct_one_sample_quantity,txt_rm_ct_two_no_of_pics,txt_rm_ct_two_sample_quantity,
             txt_rm_ct_three_no_of_pics,txt_rm_ct_three_sample_quantity, txt_rm_ct_four_no_of_pics,txt_rm_ct_four_sample_quantity,
@@ -76,6 +78,7 @@ public class RmAnalysisDetails extends AppCompatActivity {
         txt_rm_supervisor_name=findViewById(R.id.txt_rm_supervisor_name);
         txt_rm_remarks=findViewById(R.id.txt_rm_remarks);
         go_to_summary=findViewById(R.id.go_to_summary);
+        back_button_rm_analysis=findViewById(R.id.back_button_rm_analysis);
 
         cat_one=findViewById(R.id.cat_one);
         cat_two=findViewById(R.id.cat_two);
@@ -144,6 +147,13 @@ public class RmAnalysisDetails extends AppCompatActivity {
             }
         };
         newtimer.start();
+
+        back_button_rm_analysis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         go_to_summary.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -886,5 +896,22 @@ public class RmAnalysisDetails extends AppCompatActivity {
             cat_one.setBackground(getResources().getDrawable(R.drawable.round_back_ground_blue));
             cat_one.setTextColor(getResources().getColor(R.color.color_white));
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        //  super.onBackPressed();
+        AppUtils.showCustomOkCancelDialog(this, "", "Do you want to go back without saving data?", "No", "Yes",
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                }, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        RmAnalysisDetails.super.onBackPressed();
+                    }
+                });
     }
 }
