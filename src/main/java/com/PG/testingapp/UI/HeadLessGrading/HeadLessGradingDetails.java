@@ -63,7 +63,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
 
     private TextView txt_value_edt_dts_weight_btn_save,txt_value_edt_weight_btn_complete,txt_value_edt_weight_date_time,
             txt_value_edt_weight_group_name,txt_value_edt_weight_total_tare_wt,txt_value_edt_weight_net_weight
-            ,txt_h_l_g_lot_no,txt_h_l_g_count,toolbar_heading_HeadLess_det;
+            ,txt_h_l_g_lot_no,txt_h_l_g_count,toolbar_heading_HeadLess_det,head_less_add_new_grade;
     private RecyclerView value_edt_weight_recycler_view;
     private Toolbar toolbar;
     private ImageView back_button_val_edt_det;
@@ -120,11 +120,22 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
         spinner_layout_h_l_Grade=findViewById(R.id.spinner_layout_h_l_Grade);
         txt_h_l_g_count=findViewById(R.id.txt_h_l_g_count);
         toolbar_heading_HeadLess_det=findViewById(R.id.toolbar_heading_HeadLess_det);
-        
+        head_less_add_new_grade=findViewById(R.id.head_less_add_new_grade);
+
         if (status.contains("HL")){
             toolbar_heading_HeadLess_det.setText("HeadLess Grading Weights");
+
+            head_less_add_new_grade.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                   Intent addnewGrade=new Intent(HeadLessGradingDetails.this,AddNewGrade.class);
+                   addnewGrade.putExtra("status",status);
+                   startActivity(addnewGrade);
+                }
+            });
         }else if (status.contains("HO")){
             toolbar_heading_HeadLess_det.setText("HeadOn Grading Weights");
+            head_less_add_new_grade.setVisibility(View.GONE);
         }
 
         //textViews
@@ -232,7 +243,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
     private void callServiceForGrade(String varaity_code) {
         final List<String> list1 = new ArrayList<>();
         list1.clear();
-        list1.add("Select Grade");
+        list1.add("Select Grade No");
 
         AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
         apiService= AppUrl.getApiClient().create(ApiService.class);
@@ -243,7 +254,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                 AppUtils.dismissCustomProgress(mCustomProgressDialog);
                 if (response.body()!=null){
                     if (response.body().getStatus().contains(AppConstant.MESSAGE)){
-                        AppUtils.showToast(mContext,response.body().getMessage());
+                      //  AppUtils.showToast(mContext,response.body().getMessage());
 
                         for (int i=0;i<response.body().getCodes().size();i++){
                             list1.add(response.body().getCodes().get(i).getFP_Production_Grade_No());
@@ -288,7 +299,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                             spinner_layout_h_l_VarietyName.setBackground(getResources().getDrawable(R.drawable.stroke_back_ground_gray));
                         }
-                        if (gradeNO != "Select Grade") {
+                        if (gradeNO != "Select Grade No") {
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                                 spinner_layout_h_l_Grade.setBackground(getResources().getDrawable(R.drawable.stroke_back_ground_gray));
                             }
@@ -306,6 +317,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                                                 detaillsModel.setTotal_weight(Float.parseFloat(edt_value_edt_total_weight_kgs.getText().toString()));
                                                 detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
                                                 detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
+                                                detaillsModel.setNet_tare_weight(Float.parseFloat(txt_value_edt_weight_tare_weight.getText().toString()));
                                                 detaillsModel.setGroupName(count);
                                                 detaillsModel.setGroupCode(count_code);
                                                 detaillsModel.setGradeNo(gradeNO);
@@ -353,6 +365,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                                                 detaillsModel.setTotal_weight(Float.parseFloat(edt_value_edt_total_weight_kgs.getText().toString()));
                                                 detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
                                                 detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
+                                                detaillsModel.setNet_tare_weight(Float.parseFloat(txt_value_edt_weight_tare_weight.getText().toString()));
                                                 detaillsModel.setGroupName(count);
                                                 detaillsModel.setGroupCode(count_code);
                                                 detaillsModel.setGradeNo(gradeNO);
@@ -377,7 +390,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                             }
                         }
                         else {
-                            AppUtils.showToast(mContext, "please select Grade");
+                            AppUtils.showToast(mContext, "please select Grade no");
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                                 spinner_layout_h_l_Grade.setBackground(getResources().getDrawable(R.drawable.yellow_background));
                             }
@@ -392,7 +405,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                     }
 
                 } else {
-                    AppUtils.showToast(mContext, "please select count");
+                    AppUtils.showToast(mContext, "please select Group");
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                         spinner_layout.setBackground(getResources().getDrawable(R.drawable.yellow_background));
                     }
@@ -460,7 +473,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                 AppUtils.dismissCustomProgress(mCustomProgressDialog);
                 if (response.body()!=null){
                     if (response.body().getStatus().contains(AppConstant.MESSAGE)){
-                        AppUtils.showToast(mContext,response.body().getMessage());
+                       // AppUtils.showToast(mContext,response.body().getMessage());
 
                         for (int i=0;i<response.body().getCodes().size();i++){
                             list1.add(response.body().getCodes().get(i).getFP_Variety_Name());
@@ -518,7 +531,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                     AppUtils.dismissCustomProgress(mCustomProgressDialog);
                     if (response.body()!=null){
                         if (response.body().getStatus().contains(AppConstant.MESSAGE)){
-                            AppUtils.showToast(mContext,response.body().getMessage());
+                          //  AppUtils.showToast(mContext,response.body().getMessage());
 
                             for (int i=0;i<response.body().getCodes().size();i++){
                                 list.add(response.body().getCodes().get(i).getFP_Group_Name());

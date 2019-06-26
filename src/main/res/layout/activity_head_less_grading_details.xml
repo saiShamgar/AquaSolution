@@ -19,30 +19,39 @@
             android:layout_height="wrap_content"
             android:background="@drawable/gradient_background_color"
             android:elevation="@dimen/card_elevation_4dp"
-            android:weightSum="3">
+            android:weightSum="3"
+            android:padding="@dimen/margin_large">
 
 
             <ImageView
                 android:id="@+id/back_button_h_l_g_d"
                 android:layout_width="0dp"
                 android:layout_weight="0.2"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_left"
-                android:layout_marginTop="@dimen/extra_large_30dp"
-                android:layout_marginLeft="@dimen/large_20dp"/>
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_left">
+            </ImageView>
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1.5"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="HeadLess Grading Weights"
                 android:id="@+id/toolbar_heading_HeadLess_det"
-                android:layout_marginTop="28dp"
-                android:layout_marginLeft="8dp"
                 android:textSize="18dp"
                 android:gravity="center_horizontal"
                 android:textColor="@color/white"
-                android:layout_toRightOf="@+id/back_button_h_l_g_d"
-                android:layout_marginBottom="10dp"/>
+                android:layout_toRightOf="@+id/back_button_h_l_g_d" />
+
+            <TextView
+                android:id="@+id/head_less_add_new_grade"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:background="@drawable/yellow_stroke_background"
+                android:text="Add New Grade"
+                android:gravity="center"
+                android:textColor="#fdd835"
+                android:textStyle="bold"/>
 
 
 
@@ -88,7 +97,7 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:text="Lot no/ Lot date:"
+                                    android:text="Lot no /\nLot date:"
                                     android:textSize="@dimen/t13_size"
                                     android:textStyle="bold"
                                     android:textColor="@color/color_text"/>
@@ -98,6 +107,7 @@
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:text="4"
+                                    android:layout_gravity="center"
                                     android:textSize="14dp"
                                     android:textColor="@color/color_light_black"/>
                                 <TextView
@@ -130,7 +140,7 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:text="Grade :"
+                                    android:text="Group :"
                                     android:textSize="@dimen/t13_size"
                                     android:layout_gravity="center"
                                     android:textStyle="bold"
@@ -203,7 +213,7 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:text="Grade :"
+                                    android:text="Grade No :"
                                     android:textSize="@dimen/t13_size"
                                     android:layout_gravity="center"
                                     android:textStyle="bold"

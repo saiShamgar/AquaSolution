@@ -12,6 +12,7 @@ import com.PG.testingapp.model.HeadLessGrading.GetGrades;
 import com.PG.testingapp.model.HeadLessGrading.GetGroupCodes;
 import com.PG.testingapp.model.HeadLessGrading.GetVarietyDetails;
 import com.PG.testingapp.model.HeadLessGrading.LotNumbersStatus;
+import com.PG.testingapp.model.HeadLessGrading.PackingGradeStatus;
 import com.PG.testingapp.model.LocationPlacement.BarcodeResponce;
 import com.PG.testingapp.model.LoginResponse;
 import com.PG.testingapp.model.RMReceiving.GetCountCodoesStatus;
@@ -129,6 +130,16 @@ public interface ApiService {
     @POST("app_get_count_variety_code/")
     Call<GetCodes> HeadLeassCountData(
             @Field("VarietyCode")String VarietyCode);
+
+    @FormUrlEncoded
+    @POST("app_get_fp_packing_grade/")
+    Call<PackingGradeStatus> HeadLeassgetPackingGrade(
+            @Field("fpVarietyCode")String VarietyCode);
+
+    @FormUrlEncoded
+    @POST("app_add_new_grade_code/")
+    Call<Status> HeadLeassInsertNewGrade(
+            @Field("data")String fpVarietyCode);
 
     @FormUrlEncoded
     @POST("app_save_lot_details/")

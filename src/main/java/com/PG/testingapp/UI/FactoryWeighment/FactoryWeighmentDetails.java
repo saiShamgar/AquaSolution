@@ -255,6 +255,7 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
                                         detaillsModel.setTotal_weight(Float.parseFloat(edt_value_edt_total_weight_kgs.getText().toString()));
                                         detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
                                         detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
+                                        detaillsModel.setNet_tare_weight(Float.parseFloat(txt_value_edt_weight_tare_weight.getText().toString()));
                                         detaillsModel.setCummulative_weight(0);
                                         detaillsModel.setGroup_person(count);
                                         detaillsModel.setCount_code(count_code);
@@ -287,6 +288,7 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
                                         detaillsModel.setTotal_weight(Float.parseFloat(edt_value_edt_total_weight_kgs.getText().toString()));
                                         detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
                                         detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
+                                        detaillsModel.setNet_tare_weight(Float.parseFloat(txt_value_edt_weight_tare_weight.getText().toString()));
                                         detaillsModel.setCummulative_weight(0);
                                         detaillsModel.setGroup_person(count);
                                         detaillsModel.setCount_code(count_code);

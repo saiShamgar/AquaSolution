@@ -224,6 +224,7 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
                                         detaillsModel.setTotal_weight(Float.parseFloat(edt_siteWeighment_total_weight_kgs.getText().toString()));
                                         detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_siteWeighment_weight_total_tare_wt.getText().toString()));
                                         detaillsModel.setNet_weight(Float.parseFloat(txt_siteWeighment_weight_net_weight.getText().toString()));
+                                        detaillsModel.setNet_tare_weight(Float.parseFloat(txt_siteWeighment_weight_tare_weight.getText().toString()));
                                         detaillsModel.setCummulative_weight(0);
                                         detaillsModel.setCount_code(count_code);
                                         detaillsModel.setGroup_person(count);

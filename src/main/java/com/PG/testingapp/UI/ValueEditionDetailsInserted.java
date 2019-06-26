@@ -110,7 +110,7 @@ public class ValueEditionDetailsInserted extends BaseActivity {
         for (int i=0;i<detaillsModels.size();i++){
             date_time.add(detaillsModels.get(i).getTime());
             VAP_No_of_Nets.add(String.valueOf(detaillsModels.get(i).getNo_of_nets()));
-            VAP_Net_Tare_Wt.add(String.valueOf(detaillsModels.get(i).getTotal_weight()));
+            VAP_Net_Tare_Wt.add(String.valueOf(detaillsModels.get(i).getNet_tare_weight()));
             VAP_Total_Weight.add(String.valueOf(detaillsModels.get(i).getTotal_weight()));
             VAP_Total_Tare_Weight.add(String.valueOf(detaillsModels.get(i).getTotal_tare_weight()));
             VAP_Net_Weight.add(String.valueOf(detaillsModels.get(i).getNet_weight()));

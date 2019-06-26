@@ -13,25 +13,39 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.PG.testingapp.Api.ApiService;
+import com.PG.testingapp.Api.AppUrl;
+import com.PG.testingapp.BaseActivity;
 import com.PG.testingapp.R;
+import com.PG.testingapp.model.HeadLessGrading.GetGroupCodes;
+import com.PG.testingapp.model.HeadLessGrading.GroupCodes;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by Akash on 3/15/2018.
  */
 
-public class AppUtils {
+public class AppUtils  {
 
 
 
@@ -118,6 +132,108 @@ public class AppUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static Dialog showCustomOkCancelDialog_for_new_grade(Context context,
+                                                  String positiveBtnTxt,
+                                                  String negativeBtnTxt,
+                                                  final View.OnClickListener positivecallback,
+                                                  final View.OnClickListener negativecallback) {
+
+        final Dialog dialog_ok_cancel_dialog;
+        dialog_ok_cancel_dialog = new Dialog(context, R.style.custompopup_style);
+        dialog_ok_cancel_dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        dialog_ok_cancel_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        dialog_ok_cancel_dialog.setContentView(R.layout.cus_layout_add_new_grade);
+        dialog_ok_cancel_dialog.setCancelable(false);
+
+        Window window = dialog_ok_cancel_dialog.getWindow();
+        WindowManager.LayoutParams wlp = window.getAttributes();
+        wlp.gravity = Gravity.CENTER;
+        window.setAttributes(wlp);
+        dialog_ok_cancel_dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+
+
+        
+
+
+
+        dialog_ok_cancel_dialog.show();
+
+        return null;
+    }
+
+    private static void setSpinnerForAddnewGrade(Context context, Spinner spinner_select_group) {
+        final List<String> list = new ArrayList<>();
+        final ArrayList<GroupCodes>[] codes = new ArrayList[]{new ArrayList<>()};
+        final String[] group = new String[1];
+        final String[] group_code = new String[1];
+        final Integer[] position = new Integer[1];
+        list.clear();
+        list.add("Select Group");
+
+        if (AppUtils.isNetworkAvailable(context)){
+          ApiService  apiService= AppUrl.getApiClient().create(ApiService.class);
+            Call<GetGroupCodes> call=apiService.hlGetFinishedGroups();
+            call.enqueue(new Callback<GetGroupCodes>() {
+                @Override
+                public void onResponse(Call<GetGroupCodes> call, Response<GetGroupCodes> response) {
+                    if (response.body()!=null){
+                        if (response.body().getStatus().contains(AppConstant.MESSAGE)){
+                           // AppUtils.showToast(context,response.body().getMessage());
+
+                            for (int i=0;i<response.body().getCodes().size();i++){
+                                list.add(response.body().getCodes().get(i).getFP_Group_Name());
+                            }
+                            codes[0] =response.body().getCodes();
+                            ArrayAdapter<String> countAdapter = new ArrayAdapter<String>(context, R.layout.show_count, list);
+                            spinner_select_group.setVisibility(View.VISIBLE);
+                            spinner_select_group.setAdapter(countAdapter);
+                        }
+                        else {
+                            Log.e("status",response.body().getMessage());
+                            AppUtils.showCustomOkDialog(context,"",context.getResources().getString(R.string.error_default),"OK",null);
+                        }
+                    }
+                    else {
+                        AppUtils.showCustomOkDialog(context,"",context.getResources().getString(R.string.error_default),"OK",null);
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<GetGroupCodes> call, Throwable t) {
+                    Log.e("status",t.toString());
+                    AppUtils.showCustomOkDialog(context,
+                            "",
+                           t.getMessage(),
+                            "OK", null);
+                }
+            });
+        }else {
+            AppUtils.showToast(context,context.getString(R.string.error_network));
+        }
+
+        spinner_select_group.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
+                group[0] = parent.getSelectedItem().toString();
+                position[0] = i;
+
+                if (group[0] != "Select Group") {
+                    if (AppUtils.isNetworkAvailable(context)) {
+                        group_code[0] = codes[0].get(i-1).getFP_Group_Code();
+                    //    callServiceForVariety(group_code);
+                    } else {
+                        AppUtils.showToast(context, context.getString(R.string.error_network));
+                    }
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
 

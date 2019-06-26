@@ -387,6 +387,7 @@ public class Soaking_Details_Screen_2 extends AppCompatActivity implements View.
                                                 details.setTotal_weight(Float.parseFloat(edt_soaking_total_weight_kgs.getText().toString()));
                                                 details.setNet_weight(Float.parseFloat(txt_soaking_net_weight.getText().toString()));
                                                 details.setTotal_tare_weight(Float.parseFloat(txt_soaking_total_tare_wt.getText().toString()));
+                                                details.setNet_tare_weight(Float.parseFloat(txt_soaking_tare_weight.getText().toString()));
                                                 details.setGrade(soaking_details.getGrade());
                                                 soaking_grid_two_models.add(details);
 

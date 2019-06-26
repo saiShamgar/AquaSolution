@@ -336,6 +336,7 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                                         detaillsModel.setTotal_weight(Float.parseFloat(edt_value_edt_total_weight_kgs.getText().toString()));
                                         detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
                                         detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
+                                        detaillsModel.setNet_tare_weight(Float.parseFloat(txt_value_edt_weight_tare_weight.getText().toString()));
                                         detaillsModel.setCummulative_weight(0);
                                         detaillsModel.setGroupName(emp_name);
                                         detaillsModel.setGroupCode(emp_code);

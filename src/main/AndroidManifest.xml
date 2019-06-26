@@ -32,6 +32,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name=".UI.HeadLessGrading.AddNewGrade"
+            android:theme="@style/AppThemeWithNoActionBar"
+            android:screenOrientation="portrait"></activity>
         <activity android:name=".UI.RmAnalysis.RmAnalysis_summary"
             android:theme="@style/AppThemeWithNoActionBar"
             android:screenOrientation="portrait"></activity>

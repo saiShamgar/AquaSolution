@@ -10,6 +10,7 @@ public class Soaking_Grid_two_model implements Serializable {
     float total_weight;
     float total_tare_weight;
     float net_weight;
+    float net_tare_weight;
     String Grade;
 
     public Soaking_Grid_two_model() {
@@ -69,5 +70,13 @@ public class Soaking_Grid_two_model implements Serializable {
 
     public void setGrade(String grade) {
         Grade = grade;
+    }
+
+    public float getNet_tare_weight() {
+        return net_tare_weight;
+    }
+
+    public void setNet_tare_weight(float net_tare_weight) {
+        this.net_tare_weight = net_tare_weight;
     }
 }

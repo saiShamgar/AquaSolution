@@ -10,6 +10,7 @@ public class ValueEditionDetaillsModel implements Serializable {
     private float total_weight;
     private float total_tare_weight;
     private float net_weight;
+    private float net_tare_weight;
     private float cummulative_weight;
     private String group_person;
     private String team_no;
@@ -151,5 +152,13 @@ public class ValueEditionDetaillsModel implements Serializable {
 
     public void setTable_no(String table_no) {
         this.table_no = table_no;
+    }
+
+    public float getNet_tare_weight() {
+        return net_tare_weight;
+    }
+
+    public void setNet_tare_weight(float net_tare_weight) {
+        this.net_tare_weight = net_tare_weight;
     }
 }
