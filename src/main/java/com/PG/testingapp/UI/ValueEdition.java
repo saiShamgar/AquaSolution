@@ -19,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.method.CharacterPickerDialog;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -138,11 +139,28 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
                         }
                         else {
                             Log.e("status",response.body().getMessage());
-                            AppUtils.showCustomOkDialog(mContext,"",response.body().getMessage(),"OK",null);
+                            AppUtils.showCustomOkDialog(mContext, "", response.body().getMessage(), "OK", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent goback=new Intent(ValueEdition.this, MenuActivity.class);
+                                    goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(goback);
+                                    finish();
+                                }
+                            });
                         }
                     }
                     else {
-                        AppUtils.showCustomOkDialog(mContext,"",getResources().getString(R.string.error_default),"OK",null);
+                        AppUtils.showCustomOkDialog(mContext, "", getResources().getString(R.string.error_default),
+                                "OK", new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        Intent goback=new Intent(ValueEdition.this, MenuActivity.class);
+                                        goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        startActivity(goback);
+                                        finish();
+                                    }
+                                });
                     }
                 }
 
@@ -152,8 +170,16 @@ public class ValueEdition extends BaseActivity implements OnRadioButtonClick {
                     AppUtils.dismissCustomProgress(mCustomProgressDialog);
                     AppUtils.showCustomOkDialog(mContext,
                             "",
-                            getString(R.string.error_default),
-                            "OK", null);
+                            t.getMessage(),
+                            "OK", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent goback=new Intent(ValueEdition.this, MenuActivity.class);
+                                    goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(goback);
+                                    finish();
+                                }
+                            });
                 }
             });
         }else {

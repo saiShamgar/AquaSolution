@@ -162,7 +162,7 @@ public class MenuItemsAdapter extends RecyclerView.Adapter<MenuItemsAdapter.View
             holder.gridImage.setImageResource(R.drawable.ic_value_addition_ws);
         }
         else  if (position==11){
-            holder.item_name.setText("Chemical\n Treatment");
+            holder.item_name.setText("Chemical\n Treatment Manual");
             holder.gridImage.setImageResource(R.drawable.ic_chemical_treatment);
         }
         else if (position==12){

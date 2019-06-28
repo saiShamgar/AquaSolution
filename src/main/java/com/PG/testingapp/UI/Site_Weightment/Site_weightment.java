@@ -656,7 +656,16 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
                         }
                     }
                     else {
-                        AppUtils.showCustomOkDialog(mContext,"",getResources().getString(R.string.error_default),"OK",null);
+                        AppUtils.showCustomOkDialog(mContext, "", getResources().getString(R.string.error_default),
+                                "OK", new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        Intent goback=new Intent(Site_weightment.this, MenuActivity.class);
+                                        goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        startActivity(goback);
+                                        finish();
+                                    }
+                                });
                     }
                 }
 
@@ -666,8 +675,16 @@ public class Site_weightment extends BaseActivity implements View.OnClickListene
                     AppUtils.dismissCustomProgress(mCustomProgressDialog);
                     AppUtils.showCustomOkDialog(mContext,
                             "",
-                            getString(R.string.error_default),
-                            "OK", null);
+                            t.getMessage(),
+                            "OK", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent goback=new Intent(Site_weightment.this, MenuActivity.class);
+                                    goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(goback);
+                                    finish();
+                                }
+                            });
                 }
             });
         }else {

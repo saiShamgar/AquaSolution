@@ -197,8 +197,6 @@ public class AddNewGrade extends BaseActivity implements AdapterView.OnItemSelec
         String json = gson.toJson(jsonData);
         Log.e("adding grade ", json);
 
-
-
         AppUtils.showCustomProgressDialog(mCustomProgressDialog,"Loading...");
         apiService= AppUrl.getApiClient().create(ApiService.class);
         Call<Status> call=apiService.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           HeadLeassInsertNewGrade(json);

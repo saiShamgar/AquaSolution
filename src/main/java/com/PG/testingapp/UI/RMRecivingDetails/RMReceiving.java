@@ -130,7 +130,7 @@ public class RMReceiving extends BaseActivity implements RMReceivingRadioClick {
                     AppUtils.dismissCustomProgress(mCustomProgressDialog);
                     AppUtils.showCustomOkDialog(context,
                             "",
-                            getString(R.string.error_default),
+                           t.getMessage(),
                             "OK", new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {

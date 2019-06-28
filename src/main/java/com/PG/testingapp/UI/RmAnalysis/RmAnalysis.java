@@ -131,7 +131,7 @@ public class RmAnalysis extends BaseActivity implements RmAnalysis_RadioClick {
                     AppUtils.dismissCustomProgress(mCustomProgressDialog);
                     AppUtils.showCustomOkDialog(context,
                             "",
-                            getString(R.string.error_default),
+                           t.getMessage(),
                             "OK", new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {

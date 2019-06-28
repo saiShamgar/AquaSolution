@@ -117,7 +117,16 @@ public class FactoryWeighment extends BaseActivity implements OnRadioButtonClick
                         }
                     }
                     else {
-                        AppUtils.showCustomOkDialog(context,"",getResources().getString(R.string.error_default),"OK",null);
+                        AppUtils.showCustomOkDialog(context, "", getResources().getString(R.string.error_default),
+                                "OK", new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        Intent goback=new Intent(FactoryWeighment.this, MenuActivity.class);
+                                        goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        startActivity(goback);
+                                        finish();
+                                    }
+                                });
                     }
                 }
 
@@ -127,8 +136,16 @@ public class FactoryWeighment extends BaseActivity implements OnRadioButtonClick
                     AppUtils.dismissCustomProgress(mCustomProgressDialog);
                     AppUtils.showCustomOkDialog(context,
                             "",
-                            getString(R.string.error_default),
-                            "OK", null);
+                            t.getMessage(),
+                            "OK", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent goback=new Intent(FactoryWeighment.this, MenuActivity.class);
+                                    goback.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(goback);
+                                    finish();
+                                }
+                            });
                 }
             });
         }else {
