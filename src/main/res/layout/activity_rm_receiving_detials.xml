@@ -16,9 +16,11 @@
         <LinearLayout
             android:id="@+id/toolbar_layout_lin"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/extra_large_50dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2"
+            android:weightSum="3"
+            android:paddingTop="@dimen/margin_xlarge"
+            android:paddingBottom="@dimen/margin_xlarge"
             android:background="@drawable/gradient_background_color">
 
             <ImageView
@@ -26,8 +28,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="0.5"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_left"
-                android:padding="@dimen/margin_xlarge"/>
+                android:src="@drawable/ic_left" />
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1.5"
@@ -37,6 +38,19 @@
                 android:id="@+id/toolbar_heading"
                 android:textSize="@dimen/large_20dp"
                 android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/head_less_add_new_count"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@drawable/yellow_stroke_background"
+                android:text="Add New Count"
+                android:gravity="center"
+                android:textColor="#fdd835"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 

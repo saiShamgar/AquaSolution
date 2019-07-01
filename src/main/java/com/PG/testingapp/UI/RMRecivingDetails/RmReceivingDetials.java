@@ -29,6 +29,7 @@ import com.PG.testingapp.Api.AppUrl;
 import com.PG.testingapp.BaseActivity;
 import com.PG.testingapp.InterFace.RMReceivingRadioClick;
 import com.PG.testingapp.R;
+import com.PG.testingapp.UI.AddingNewCounts;
 import com.PG.testingapp.UI.HeadOnHeadLessGrading.HOHL_details_inserting;
 import com.PG.testingapp.UI.HeadOnHeadLessGrading.HOHL_weights;
 import com.PG.testingapp.UI.MenuActivity;
@@ -64,7 +65,7 @@ public class RmReceivingDetials extends BaseActivity {
     private LinearLayout spinner_layout_rm_recived_loc,spinner_layout_rm_product,spinner_layout_rm_variety,spinner_layout_rm_count;
     private Spinner spinner_rm_recived_loc,spinner_rm_product,spinner_rm_variety,spinner_rm_count;
     private EditText txt_rm_received_details_quantity;
-    private TextView txt_rm_receiving_details_weight_btn_save,txt_rm_receiving_details_btn_complete;
+    private TextView txt_rm_receiving_details_weight_btn_save,txt_rm_receiving_details_btn_complete,head_less_add_new_count;
     private RecyclerView rm_receiving_details_recycler_view;
     private RMReceive_IGP_No rmReceive_igp_no;
     private ImageView back_button_rm_recive_details;
@@ -106,6 +107,7 @@ public class RmReceivingDetials extends BaseActivity {
         txt_rm_agent_name=findViewById(R.id.txt_rm_agent_name);
         txt_rm_Lot_no=findViewById(R.id.txt_rm_Lot_no);
         txt_rm_lot_date=findViewById(R.id.txt_rm_lot_date);
+        head_less_add_new_count=findViewById(R.id.head_less_add_new_count);
 
         spinner_layout_rm_recived_loc=findViewById(R.id.spinner_layout_rm_recived_loc);
         spinner_layout_rm_product=findViewById(R.id.spinner_layout_rm_product);
@@ -126,6 +128,14 @@ public class RmReceivingDetials extends BaseActivity {
         txt_rm_receiving_details_btn_complete=findViewById(R.id.txt_rm_receiving_details_btn_complete);
 
         rmReceive_igp_no=(RMReceive_IGP_No) getIntent().getSerializableExtra("process");
+
+        head_less_add_new_count.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent new_count=new Intent(RmReceivingDetials.this, AddingNewCounts.class);
+                startActivity(new_count);
+            }
+        });
 
         if (rmReceive_igp_no!=null){
             txt_rm_inwardDate.setText(AppUtils.dateFormat(rmReceive_igp_no.getRM_Inward_Date()));

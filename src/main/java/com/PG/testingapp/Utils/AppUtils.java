@@ -295,10 +295,18 @@ public class AppUtils  {
     }
 
     public static String roundValue(String s){
-
         String s1="";
-        BigDecimal bd1 = new BigDecimal(s).setScale(2, RoundingMode.HALF_UP);
-        s1= String.valueOf(bd1.doubleValue());
+        try
+        {
+            BigDecimal bd1 = new BigDecimal(s).setScale(2, RoundingMode.HALF_UP);
+            s1= String.valueOf(bd1.doubleValue());
+        }
+        catch (NumberFormatException e){
+            e.printStackTrace();
+            s1="0";
+        }
+
+
 
         return s1;
 

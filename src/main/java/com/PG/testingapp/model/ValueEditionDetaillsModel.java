@@ -6,12 +6,12 @@ import java.util.ArrayList;
 public class ValueEditionDetaillsModel implements Serializable {
 
     private String time;
-    private int no_of_nets;
-    private float total_weight;
-    private float total_tare_weight;
-    private float net_weight;
-    private float net_tare_weight;
-    private float cummulative_weight;
+    private String no_of_nets;
+    private String total_weight;
+    private String total_tare_weight;
+    private String net_weight;
+    private String net_tare_weight;
+    private String cummulative_weight;
     private String group_person;
     private String team_no;
     private String count_code;
@@ -34,43 +34,51 @@ public class ValueEditionDetaillsModel implements Serializable {
         this.time = time;
     }
 
-    public int getNo_of_nets() {
+    public String getNo_of_nets() {
         return no_of_nets;
     }
 
-    public void setNo_of_nets(int no_of_nets) {
+    public void setNo_of_nets(String no_of_nets) {
         this.no_of_nets = no_of_nets;
     }
 
-    public float getTotal_weight() {
+    public String getTotal_weight() {
         return total_weight;
     }
 
-    public void setTotal_weight(float total_weight) {
+    public void setTotal_weight(String total_weight) {
         this.total_weight = total_weight;
     }
 
-    public float getTotal_tare_weight() {
+    public String getTotal_tare_weight() {
         return total_tare_weight;
     }
 
-    public void setTotal_tare_weight(float total_tare_weight) {
+    public void setTotal_tare_weight(String total_tare_weight) {
         this.total_tare_weight = total_tare_weight;
     }
 
-    public float getNet_weight() {
+    public String getNet_weight() {
         return net_weight;
     }
 
-    public void setNet_weight(float net_weight) {
+    public void setNet_weight(String net_weight) {
         this.net_weight = net_weight;
     }
 
-    public float getCummulative_weight() {
+    public String getNet_tare_weight() {
+        return net_tare_weight;
+    }
+
+    public void setNet_tare_weight(String net_tare_weight) {
+        this.net_tare_weight = net_tare_weight;
+    }
+
+    public String getCummulative_weight() {
         return cummulative_weight;
     }
 
-    public void setCummulative_weight(float cummulative_weight) {
+    public void setCummulative_weight(String cummulative_weight) {
         this.cummulative_weight = cummulative_weight;
     }
 
@@ -152,13 +160,5 @@ public class ValueEditionDetaillsModel implements Serializable {
 
     public void setTable_no(String table_no) {
         this.table_no = table_no;
-    }
-
-    public float getNet_tare_weight() {
-        return net_tare_weight;
-    }
-
-    public void setNet_tare_weight(float net_tare_weight) {
-        this.net_tare_weight = net_tare_weight;
     }
 }

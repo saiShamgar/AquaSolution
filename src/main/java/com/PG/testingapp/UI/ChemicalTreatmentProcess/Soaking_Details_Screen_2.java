@@ -232,7 +232,7 @@ public class Soaking_Details_Screen_2 extends AppCompatActivity implements View.
         return validate;
     }
 
-    private void calculateDifference(Editable s) {
+    private void   calculateDifference(Editable s) {
         try {
             SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss aa");
             Date date1 = null;
@@ -382,12 +382,12 @@ public class Soaking_Details_Screen_2 extends AppCompatActivity implements View.
                                             public void onClick(View v) {
                                                 Soaking_Grid_two_model details=new Soaking_Grid_two_model();
                                                 details.setDate(txt_soaking_date_time.getText().toString());
-                                                details.setTub_no(Integer.parseInt(txt_soaking_tub_no.getText().toString()));
-                                                details.setNo_of_nets(Integer.parseInt(txt_soaking_no_nets.getText().toString()));
-                                                details.setTotal_weight(Float.parseFloat(edt_soaking_total_weight_kgs.getText().toString()));
-                                                details.setNet_weight(Float.parseFloat(txt_soaking_net_weight.getText().toString()));
-                                                details.setTotal_tare_weight(Float.parseFloat(txt_soaking_total_tare_wt.getText().toString()));
-                                                details.setNet_tare_weight(Float.parseFloat(txt_soaking_tare_weight.getText().toString()));
+                                                details.setTub_no(txt_soaking_tub_no.getText().toString());
+                                                details.setNo_of_nets(txt_soaking_no_nets.getText().toString());
+                                                details.setTotal_weight(edt_soaking_total_weight_kgs.getText().toString());
+                                                details.setNet_weight(txt_soaking_net_weight.getText().toString());
+                                                details.setTotal_tare_weight(txt_soaking_total_tare_wt.getText().toString());
+                                                details.setNet_tare_weight(txt_soaking_tare_weight.getText().toString());
                                                 details.setGrade(soaking_details.getGrade());
                                                 soaking_grid_two_models.add(details);
 
@@ -414,6 +414,22 @@ public class Soaking_Details_Screen_2 extends AppCompatActivity implements View.
                                         new View.OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
+
+                                                Soaking_Grid_two_model details=new Soaking_Grid_two_model();
+                                                details.setDate(txt_soaking_date_time.getText().toString());
+                                                details.setTub_no(txt_soaking_tub_no.getText().toString());
+                                                details.setNo_of_nets(txt_soaking_no_nets.getText().toString());
+                                                details.setTotal_weight(edt_soaking_total_weight_kgs.getText().toString());
+                                                details.setNet_weight(txt_soaking_net_weight.getText().toString());
+                                                details.setTotal_tare_weight(txt_soaking_total_tare_wt.getText().toString());
+                                                details.setNet_tare_weight(txt_soaking_tare_weight.getText().toString());
+                                                details.setGrade(soaking_details.getGrade());
+                                                soaking_grid_two_models.add(details);
+
+                                                adapter=new Soaking_grid_adapter_for_screen_2(getApplicationContext(),soaking_grid_two_models);
+                                                soaking_process_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                                                soaking_process_recycler_view.setHasFixedSize(true);
+                                                soaking_process_recycler_view.setAdapter(adapter);
 
                                             }
                                         });

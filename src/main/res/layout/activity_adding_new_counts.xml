@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/act_background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22dp"
+        android:text="Add New Count"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/margin_xxxxxlarge"/>
+
+
+    <LinearLayout
+        android:id="@+id/spinner_layout_select_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boarder_shape"
+        android:layout_marginLeft="@dimen/margin_xxxxlarge"
+        android:layout_marginRight="@dimen/margin_xxxxlarge"
+        android:padding="@dimen/card_radius_8dp"
+        android:layout_marginBottom="@dimen/margin_xxlarge">
+        <Spinner
+            android:id="@+id/spinner_select_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center">
+        </Spinner>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/spinner_layout_select_variety"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boarder_shape"
+        android:layout_marginLeft="@dimen/margin_xxxxlarge"
+        android:padding="@dimen/card_radius_8dp"
+        android:layout_marginRight="@dimen/margin_xxxxlarge"
+        android:layout_marginBottom="@dimen/margin_xxlarge">
+        <Spinner
+            android:id="@+id/spinner_select_variety"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center">
+        </Spinner>
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/edt_add_new_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Add New Count"
+        android:padding="@dimen/margin_large"
+        android:textColor="@color/black"
+        android:background="@drawable/boarder_shape"
+        android:inputType="numberDecimal"
+        android:imeOptions="actionDone"
+        android:layout_marginLeft="@dimen/margin_xxxxlarge"
+        android:layout_marginRight="@dimen/margin_xxxxlarge"
+        android:layout_marginBottom="@dimen/margin_xxlarge"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/cancel_add_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:layout_margin="@dimen/margin_large"
+            android:padding="@dimen/margin_large"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/txt_add_new_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:background="@drawable/yellow_background"
+            android:layout_margin="@dimen/margin_large"
+            android:padding="@dimen/margin_large"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+</LinearLayout>

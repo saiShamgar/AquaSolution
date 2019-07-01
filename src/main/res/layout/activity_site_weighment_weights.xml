@@ -93,6 +93,30 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/margin_xxxxxlarge"
+                        android:layout_marginRight="@dimen/margin_xxxxxxlarge"
+                        android:layout_marginTop="@dimen/margin_xlarge"
+                        android:layout_marginBottom="@dimen/margin_xlarge"
+                        android:layout_marginLeft="@dimen/margin_xxxxxxlarge">
+
+
+                        <TextView
+                            android:id="@+id/txt_siteWeighment_weight_add_new_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/t13_size"
+                            android:padding="5dp"
+                           android:text="Add New Count"
+                            android:gravity="center"
+                            android:background="@drawable/boarder_shape"
+                            android:textColor="@color/app_dark_color"
+                            android:textStyle="bold"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_xxxxxlarge"
                         android:padding="5dp">
 
                         <TextView

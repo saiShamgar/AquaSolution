@@ -47,7 +47,7 @@ public class ValueEditionInsertDetailsAdapter extends RecyclerView.Adapter<Value
             holder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
         }
 
-        cummulativeWeight=cummulativeWeight+ insertDetails.get(i).getNet_weight();
+        cummulativeWeight= Float.parseFloat(cummulativeWeight+ insertDetails.get(i).getNet_weight());
         holder.txt_cummulative_weight.setText(AppUtils.roundValue(String.valueOf(cummulativeWeight)));
 
 

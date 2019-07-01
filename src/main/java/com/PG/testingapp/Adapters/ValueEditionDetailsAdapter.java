@@ -15,6 +15,8 @@ import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.model.Processes_data;
 import com.PG.testingapp.model.ValueEditionDetaillsModel;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +24,7 @@ public class ValueEditionDetailsAdapter extends RecyclerView.Adapter<ValueEditio
 
     private Context context;
     private ArrayList<ValueEditionDetaillsModel> details;
-    float cummulativeWeight;
+    double cummulativeWeight;
 
     public ValueEditionDetailsAdapter(Context context, ArrayList<ValueEditionDetaillsModel> details) {
         this.context = context;
@@ -60,7 +62,13 @@ public class ValueEditionDetailsAdapter extends RecyclerView.Adapter<ValueEditio
             }
         });
 
-        cummulativeWeight=cummulativeWeight+ valueEditionDetaillsModel1.getNet_weight();
+        try {
+            cummulativeWeight= cummulativeWeight+ Double.parseDouble(valueEditionDetaillsModel1.getNet_weight());
+
+        }catch (NumberFormatException e){
+            e.printStackTrace();
+        }
+
         holder.txt_cumulative_wt.setText(AppUtils.roundValue(String.valueOf(cummulativeWeight)));
 
         if(position %2 == 1)

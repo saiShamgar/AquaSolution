@@ -62,7 +62,7 @@ public class ValueEditionDetailsInserted extends BaseActivity {
     private Button valEdtNextLot;
     private ArrayList<String> list=new ArrayList<>();
     private int no_of_nets;
-    private float tot_net_wt,tot_wt;
+    private double tot_net_wt,tot_wt;
     private ArrayList<String> date_time=new ArrayList<>();
     private ArrayList<String> VAP_No_of_Nets=new ArrayList<>();
     private ArrayList<String> VAP_Net_Tare_Wt=new ArrayList<>();
@@ -118,16 +118,25 @@ public class ValueEditionDetailsInserted extends BaseActivity {
             Table_nos.add(detaillsModels.get(i).getTable_no());
             Team_nos.add(detaillsModels.get(i).getTeam_no());
 
+            try {
+                no_of_nets= no_of_nets+Integer.parseInt(detaillsModels.get(i).getNo_of_nets());
+                tot_net_wt= tot_net_wt+Double.parseDouble(detaillsModels.get(i).getNet_weight());
+                tot_wt= tot_wt+Double.parseDouble(detaillsModels.get(i).getTotal_weight());
+            }catch (NumberFormatException e){
+                e.printStackTrace();
+            }
 
-            no_of_nets=no_of_nets+detaillsModels.get(i).getNo_of_nets();
-            tot_net_wt=tot_net_wt+detaillsModels.get(i).getNet_weight();
-            tot_wt=tot_wt+detaillsModels.get(i).getTotal_weight();
         }
 
-        BigDecimal bd = new BigDecimal(tot_wt).setScale(2, RoundingMode.HALF_UP);
-        tot_wt= (float) bd.doubleValue();
-        BigDecimal bd1 = new BigDecimal(tot_net_wt).setScale(2, RoundingMode.HALF_UP);
-        tot_net_wt= (float) bd1.doubleValue();
+        try
+        {
+            BigDecimal bd = new BigDecimal(tot_wt).setScale(2, RoundingMode.HALF_UP);
+            tot_wt= bd.doubleValue();
+            BigDecimal bd1 = new BigDecimal(tot_net_wt).setScale(2, RoundingMode.HALF_UP);
+            tot_net_wt= bd1.doubleValue();
+        }catch (NumberFormatException e){
+
+        }
         tot_no_nets.setText(String.valueOf(no_of_nets));
         tot_net_weight.setText(String.valueOf(tot_net_wt));
         tot_weight.setText(String.valueOf(tot_wt));
@@ -216,7 +225,7 @@ public class ValueEditionDetailsInserted extends BaseActivity {
                 AppUtils.dismissCustomProgress(mCustomProgressDialog);
                 AppUtils.showCustomOkDialog(context,
                         "",
-                        getString(R.string.error_default),
+                        t.getMessage(),
                         "OK", null);
             }
         });

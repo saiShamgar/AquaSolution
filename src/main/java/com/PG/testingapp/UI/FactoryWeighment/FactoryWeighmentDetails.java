@@ -29,6 +29,7 @@ import com.PG.testingapp.Api.ApiService;
 import com.PG.testingapp.Api.AppUrl;
 import com.PG.testingapp.BaseActivity;
 import com.PG.testingapp.R;
+import com.PG.testingapp.UI.AddingNewCounts;
 import com.PG.testingapp.UI.HeadLessGrading.HeadLessGradingDetails;
 import com.PG.testingapp.UI.ValueEditionDetails;
 import com.PG.testingapp.UI.ValueEditionDetailsInserted;
@@ -57,7 +58,7 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
 
     private TextView txt_value_edt_dts_weight_btn_save,txt_value_edt_weight_btn_complete,txt_value_edt_weight_date_time,
             txt_value_edt_weight_group_name,txt_value_edt_weight_total_tare_wt,txt_value_edt_weight_net_weight,txt_ftwt_det_materialGroupName
-            ,txt_ftwt_det_veriaty_name;
+            ,txt_ftwt_det_veriaty_name,txt_factoryWeighment_weight_add_new_count;
     private RecyclerView value_edt_weight_recycler_view;
     private Toolbar toolbar;
     private ImageView back_button_val_edt_det;
@@ -107,6 +108,7 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
         spinner_layout=findViewById(R.id.spinner_layout);
         txt_ftwt_det_materialGroupName=findViewById(R.id.txt_ftwt_det_materialGroupName);
         txt_ftwt_det_veriaty_name=findViewById(R.id.txt_ftwt_det_veriaty_name);
+        txt_factoryWeighment_weight_add_new_count=findViewById(R.id.txt_factoryWeighment_weight_add_new_count);
 
         txt_ftwt_det_materialGroupName.setText(processes_data.getMaterial_Group_Name());
         txt_ftwt_det_veriaty_name.setText(processes_data.getProduct_Variety_Name());
@@ -123,6 +125,14 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
        // txt_ftwt_det_variety_count.setText(processes_data.getVarietycount());
 
         spinner_val_edt_det=findViewById(R.id.spinner_ftwt_det);
+
+        txt_factoryWeighment_weight_add_new_count.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newCount=new Intent(FactoryWeighmentDetails.this, AddingNewCounts.class);
+                startActivity(newCount);
+            }
+        });
 
         setSpinner();
         CountDownTimer newtimer = new CountDownTimer(1000000000, 1000) {
@@ -251,12 +261,12 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
                                         count_code=codes.get(position-1).getVcode();
                                         ValueEditionDetaillsModel detaillsModel = new ValueEditionDetaillsModel();
                                         detaillsModel.setTime(txt_value_edt_weight_date_time.getText().toString());
-                                        detaillsModel.setNo_of_nets(Integer.parseInt(txt_value_edt_weight_no_nets.getText().toString()));
-                                        detaillsModel.setTotal_weight(Float.parseFloat(edt_value_edt_total_weight_kgs.getText().toString()));
-                                        detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
-                                        detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
-                                        detaillsModel.setNet_tare_weight(Float.parseFloat(txt_value_edt_weight_tare_weight.getText().toString()));
-                                        detaillsModel.setCummulative_weight(0);
+                                        detaillsModel.setNo_of_nets(txt_value_edt_weight_no_nets.getText().toString());
+                                        detaillsModel.setTotal_weight(edt_value_edt_total_weight_kgs.getText().toString());
+                                        detaillsModel.setTotal_tare_weight(txt_value_edt_weight_total_tare_wt.getText().toString());
+                                        detaillsModel.setNet_weight(txt_value_edt_weight_net_weight.getText().toString());
+                                        detaillsModel.setNet_tare_weight(txt_value_edt_weight_tare_weight.getText().toString());
+                                        detaillsModel.setCummulative_weight("");
                                         detaillsModel.setGroup_person(count);
                                         detaillsModel.setCount_code(count_code);
 
@@ -284,12 +294,12 @@ public class FactoryWeighmentDetails extends BaseActivity implements View.OnClic
                                         count_code=codes.get(position-1).getVcode();
                                         ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
                                         detaillsModel.setTime(txt_value_edt_weight_date_time.getText().toString());
-                                        detaillsModel.setNo_of_nets(Integer.parseInt(txt_value_edt_weight_no_nets.getText().toString()));
-                                        detaillsModel.setTotal_weight(Float.parseFloat(edt_value_edt_total_weight_kgs.getText().toString()));
-                                        detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
-                                        detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
-                                        detaillsModel.setNet_tare_weight(Float.parseFloat(txt_value_edt_weight_tare_weight.getText().toString()));
-                                        detaillsModel.setCummulative_weight(0);
+                                        detaillsModel.setNo_of_nets(txt_value_edt_weight_no_nets.getText().toString());
+                                        detaillsModel.setTotal_weight(edt_value_edt_total_weight_kgs.getText().toString());
+                                        detaillsModel.setTotal_tare_weight(txt_value_edt_weight_total_tare_wt.getText().toString());
+                                        detaillsModel.setNet_weight(txt_value_edt_weight_net_weight.getText().toString());
+                                        detaillsModel.setNet_tare_weight(txt_value_edt_weight_tare_weight.getText().toString());
+                                        detaillsModel.setCummulative_weight("");
                                         detaillsModel.setGroup_person(count);
                                         detaillsModel.setCount_code(count_code);
 

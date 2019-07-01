@@ -115,11 +115,6 @@
 
         </LinearLayout>
 
-        <HorizontalScrollView
-            android:id="@+id/horizantal_scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/toolbar_layout_lin">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -133,7 +128,8 @@
                 android:background="@drawable/gradient_background_color">
 
                 <TextView
-                    android:layout_width="@dimen/extra_large_50dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="RB"
                     android:textColor="@color/white"
@@ -142,7 +138,8 @@
                     android:padding="@dimen/margin_large" />
 
                 <TextView
-                    android:layout_width="70dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="Lot.No"
                     android:textColor="@color/white"
@@ -151,7 +148,8 @@
                     android:padding="@dimen/margin_large"/>
 
                 <TextView
-                    android:layout_width="70dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="Grade"
                     android:textColor="@color/white"
@@ -160,7 +158,8 @@
                     android:padding="@dimen/margin_large"/>
 
                 <TextView
-                    android:layout_width="70dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="Required Quantity"
                     android:textColor="@color/white"
@@ -170,7 +169,8 @@
 
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="Received From"
                     android:textColor="@color/white"
@@ -178,7 +178,8 @@
                     android:textSize="@dimen/t0_size"
                     android:padding="@dimen/margin_large"/>
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:padding="@dimen/margin_large"
@@ -196,9 +197,6 @@
 
 
         </LinearLayout>
-
-        </HorizontalScrollView>
-
 
     </LinearLayout>
 

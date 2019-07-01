@@ -215,7 +215,7 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                         }
                         else {
                             Log.e("status",response.body().getMessage());
-                            AppUtils.showCustomOkDialog(mContext,"",getResources().getString(R.string.error_default),"OK",null);
+                            AppUtils.showCustomOkDialog(mContext,"",response.body().getMessage(),"OK",null);
                         }
                     }
                     else {
@@ -229,7 +229,7 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                     AppUtils.dismissCustomProgress(mCustomProgressDialog);
                     AppUtils.showCustomOkDialog(mContext,
                             "",
-                            getString(R.string.error_default),
+                            t.getMessage(),
                             "OK", null);
                 }
             });
@@ -332,12 +332,12 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                                         emp_code=emp_codes.get(emp_position-1).getEmp_id();
                                         ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
                                         detaillsModel.setTime(txt_value_edt_weight_date_time.getText().toString());
-                                        detaillsModel.setNo_of_nets(Integer.parseInt(txt_value_edt_weight_no_nets.getText().toString()));
-                                        detaillsModel.setTotal_weight(Float.parseFloat(edt_value_edt_total_weight_kgs.getText().toString()));
-                                        detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
-                                        detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
-                                        detaillsModel.setNet_tare_weight(Float.parseFloat(txt_value_edt_weight_tare_weight.getText().toString()));
-                                        detaillsModel.setCummulative_weight(0);
+                                        detaillsModel.setNo_of_nets(txt_value_edt_weight_no_nets.getText().toString());
+                                        detaillsModel.setTotal_weight(edt_value_edt_total_weight_kgs.getText().toString());
+                                        detaillsModel.setTotal_tare_weight(txt_value_edt_weight_total_tare_wt.getText().toString());
+                                        detaillsModel.setNet_weight(txt_value_edt_weight_net_weight.getText().toString());
+                                        detaillsModel.setNet_tare_weight(txt_value_edt_weight_tare_weight.getText().toString());
+                                        detaillsModel.setCummulative_weight("");
                                         detaillsModel.setGroupName(emp_name);
                                         detaillsModel.setGroupCode(emp_code);
                                         detaillsModel.setGradeNo(processes_data.getFP_Production_Grade_No());
@@ -369,11 +369,11 @@ public class ValueEditionDetails extends BaseActivity implements View.OnClickLis
                                         emp_code=emp_codes.get(emp_position-1).getEmp_id();
                                         ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
                                         detaillsModel.setTime(txt_value_edt_weight_date_time.getText().toString());
-                                        detaillsModel.setNo_of_nets(Integer.parseInt(txt_value_edt_weight_no_nets.getText().toString()));
-                                        detaillsModel.setTotal_weight(Float.parseFloat(edt_value_edt_total_weight_kgs.getText().toString()));
-                                        detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
-                                        detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
-                                        detaillsModel.setCummulative_weight(0);
+                                        detaillsModel.setNo_of_nets(txt_value_edt_weight_no_nets.getText().toString());
+                                        detaillsModel.setTotal_weight(edt_value_edt_total_weight_kgs.getText().toString());
+                                        detaillsModel.setTotal_tare_weight(txt_value_edt_weight_total_tare_wt.getText().toString());
+                                        detaillsModel.setNet_weight(txt_value_edt_weight_net_weight.getText().toString());
+                                        detaillsModel.setCummulative_weight("");
                                         detaillsModel.setGroupName(emp_name);
                                         detaillsModel.setGroupCode(emp_code);
                                         detaillsModel.setTeam_no(txt_value_edt_weight_group_nos.getText().toString());

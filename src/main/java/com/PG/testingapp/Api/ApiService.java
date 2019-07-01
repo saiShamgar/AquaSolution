@@ -22,6 +22,8 @@ import com.PG.testingapp.model.RmAnalysis.RmAnaalysisDetailsStatus;
 import com.PG.testingapp.model.SiteWTInsertResponce;
 import com.PG.testingapp.model.Soaking.GetLotNo_Soaking_status;
 import com.PG.testingapp.model.Status;
+import com.PG.testingapp.model.Updations.NewCountGroupCodes;
+import com.PG.testingapp.model.Updations.NewCountVarietyCodesStatus;
 import com.PG.testingapp.model.ValueEdition.GetLotDetails_VD;
 import com.PG.testingapp.model.headOnHeadLessGrading.GetLotNumbers_HOHL_status;
 import com.PG.testingapp.model.headOnHeadLessGrading.Getcodes_Grouphead;
@@ -257,6 +259,22 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("app_rm_analysis_save_data/")
     Call<Status> insert_analysis_details(
+            @Field("data")String json);
+
+
+    //adding new counts
+
+    @GET("app_rmmaterial_get_group /")
+    Call<NewCountGroupCodes> getNewGroupCodes();
+
+    @FormUrlEncoded
+    @POST("app_rmvariety_get_details/")
+    Call<NewCountVarietyCodesStatus> getNewVarietyCodes(
+            @Field("Material_Group_Code")String json);
+
+    @FormUrlEncoded
+    @POST("app_factory_new_variety_count_reg/")
+    Call<Status> insertNewCount(
             @Field("data")String json);
 
 }

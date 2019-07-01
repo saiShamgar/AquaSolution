@@ -22,7 +22,8 @@ public class HeadLessGrading_2_Grid extends RecyclerView.Adapter<HeadLessGrading
 
     private Context context;
     private ArrayList<ValueEditionDetaillsModel> details;
-    float cummulativeWeight,total_weight;
+    double cummulativeWeight;
+    float total_weight;
     private String status;
 
     public HeadLessGrading_2_Grid(Context context, ArrayList<ValueEditionDetaillsModel> details, String status) {
@@ -64,9 +65,13 @@ public class HeadLessGrading_2_Grid extends RecyclerView.Adapter<HeadLessGrading
             });
 
 
-            cummulativeWeight=cummulativeWeight+ valueEditionDetaillsModel1.getNet_weight();
-            BigDecimal bd1 = new BigDecimal(cummulativeWeight).setScale(2, RoundingMode.HALF_UP);
-            cummulativeWeight= (float) bd1.doubleValue();
+            try {
+                cummulativeWeight= cummulativeWeight+ Double.parseDouble(valueEditionDetaillsModel1.getNet_weight());
+                BigDecimal bd1 = new BigDecimal(cummulativeWeight).setScale(2, RoundingMode.HALF_UP);
+                cummulativeWeight=  bd1.doubleValue();
+            } catch (NumberFormatException e) {
+              e.printStackTrace();
+            }
             holder.txt_cumulative_wt.setText(String.valueOf(cummulativeWeight));
             if(position %2 == 1)
             {
@@ -120,9 +125,13 @@ public class HeadLessGrading_2_Grid extends RecyclerView.Adapter<HeadLessGrading
 
 
 
-            cummulativeWeight=cummulativeWeight+ valueEditionDetaillsModel1.getNet_weight();
-            BigDecimal bd1 = new BigDecimal(cummulativeWeight).setScale(2, RoundingMode.HALF_UP);
-            cummulativeWeight= (float) bd1.doubleValue();
+            try {
+                cummulativeWeight= cummulativeWeight+ Double.parseDouble(valueEditionDetaillsModel1.getNet_weight());
+                BigDecimal bd1 = new BigDecimal(cummulativeWeight).setScale(2, RoundingMode.HALF_UP);
+                cummulativeWeight=  bd1.doubleValue();
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
             holder.txt_cumulative_wt.setText(String.valueOf(cummulativeWeight));
             if(position %2 == 1)
             {
@@ -172,9 +181,13 @@ public class HeadLessGrading_2_Grid extends RecyclerView.Adapter<HeadLessGrading
                 }
             });
 
-            cummulativeWeight=cummulativeWeight+ valueEditionDetaillsModel1.getNet_weight();
-            BigDecimal bd1 = new BigDecimal(cummulativeWeight).setScale(2, RoundingMode.HALF_UP);
-            cummulativeWeight= (float) bd1.doubleValue();
+            try {
+                cummulativeWeight= cummulativeWeight+ Double.parseDouble(valueEditionDetaillsModel1.getNet_weight());
+                BigDecimal bd1 = new BigDecimal(cummulativeWeight).setScale(2, RoundingMode.HALF_UP);
+                cummulativeWeight=  bd1.doubleValue();
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
             holder.txt_cumulative_wt.setText(String.valueOf(cummulativeWeight));
 
             if(position %2 == 1)
@@ -225,9 +238,13 @@ public class HeadLessGrading_2_Grid extends RecyclerView.Adapter<HeadLessGrading
                 }
             });
 
-            cummulativeWeight=cummulativeWeight+ valueEditionDetaillsModel1.getNet_weight();
-            BigDecimal bd1 = new BigDecimal(cummulativeWeight).setScale(2, RoundingMode.HALF_UP);
-            cummulativeWeight= (float) bd1.doubleValue();
+            try {
+                cummulativeWeight= cummulativeWeight+ Double.parseDouble(valueEditionDetaillsModel1.getNet_weight());
+                BigDecimal bd1 = new BigDecimal(cummulativeWeight).setScale(2, RoundingMode.HALF_UP);
+                cummulativeWeight=  bd1.doubleValue();
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
             holder.txt_cumulative_wt.setText(String.valueOf(cummulativeWeight));
 
             if(position %2 == 1)

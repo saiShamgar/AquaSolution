@@ -45,7 +45,7 @@ public class Soaking_details_screen_3 extends BaseActivity {
     private FloatingActionButton btn_soaking_inserted_Upload;
     private Soaking_grid_adapter_for_screen_2 adapter;
     private int no_of_nets;
-    private float tot_net_wt,tot_wt;
+    private double tot_net_wt,tot_wt;
 
     private ArrayList<String> date_time=new ArrayList<>();
     private ArrayList<String> VAP_No_of_Nets=new ArrayList<>();
@@ -53,7 +53,7 @@ public class Soaking_details_screen_3 extends BaseActivity {
     private ArrayList<String> VAP_Total_Weight=new ArrayList<>();
     private ArrayList<String> VAP_Total_Tare_Weight=new ArrayList<>();
     private ArrayList<String> VAP_Net_Weight=new ArrayList<>();
-    private ArrayList<Integer> VAP_TubNO=new ArrayList<>();
+    private ArrayList<String> VAP_TubNO=new ArrayList<>();
     private TextView tot_no_nets,tot_net_weight,tot_weight;
     private Context context;
     private SharedPreferenceConfig config;
@@ -104,15 +104,30 @@ public class Soaking_details_screen_3 extends BaseActivity {
             VAP_TubNO.add(detaillsModels.get(i).getTub_no());
 
 
-            no_of_nets=no_of_nets+detaillsModels.get(i).getNo_of_nets();
-            tot_net_wt=tot_net_wt+detaillsModels.get(i).getNet_weight();
-            tot_wt=tot_wt+detaillsModels.get(i).getTotal_weight();
+            try
+            {
+                no_of_nets=no_of_nets+Integer.parseInt(detaillsModels.get(i).getNo_of_nets());
+                tot_net_wt=tot_net_wt+Double.parseDouble(detaillsModels.get(i).getNet_weight());
+                tot_wt=tot_wt+Double.parseDouble(detaillsModels.get(i).getTotal_weight());
+
+            }catch (NumberFormatException e){
+                e.printStackTrace();
+            }
+
+
         }
 
-        BigDecimal bd = new BigDecimal(tot_wt).setScale(2, RoundingMode.HALF_UP);
-        tot_wt= (float) bd.doubleValue();
-        BigDecimal bd1 = new BigDecimal(tot_net_wt).setScale(2, RoundingMode.HALF_UP);
-        tot_net_wt= (float) bd1.doubleValue();
+        try
+        {
+            BigDecimal bd = new BigDecimal(tot_wt).setScale(2, RoundingMode.HALF_UP);
+            tot_wt=  bd.doubleValue();
+            BigDecimal bd1 = new BigDecimal(tot_net_wt).setScale(2, RoundingMode.HALF_UP);
+            tot_net_wt=  bd1.doubleValue();
+        }catch (NumberFormatException e){
+            e.printStackTrace();
+        }
+
+
         tot_no_nets.setText(String.valueOf(no_of_nets));
         tot_net_weight.setText(String.valueOf(tot_net_wt));
         tot_weight.setText(String.valueOf(tot_wt));

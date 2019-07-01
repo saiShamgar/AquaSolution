@@ -1,9 +1,12 @@
 package com.PG.testingapp.UI.HeadLessGrading;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.CountDownTimer;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -29,12 +32,14 @@ import com.PG.testingapp.Adapters.ValueEditionDetailsAdapter;
 import com.PG.testingapp.Api.ApiService;
 import com.PG.testingapp.Api.AppUrl;
 import com.PG.testingapp.BaseActivity;
+import com.PG.testingapp.LocalDataBase.DatabaseClient;
 import com.PG.testingapp.R;
 import com.PG.testingapp.UI.FactoryWeighment.FactoryWeighmentDetails;
 import com.PG.testingapp.UI.FactoryWeighment.FactoryWeighmentDetailsInserted;
 import com.PG.testingapp.Utils.AppConstant;
 import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.Utils.SharedPreferenceConfig;
+import com.PG.testingapp.ViewModels.DataViewModel;
 import com.PG.testingapp.model.FactoryWeighment.ActualCodes;
 import com.PG.testingapp.model.FactoryWeighment.FTLotNumbers;
 import com.PG.testingapp.model.FactoryWeighment.FactoryWeighmentCodes;
@@ -44,6 +49,7 @@ import com.PG.testingapp.model.HeadLessGrading.GetGrades;
 import com.PG.testingapp.model.HeadLessGrading.GetGroupCodes;
 import com.PG.testingapp.model.HeadLessGrading.GetVarietyDetails;
 import com.PG.testingapp.model.HeadLessGrading.GroupCodes;
+import com.PG.testingapp.model.HeadLessGrading.LD_HL_InsertionData;
 import com.PG.testingapp.model.HeadLessGrading.Lot_numbers;
 import com.PG.testingapp.model.HeadLessGrading.VarietyCodes;
 import com.PG.testingapp.model.ValueEditionDetaillsModel;
@@ -98,6 +104,8 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
 
     private HeadLessGrading_2_Grid valueEditionDetailsAdapter;
     private ArrayList<ValueEditionDetaillsModel> valueEditionDetaillsModel=new ArrayList<>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,6 +116,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
         mContext=HeadLessGradingDetails.this;
         processes_data=(Lot_numbers) getIntent().getSerializableExtra("process");
         status=getIntent().getExtras().get("status").toString();
+
 
       //  Log.e("tag",status);
 
@@ -238,6 +247,11 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
             }
         });
 
+        valueEditionDetailsAdapter=new HeadLessGrading_2_Grid(getApplicationContext(),valueEditionDetaillsModel,"HLG");
+        value_edt_weight_recycler_view.setHasFixedSize(true);
+       value_edt_weight_recycler_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+       value_edt_weight_recycler_view.setAdapter(valueEditionDetailsAdapter);
+
     }
 
     private void callServiceForGrade(String varaity_code) {
@@ -304,7 +318,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                                 spinner_layout_h_l_Grade.setBackground(getResources().getDrawable(R.drawable.stroke_back_ground_gray));
                             }
                             if (doValidation()) {
-                                AppUtils.showCustomOkCancelDialog(this, "", getString(R.string.next_count_alert), "No", "Yes",
+                                AppUtils.showCustomOkCancelDialog(this, "", "Do you want to change grade?", "No", "Yes",
                                         new View.OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
@@ -313,11 +327,11 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                                                 gradeCode=gradeCodes.get(gradePosition-1).getFP_Production_Grade_Code();
                                                 ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
                                                 detaillsModel.setTime(txt_value_edt_weight_date_time.getText().toString());
-                                                detaillsModel.setNo_of_nets(Integer.parseInt(txt_value_edt_weight_no_nets.getText().toString()));
-                                                detaillsModel.setTotal_weight(Float.parseFloat(edt_value_edt_total_weight_kgs.getText().toString()));
-                                                detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
-                                                detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
-                                                detaillsModel.setNet_tare_weight(Float.parseFloat(txt_value_edt_weight_tare_weight.getText().toString()));
+                                                detaillsModel.setNo_of_nets(txt_value_edt_weight_no_nets.getText().toString());
+                                                detaillsModel.setTotal_weight(edt_value_edt_total_weight_kgs.getText().toString());
+                                                detaillsModel.setTotal_tare_weight(txt_value_edt_weight_total_tare_wt.getText().toString());
+                                                detaillsModel.setNet_weight(txt_value_edt_weight_net_weight.getText().toString());
+                                                detaillsModel.setNet_tare_weight(txt_value_edt_weight_tare_weight.getText().toString());
                                                 detaillsModel.setGroupName(count);
                                                 detaillsModel.setGroupCode(count_code);
                                                 detaillsModel.setGradeNo(gradeNO);
@@ -325,6 +339,30 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                                                 detaillsModel.setGradeCode(gradeCode);
                                                 detaillsModel.setVarietyCode(varaity_code);
                                                 detaillsModel.setVarietyName(varietyName);
+
+//                                                LD_HL_InsertionData insertionData=new LD_HL_InsertionData();
+//                                                insertionData.setHLW_Weighment_Date_Time(txt_value_edt_weight_date_time.getText().toString());
+//                                                insertionData.setHLG_No_of_Nets(txt_value_edt_weight_no_nets.getText().toString());
+//                                                insertionData.setHLG_Total_Weight(edt_value_edt_total_weight_kgs.getText().toString());
+//                                                insertionData.setHLG_Total_Tare_Weight(txt_value_edt_weight_total_tare_wt.getText().toString());
+//                                                insertionData.setHLG_Net_Weight(txt_value_edt_weight_net_weight.getText().toString());
+//                                                insertionData.setHLG_Tare_Weight(txt_value_edt_weight_tare_weight.getText().toString());
+//                                                insertionData.setFP_Group_Code(count_code);
+//                                                insertionData.setFP_Group_Name(count);
+//                                                insertionData.setFP_Production_Grade_Code(gradeCode);
+//                                                insertionData.setFP_Production_Grade_Name(gradeNO);
+//                                                insertionData.setFP_Variety_Code(varaity_code);
+//                                                insertionData.setFP_Variety_Name(varietyName);
+//                                                insertionData.setHLGS_Count_Code(txt_h_l_g_count.getText().toString());
+//
+//
+//                                                if ( DatabaseClient.getInstance(mContext).getAppDatabase()
+//                                                        .operations()
+//                                                        .insert(insertionData)>0){
+//                                                    valueEditionDetailsAdapter.notifyDataSetChanged();
+//
+//                                                }
+
 
                                                 valueEditionDetaillsModel.add(detaillsModel);
                                                 valueEditionDetailsAdapter=new HeadLessGrading_2_Grid(getApplicationContext(),valueEditionDetaillsModel,"HLG");
@@ -334,7 +372,7 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                                                 clearText();
 
                                                 edt_value_edt_total_weight_kgs.requestFocus();
-
+//
                                                 edt_value_edt_total_weight_kgs.post(new Runnable() {
                                                     @Override
                                                     public void run() {
@@ -343,6 +381,10 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                                                         edt_value_edt_total_weight_kgs.requestFocus(); // needed if you have more then one input
                                                     }
                                                 });
+
+
+
+//
 //                                                getWindow().setSoftInputMode(
 //                                                        WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
 //                                                AppUtils.showkeyboard(mContext,edt_value_edt_total_weight_kgs);
@@ -361,11 +403,11 @@ public class HeadLessGradingDetails extends BaseActivity implements View.OnClick
                                                 gradeCode=gradeCodes.get(gradePosition-1).getFP_Production_Grade_Code();
                                                 ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
                                                 detaillsModel.setTime(txt_value_edt_weight_date_time.getText().toString());
-                                                detaillsModel.setNo_of_nets(Integer.parseInt(txt_value_edt_weight_no_nets.getText().toString()));
-                                                detaillsModel.setTotal_weight(Float.parseFloat(edt_value_edt_total_weight_kgs.getText().toString()));
-                                                detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_value_edt_weight_total_tare_wt.getText().toString()));
-                                                detaillsModel.setNet_weight(Float.parseFloat(txt_value_edt_weight_net_weight.getText().toString()));
-                                                detaillsModel.setNet_tare_weight(Float.parseFloat(txt_value_edt_weight_tare_weight.getText().toString()));
+                                                detaillsModel.setNo_of_nets(txt_value_edt_weight_no_nets.getText().toString());
+                                                detaillsModel.setTotal_weight(edt_value_edt_total_weight_kgs.getText().toString());
+                                                detaillsModel.setTotal_tare_weight(txt_value_edt_weight_total_tare_wt.getText().toString());
+                                                detaillsModel.setNet_weight(txt_value_edt_weight_net_weight.getText().toString());
+                                                detaillsModel.setNet_tare_weight(txt_value_edt_weight_tare_weight.getText().toString());
                                                 detaillsModel.setGroupName(count);
                                                 detaillsModel.setGroupCode(count_code);
                                                 detaillsModel.setGradeNo(gradeNO);

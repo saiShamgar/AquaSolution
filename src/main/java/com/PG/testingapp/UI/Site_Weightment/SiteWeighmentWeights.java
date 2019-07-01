@@ -30,6 +30,7 @@ import com.PG.testingapp.Api.ApiService;
 import com.PG.testingapp.Api.AppUrl;
 import com.PG.testingapp.BaseActivity;
 import com.PG.testingapp.R;
+import com.PG.testingapp.UI.AddingNewCounts;
 import com.PG.testingapp.UI.HeadLessGrading.HeadLessGradingDetails;
 import com.PG.testingapp.UI.ValueEditionDetails;
 import com.PG.testingapp.UI.ValueEditionDetailsInserted;
@@ -77,6 +78,7 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
     private String scheduleNo,enquiryNO,prodct_code;
     private ArrayAdapter<String> countAdapter;
     private ApiService apiService;
+    private TextView txt_siteWeighment_weight_add_new_count;
 
     private ArrayList<ValueEditionDetaillsModel> valueEditionDetaillsModel=new ArrayList<>();
 
@@ -102,6 +104,15 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
         siteWeighment_weight_recycler_view=findViewById(R.id.siteWeighment_weight_recycler_view);
         txt_siteWeighment_weight_btn_complete=findViewById(R.id.txt_siteWeighment_weight_btn_complete);
         back_button_site_wt_det=findViewById(R.id.back_button_site_wt_det);
+        txt_siteWeighment_weight_add_new_count=findViewById(R.id.txt_siteWeighment_weight_add_new_count);
+
+        txt_siteWeighment_weight_add_new_count.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newCount=new Intent(SiteWeighmentWeights.this, AddingNewCounts.class);
+                startActivity(newCount);
+            }
+        });
 
         spinner_st_w_det=findViewById(R.id.spinner_st_w_det);
         spinner_layout=findViewById(R.id.spinner_layout);
@@ -220,12 +231,12 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
                                         count_code=codes.get(position-1).getVcode();
                                         ValueEditionDetaillsModel detaillsModel = new ValueEditionDetaillsModel();
                                         detaillsModel.setTime(txt_siteWeighment_weight_date_time.getText().toString());
-                                        detaillsModel.setNo_of_nets(Integer.parseInt(txt_siteWeighment_weight_no_nets.getText().toString()));
-                                        detaillsModel.setTotal_weight(Float.parseFloat(edt_siteWeighment_total_weight_kgs.getText().toString()));
-                                        detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_siteWeighment_weight_total_tare_wt.getText().toString()));
-                                        detaillsModel.setNet_weight(Float.parseFloat(txt_siteWeighment_weight_net_weight.getText().toString()));
-                                        detaillsModel.setNet_tare_weight(Float.parseFloat(txt_siteWeighment_weight_tare_weight.getText().toString()));
-                                        detaillsModel.setCummulative_weight(0);
+                                        detaillsModel.setNo_of_nets(txt_siteWeighment_weight_no_nets.getText().toString());
+                                        detaillsModel.setTotal_weight(edt_siteWeighment_total_weight_kgs.getText().toString());
+                                        detaillsModel.setTotal_tare_weight(txt_siteWeighment_weight_total_tare_wt.getText().toString());
+                                        detaillsModel.setNet_weight(txt_siteWeighment_weight_net_weight.getText().toString());
+                                        detaillsModel.setNet_tare_weight(txt_siteWeighment_weight_tare_weight.getText().toString());
+                                        detaillsModel.setCummulative_weight("");
                                         detaillsModel.setCount_code(count_code);
                                         detaillsModel.setGroup_person(count);
 
@@ -259,11 +270,11 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
                                         count_code=codes.get(position-1).getVcode();
                                         ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
                                         detaillsModel.setTime(txt_siteWeighment_weight_date_time.getText().toString());
-                                        detaillsModel.setNo_of_nets(Integer.parseInt(txt_siteWeighment_weight_no_nets.getText().toString()));
-                                        detaillsModel.setTotal_weight(Float.parseFloat(edt_siteWeighment_total_weight_kgs.getText().toString()));
-                                        detaillsModel.setTotal_tare_weight(Float.parseFloat(txt_siteWeighment_weight_total_tare_wt.getText().toString()));
-                                        detaillsModel.setNet_weight(Float.parseFloat(txt_siteWeighment_weight_net_weight.getText().toString()));
-                                        detaillsModel.setCummulative_weight(0);
+                                        detaillsModel.setNo_of_nets(txt_siteWeighment_weight_no_nets.getText().toString());
+                                        detaillsModel.setTotal_weight(edt_siteWeighment_total_weight_kgs.getText().toString());
+                                        detaillsModel.setTotal_tare_weight(txt_siteWeighment_weight_total_tare_wt.getText().toString());
+                                        detaillsModel.setNet_weight(txt_siteWeighment_weight_net_weight.getText().toString());
+                                        detaillsModel.setCummulative_weight("");
                                         detaillsModel.setCount_code(count_code);
                                         detaillsModel.setGroup_person(count);
 

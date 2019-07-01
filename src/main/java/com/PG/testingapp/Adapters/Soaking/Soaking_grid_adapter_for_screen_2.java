@@ -21,7 +21,7 @@ public class Soaking_grid_adapter_for_screen_2 extends RecyclerView.Adapter<Soak
 
     private Context context;
     private ArrayList<Soaking_Grid_two_model> details;
-    float cummulativeWeight,total_weight;
+    double cummulativeWeight,total_weight;
 
     public Soaking_grid_adapter_for_screen_2(Context context, ArrayList<Soaking_Grid_two_model> details) {
         this.context = context;
@@ -59,9 +59,16 @@ public class Soaking_grid_adapter_for_screen_2 extends RecyclerView.Adapter<Soak
             }
         });
 
-        cummulativeWeight= cummulativeWeight+ valueEditionDetaillsModel1.getNet_weight();
-        BigDecimal bd1 = new BigDecimal(cummulativeWeight).setScale(2, RoundingMode.HALF_UP);
-        cummulativeWeight= (float) bd1.doubleValue();
+        try
+        {
+            cummulativeWeight= cummulativeWeight+ Double.parseDouble(valueEditionDetaillsModel1.getNet_weight());
+            BigDecimal bd1 = new BigDecimal(cummulativeWeight).setScale(2, RoundingMode.HALF_UP);
+            cummulativeWeight=  bd1.doubleValue();
+
+        }catch (NumberFormatException e){
+            e.printStackTrace();
+        }
+
         holder.txt_cumulative_wt.setText(String.valueOf(cummulativeWeight));
 
         if(position %2 == 1)

@@ -36,7 +36,7 @@ public class SoakingInsertDetails implements Serializable {
 
 
     @SerializedName("Tub_No")
-    private ArrayList<Integer> Tub_No;
+    private ArrayList<String> Tub_No;
 
     @SerializedName("CTP_No_of_Nets")
     private ArrayList<String> CTP_No_of_Nets;
@@ -61,7 +61,7 @@ public class SoakingInsertDetails implements Serializable {
     private String FP_Grade_Code;
 
 
-    public SoakingInsertDetails(String CTP_Duration, String lot_No, String soaking_Process_Schedule_No, String production_Process_Schedule_No, String product_Process_Code, String CTP_Date_Time_Start, String CTP_Date_Time_End, ArrayList<String> CTP_Weighment_Date_Time, String FP_Production_Grade_Code, ArrayList<Integer> tub_No, ArrayList<String> CTP_No_of_Nets, ArrayList<String> CTP_Net_Tare_Wt, ArrayList<String> CTP_Total_Weight, ArrayList<String> CTP_Total_Tare_Weight, ArrayList<String> CTP_Net_Weight, String CTP_Supervisor_Emp_Id, String FP_Grade_Code) {
+    public SoakingInsertDetails(String CTP_Duration, String lot_No, String soaking_Process_Schedule_No, String production_Process_Schedule_No, String product_Process_Code, String CTP_Date_Time_Start, String CTP_Date_Time_End, ArrayList<String> CTP_Weighment_Date_Time, String FP_Production_Grade_Code, ArrayList<String> tub_No, ArrayList<String> CTP_No_of_Nets, ArrayList<String> CTP_Net_Tare_Wt, ArrayList<String> CTP_Total_Weight, ArrayList<String> CTP_Total_Tare_Weight, ArrayList<String> CTP_Net_Weight, String CTP_Supervisor_Emp_Id, String FP_Grade_Code) {
         this.CTP_Duration = CTP_Duration;
         Lot_No = lot_No;
         Soaking_Process_Schedule_No = soaking_Process_Schedule_No;
@@ -95,6 +95,14 @@ public class SoakingInsertDetails implements Serializable {
 
     public void setLot_No(String lot_No) {
         Lot_No = lot_No;
+    }
+
+    public String getSoaking_Process_Schedule_No() {
+        return Soaking_Process_Schedule_No;
+    }
+
+    public void setSoaking_Process_Schedule_No(String soaking_Process_Schedule_No) {
+        Soaking_Process_Schedule_No = soaking_Process_Schedule_No;
     }
 
     public String getProduction_Process_Schedule_No() {
@@ -145,11 +153,11 @@ public class SoakingInsertDetails implements Serializable {
         this.FP_Production_Grade_Code = FP_Production_Grade_Code;
     }
 
-    public ArrayList<Integer> getTub_No() {
+    public ArrayList<String> getTub_No() {
         return Tub_No;
     }
 
-    public void setTub_No(ArrayList<Integer> tub_No) {
+    public void setTub_No(ArrayList<String> tub_No) {
         Tub_No = tub_No;
     }
 
@@ -207,13 +215,5 @@ public class SoakingInsertDetails implements Serializable {
 
     public void setFP_Grade_Code(String FP_Grade_Code) {
         this.FP_Grade_Code = FP_Grade_Code;
-    }
-
-    public String getSoaking_Process_Schedule_No() {
-        return Soaking_Process_Schedule_No;
-    }
-
-    public void setSoaking_Process_Schedule_No(String soaking_Process_Schedule_No) {
-        Soaking_Process_Schedule_No = soaking_Process_Schedule_No;
     }
 }

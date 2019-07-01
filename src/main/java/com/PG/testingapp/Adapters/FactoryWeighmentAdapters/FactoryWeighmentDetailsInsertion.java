@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class FactoryWeighmentDetailsInsertion extends RecyclerView.Adapter<FactoryWeighmentDetailsInsertion.ViewHolder> {
     private Context context;
     private ArrayList<ValueEditionDetaillsModel> insertDetails;
-    float cummulative_wt;
+    double cummulative_wt;
 
     public FactoryWeighmentDetailsInsertion(Context context, ArrayList<ValueEditionDetaillsModel> insertDetails) {
         this.context = context;
@@ -49,9 +49,9 @@ public class FactoryWeighmentDetailsInsertion extends RecyclerView.Adapter<Facto
         String sl= String.valueOf(i+1);
         holder.txt_sl_no.setText(sl);
 
-        cummulative_wt=cummulative_wt+insertDetails.get(i).getNet_weight();
+        cummulative_wt= cummulative_wt+Double.parseDouble(insertDetails.get(i).getNet_weight());
         BigDecimal bd1 = new BigDecimal(cummulative_wt).setScale(2, RoundingMode.HALF_UP);
-        cummulative_wt= (float) bd1.doubleValue();
+        cummulative_wt= bd1.doubleValue();
 
         holder.txt_count.setText(insertDetails.get(i).getGroup_person());
         holder.txt_time.setText(insertDetails.get(i).getTime());
