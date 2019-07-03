@@ -145,6 +145,8 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
         checkLocation();
         init();
 
+        Log.e("codes",config.readMenuCodes().toString());
+
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,7 +183,7 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
         recyclerview_in_grid=findViewById(R.id.recyclerview_in_grid);
 
         logout=findViewById(R.id.logout);
-        adapter=new MenuItemsAdapter(this);
+        adapter=new MenuItemsAdapter(this,config);
         recyclerview_in_grid.setHasFixedSize(true);
         recyclerview_in_grid.setLayoutManager(new GridLayoutManager(this,3));
         recyclerview_in_grid.setAdapter(adapter);

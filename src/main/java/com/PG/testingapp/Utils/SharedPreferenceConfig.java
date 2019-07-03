@@ -7,6 +7,10 @@ import android.util.Log;
 
 import com.PG.testingapp.R;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
 public class SharedPreferenceConfig {
     private SharedPreferences sharedPreferences;
     private Context context;
@@ -110,5 +114,20 @@ public class SharedPreferenceConfig {
         url = sharedPreferences.getString(context.getResources().getString(R.string.map_longitude),"no");
         Log.i("SharedPreferenceRead: ",""+url);
         return url;
+    }
+
+    public void writeMenuCodes(ArrayList<String> url){
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Set<String> set = new HashSet<String>();
+        set.addAll(url);
+        editor.putStringSet("Key", set);
+        editor.commit();
+        Log.i("SharedPreferenceWrite: ",""+set);
+    }
+
+    public Set<String> readMenuCodes(){
+        Set<String> set = sharedPreferences.getStringSet("Key ", null);
+        Log.i("SharedPreferenceRead: ",""+set);
+        return  set;
     }
 }

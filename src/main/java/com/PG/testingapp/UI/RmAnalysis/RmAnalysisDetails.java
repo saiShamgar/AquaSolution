@@ -858,7 +858,7 @@ public class RmAnalysisDetails extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void setTextForColumnThree(String text, TextView txt_rm_ct_one_per_sam_qt, EditText txt_rm_ct_one_sample_quantity, TextView txt_rm_ct_one_recd_qty, EditText txt_rm_ct_one_final_qty, TextView cat_one) {
-        if (txt_rm_no_of_pics.getText().toString()!=""){
+        if (txt_rm_no_of_pics.getText().toString()!=""  && rmAnalysisDetailsModel.getQuantity()!=null){
             txt_rm_ct_one_sample_quantity.setEnabled(false);
             txt_rm_ct_one_sample_quantity.setText("0.000");
             float no_pieces=Float.parseFloat(text);
@@ -875,11 +875,14 @@ public class RmAnalysisDetails extends AppCompatActivity {
             cat_one.setBackground(getResources().getDrawable(R.drawable.round_back_ground_blue));
             cat_one.setTextColor(getResources().getColor(R.color.color_white));
         }
+        else {
+            AppUtils.showToast(context,"Please check field No of pieces or Quantity");
+        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void setTextForColumnThree_basedOncolumn2(String text, TextView txt_rm_ct_one_per_sam_qt, EditText txt_rm_ct_one_no_of_pics, TextView txt_rm_ct_one_recd_qty, EditText txt_rm_ct_one_final_qty, TextView cat_one) {
-        if (txt_rm_sample_quantity.getText().toString()!=""){
+        if (txt_rm_sample_quantity.getText().toString()!="" && rmAnalysisDetailsModel.getQuantity()!=null){
             txt_rm_ct_one_no_of_pics.setEnabled(false);
             txt_rm_ct_one_no_of_pics.setText("0");
             float no_pieces=Float.parseFloat(text);
@@ -895,6 +898,9 @@ public class RmAnalysisDetails extends AppCompatActivity {
             txt_rm_ct_one_per_sam_qt.setText(AppUtils.roundValue(String.valueOf(result)));
             cat_one.setBackground(getResources().getDrawable(R.drawable.round_back_ground_blue));
             cat_one.setTextColor(getResources().getColor(R.color.color_white));
+        }
+        else {
+            AppUtils.showToast(context,"Please check field Sample Quantity or Quantity");
         }
     }
 

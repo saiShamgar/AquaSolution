@@ -73,6 +73,7 @@ public class LoginActivity extends BaseActivity  {
                             sharedPreferenceConfig.writeLoginEmpId(response.body().getData().getUser_Emp_Id());
                             AppUtils.showToast(mContext,response.body().getMessage());
                             sharedPreferenceConfig.writeLoginPreference("logged in");
+                            sharedPreferenceConfig.writeMenuCodes(response.body().getCodes());
                             Intent login = new Intent(LoginActivity.this, MenuActivity.class);
                             startActivity(login);
                             finish();

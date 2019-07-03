@@ -26,12 +26,15 @@ import com.PG.testingapp.UI.Site_Weightment.Site_weightment;
 import com.PG.testingapp.UI.ValueEdition;
 import com.PG.testingapp.UI.WeightLoadMachine;
 import com.PG.testingapp.Utils.AppUtils;
+import com.PG.testingapp.Utils.SharedPreferenceConfig;
 import com.google.zxing.integration.android.IntentIntegrator;
 
 public class MenuItemsAdapter extends RecyclerView.Adapter<MenuItemsAdapter.ViewHolder> {
     private Context context;
-    public MenuItemsAdapter(Context context) {
+    private SharedPreferenceConfig config;
+    public MenuItemsAdapter(Context context, SharedPreferenceConfig config) {
         this.context = context;
+        this.config=config;
     }
 
     @NonNull
@@ -49,64 +52,109 @@ public class MenuItemsAdapter extends RecyclerView.Adapter<MenuItemsAdapter.View
             public void onClick(View v) {
                 if (AppUtils.isNetworkAvailable(context)) {
                     if (position==0){
-                        Intent siteWeightment=new Intent(context, Site_weightment.class);
-                        context.startActivity(siteWeightment);
+                        if (!(config.readMenuCodes().contains(context.getResources().getString(R.string.Site_Weighment)))){
+                            AppUtils.showToast(context,"You Have No granted permissions");
+                        }else {
+                            Intent siteWeightment=new Intent(context, Site_weightment.class);
+                            context.startActivity(siteWeightment);
+                        }
                     }
                     else if (position==1){
-                        //  Toast.makeText(context,"factory weighment",Toast.LENGTH_SHORT).show();
-                        Intent valueEdition=new Intent(context, FactoryWeighment.class);
-                        context.startActivity(valueEdition);
+                        if (!(config.readMenuCodes().contains(context.getResources().getString(R.string.Factory_Weighment)))){
+                            AppUtils.showToast(context,"You Have No granted permissions");
+                        }else {
+                            Intent valueEdition=new Intent(context, FactoryWeighment.class);
+                            context.startActivity(valueEdition);
+                        }
+
                     }
                     else if (position==2){
 
                     }
                     else if (position==3){
+                        if (!(config.readMenuCodes().contains(context.getResources().getString(R.string.Headon_Grading)))){
+                            AppUtils.showToast(context,"You Have No granted permissions");
+                        }else {
                         Intent valueEdition=new Intent(context, HeadOnGrading.class);
                         context.startActivity(valueEdition);
+                        }
                     }
                     else  if (position==4){
 
                     }
                     else  if (position==5){
-                        Intent valueEdition=new Intent(context, HeadOnHeadLessGrading.class);
-                        context.startActivity(valueEdition);
+                        if (!(config.readMenuCodes().contains(context.getResources().getString(R.string.Headon_Headless_Grading)))){
+                            AppUtils.showToast(context,"You Have No granted permissions");
+                        }
+                        else {
+                            Intent valueEdition=new Intent(context, HeadOnHeadLessGrading.class);
+                            context.startActivity(valueEdition);
+                        }
                     }
                     else  if (position==6){
 
                     }
                     else  if (position==7){
-                        Intent valueEdition=new Intent(context, HeadLessGrading.class);
-                        context.startActivity(valueEdition);
+                        if (!(config.readMenuCodes().contains(context.getResources().getString(R.string.Headless_Grading)))){
+                            AppUtils.showToast(context,"You Have No granted permissions");
+                        }
+                        else {
+                            Intent valueEdition=new Intent(context, HeadLessGrading.class);
+                            context.startActivity(valueEdition);
+                        }
                     }
                     else  if (position==8){
 
                     }
                     else  if (position==9){
-                        Intent valueEdition=new Intent(context, ValueEdition.class);
-                        context.startActivity(valueEdition);
+                        if (!(config.readMenuCodes().contains(context.getResources().getString(R.string.Value_addition)))){
+                            AppUtils.showToast(context,"You Have No granted permissions");
+                        }
+                        else {
+                            Intent valueEdition=new Intent(context, ValueEdition.class);
+                            context.startActivity(valueEdition);
+                        }
                     }
                     else  if (position==10){
 
                     }
                     else  if (position==11){
-                        Intent valueEdition=new Intent(context, ChemicalTreatmentProcess.class);
-                        context.startActivity(valueEdition);
-
+                        if (!(config.readMenuCodes().contains(context.getResources().getString(R.string.Soaking_Process_Scheduling)))){
+                            AppUtils.showToast(context,"You Have No granted permissions");
+                        }else {
+                            Intent valueEdition=new Intent(context, ChemicalTreatmentProcess.class);
+                            context.startActivity(valueEdition);
+                        }
                     }
                     else  if (position==12){
 
                     }
                     else  if (position==13){
-                        Intent valueEdition=new Intent(context, LocationPlacement.class);
-                        context.startActivity(valueEdition);
+                        if (!(config.readMenuCodes().contains(context.getResources().getString(R.string.Cold_Storage_Details)))){
+                            AppUtils.showToast(context,"You Have No granted permissions");
+                        }
+                        else {
+                            Intent valueEdition=new Intent(context, LocationPlacement.class);
+                            context.startActivity(valueEdition);
+                        }
                     }
                     else  if (position==14){
-                        Intent valueEdition=new Intent(context, RMReceiving.class);
-                        context.startActivity(valueEdition);
+                        if (!(config.readMenuCodes().contains(context.getResources().getString(R.string.Raw_Material_Receiving)))){
+                            AppUtils.showToast(context,"You Have No granted permissions");
+                        }
+                        else {
+                            Intent valueEdition=new Intent(context, RMReceiving.class);
+                            context.startActivity(valueEdition);
+                        }
                     }
                     else  if (position==15){
-                        Intent valueEdition=new Intent(context, RmAnalysis.class);
-                        context.startActivity(valueEdition);
+                        if (!(config.readMenuCodes().contains(context.getResources().getString(R.string.RM_Receiving_Analysis)))){
+                            AppUtils.showToast(context,"You Have No granted permissions");
+                        }
+                        else {
+                            Intent valueEdition=new Intent(context, RmAnalysis.class);
+                            context.startActivity(valueEdition);
+                        }
                     }
 
                 }

@@ -21,7 +21,7 @@ public class ValueEditionInsertDetailsAdapter extends RecyclerView.Adapter<Value
 
     private Context context;
     private ArrayList<ValueEditionDetaillsModel> insertDetails;
-    float cummulativeWeight;
+    double cummulativeWeight;
 
     public ValueEditionInsertDetailsAdapter(Context context, ArrayList<ValueEditionDetaillsModel> insertDetails) {
         this.context = context;
@@ -47,7 +47,15 @@ public class ValueEditionInsertDetailsAdapter extends RecyclerView.Adapter<Value
             holder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
         }
 
-        cummulativeWeight= Float.parseFloat(cummulativeWeight+ insertDetails.get(i).getNet_weight());
+        try
+        {
+            cummulativeWeight= Double.parseDouble(cummulativeWeight+ insertDetails.get(i).getNet_weight());
+
+        }catch (NumberFormatException e){
+            e.printStackTrace();
+        }
+
+
         holder.txt_cummulative_weight.setText(AppUtils.roundValue(String.valueOf(cummulativeWeight)));
 
 

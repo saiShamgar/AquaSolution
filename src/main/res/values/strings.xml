@@ -19,6 +19,8 @@
     <string name="NextLot">Are You sure You want to change the Lot no?</string>
     <string name="siteWtAlert">Are You sure You want to save weights? </string>
     <string name="upload_local_data">Are You sure You want to upload local data? </string>
+    <string-array name="menu_codes">com.PG.testingapp.Utils.menu_codes</string-array>
+
 
 
     //site Weighment
@@ -54,4 +56,16 @@
     <string name="enquiry_no">Enquiry No.</string>
     <string name="take_picture">Take Picture</string>
     <string name="next">Next</string>
+    
+    <string name="Value_addition">6.3.1</string>
+    <string name="Headless_Grading">6.3.2</string>
+    <string name="Headon_Grading">6.3.3</string>
+    <string name="Headon_Headless_Grading">6.3.4</string>
+    <string name="Soaking_Process_Scheduling">6.2.1</string>
+    <string name="Raw_Material_Receiving">5.2.10</string>
+    <string name="RM_Receiving_Analysis">5.2.11</string>
+    <string name="Site_Weighment">5.3.16</string>
+    <string name="Factory_Weighment">5.3.17</string>
+    <string name="Cold_Storage_Details">9.3.1</string>
+
 </resources>

@@ -193,7 +193,6 @@ public class Soaking_Details_Screen_2 extends AppCompatActivity implements View.
 
     boolean doValidation() {
         validate = true;
-
         if (txt_soaking_det_process_duration.getText().toString().trim().length() == 0) {
             validate = false;
             txt_soaking_det_process_duration.requestFocus();

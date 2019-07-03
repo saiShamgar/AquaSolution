@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.mikepenz:fastadapter:3.2.7@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/392f7df3ecf2065c01efa5a118d5e72e/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/392f7df3ecf2065c01efa5a118d5e72e/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c95763d6c2e29dbfded1cf4e0a85d3ba/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c95763d6c2e29dbfded1cf4e0a85d3ba/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

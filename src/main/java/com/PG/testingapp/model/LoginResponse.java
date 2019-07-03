@@ -20,12 +20,17 @@ public class LoginResponse {
     @Expose
     private LoginData data;
 
+    @SerializedName("Codes")
+    @Expose
+    private ArrayList<String> Codes;
 
-    public LoginResponse(String status, String message, LoginData data) {
+    public LoginResponse(String status, String message, LoginData data, ArrayList<String> codes) {
         this.status = status;
         this.message = message;
         this.data = data;
+        Codes = codes;
     }
+
 
     public String getStatus() {
         return status;
@@ -45,6 +50,14 @@ public class LoginResponse {
 
     public LoginData getData() {
         return data;
+    }
+
+    public ArrayList<String> getCodes() {
+        return Codes;
+    }
+
+    public void setCodes(ArrayList<String> codes) {
+        Codes = codes;
     }
 
     public void setData(LoginData data) {
