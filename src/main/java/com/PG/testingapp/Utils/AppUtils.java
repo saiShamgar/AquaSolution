@@ -275,6 +275,10 @@ public class AppUtils  {
                 dialog_ok_cancel_dialog.dismiss();
                 if (positivecallback != null) {
                     positivecallback.onClick(v);
+                    txtPositive.setClickable(false);
+                }
+                else {
+                    txtPositive.setClickable(true);
                 }
             }
         });
@@ -285,6 +289,10 @@ public class AppUtils  {
                 dialog_ok_cancel_dialog.dismiss();
                 if (negativecallback != null) {
                     negativecallback.onClick(v);
+                    txtNegativePositive.setClickable(false);
+                }
+                else {
+                    txtNegativePositive.setClickable(true);
                 }
             }
         });

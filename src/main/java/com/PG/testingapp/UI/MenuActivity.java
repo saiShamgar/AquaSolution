@@ -145,7 +145,7 @@ public class MenuActivity extends AppCompatActivity implements  GoogleApiClient.
         checkLocation();
         init();
 
-        Log.e("codes",config.readMenuCodes().toString());
+     //   Log.e("codes",config.readMenuCodes().toString());
 
 
         logout.setOnClickListener(new View.OnClickListener() {

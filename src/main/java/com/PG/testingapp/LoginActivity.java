@@ -29,6 +29,7 @@ public class LoginActivity extends BaseActivity  {
     private Context mContext;
     private ApiService apiService;
     private SharedPreferenceConfig sharedPreferenceConfig;
+    private boolean validate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +50,28 @@ public class LoginActivity extends BaseActivity  {
         edt_password = findViewById(R.id.edt_password);
 
         //navigating to menu
-        btn_submit.setOnClickListener(new View.OnClickListener() {
+        btn_submit.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-               callService();
+                if (doValidation()){
+                    callService();
+                }
             }
         });
+    }
 
+    boolean doValidation() {
+        validate = true;
+        if (edt_user_name.getText().toString().trim().length() == 0) {
+            validate = false;
+            edt_user_name.setError("Field cannot be empty");
+            edt_user_name.requestFocus();
+        } else if (edt_password.getText().toString().trim().length() == 0) {
+            validate = false;
+            edt_password.setError("Field cannot be empty");
+            edt_password.requestFocus();
+        }
+        return validate;
     }
 
     private void callService() {
@@ -100,9 +116,5 @@ public class LoginActivity extends BaseActivity  {
         }else {
             AppUtils.showToast(mContext,getString(R.string.error_network));
         }
-
-
     }
-
-
 }

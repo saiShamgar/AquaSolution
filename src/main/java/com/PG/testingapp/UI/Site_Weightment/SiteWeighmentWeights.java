@@ -256,17 +256,11 @@ public class SiteWeighmentWeights extends BaseActivity implements View.OnClickLi
                                                 edt_siteWeighment_total_weight_kgs.requestFocus(); // needed if you have more then one input
                                             }
                                         });
-
-
-
-
-
                                     }
                                 },
                                 new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-
                                         count_code=codes.get(position-1).getVcode();
                                         ValueEditionDetaillsModel detaillsModel=new ValueEditionDetaillsModel();
                                         detaillsModel.setTime(txt_siteWeighment_weight_date_time.getText().toString());

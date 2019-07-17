@@ -17,9 +17,7 @@ import android.util.Log;
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class UsbDriver
-{
-
+public class UsbDriver {
     private final Context mApplicationContext;
     private final UsbManager mUsbManager;
     @SuppressWarnings("unused")
@@ -33,8 +31,7 @@ public class UsbDriver
     public static UsbEndpoint Data_Out_End_Point = null;
     public static UsbDeviceConnection USB_Device_Connection;
 
-    public UsbDriver(Activity parentActivity , int vid, int pid)
-    {
+    public UsbDriver(Activity parentActivity , int vid, int pid) {
         mApplicationContext = parentActivity.getApplicationContext();
         mUsbManager = (UsbManager) mApplicationContext.getSystemService(Context.USB_SERVICE);
         VID = 6790;
@@ -51,24 +48,16 @@ public class UsbDriver
         HashMap<String, UsbDevice> devlist = mUsbManager.getDeviceList();
         Iterator<UsbDevice> deviter = devlist.values().iterator();
         Device_Details = null;
-        if (devlist.size() != 0)
-        {
-
-            while (deviter.hasNext())
-            {
+        if (devlist.size() != 0) {
+            while (deviter.hasNext()) {
                 Device_Details = deviter.next();
-
-                if (Device_Details.getVendorId() == VID && Device_Details.getProductId() == PID)
-                {
-                    if (!mUsbManager.hasPermission(Device_Details))
-                    {
+                if (Device_Details.getVendorId() == VID && Device_Details.getProductId() == PID) {
+                    if (!mUsbManager.hasPermission(Device_Details)) {
                         onPermissionDenied(Device_Details);
                     }
-                    else
-                    {
+                    else {
                         UsbDeviceConnection conn = mUsbManager.openDevice(Device_Details);
-                        if (!conn.claimInterface(Device_Details.getInterface(0), true))
-                        {
+                        if (!conn.claimInterface(Device_Details.getInterface(0), true)) {
                             return;
                         }
 
@@ -81,48 +70,36 @@ public class UsbDriver
                         Data_Out_End_Point = null;
 
                         UsbInterface usbIf = Device_Details.getInterface(0);
-                        for (int i = 0; i < usbIf.getEndpointCount(); i++)
-                        {
-                            if (usbIf.getEndpoint(i).getType() == UsbConstants.USB_ENDPOINT_XFER_BULK)
-                            {
+                        for (int i = 0; i < usbIf.getEndpointCount(); i++) {
+                            if (usbIf.getEndpoint(i).getType() == UsbConstants.USB_ENDPOINT_XFER_BULK) {
                                 if (usbIf.getEndpoint(i).getDirection() == UsbConstants.USB_DIR_IN)
-
                                     Data_In_End_Point = usbIf.getEndpoint(i);
                                 else
                                     Data_Out_End_Point = usbIf.getEndpoint(i);
                             }
-                        }
-                        if (Data_In_End_Point == null || Data_Out_End_Point == null)
-
+                        }if (Data_In_End_Point == null || Data_Out_End_Point == null)
                             Device_Exception = 2;
                     }
                     break;
                 }j++;
             }
-            if (Device_Details == null)
-            {
+            if (Device_Details == null) {
                 Device_Exception = 3;
                 return;
             }
         }
-        else
-        {
+        else {
             Device_Exception = 1;
             return;
         }
 
     }
-    public void onPermissionDenied(UsbDevice d)
-    {
+    public void onPermissionDenied(UsbDevice d) {
         UsbManager usbman = (UsbManager) mApplicationContext.getSystemService(Context.USB_SERVICE);
-
         PendingIntent pi = PendingIntent.getBroadcast(mApplicationContext, 0, new Intent(ACTION_USB_PERMISSION), 0);
-
         mApplicationContext.registerReceiver(mPermissionReceiver,new IntentFilter(ACTION_USB_PERMISSION));
-
         usbman.requestPermission(d, pi);
     }
-
 
     private class PermissionReceiver extends BroadcastReceiver
     {
@@ -144,8 +121,7 @@ public class UsbDriver
                 {
                     mPermissionListener.onPermissionDenied((UsbDevice) intent.getParcelableExtra(UsbManager.EXTRA_DEVICE));
                 }
-                else
-                {
+                else {
                     l("Permission granted");
                     UsbDevice dev = (UsbDevice) intent.getParcelableExtra(UsbManager.EXTRA_DEVICE);
                     if (dev != null)

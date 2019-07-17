@@ -26,7 +26,6 @@ import com.PG.testingapp.R;
 import com.PG.testingapp.Utils.AppUtils;
 import com.PG.testingapp.model.Soaking.Soaking_Grid_two_model;
 import com.PG.testingapp.model.Soaking.Soaking_details;
-import com.PG.testingapp.model.ValueEditionDetaillsModel;
 
 import java.io.Serializable;
 import java.text.ParseException;

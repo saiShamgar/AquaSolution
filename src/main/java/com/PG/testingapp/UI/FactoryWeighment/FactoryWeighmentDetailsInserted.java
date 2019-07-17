@@ -147,7 +147,7 @@ public class FactoryWeighmentDetailsInserted extends BaseActivity {
                             @Override
                             public void onClick(View v) {
                                 if (AppUtils.isNetworkAvailable(context)){
-                                    callService();
+                                  //  callService();
                                 }
                                 else {
                                     AppUtils.showToast(context,getString(R.string.error_network));

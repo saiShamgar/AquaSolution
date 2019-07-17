@@ -126,7 +126,7 @@ public class SharedPreferenceConfig {
     }
 
     public Set<String> readMenuCodes(){
-        Set<String> set = sharedPreferences.getStringSet("Key ", null);
+        Set<String> set = sharedPreferences.getStringSet("Key", null);
         Log.i("SharedPreferenceRead: ",""+set);
         return  set;
     }
